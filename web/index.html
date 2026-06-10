@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clasificación en tiempo real de la Porra Mundial 2026">
+  <title>Porra Mundial 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient--one"></div>
+  <div class="ambient ambient--two"></div>
+  <div class="ambient ambient--grid"></div>
+
+  <div class="app" id="app">
+    <header class="hero">
+      <div class="hero__badge">
+        <span class="hero__badge-icon" aria-hidden="true">🏆</span>
+        <span>Mundial 2026</span>
+      </div>
+      <h1 class="hero__title">Porra Mundial 2026</h1>
+      <p class="hero__subtitle">Clasificación en tiempo real</p>
+    </header>
+
+    <section class="stats" id="stats" aria-label="Estadísticas generales">
+      <article class="stat-card">
+        <span class="stat-card__label">Participantes</span>
+        <span class="stat-card__value" data-stat="participantes">—</span>
+      </article>
+      <article class="stat-card stat-card--highlight">
+        <span class="stat-card__label">Líder actual</span>
+        <span class="stat-card__value" data-stat="lider">—</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-card__label">Última actualización</span>
+        <span class="stat-card__value stat-card__value--small" data-stat="actualizacion">—</span>
+      </article>
+    </section>
+
+    <section class="podium-section" id="podium-section" hidden>
+      <div class="section-header">
+        <h2 class="section-header__title">Podio</h2>
+        <p class="section-header__desc">Los tres primeros clasificados</p>
+      </div>
+      <div class="podium" id="podium" role="list"></div>
+    </section>
+
+    <section class="table-section">
+      <div class="section-header">
+        <h2 class="section-header__title">Clasificación completa</h2>
+        <p class="section-header__desc">Todos los participantes</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="leaderboard" id="leaderboard" aria-label="Clasificación de participantes">
+          <thead>
+            <tr>
+              <th scope="col">Pos.</th>
+              <th scope="col">Jugador</th>
+              <th scope="col" class="col-num">Aciertos</th>
+              <th scope="col" class="col-num">Puntos</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table>
+
+        <div class="mobile-cards" id="mobile-cards" role="list"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Porra Mundial 2026 · Datos en vivo</p>
+    </footer>
+  </div>
+
+  <div class="loading" id="loading" aria-live="polite" aria-busy="true">
+    <div class="loading__inner">
+      <div class="loading__spinner" aria-hidden="true"></div>
+      <p class="loading__text">Cargando clasificación...</p>
+      <div class="skeleton skeleton--stats">
+        <div class="skeleton__block"></div>
+        <div class="skeleton__block"></div>
+        <div class="skeleton__block"></div>
+      </div>
+      <div class="skeleton skeleton--podium">
+        <div class="skeleton__block"></div>
+        <div class="skeleton__block skeleton__block--tall"></div>
+        <div class="skeleton__block"></div>
+      </div>
+      <div class="skeleton skeleton--table">
+        <div class="skeleton__row"></div>
+        <div class="skeleton__row"></div>
+        <div class="skeleton__row"></div>
+        <div class="skeleton__row"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="error" id="error" role="alert">
+    <div class="error__card">
+      <button class="error__close" id="close-error-button" type="button" aria-label="Cerrar">✕</button>
+      <span class="error__icon" aria-hidden="true">⚠</span>
+      <h2 class="error__title">No se pudo cargar la clasificación</h2>
+      <p class="error__message" id="error-message"></p>
+      <button class="error__button" id="retry-button" type="button">Reintentar</button>
+    </div>
+  </div>
+
+  <script type="application/json" id="clasificacion-data">
+[
+  {
+    "posicion": 1,
+    "nombre": "Agus",
+    "aciertos": 45,
+    "puntos": 45
+  },
+  {
+    "posicion": 2,
+    "nombre": "Mario",
+    "aciertos": 43,
+    "puntos": 43
+  }
+]
+  </script>
+  <script src="clasificacion.js"></script>
+  <script src="partidos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
