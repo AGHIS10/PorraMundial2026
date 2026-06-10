@@ -24,12 +24,12 @@ PARTIDOS_FILE = PROYECTO_DIR / "partidos.json"
 RESULTADOS_FILE = PROYECTO_DIR / "resultados.json"
 PARTICIPANTES_DIR = PROYECTO_DIR / "participantes"
 CLASIFICACION_FILE = PROYECTO_DIR / "clasificacion.json"
-WEB_DIR = PROYECTO_DIR / "web"
-WEB_CLASIFICACION_FILE = WEB_DIR / "clasificacion.json"
-WEB_CLASIFICACION_JS_FILE = WEB_DIR / "clasificacion.js"
-WEB_PARTIDOS_FILE = WEB_DIR / "partidos.json"
-WEB_PARTIDOS_JS_FILE = WEB_DIR / "partidos.js"
-WEB_INDEX_FILE = WEB_DIR / "index.html"
+DOCS_DIR = PROYECTO_DIR / "docs"
+DOCS_CLASIFICACION_FILE = DOCS_DIR / "clasificacion.json"
+DOCS_CLASIFICACION_JS_FILE = DOCS_DIR / "clasificacion.js"
+DOCS_PARTIDOS_FILE = DOCS_DIR / "partidos.json"
+DOCS_PARTIDOS_JS_FILE = DOCS_DIR / "partidos.js"
+DOCS_INDEX_FILE = DOCS_DIR / "index.html"
 
 CAMPOS_PARTIDO = ("id", "fecha", "hora", "local", "visitante", "fase", "peso")
 
@@ -343,24 +343,24 @@ def actualizar_index_html(contenido: list[dict[str, Any]], ruta: Path) -> None:
     ruta.write_text(html_actualizado, encoding="utf-8")
 
 
-def sincronizar_web(
+def sincronizar_docs(
     filas: list[FilaClasificacion],
     partidos: list[Partido],
 ) -> None:
-    """Sincroniza clasificación y partidos con el frontend."""
-    if not WEB_DIR.exists():
+    """Sincroniza clasificación y partidos con el frontend en docs/."""
+    if not DOCS_DIR.exists():
         return
 
     clasificacion = filas_a_dict(filas)
     partidos_dict = partidos_a_dict(partidos)
 
-    guardar_json(clasificacion, WEB_CLASIFICACION_FILE)
-    guardar_modulo_js("__CLASIFICACION__", clasificacion, WEB_CLASIFICACION_JS_FILE)
-    guardar_json(partidos_dict, WEB_PARTIDOS_FILE)
-    guardar_modulo_js("__PARTIDOS__", partidos_dict, WEB_PARTIDOS_JS_FILE)
+    guardar_json(clasificacion, DOCS_CLASIFICACION_FILE)
+    guardar_modulo_js("__CLASIFICACION__", clasificacion, DOCS_CLASIFICACION_JS_FILE)
+    guardar_json(partidos_dict, DOCS_PARTIDOS_FILE)
+    guardar_modulo_js("__PARTIDOS__", partidos_dict, DOCS_PARTIDOS_JS_FILE)
 
-    if WEB_INDEX_FILE.exists():
-        actualizar_index_html(clasificacion, WEB_INDEX_FILE)
+    if DOCS_INDEX_FILE.exists():
+        actualizar_index_html(clasificacion, DOCS_INDEX_FILE)
 
 
 def listar_participantes(directorio: Path) -> list[Path]:
@@ -455,7 +455,7 @@ def main() -> int:
 
     filas = asignar_posiciones(ordenar_clasificacion(entradas))
     guardar_json(filas_a_dict(filas), CLASIFICACION_FILE)
-    sincronizar_web(filas, partidos)
+    sincronizar_docs(filas, partidos)
     mostrar_resumen(contexto, len(entradas), filas, CLASIFICACION_FILE)
     return 0
 

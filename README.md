@@ -15,7 +15,7 @@ porra-mundial/
 ├── clasificacion.json       # Clasificación generada (salida)
 ├── scripts/
 │   └── calcular_clasificacion.py
-├── web/                     # Frontend premium
+├── docs/                    # Frontend (GitHub Pages)
 │   ├── index.html
 │   ├── styles.css
 │   ├── app.js
@@ -176,7 +176,7 @@ Si un participante tiene longitud incorrecta o JSON inválido, se ignora y se mu
 3. Mantén el orden de los partidos sin cambios.
 4. Ejecuta de nuevo `python scripts/calcular_clasificacion.py`.
 
-El fichero `clasificacion.json` se sobrescribe automáticamente con la clasificación actualizada. También se sincroniza a `web/clasificacion.json` y `web/partidos.json` para el frontend.
+El fichero `clasificacion.json` se sobrescribe automáticamente con la clasificación actualizada. También se sincroniza a `docs/` para el frontend.
 
 ## Validación de coherencia
 
@@ -192,22 +192,31 @@ Si no coinciden:
 ERROR: longitud inconsistente (partidos: 71, resultados: 71, pronosticos: 70)
 ```
 
-## Frontend web
+## Frontend (docs/)
 
 Interfaz premium para visualizar la clasificación en tiempo real.
 
-### Cómo abrirlo
+### GitHub Pages
 
-Desde la carpeta `web/`:
+Configuración recomendada en el repositorio:
+
+- **Branch:** `main`
+- **Folder:** `/docs`
+
+No requiere cambios adicionales en el proyecto.
+
+### Cómo abrirlo en local
+
+Desde la carpeta `docs/`:
 
 ```bash
-cd web
-python -m http.server 8080
+cd docs
+python3 -m http.server 8080
 ```
 
 Abre en el navegador: `http://localhost:8080`
 
-> **Nota:** `fetch` no funciona abriendo `index.html` directamente con `file://`. Necesitas un servidor local.
+También puedes abrir `docs/index.html` directamente: los datos embebidos en `clasificacion.js` permiten ver la clasificación sin servidor.
 
 ### Características
 
