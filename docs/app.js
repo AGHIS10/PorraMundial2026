@@ -1,5 +1,6 @@
-const DATA_URL = "./clasificacion.json";
-const PARTIDOS_URL = "./partidos.json";
+const BUILD = document.querySelector('meta[name="app-build"]')?.content || String(Date.now());
+const DATA_URL = `./clasificacion.json?v=${BUILD}`;
+const PARTIDOS_URL = `./partidos.json?v=${BUILD}`;
 const PUNTOS_MAXIMOS = 275;
 
 const appData = {

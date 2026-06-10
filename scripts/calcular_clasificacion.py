@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -325,6 +327,22 @@ def guardar_modulo_js(
         archivo.write(";\n")
 
 
+def generar_build_id() -> str:
+    """Genera un identificador de build para invalidar caché del frontend."""
+    return datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+
+
+def actualizar_cache_bust(html: str, build_id: str) -> str:
+    """Actualiza meta app-build y parámetros ?v= de los assets estáticos."""
+    html = re.sub(
+        r'(<meta name="app-build" content=")[^"]*(")',
+        rf"\g<1>{build_id}\2",
+        html,
+        count=1,
+    )
+    return re.sub(r"\?v=\d+", f"?v={build_id}", html)
+
+
 def actualizar_index_html(contenido: list[dict[str, Any]], ruta: Path) -> None:
     """Actualiza los datos embebidos de clasificación en index.html."""
     marcador_inicio = '<script type="application/json" id="clasificacion-data">'
@@ -340,6 +358,7 @@ def actualizar_index_html(contenido: list[dict[str, Any]], ruta: Path) -> None:
     json_embebido = json.dumps(contenido, ensure_ascii=False, indent=2)
     bloque = f"{marcador_inicio}\n{json_embebido}\n  {marcador_fin}"
     html_actualizado = html[:inicio] + bloque + html[fin + len(marcador_fin):]
+    html_actualizado = actualizar_cache_bust(html_actualizado, generar_build_id())
     ruta.write_text(html_actualizado, encoding="utf-8")
 
 
