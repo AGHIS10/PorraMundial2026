@@ -1,25 +1,19 @@
 const BUILD = document.querySelector('meta[name="app-build"]')?.content || String(Date.now());
 const DATA_URL = `./clasificacion.json?v=${BUILD}`;
 const PARTIDOS_URL = `./partidos.json?v=${BUILD}`;
+const RESULTADOS_URL = `./resultados.json?v=${BUILD}`;
+const PARTICIPANTES_URL = `./participantes.json?v=${BUILD}`;
 const PUNTOS_MAXIMOS = 275;
 
 const appData = {
   clasificacion: null,
   partidos: null,
+  resultados: null,
+  participantes: null,
 };
 
 const MEDALS = { 1: "🥇", 2: "🥈", 3: "🥉" };
 const PODIUM_ORDER = [2, 1, 3];
-
-const FASES = [
-  { key: "grupos", label: "Grupos", max: 72 },
-  { key: "dieciseisavos", label: "Dieciseisavos", max: 16 },
-  { key: "octavos", label: "Octavos", max: 8 },
-  { key: "cuartos", label: "Cuartos", max: 4 },
-  { key: "semifinales", label: "Semifinales", max: 2 },
-  { key: "tercer_puesto", label: "3er puesto", max: 1 },
-  { key: "final", label: "Final", max: 1 },
-];
 
 const FASE_LABELS = {
   grupos: "Grupos",
@@ -29,6 +23,16 @@ const FASE_LABELS = {
   semifinales: "Semifinales",
   tercer_puesto: "3er puesto",
   final: "Final",
+};
+
+const FASE_BADGE_CLASS = {
+  grupos: "fase-badge--grupos",
+  dieciseisavos: "fase-badge--dieciseisavos",
+  octavos: "fase-badge--octavos",
+  cuartos: "fase-badge--cuartos",
+  semifinales: "fase-badge--semifinales",
+  tercer_puesto: "fase-badge--tercer_puesto",
+  final: "fase-badge--final",
 };
 
 const elements = {
@@ -49,11 +53,10 @@ const elements = {
   btnBack: document.getElementById("btn-back"),
   detailHero: document.getElementById("detail-hero"),
   detailStats: document.getElementById("detail-stats"),
-  phaseGrid: document.getElementById("phase-grid"),
-  perfGrid: document.getElementById("perf-grid"),
+  predList: document.getElementById("pred-list"),
 };
 
-/* ── Data loading (sin cambios) ── */
+/* ── Data loading ── */
 
 function getMedal(position) {
   return MEDALS[position] || null;
@@ -82,6 +85,16 @@ function formatMatchDate(iso) {
   return new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "short" }).format(
     new Date(y, m - 1, d)
   );
+}
+
+function formatMatchDateTime(fecha, hora) {
+  const [y, m, d] = fecha.split("-");
+  return `${d}/${m}/${y} · ${hora}`;
+}
+
+function formatResultado(value) {
+  if (value === null || value === undefined || value === "") return "—";
+  return String(value);
 }
 
 function validateData(data) {
@@ -126,7 +139,9 @@ function loadClasificacionSync() {
     try {
       const data = source();
       if (data) return data;
-    } catch { continue; }
+    } catch {
+      continue;
+    }
   }
   return null;
 }
@@ -157,6 +172,77 @@ async function loadPartidos() {
   return null;
 }
 
+function loadEmbeddedResultados() {
+  return window.__RESULTADOS__ || null;
+}
+
+async function fetchResultados() {
+  const response = await fetch(RESULTADOS_URL);
+  if (!response.ok) throw new Error(`No se pudo acceder a resultados.json (${response.status}).`);
+  return response.json();
+}
+
+async function loadResultados() {
+  const embedded = loadEmbeddedResultados();
+  if (embedded) return embedded;
+  const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
+  if (canFetch) return fetchResultados();
+  return null;
+}
+
+function loadEmbeddedParticipantes() {
+  return window.__PARTICIPANTES__ || null;
+}
+
+async function fetchParticipantes() {
+  const response = await fetch(PARTICIPANTES_URL);
+  if (!response.ok) {
+    throw new Error(`No se pudo acceder a participantes.json (${response.status}).`);
+  }
+  return response.json();
+}
+
+async function loadParticipantes() {
+  const embedded = loadEmbeddedParticipantes();
+  if (embedded) return embedded;
+  const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
+  if (canFetch) return fetchParticipantes();
+  return null;
+}
+
+async function getParticipante(nombre) {
+  if (!appData.participantes) {
+    throw new Error("No se cargaron los datos de participantes.");
+  }
+  const participante = appData.participantes[nombre];
+  if (!participante) {
+    throw new Error(`No se encontraron pronósticos para ${nombre}.`);
+  }
+  return participante;
+}
+
+/* ── Match status helpers ── */
+
+function getMatchStatus(pronostico, resultado) {
+  if (resultado === null || resultado === undefined) {
+    return "pending";
+  }
+  if (pronostico === resultado) {
+    return "hit";
+  }
+  return "miss";
+}
+
+function countPlayedMatches(resultados) {
+  return resultados.filter((r) => r !== null && r !== undefined).length;
+}
+
+function calcPrecision(aciertos, resultados) {
+  const jugados = countPlayedMatches(resultados);
+  if (jugados === 0) return 0;
+  return Math.round((aciertos / jugados) * 100);
+}
+
 /* ── Navigation ── */
 
 function showView(view) {
@@ -172,14 +258,33 @@ function showView(view) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function openParticipant(nombre) {
+async function openParticipant(nombre) {
   const entry = appData.clasificacion.find((e) => e.nombre === nombre);
   if (!entry) return;
-  renderParticipantDetail(entry);
+
   showView("participant");
+  elements.predList.innerHTML = `
+    <div class="pred-loading">
+      <div class="loading__ball" aria-hidden="true"></div>
+      <p>Cargando pronósticos...</p>
+    </div>
+  `;
+
+  try {
+    const participante = await getParticipante(nombre);
+    renderParticipantDetail(entry, participante);
+  } catch (error) {
+    elements.predList.innerHTML = `
+      <div class="pred-error">
+        <span aria-hidden="true">⚠</span>
+        <p>${error instanceof Error ? error.message : "Error al cargar pronósticos."}</p>
+      </div>
+    `;
+    renderParticipantDetailHeader(entry);
+  }
 }
 
-/* ── Rendering ── */
+/* ── Rendering: home ── */
 
 function renderStats(data, updatedAt) {
   const leader = data[0];
@@ -245,7 +350,7 @@ function createTableRow(entry, index) {
     <td class="col-name">${entry.nombre}</td>
     <td class="num">${entry.aciertos}</td>
     <td class="num col-points">${entry.puntos}</td>
-    <td><span class="trend-icon" title="Próximamente">—</span></td>
+    <td><span class="trend-icon" title="Ver detalle">→</span></td>
   `;
 
   row.addEventListener("click", () => openParticipant(entry.nombre));
@@ -317,20 +422,11 @@ function renderMatches(partidos) {
   partidos.forEach((p, i) => elements.matchesList.appendChild(createMatchCard(p, i)));
 }
 
-function countPartidosByFase(partidos) {
-  const counts = {};
-  if (!partidos) return counts;
-  partidos.forEach((p) => {
-    counts[p.fase] = (counts[p.fase] || 0) + 1;
-  });
-  return counts;
-}
+/* ── Rendering: participant detail ── */
 
-function renderParticipantDetail(entry) {
-  const pct = appData.partidos
-    ? Math.round((entry.aciertos / appData.partidos.length) * 100)
-    : 0;
-  const faseCounts = countPartidosByFase(appData.partidos);
+function renderParticipantDetailHeader(entry, precision) {
+  const pct = precision ?? calcPrecision(entry.aciertos, appData.resultados || []);
+  const jugados = countPlayedMatches(appData.resultados || []);
 
   elements.detailHero.innerHTML = `
     <div class="detail-hero__avatar">${getInitials(entry.nombre)}</div>
@@ -350,39 +446,89 @@ function renderParticipantDetail(entry) {
     <div class="detail-stat">
       <div class="detail-stat__value">${pct}%</div>
       <div class="detail-stat__label">Precisión</div>
+      <div class="detail-stat__sub">${entry.aciertos} de ${jugados} jugados</div>
     </div>
     <div class="detail-stat">
       <div class="detail-stat__value">${entry.posicion}º</div>
       <div class="detail-stat__label">Posición</div>
     </div>
   `;
+}
 
-  elements.phaseGrid.innerHTML = FASES.map((fase) => {
-    const count = faseCounts[fase.key] || 0;
-    const active = count > 0;
-    return `
-      <div class="phase-card">
-        <div class="phase-card__name">${fase.label}</div>
-        <div class="phase-card__value${active ? " phase-card__value--active" : ""}">—</div>
-        <div class="phase-card__sub">${count > 0 ? `${count} partidos` : "Próximamente"}</div>
+function createStatusBadge(status) {
+  const badges = {
+    hit: { className: "pred-status--hit", icon: "✅", label: "Acierto" },
+    miss: { className: "pred-status--miss", icon: "❌", label: "Error" },
+    pending: { className: "pred-status--pending", icon: "⏳", label: "Pendiente" },
+  };
+  const badge = badges[status];
+  return `<span class="pred-status ${badge.className}">${badge.icon} ${badge.label}</span>`;
+}
+
+function createPredCard(partido, pronostico, resultado, index) {
+  const status = getMatchStatus(pronostico, resultado);
+  const card = document.createElement("article");
+  card.className = `pred-card pred-card--${status}`;
+  card.setAttribute("role", "listitem");
+  card.style.animationDelay = `${0.02 * index}s`;
+
+  const faseLabel = FASE_LABELS[partido.fase] || partido.fase;
+  const faseClass = FASE_BADGE_CLASS[partido.fase] || "fase-badge--grupos";
+  const resultadoTexto =
+    resultado === null || resultado === undefined ? "Pendiente" : formatResultado(resultado);
+
+  card.innerHTML = `
+    <div class="pred-card__header">
+      <div class="pred-card__datetime">${formatMatchDateTime(partido.fecha, partido.hora)}</div>
+      <span class="fase-badge ${faseClass}">${faseLabel}</span>
+    </div>
+    <div class="pred-card__matchup">
+      <div class="pred-card__team">${flagImg(partido.local)} <span>${partido.local}</span></div>
+      <span class="pred-card__vs">vs</span>
+      <div class="pred-card__team">${flagImg(partido.visitante)} <span>${partido.visitante}</span></div>
+    </div>
+    <div class="pred-card__results">
+      <div class="pred-card__field">
+        <span class="pred-card__field-label">Pronóstico</span>
+        <span class="pred-card__field-value pred-card__field-value--pick">${formatResultado(pronostico)}</span>
       </div>
-    `;
-  }).join("");
-
-  elements.perfGrid.innerHTML = `
-    <div class="perf-card">
-      <div class="perf-card__label">Mejor fase</div>
-      <div class="perf-card__value">Próximamente</div>
-    </div>
-    <div class="perf-card">
-      <div class="perf-card__label">Peor fase</div>
-      <div class="perf-card__value">Próximamente</div>
-    </div>
-    <div class="perf-card">
-      <div class="perf-card__label">Precisión global</div>
-      <div class="perf-card__value">${pct}%</div>
+      <div class="pred-card__field">
+        <span class="pred-card__field-label">Resultado</span>
+        <span class="pred-card__field-value${status === "pending" ? " pred-card__field-value--pending" : ""}">${resultadoTexto}</span>
+      </div>
+      <div class="pred-card__field pred-card__field--status">
+        <span class="pred-card__field-label">Estado</span>
+        ${createStatusBadge(status)}
+      </div>
     </div>
   `;
+
+  return card;
+}
+
+function renderParticipantDetail(entry, participante) {
+  const resultados = appData.resultados || [];
+  const partidos = appData.partidos || [];
+  const precision = calcPrecision(entry.aciertos, resultados);
+
+  renderParticipantDetailHeader(entry, precision);
+
+  elements.predList.innerHTML = "";
+
+  if (partidos.length === 0) {
+    elements.predList.innerHTML = `
+      <div class="pred-error">
+        <p>No hay partidos disponibles en partidos.json.</p>
+      </div>
+    `;
+    return;
+  }
+
+  partidos.forEach((partido, index) => {
+    const pronostico = participante.pronosticos[index] ?? null;
+    const resultado = resultados[index] ?? null;
+    elements.predList.appendChild(createPredCard(partido, pronostico, resultado, index));
+  });
 }
 
 function renderApp(data) {
@@ -420,12 +566,16 @@ async function init() {
   hideError();
   showLoading();
   try {
-    const [clasificacion, partidos] = await Promise.all([
+    const [clasificacion, partidos, resultados, participantes] = await Promise.all([
       loadClasificacion(),
       loadPartidos().catch(() => null),
+      loadResultados().catch(() => null),
+      loadParticipantes().catch(() => null),
     ]);
     appData.clasificacion = clasificacion;
     appData.partidos = partidos;
+    appData.resultados = resultados;
+    appData.participantes = participantes;
     renderApp(clasificacion);
     hideError();
     hideLoading();
