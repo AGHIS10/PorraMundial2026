@@ -18,10 +18,12 @@ PARTIDOS_FILE = PROYECTO_DIR / "partidos.json"
 RESULTADOS_FILE = PROYECTO_DIR / "resultados.json"
 ALIAS_FILE = PROYECTO_DIR / "equipos_alias.json"
 API_URL = "https://api.football-data.org/v4/competitions/WC/matches"
+API_MATCHES_URL = "https://api.football-data.org/v4/matches"
 API_SEASON = 2026
 API_KEY_ENV = "FOOTBALL_DATA_API_KEY"
 ESTADOS_FINALIZADOS = frozenset({"FINISHED", "AWARDED"})
 MAX_DIFERENCIA_DIAS = 2
+MAX_IDS_POR_PETICION = 50
 STAGE_GRUPOS = "GROUP_STAGE"
 
 
@@ -100,14 +102,22 @@ def fechas_compatibles(fecha_partido: str, utc_date: str) -> bool:
     return abs((fecha_local - fecha_api).days) <= MAX_DIFERENCIA_DIAS
 
 
+def nombre_equipo_api(partido_api: dict[str, Any], lado: str) -> str:
+    """Devuelve el nombre de homeTeam o awayTeam de un partido API."""
+    equipo = partido_api.get(f"{lado}Team") or {}
+    if isinstance(equipo, dict):
+        return equipo.get("name") or ""
+    return ""
+
+
 def equipos_coinciden(
     partido: dict[str, Any],
     partido_api: dict[str, Any],
     alias: dict[str, str | list[str]],
 ) -> bool:
     """Comprueba si local/visitante coinciden con home/away de la API."""
-    home_api = partido_api.get("homeTeam", {}).get("name", "")
-    away_api = partido_api.get("awayTeam", {}).get("name", "")
+    home_api = nombre_equipo_api(partido_api, "home")
+    away_api = nombre_equipo_api(partido_api, "away")
     return (
         nombres_equipo_coinciden(partido["local"], home_api, alias)
         and nombres_equipo_coinciden(partido["visitante"], away_api, alias)
@@ -134,15 +144,72 @@ def resultado_desde_marcador(goles_local: int, goles_visitante: int) -> str:
     return "X"
 
 
+def extraer_goles_marcador(marcador: dict[str, Any]) -> tuple[int | None, int | None]:
+    """Lee goles de un nodo de marcador (v4: home/away, v2: homeTeam/awayTeam)."""
+    if not isinstance(marcador, dict):
+        return None, None
+    goles_local = marcador.get("home")
+    goles_visitante = marcador.get("away")
+    if goles_local is None:
+        goles_local = marcador.get("homeTeam")
+    if goles_visitante is None:
+        goles_visitante = marcador.get("awayTeam")
+    return goles_local, goles_visitante
+
+
 def extraer_marcador_final(partido_api: dict[str, Any]) -> tuple[int, int] | None:
     """Obtiene el marcador a los 90 minutos desde la respuesta de la API."""
     score = partido_api.get("score") or {}
     full_time = score.get("fullTime") or {}
-    goles_local = full_time.get("homeTeam")
-    goles_visitante = full_time.get("awayTeam")
+    goles_local, goles_visitante = extraer_goles_marcador(full_time)
     if goles_local is None or goles_visitante is None:
         return None
     return int(goles_local), int(goles_visitante)
+
+
+def marcador_final_incompleto(partido_api: dict[str, Any]) -> bool:
+    """Indica si un partido finalizado no trae marcador en la respuesta."""
+    return partido_finalizado(partido_api) and extraer_marcador_final(partido_api) is None
+
+
+def fusionar_score(
+    score_base: dict[str, Any] | None,
+    score_nuevo: dict[str, Any] | None,
+) -> dict[str, Any]:
+    """Combina nodos score conservando valores ya conocidos."""
+    resultado = dict(score_base or {})
+    if not isinstance(score_nuevo, dict):
+        return resultado
+
+    nodos_marcador = ("fullTime", "halfTime", "regularTime", "extraTime", "penalties")
+    for clave, valor in score_nuevo.items():
+        if clave in nodos_marcador and isinstance(valor, dict):
+            existente = resultado.get(clave) or {}
+            fusionado = dict(existente) if isinstance(existente, dict) else {}
+            for sub_clave, sub_valor in valor.items():
+                if sub_valor is not None:
+                    fusionado[sub_clave] = sub_valor
+            resultado[clave] = fusionado
+        elif valor is not None:
+            resultado[clave] = valor
+    return resultado
+
+
+def fusionar_partido_api(
+    partido_base: dict[str, Any],
+    partido_nuevo: dict[str, Any],
+) -> dict[str, Any]:
+    """Fusiona dos representaciones del mismo partido priorizando datos completos."""
+    fusionado = dict(partido_base)
+    if partido_nuevo.get("status"):
+        fusionado["status"] = partido_nuevo["status"]
+    if partido_nuevo.get("lastUpdated"):
+        fusionado["lastUpdated"] = partido_nuevo["lastUpdated"]
+    fusionado["score"] = fusionar_score(
+        partido_base.get("score"),
+        partido_nuevo.get("score"),
+    )
+    return fusionado
 
 
 def partido_finalizado(partido_api: dict[str, Any]) -> bool:
@@ -205,8 +272,8 @@ def diagnosticar_partido(
         fechas_api = sorted(
             {
                 f"{candidato.get('utcDate', '?')} "
-                f"({candidato.get('homeTeam', {}).get('name', '?')} vs "
-                f"{candidato.get('awayTeam', {}).get('name', '?')})"
+                f"({nombre_equipo_api(candidato, 'home') or '?'} vs "
+                f"{nombre_equipo_api(candidato, 'away') or '?'})"
                 for candidato in por_equipos
             }
         )
@@ -227,22 +294,22 @@ def diagnosticar_partido(
 
     candidatos_home = sorted(
         {
-            candidato.get("homeTeam", {}).get("name", "")
+            nombre_equipo_api(candidato, "home")
             for candidato in partidos_api
             if nombres_equipo_coinciden(
                 partido["local"],
-                candidato.get("homeTeam", {}).get("name", ""),
+                nombre_equipo_api(candidato, "home"),
                 alias,
             )
         }
     )
     candidatos_away = sorted(
         {
-            candidato.get("awayTeam", {}).get("name", "")
+            nombre_equipo_api(candidato, "away")
             for candidato in partidos_api
             if nombres_equipo_coinciden(
                 partido["visitante"],
-                candidato.get("awayTeam", {}).get("name", ""),
+                nombre_equipo_api(candidato, "away"),
                 alias,
             )
         }
@@ -289,19 +356,114 @@ def cargar_resultados_actuales(total_partidos: int) -> list[str | None]:
     return datos
 
 
-def consultar_partidos_api(api_key: str) -> list[dict[str, Any]]:
-    """Consulta todos los partidos del Mundial en football-data.org."""
+def _consultar_api(
+    api_key: str,
+    url: str,
+    params: dict[str, Any] | None = None,
+) -> list[dict[str, Any]]:
+    """Ejecuta una petición GET y devuelve la lista de partidos."""
     respuesta = requests.get(
-        API_URL,
+        url,
         headers={"X-Auth-Token": api_key},
-        params={"season": API_SEASON},
+        params=params or {},
         timeout=30,
     )
     respuesta.raise_for_status()
     datos = respuesta.json()
+    if isinstance(datos, list):
+        return datos
     partidos = datos.get("matches", [])
     if not isinstance(partidos, list):
         raise ValueError("La API no devolvió una lista de partidos.")
+    return partidos
+
+
+def consultar_lista_competicion(api_key: str) -> list[dict[str, Any]]:
+    """Consulta todos los partidos del Mundial (calendario completo)."""
+    return _consultar_api(api_key, API_URL, {"season": API_SEASON})
+
+
+def consultar_partidos_finalizados(api_key: str) -> list[dict[str, Any]]:
+    """Consulta partidos finalizados; suele traer marcadores completos."""
+    return _consultar_api(
+        api_key,
+        API_URL,
+        {"season": API_SEASON, "status": "FINISHED"},
+    )
+
+
+def consultar_partidos_por_ids(
+    api_key: str,
+    ids_partido: list[int],
+) -> list[dict[str, Any]]:
+    """Consulta partidos concretos por id (datos más frescos)."""
+    if not ids_partido:
+        return []
+
+    partidos: list[dict[str, Any]] = []
+    for inicio in range(0, len(ids_partido), MAX_IDS_POR_PETICION):
+        lote = ids_partido[inicio : inicio + MAX_IDS_POR_PETICION]
+        partidos.extend(
+            _consultar_api(
+                api_key,
+                API_MATCHES_URL,
+                {"ids": ",".join(str(partido_id) for partido_id in lote)},
+            )
+        )
+    return partidos
+
+
+def enriquecer_marcadores_partidos(
+    api_key: str,
+    partidos_api: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], int]:
+    """Completa marcadores ausentes en partidos finalizados."""
+    por_id: dict[int, dict[str, Any]] = {
+        partido["id"]: dict(partido)
+        for partido in partidos_api
+        if partido.get("id") is not None
+    }
+    incompletos = [
+        partido_id
+        for partido_id, partido in por_id.items()
+        if marcador_final_incompleto(partido)
+    ]
+    if not incompletos:
+        return partidos_api, 0
+
+    enriquecidos_ids: set[int] = set()
+
+    for partido in consultar_partidos_finalizados(api_key):
+        partido_id = partido.get("id")
+        if partido_id not in incompletos or not extraer_marcador_final(partido):
+            continue
+        por_id[partido_id] = fusionar_partido_api(por_id[partido_id], partido)
+        enriquecidos_ids.add(partido_id)
+
+    incompletos = [
+        partido_id
+        for partido_id in incompletos
+        if marcador_final_incompleto(por_id[partido_id])
+    ]
+    if incompletos:
+        for partido in consultar_partidos_por_ids(api_key, incompletos):
+            partido_id = partido.get("id")
+            if partido_id not in por_id or not extraer_marcador_final(partido):
+                continue
+            por_id[partido_id] = fusionar_partido_api(por_id[partido_id], partido)
+            enriquecidos_ids.add(partido_id)
+
+    partidos_enriquecidos = [
+        por_id[partido["id"]] if partido.get("id") in por_id else partido
+        for partido in partidos_api
+    ]
+    return partidos_enriquecidos, len(enriquecidos_ids)
+
+
+def consultar_partidos_api(api_key: str) -> list[dict[str, Any]]:
+    """Consulta el Mundial y completa marcadores si la lista base viene incompleta."""
+    partidos = consultar_lista_competicion(api_key)
+    partidos, _ = enriquecer_marcadores_partidos(api_key, partidos)
     return partidos
 
 
@@ -348,8 +510,8 @@ def actualizar_resultados(
 
         estadisticas["encontrados"] += 1
         resultado = resultado_desde_api(partido_api)
-        home_api = partido_api.get("homeTeam", {}).get("name", "?")
-        away_api = partido_api.get("awayTeam", {}).get("name", "?")
+        home_api = nombre_equipo_api(partido_api, "home") or "?"
+        away_api = nombre_equipo_api(partido_api, "away") or "?"
 
         if resultado is None:
             estadisticas["pendientes"] += 1
@@ -375,6 +537,7 @@ def mostrar_resumen(
     total_api: int,
     total_api_grupos: int,
     estadisticas: dict[str, int],
+    marcadores_enriquecidos: int = 0,
 ) -> None:
     """Imprime el resumen final."""
     print()
@@ -386,6 +549,8 @@ def mostrar_resumen(
     print(f"Partidos finalizados: {estadisticas['finalizados']}")
     print(f"Partidos pendientes: {estadisticas['pendientes']}")
     print(f"Partidos actualizados: {estadisticas['actualizados']}")
+    if marcadores_enriquecidos:
+        print(f"Marcadores enriquecidos desde API: {marcadores_enriquecidos}")
     if estadisticas["sin_emparejar"]:
         print(f"Partidos sin emparejar: {estadisticas['sin_emparejar']}")
     print(f"Partidos en API (total): {total_api}")
@@ -412,7 +577,11 @@ def main() -> int:
             raise ValueError("equipos_alias.json debe ser un objeto JSON.")
 
         resultados_actuales = cargar_resultados_actuales(len(partidos))
-        partidos_api_total = consultar_partidos_api(api_key)
+        partidos_api_total = consultar_lista_competicion(api_key)
+        partidos_api_total, marcadores_enriquecidos = enriquecer_marcadores_partidos(
+            api_key,
+            partidos_api_total,
+        )
         partidos_api = filtrar_partidos_grupos_api(partidos_api_total)
         nuevos_resultados, estadisticas = actualizar_resultados(
             partidos,
@@ -426,6 +595,7 @@ def main() -> int:
             len(partidos_api_total),
             len(partidos_api),
             estadisticas,
+            marcadores_enriquecidos,
         )
         if estadisticas["sin_emparejar"]:
             print(

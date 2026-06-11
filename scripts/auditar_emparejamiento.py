@@ -16,36 +16,24 @@ sys.path.insert(0, str(PROYECTO_DIR / "scripts"))
 from actualizar_resultados import (  # noqa: E402
     ALIAS_FILE,
     API_KEY_ENV,
-    API_SEASON,
-    API_URL,
     PARTIDOS_FILE,
     RESULTADOS_FILE,
     cargar_json,
+    consultar_partidos_api,
     diagnosticar_partido,
     filtrar_partidos_grupos_api,
     formatear_partido,
+    nombre_equipo_api,
     nombres_equipo_coinciden,
 )
-
-
-def consultar_partidos_api(api_key: str) -> list[dict[str, Any]]:
-    """Consulta la API y devuelve todos los partidos."""
-    respuesta = requests.get(
-        API_URL,
-        headers={"X-Auth-Token": api_key},
-        params={"season": API_SEASON},
-        timeout=30,
-    )
-    respuesta.raise_for_status()
-    return respuesta.json().get("matches", [])
 
 
 def listar_equipos_api(partidos_api: list[dict[str, Any]]) -> set[str]:
     """Devuelve todos los nombres de equipos presentes en la API."""
     equipos: set[str] = set()
     for partido in partidos_api:
-        equipos.add(partido.get("homeTeam", {}).get("name", ""))
-        equipos.add(partido.get("awayTeam", {}).get("name", ""))
+        equipos.add(nombre_equipo_api(partido, "home"))
+        equipos.add(nombre_equipo_api(partido, "away"))
     equipos.discard("")
     return equipos
 
@@ -139,8 +127,8 @@ def main() -> int:
         if api_id is not None:
             api_usados[api_id] = api_usados.get(api_id, 0) + 1
 
-        home_api = partido_api.get("homeTeam", {}).get("name", "?")
-        away_api = partido_api.get("awayTeam", {}).get("name", "?")
+        home_api = nombre_equipo_api(partido_api, "home") or "?"
+        away_api = nombre_equipo_api(partido_api, "away") or "?"
         print(
             f"[OK] #{indice:02d} {partido['fecha']} {etiqueta} → "
             f"{home_api} vs {away_api} ({partido_api.get('utcDate', '?')})"
@@ -166,7 +154,7 @@ def main() -> int:
             print(f"  - {partido['fecha']} {formatear_partido(partido)}: {motivo}")
         return 2
 
-    print("\nResultado: 71/71 emparejamiento válido")
+    print(f"\nResultado: {len(partidos)}/{len(partidos)} emparejamiento válido")
     return 0
 
 
