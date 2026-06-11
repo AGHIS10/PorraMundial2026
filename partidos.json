@@ -65,6 +65,24 @@
   {
     "id": 8,
     "fecha": "2026-06-14",
+    "hora": "04:00",
+    "local": "Suecia",
+    "visitante": "Túnez",
+    "fase": "grupos",
+    "peso": 1
+  },
+  {
+    "id": 9,
+    "fecha": "2026-06-14",
+    "hora": "06:00",
+    "local": "Australia",
+    "visitante": "Turquía",
+    "fase": "grupos",
+    "peso": 1
+  },
+  {
+    "id": 10,
+    "fecha": "2026-06-14",
     "hora": "22:00",
     "local": "Alemania",
     "visitante": "Curazao",
@@ -72,7 +90,7 @@
     "peso": 1
   },
   {
-    "id": 9,
+    "id": 11,
     "fecha": "2026-06-14",
     "hora": "22:00",
     "local": "Países Bajos",
@@ -81,16 +99,7 @@
     "peso": 1
   },
   {
-    "id": 10,
-    "fecha": "2026-06-14",
-    "hora": "04:00",
-    "local": "Suecia",
-    "visitante": "Túnez",
-    "fase": "grupos",
-    "peso": 1
-  },
-  {
-    "id": 11,
+    "id": 12,
     "fecha": "2026-06-15",
     "hora": "01:00",
     "local": "Costa de Marfil",
@@ -99,7 +108,7 @@
     "peso": 1
   },
   {
-    "id": 12,
+    "id": 13,
     "fecha": "2026-06-15",
     "hora": "18:00",
     "local": "España",
@@ -108,7 +117,7 @@
     "peso": 1
   },
   {
-    "id": 13,
+    "id": 14,
     "fecha": "2026-06-15",
     "hora": "21:00",
     "local": "Bélgica",
@@ -117,7 +126,7 @@
     "peso": 1
   },
   {
-    "id": 14,
+    "id": 15,
     "fecha": "2026-06-16",
     "hora": "00:00",
     "local": "Arabia Saudí",
@@ -126,7 +135,7 @@
     "peso": 1
   },
   {
-    "id": 15,
+    "id": 16,
     "fecha": "2026-06-16",
     "hora": "03:00",
     "local": "Irán",
@@ -135,7 +144,7 @@
     "peso": 1
   },
   {
-    "id": 16,
+    "id": 17,
     "fecha": "2026-06-16",
     "hora": "21:00",
     "local": "Francia",
@@ -144,7 +153,7 @@
     "peso": 1
   },
   {
-    "id": 17,
+    "id": 18,
     "fecha": "2026-06-17",
     "hora": "00:00",
     "local": "Irak",
@@ -153,7 +162,7 @@
     "peso": 1
   },
   {
-    "id": 18,
+    "id": 19,
     "fecha": "2026-06-17",
     "hora": "03:00",
     "local": "Argentina",
@@ -162,7 +171,7 @@
     "peso": 1
   },
   {
-    "id": 19,
+    "id": 20,
     "fecha": "2026-06-17",
     "hora": "06:00",
     "local": "Austria",
@@ -171,7 +180,7 @@
     "peso": 1
   },
   {
-    "id": 20,
+    "id": 21,
     "fecha": "2026-06-17",
     "hora": "19:00",
     "local": "Portugal",
@@ -180,7 +189,7 @@
     "peso": 1
   },
   {
-    "id": 21,
+    "id": 22,
     "fecha": "2026-06-17",
     "hora": "22:00",
     "local": "Inglaterra",
@@ -189,7 +198,7 @@
     "peso": 1
   },
   {
-    "id": 22,
+    "id": 23,
     "fecha": "2026-06-18",
     "hora": "01:00",
     "local": "Ghana",
@@ -198,7 +207,7 @@
     "peso": 1
   },
   {
-    "id": 23,
+    "id": 24,
     "fecha": "2026-06-18",
     "hora": "04:00",
     "local": "Uzbekistán",
@@ -207,7 +216,7 @@
     "peso": 1
   },
   {
-    "id": 24,
+    "id": 25,
     "fecha": "2026-06-18",
     "hora": "18:00",
     "local": "República Checa",
@@ -216,7 +225,7 @@
     "peso": 1
   },
   {
-    "id": 25,
+    "id": 26,
     "fecha": "2026-06-18",
     "hora": "21:00",
     "local": "Suiza",
@@ -225,7 +234,7 @@
     "peso": 1
   },
   {
-    "id": 26,
+    "id": 27,
     "fecha": "2026-06-19",
     "hora": "00:00",
     "local": "Canadá",
@@ -234,7 +243,7 @@
     "peso": 1
   },
   {
-    "id": 27,
+    "id": 28,
     "fecha": "2026-06-19",
     "hora": "03:00",
     "local": "México",
@@ -243,7 +252,7 @@
     "peso": 1
   },
   {
-    "id": 28,
+    "id": 29,
     "fecha": "2026-06-19",
     "hora": "21:00",
     "local": "Estados Unidos",
@@ -252,7 +261,7 @@
     "peso": 1
   },
   {
-    "id": 29,
+    "id": 30,
     "fecha": "2026-06-20",
     "hora": "00:00",
     "local": "Escocia",
@@ -261,7 +270,7 @@
     "peso": 1
   },
   {
-    "id": 30,
+    "id": 31,
     "fecha": "2026-06-20",
     "hora": "02:30",
     "local": "Brasil",
@@ -270,7 +279,7 @@
     "peso": 1
   },
   {
-    "id": 31,
+    "id": 32,
     "fecha": "2026-06-20",
     "hora": "05:00",
     "local": "Turquía",
@@ -279,7 +288,7 @@
     "peso": 1
   },
   {
-    "id": 32,
+    "id": 33,
     "fecha": "2026-06-20",
     "hora": "19:00",
     "local": "Países Bajos",
@@ -288,7 +297,7 @@
     "peso": 1
   },
   {
-    "id": 33,
+    "id": 34,
     "fecha": "2026-06-20",
     "hora": "22:00",
     "local": "Alemania",
@@ -297,7 +306,7 @@
     "peso": 1
   },
   {
-    "id": 34,
+    "id": 35,
     "fecha": "2026-06-21",
     "hora": "02:00",
     "local": "Ecuador",
@@ -306,7 +315,7 @@
     "peso": 1
   },
   {
-    "id": 35,
+    "id": 36,
     "fecha": "2026-06-21",
     "hora": "06:00",
     "local": "Túnez",
@@ -315,7 +324,7 @@
     "peso": 1
   },
   {
-    "id": 36,
+    "id": 37,
     "fecha": "2026-06-21",
     "hora": "18:00",
     "local": "España",
@@ -324,7 +333,7 @@
     "peso": 1
   },
   {
-    "id": 37,
+    "id": 38,
     "fecha": "2026-06-21",
     "hora": "21:00",
     "local": "Bélgica",
@@ -333,7 +342,7 @@
     "peso": 1
   },
   {
-    "id": 38,
+    "id": 39,
     "fecha": "2026-06-22",
     "hora": "00:00",
     "local": "Uruguay",
@@ -342,7 +351,7 @@
     "peso": 1
   },
   {
-    "id": 39,
+    "id": 40,
     "fecha": "2026-06-22",
     "hora": "03:00",
     "local": "Nueva Zelanda",
@@ -351,7 +360,7 @@
     "peso": 1
   },
   {
-    "id": 40,
+    "id": 41,
     "fecha": "2026-06-22",
     "hora": "19:00",
     "local": "Argentina",
@@ -360,7 +369,7 @@
     "peso": 1
   },
   {
-    "id": 41,
+    "id": 42,
     "fecha": "2026-06-22",
     "hora": "23:00",
     "local": "Francia",
@@ -369,7 +378,7 @@
     "peso": 1
   },
   {
-    "id": 42,
+    "id": 43,
     "fecha": "2026-06-23",
     "hora": "02:00",
     "local": "Noruega",
@@ -378,7 +387,7 @@
     "peso": 1
   },
   {
-    "id": 43,
+    "id": 44,
     "fecha": "2026-06-23",
     "hora": "05:00",
     "local": "Jordania",
@@ -387,7 +396,7 @@
     "peso": 1
   },
   {
-    "id": 44,
+    "id": 45,
     "fecha": "2026-06-23",
     "hora": "19:00",
     "local": "Portugal",
@@ -396,7 +405,7 @@
     "peso": 1
   },
   {
-    "id": 45,
+    "id": 46,
     "fecha": "2026-06-23",
     "hora": "22:00",
     "local": "Inglaterra",
@@ -405,7 +414,7 @@
     "peso": 1
   },
   {
-    "id": 46,
+    "id": 47,
     "fecha": "2026-06-24",
     "hora": "01:00",
     "local": "Panamá",
@@ -414,7 +423,7 @@
     "peso": 1
   },
   {
-    "id": 47,
+    "id": 48,
     "fecha": "2026-06-24",
     "hora": "04:00",
     "local": "Colombia",
@@ -423,7 +432,7 @@
     "peso": 1
   },
   {
-    "id": 48,
+    "id": 49,
     "fecha": "2026-06-24",
     "hora": "21:00",
     "local": "Suiza",
@@ -432,7 +441,7 @@
     "peso": 1
   },
   {
-    "id": 49,
+    "id": 50,
     "fecha": "2026-06-25",
     "hora": "00:00",
     "local": "Escocia",
@@ -441,7 +450,7 @@
     "peso": 1
   },
   {
-    "id": 50,
+    "id": 51,
     "fecha": "2026-06-25",
     "hora": "00:00",
     "local": "Marruecos",
@@ -450,7 +459,7 @@
     "peso": 1
   },
   {
-    "id": 51,
+    "id": 52,
     "fecha": "2026-06-25",
     "hora": "03:00",
     "local": "República Checa",
@@ -459,7 +468,7 @@
     "peso": 1
   },
   {
-    "id": 52,
+    "id": 53,
     "fecha": "2026-06-25",
     "hora": "03:00",
     "local": "Sudáfrica",
@@ -468,7 +477,7 @@
     "peso": 1
   },
   {
-    "id": 53,
+    "id": 54,
     "fecha": "2026-06-25",
     "hora": "21:00",
     "local": "Bosnia y Herzegovina",
@@ -477,7 +486,7 @@
     "peso": 1
   },
   {
-    "id": 54,
+    "id": 55,
     "fecha": "2026-06-25",
     "hora": "22:00",
     "local": "Curazao",
@@ -486,20 +495,11 @@
     "peso": 1
   },
   {
-    "id": 55,
+    "id": 56,
     "fecha": "2026-06-25",
     "hora": "22:00",
     "local": "Ecuador",
     "visitante": "Alemania",
-    "fase": "grupos",
-    "peso": 1
-  },
-  {
-    "id": 56,
-    "fecha": "2026-06-26",
-    "hora": "01:00",
-    "local": "Túnez",
-    "visitante": "Países Bajos",
     "fase": "grupos",
     "peso": 1
   },
@@ -515,9 +515,9 @@
   {
     "id": 58,
     "fecha": "2026-06-26",
-    "hora": "04:00",
-    "local": "Turquía",
-    "visitante": "Estados Unidos",
+    "hora": "01:00",
+    "local": "Túnez",
+    "visitante": "Países Bajos",
     "fase": "grupos",
     "peso": 1
   },
@@ -533,6 +533,15 @@
   {
     "id": 60,
     "fecha": "2026-06-26",
+    "hora": "04:00",
+    "local": "Turquía",
+    "visitante": "Estados Unidos",
+    "fase": "grupos",
+    "peso": 1
+  },
+  {
+    "id": 61,
+    "fecha": "2026-06-26",
     "hora": "21:00",
     "local": "Noruega",
     "visitante": "Francia",
@@ -540,7 +549,7 @@
     "peso": 1
   },
   {
-    "id": 61,
+    "id": 62,
     "fecha": "2026-06-26",
     "hora": "21:00",
     "local": "Senegal",
@@ -549,7 +558,7 @@
     "peso": 1
   },
   {
-    "id": 62,
+    "id": 63,
     "fecha": "2026-06-27",
     "hora": "02:00",
     "local": "Cabo Verde",
@@ -558,20 +567,11 @@
     "peso": 1
   },
   {
-    "id": 63,
+    "id": 64,
     "fecha": "2026-06-27",
     "hora": "02:00",
     "local": "Uruguay",
     "visitante": "España",
-    "fase": "grupos",
-    "peso": 1
-  },
-  {
-    "id": 64,
-    "fecha": "2026-06-27",
-    "hora": "05:00",
-    "local": "Nueva Zelanda",
-    "visitante": "Bélgica",
     "fase": "grupos",
     "peso": 1
   },
@@ -587,9 +587,9 @@
   {
     "id": 66,
     "fecha": "2026-06-27",
-    "hora": "23:00",
-    "local": "Panamá",
-    "visitante": "Inglaterra",
+    "hora": "05:00",
+    "local": "Nueva Zelanda",
+    "visitante": "Bélgica",
     "fase": "grupos",
     "peso": 1
   },
@@ -604,6 +604,15 @@
   },
   {
     "id": 68,
+    "fecha": "2026-06-27",
+    "hora": "23:00",
+    "local": "Panamá",
+    "visitante": "Inglaterra",
+    "fase": "grupos",
+    "peso": 1
+  },
+  {
+    "id": 69,
     "fecha": "2026-06-28",
     "hora": "01:30",
     "local": "Colombia",
@@ -612,7 +621,7 @@
     "peso": 1
   },
   {
-    "id": 69,
+    "id": 70,
     "fecha": "2026-06-28",
     "hora": "01:30",
     "local": "RD Congo",
@@ -621,7 +630,7 @@
     "peso": 1
   },
   {
-    "id": 70,
+    "id": 71,
     "fecha": "2026-06-28",
     "hora": "04:00",
     "local": "Argelia",
@@ -630,7 +639,7 @@
     "peso": 1
   },
   {
-    "id": 71,
+    "id": 72,
     "fecha": "2026-06-28",
     "hora": "04:00",
     "local": "Jordania",

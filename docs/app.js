@@ -46,8 +46,6 @@ const elements = {
   podium: document.getElementById("podium"),
   leaderboardBody: document.getElementById("leaderboard-body"),
   mobileCards: document.getElementById("mobile-cards"),
-  matchesSection: document.getElementById("matches-section"),
-  matchesList: document.getElementById("matches-list"),
   viewHome: document.getElementById("view-home"),
   viewParticipant: document.getElementById("view-participant"),
   btnBack: document.getElementById("btn-back"),
@@ -78,13 +76,6 @@ function formatDate(date) {
     hour: "2-digit",
     minute: "2-digit",
   }).format(date);
-}
-
-function formatMatchDate(iso) {
-  const [y, m, d] = iso.split("-");
-  return new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "short" }).format(
-    new Date(y, m - 1, d)
-  );
 }
 
 function formatMatchDateTime(fecha, hora) {
@@ -387,41 +378,6 @@ function renderTable(data) {
   });
 }
 
-function createMatchCard(partido, index) {
-  const card = document.createElement("article");
-  card.className = "match-card";
-  card.setAttribute("role", "listitem");
-  card.style.animationDelay = `${0.02 * index}s`;
-
-  card.innerHTML = `
-    <div class="match-card__meta">
-      <span class="match-card__date">${formatMatchDate(partido.fecha)}</span>
-      <span class="match-card__time">${partido.hora}</span>
-      <span class="match-card__phase">${FASE_LABELS[partido.fase] || partido.fase}</span>
-    </div>
-    <div class="match-card__teams">
-      <div class="match-card__team">${flagImg(partido.local)} ${partido.local}</div>
-      <span class="match-card__vs">VS</span>
-      <div class="match-card__team">${flagImg(partido.visitante)} ${partido.visitante}</div>
-    </div>
-    <div class="match-card__slots">
-      <span class="match-card__slot">Resultado</span>
-      <span class="match-card__slot">Pronóstico</span>
-    </div>
-  `;
-  return card;
-}
-
-function renderMatches(partidos) {
-  if (!partidos || partidos.length === 0) {
-    elements.matchesSection.hidden = true;
-    return;
-  }
-  elements.matchesSection.hidden = false;
-  elements.matchesList.innerHTML = "";
-  partidos.forEach((p, i) => elements.matchesList.appendChild(createMatchCard(p, i)));
-}
-
 /* ── Rendering: participant detail ── */
 
 function renderParticipantDetailHeader(entry, precision) {
@@ -536,7 +492,6 @@ function renderApp(data) {
   renderStats(data, updatedAt);
   renderPodium(data);
   renderTable(data);
-  renderMatches(appData.partidos);
 }
 
 /* ── UI state ── */

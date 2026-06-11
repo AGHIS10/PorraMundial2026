@@ -490,110 +490,6 @@ body {
 /* Mobile standings */
 .mobile-standings { display: none; }
 
-/* ── Matches ── */
-.matches-section { margin-bottom: 3rem; }
-
-.matches-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.match-card {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 0.75rem 1rem;
-  align-items: center;
-  padding: 0.9rem 1.1rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  backdrop-filter: blur(8px);
-  opacity: 0;
-  animation: rowIn 0.4s var(--transition) forwards;
-  transition: border-color var(--transition), transform var(--transition);
-}
-
-.match-card:hover {
-  border-color: var(--border-glow);
-  transform: translateX(4px);
-}
-
-.match-card__meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  min-width: 72px;
-}
-
-.match-card__date {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-}
-
-.match-card__time {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-cyan);
-}
-
-.match-card__phase {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  padding: 0.15rem 0.4rem;
-  background: var(--bg-glass);
-  border-radius: 4px;
-  width: fit-content;
-}
-
-.match-card__teams {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.match-card__team {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.match-card__vs {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-}
-
-.match-card__slots {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  align-items: flex-end;
-}
-
-.match-card__slot {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  padding: 0.2rem 0.5rem;
-  border: 1px dashed var(--border);
-  border-radius: 6px;
-  min-width: 64px;
-  text-align: center;
-}
-
 .flag {
   width: 28px;
   height: 20px;
@@ -1272,16 +1168,6 @@ body {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-  }
-
-  .match-card {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-
-  .match-card__slots {
-    flex-direction: row;
-    justify-content: flex-start;
   }
 
   .perf-grid { grid-template-columns: 1fr; }
