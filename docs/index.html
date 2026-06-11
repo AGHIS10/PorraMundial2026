@@ -5,35 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Clasificación en directo de la Porra Mundial 2026">
   <meta name="theme-color" content="#0d1f4d">
-  <meta name="app-build" content="20260611211037">
+  <meta name="app-build" content="20260611231500">
   <title>Porra Mundial 2026 · Clasificación en directo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260611211037">
+  <link rel="stylesheet" href="styles.css?v=20260611231500">
 </head>
 <body>
   <div class="bg-layer bg-layer--gradient"></div>
-  <div class="bg-layer bg-layer--glow"></div>
+  <div class="bg-layer bg-layer--spotlights"></div>
+  <div class="bg-layer bg-layer--stadium"></div>
+  <div class="bg-layer bg-layer--geo"></div>
+  <div class="bg-layer bg-layer--hosts" aria-hidden="true">
+    <svg class="bg-hosts__svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+      <path class="bg-hosts__canada" d="M180,80 L320,60 L380,140 L340,220 L200,200 Z"/>
+      <path class="bg-hosts__usa" d="M420,180 L720,120 L780,280 L680,380 L440,340 Z"/>
+      <path class="bg-hosts__mexico" d="M380,380 L520,340 L580,460 L480,520 L360,480 Z"/>
+    </svg>
+  </div>
   <div class="bg-layer bg-layer--pattern"></div>
+  <div class="bg-layer bg-layer--glow"></div>
 
   <div class="app-shell">
     <!-- Vista principal -->
     <main class="view view--active" id="view-home">
       <header class="hero">
-        <div class="hero__crest">
-          <svg class="hero__trophy" viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M32 4l4 8h12l-2 10 8 6-10 2 2 12-14-8-14 8 2-12-10-2 8-6-2-10h12z" fill="currentColor"/>
-            <rect x="22" y="48" width="20" height="4" rx="1" fill="currentColor"/>
-            <rect x="18" y="54" width="28" height="6" rx="2" fill="currentColor"/>
-          </svg>
-          <span class="hero__edition">FIFA World Cup 2026</span>
+        <div class="hero__spotlight" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__crest">
+            <div class="hero__trophy-wrap">
+              <svg class="hero__trophy" viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 4l4 8h12l-2 10 8 6-10 2 2 12-14-8-14 8 2-12-10-2 8-6-2-10h12z" fill="currentColor"/>
+                <rect x="22" y="48" width="20" height="4" rx="1" fill="currentColor"/>
+                <rect x="18" y="54" width="28" height="6" rx="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="hero__edition">FIFA World Cup 2026</span>
+          </div>
+          <h1 class="hero__title">Porra Mundial 2026</h1>
+          <p class="hero__subtitle">
+            <span class="live-dot" aria-hidden="true"></span>
+            Clasificación en directo
+          </p>
         </div>
-        <h1 class="hero__title">Porra Mundial 2026</h1>
-        <p class="hero__subtitle">
-          <span class="live-dot" aria-hidden="true"></span>
-          Clasificación en directo
-        </p>
       </header>
 
       <section class="stats-grid" id="stats" aria-label="Estadísticas generales">
@@ -69,7 +84,10 @@
           <h2 class="section-head__title">Podio</h2>
           <p class="section-head__desc">Los tres primeros de la competición</p>
         </div>
-        <div class="podium-stage" id="podium" role="list"></div>
+        <div class="podium-arena">
+          <div class="podium-arena__floor" aria-hidden="true"></div>
+          <div class="podium-stage" id="podium" role="list"></div>
+        </div>
       </section>
 
       <section class="table-section">
@@ -205,6 +223,6 @@
   <script src="resultados.js?v=20260611211037"></script>
   <script src="participantes.js?v=20260611211037"></script>
   <script src="flags.js?v=20260611211037"></script>
-  <script src="app.js?v=20260611211037"></script>
+  <script src="app.js?v=20260611231500"></script>
 </body>
 </html>

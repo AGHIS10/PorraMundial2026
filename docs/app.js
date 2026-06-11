@@ -237,14 +237,18 @@ function calcPrecision(aciertos, resultados) {
 /* ── Navigation ── */
 
 function showView(view) {
-  elements.viewHome.classList.remove("view--active");
-  elements.viewParticipant.classList.remove("view--active");
+  elements.viewHome.classList.remove("view--active", "view--exit");
+  elements.viewParticipant.classList.remove("view--active", "view--exit");
   elements.viewParticipant.hidden = true;
   if (view === "participant") {
     elements.viewParticipant.hidden = false;
-    elements.viewParticipant.classList.add("view--active");
+    requestAnimationFrame(() => {
+      elements.viewParticipant.classList.add("view--active");
+    });
   } else {
-    elements.viewHome.classList.add("view--active");
+    requestAnimationFrame(() => {
+      elements.viewHome.classList.add("view--active");
+    });
   }
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -299,12 +303,17 @@ function createPodiumPlayer(entry) {
   article.setAttribute("role", "listitem");
 
   article.innerHTML = `
-    <span class="podium-player__medal" aria-hidden="true">${getMedal(pos)}</span>
-    <div class="podium-player__avatar" data-player="${entry.nombre}">${getInitials(entry.nombre)}</div>
-    <h3 class="podium-player__name" data-player="${entry.nombre}">${entry.nombre}</h3>
-    <span class="podium-player__points">${entry.puntos}</span>
-    <span class="podium-player__meta">${entry.aciertos} aciertos</span>
+    <div class="podium-player__glow" aria-hidden="true"></div>
+    <div class="podium-player__body">
+      <span class="podium-player__medal" aria-hidden="true">${getMedal(pos)}</span>
+      <div class="podium-player__avatar" data-player="${entry.nombre}">${getInitials(entry.nombre)}</div>
+      <h3 class="podium-player__name" data-player="${entry.nombre}">${entry.nombre}</h3>
+      <span class="podium-player__points">${entry.puntos}</span>
+      <span class="podium-player__meta">${entry.aciertos} aciertos</span>
+    </div>
     <div class="podium-player__stand">
+      <div class="podium-player__stand-top"></div>
+      <div class="podium-player__stand-face"></div>
       <span class="podium-player__rank">${pos}º</span>
     </div>
   `;
@@ -331,8 +340,10 @@ function renderPodium(data) {
 
 function createTableRow(entry, index) {
   const row = document.createElement("tr");
-  const isTop = entry.posicion <= 3;
-  if (isTop) row.classList.add("row--top");
+  const pos = entry.posicion;
+  if (pos <= 3) {
+    row.classList.add("row--top", `row--pos-${pos}`);
+  }
   row.style.animationDelay = `${0.04 * index}s`;
 
   row.innerHTML = `
@@ -350,8 +361,9 @@ function createTableRow(entry, index) {
 
 function createMobileRow(entry, index) {
   const row = document.createElement("article");
-  const isTop = entry.posicion <= 3;
-  row.className = `mobile-row${isTop ? " mobile-row--top" : ""}`;
+  const pos = entry.posicion;
+  const topClass = pos <= 3 ? ` mobile-row--top mobile-row--pos-${pos}` : "";
+  row.className = `mobile-row${topClass}`;
   row.setAttribute("role", "listitem");
   row.style.animationDelay = `${0.04 * index}s`;
 
@@ -384,14 +396,19 @@ function renderParticipantDetailHeader(entry, precision) {
   const pct = precision ?? calcPrecision(entry.aciertos, appData.resultados || []);
   const jugados = countPlayedMatches(appData.resultados || []);
 
+  const posClass = entry.posicion <= 3 ? ` detail-hero--pos-${entry.posicion}` : "";
   elements.detailHero.innerHTML = `
-    <div class="detail-hero__avatar">${getInitials(entry.nombre)}</div>
-    <h1 class="detail-hero__name">${entry.nombre}</h1>
-    <p class="detail-hero__rank">${formatPosition(entry.posicion)} en la clasificación</p>
+    <div class="detail-hero__card${posClass}">
+      <div class="detail-hero__glow" aria-hidden="true"></div>
+      <span class="detail-hero__badge">${entry.posicion}º</span>
+      <div class="detail-hero__avatar">${getInitials(entry.nombre)}</div>
+      <h1 class="detail-hero__name">${entry.nombre}</h1>
+      <p class="detail-hero__rank">${formatPosition(entry.posicion)} en la clasificación</p>
+    </div>
   `;
 
   elements.detailStats.innerHTML = `
-    <div class="detail-stat">
+    <div class="detail-stat detail-stat--featured">
       <div class="detail-stat__value detail-stat__value--gold">${entry.puntos}</div>
       <div class="detail-stat__label">Puntos</div>
     </div>
@@ -434,6 +451,7 @@ function createPredCard(partido, pronostico, resultado, index) {
     resultado === null || resultado === undefined ? "Pendiente" : formatResultado(resultado);
 
   card.innerHTML = `
+    <div class="pred-card__accent pred-card__accent--${status}" aria-hidden="true"></div>
     <div class="pred-card__header">
       <div class="pred-card__datetime">${formatMatchDateTime(partido.fecha, partido.hora)}</div>
       <span class="fase-badge ${faseClass}">${faseLabel}</span>
