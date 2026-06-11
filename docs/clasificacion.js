@@ -1,7 +1,7 @@
 window.__CLASIFICACION__ = [
   {
     "posicion": 1,
-    "nombre": "Agus",
+    "nombre": "AGUSTIN",
     "aciertos": 0,
     "puntos": 0
   },
@@ -31,18 +31,24 @@ window.__CLASIFICACION__ = [
   },
   {
     "posicion": 6,
-    "nombre": "MARIO",
+    "nombre": "JORGE",
     "aciertos": 0,
     "puntos": 0
   },
   {
     "posicion": 7,
-    "nombre": "PEDRO",
+    "nombre": "MARIO",
     "aciertos": 0,
     "puntos": 0
   },
   {
     "posicion": 8,
+    "nombre": "PEDRO",
+    "aciertos": 0,
+    "puntos": 0
+  },
+  {
+    "posicion": 9,
     "nombre": "SERGIO",
     "aciertos": 0,
     "puntos": 0
