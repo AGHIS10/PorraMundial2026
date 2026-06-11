@@ -260,7 +260,7 @@ function showView(view) {
 
 async function openParticipant(nombre) {
   const entry = appData.clasificacion.find((e) => e.nombre === nombre);
-  if (!entry) return;
+  if (!entry || !elements.predList) return;
 
   showView("participant");
   elements.predList.innerHTML = `
