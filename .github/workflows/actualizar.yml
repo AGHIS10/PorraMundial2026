@@ -21,8 +21,19 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Actualizar resultados
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: python scripts/actualizar_resultados.py
+
       - name: Ejecutar clasificacion
         run: python scripts/calcular_clasificacion.py
+
+      - name: Sincronizar frontend
+        run: python scripts/sync_frontend.py
 
       - name: Commit y push cambios
         run: |
