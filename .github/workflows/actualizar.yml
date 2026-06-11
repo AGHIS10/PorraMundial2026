@@ -35,6 +35,9 @@ jobs:
       - name: Sincronizar frontend
         run: python scripts/sync_frontend.py
 
+      - name: Generar estado del sistema
+        run: python scripts/generar_status.py
+
       - name: Commit y push cambios
         run: |
           git config user.name "github-actions[bot]"

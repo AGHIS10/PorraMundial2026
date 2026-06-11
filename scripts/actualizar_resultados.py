@@ -16,7 +16,9 @@ import requests
 PROYECTO_DIR = Path(__file__).resolve().parent.parent
 PARTIDOS_FILE = PROYECTO_DIR / "partidos.json"
 RESULTADOS_FILE = PROYECTO_DIR / "resultados.json"
+MARCADORES_FILE = PROYECTO_DIR / "marcadores.json"
 ALIAS_FILE = PROYECTO_DIR / "equipos_alias.json"
+RUN_STATS_FILE = PROYECTO_DIR / ".run" / "actualizar_stats.json"
 API_URL = "https://api.football-data.org/v4/competitions/WC/matches"
 API_MATCHES_URL = "https://api.football-data.org/v4/matches"
 API_SEASON = 2026
@@ -38,6 +40,36 @@ def guardar_json(contenido: Any, ruta: Path) -> None:
     with ruta.open("w", encoding="utf-8") as archivo:
         json.dump(contenido, archivo, ensure_ascii=False, indent=2)
         archivo.write("\n")
+
+
+def instante_utc_iso() -> str:
+    """Devuelve la hora actual en UTC con sufijo Z."""
+    return (
+        datetime.now(timezone.utc)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
+
+
+def guardar_estadisticas_ejecucion(
+    last_api_check: str,
+    estadisticas: dict[str, int],
+    marcadores_enriquecidos: int,
+) -> None:
+    """Persiste métricas de la ejecución para generar status.json al final del workflow."""
+    RUN_STATS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    guardar_json(
+        {
+            "lastApiCheck": last_api_check,
+            "matchesUpdated": estadisticas["actualizados"],
+            "finishedMatches": estadisticas["finalizados"],
+            "matchesPending": estadisticas["pendientes"],
+            "matchesFound": estadisticas["encontrados"],
+            "scoresEnriched": marcadores_enriquecidos,
+        },
+        RUN_STATS_FILE,
+    )
 
 
 def normalizar_nombre(nombre: str) -> str:
@@ -227,6 +259,15 @@ def resultado_desde_api(partido_api: dict[str, Any]) -> str | None:
     return resultado_desde_marcador(*marcador)
 
 
+def marcador_desde_api(partido_api: dict[str, Any]) -> dict[str, int] | None:
+    """Obtiene el marcador numérico final desde la API."""
+    marcador = extraer_marcador_final(partido_api)
+    if marcador is None:
+        return None
+    goles_local, goles_visitante = marcador
+    return {"home": goles_local, "away": goles_visitante}
+
+
 def buscar_partido_api(
     partido: dict[str, Any],
     partidos_api: list[dict[str, Any]],
@@ -356,6 +397,21 @@ def cargar_resultados_actuales(total_partidos: int) -> list[str | None]:
     return datos
 
 
+def cargar_marcadores_actuales(total_partidos: int) -> list[dict[str, int] | None]:
+    """Carga marcadores existentes o inicializa una lista vacía."""
+    if not MARCADORES_FILE.exists():
+        return [None] * total_partidos
+    datos = cargar_json(MARCADORES_FILE)
+    if not isinstance(datos, list):
+        raise ValueError("marcadores.json debe ser un array.")
+    if len(datos) != total_partidos:
+        raise ValueError(
+            f"marcadores.json tiene {len(datos)} entradas, "
+            f"pero partidos.json tiene {total_partidos}."
+        )
+    return datos
+
+
 def _consultar_api(
     api_key: str,
     url: str,
@@ -477,9 +533,11 @@ def actualizar_resultados(
     partidos_api: list[dict[str, Any]],
     alias: dict[str, str | list[str]],
     resultados_actuales: list[str | None],
-) -> tuple[list[str | None], dict[str, int]]:
-    """Genera la nueva lista de resultados conservando el orden de partidos.json."""
+    marcadores_actuales: list[dict[str, int] | None],
+) -> tuple[list[str | None], list[dict[str, int] | None], dict[str, int]]:
+    """Genera resultados y marcadores conservando el orden de partidos.json."""
     nuevos_resultados = list(resultados_actuales)
+    nuevos_marcadores = list(marcadores_actuales)
     estadisticas = {
         "encontrados": 0,
         "finalizados": 0,
@@ -516,6 +574,7 @@ def actualizar_resultados(
         if resultado is None:
             estadisticas["pendientes"] += 1
             nuevos_resultados[indice] = None
+            nuevos_marcadores[indice] = None
             print(
                 f"[OK] {etiqueta} → Emparejado con {home_api} vs {away_api} (PENDIENTE)"
             )
@@ -525,11 +584,19 @@ def actualizar_resultados(
         if nuevos_resultados[indice] != resultado:
             estadisticas["actualizados"] += 1
         nuevos_resultados[indice] = resultado
+        nuevos_marcadores[indice] = marcador_desde_api(partido_api)
+        marcador_txt = nuevos_marcadores[indice]
+        extra = (
+            f" ({marcador_txt['home']}-{marcador_txt['away']})"
+            if marcador_txt
+            else ""
+        )
         print(
-            f"[OK] {etiqueta} → Emparejado con {home_api} vs {away_api} → {resultado}"
+            f"[OK] {etiqueta} → Emparejado con {home_api} vs {away_api} → "
+            f"{resultado}{extra}"
         )
 
-    return nuevos_resultados, estadisticas
+    return nuevos_resultados, nuevos_marcadores, estadisticas
 
 
 def mostrar_resumen(
@@ -577,19 +644,28 @@ def main() -> int:
             raise ValueError("equipos_alias.json debe ser un objeto JSON.")
 
         resultados_actuales = cargar_resultados_actuales(len(partidos))
+        marcadores_actuales = cargar_marcadores_actuales(len(partidos))
         partidos_api_total = consultar_lista_competicion(api_key)
+        last_api_check = instante_utc_iso()
         partidos_api_total, marcadores_enriquecidos = enriquecer_marcadores_partidos(
             api_key,
             partidos_api_total,
         )
         partidos_api = filtrar_partidos_grupos_api(partidos_api_total)
-        nuevos_resultados, estadisticas = actualizar_resultados(
+        nuevos_resultados, nuevos_marcadores, estadisticas = actualizar_resultados(
             partidos,
             partidos_api,
             alias,
             resultados_actuales,
+            marcadores_actuales,
         )
         guardar_json(nuevos_resultados, RESULTADOS_FILE)
+        guardar_json(nuevos_marcadores, MARCADORES_FILE)
+        guardar_estadisticas_ejecucion(
+            last_api_check,
+            estadisticas,
+            marcadores_enriquecidos,
+        )
         mostrar_resumen(
             len(partidos),
             len(partidos_api_total),

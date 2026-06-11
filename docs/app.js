@@ -2,14 +2,19 @@ const BUILD = document.querySelector('meta[name="app-build"]')?.content || Strin
 const DATA_URL = `./clasificacion.json?v=${BUILD}`;
 const PARTIDOS_URL = `./partidos.json?v=${BUILD}`;
 const RESULTADOS_URL = `./resultados.json?v=${BUILD}`;
+const MARCADORES_URL = `./marcadores.json?v=${BUILD}`;
 const PARTICIPANTES_URL = `./participantes.json?v=${BUILD}`;
+const STATUS_URL = `./status.json?v=${BUILD}`;
 const PUNTOS_MAXIMOS = 275;
+const SYNC_TIMEZONE = "UTC";
 
 const appData = {
   clasificacion: null,
   partidos: null,
   resultados: null,
+  marcadores: null,
   participantes: null,
+  status: null,
 };
 
 const MEDALS = { 1: "🥇", 2: "🥈", 3: "🥉" };
@@ -68,14 +73,39 @@ function formatPosition(position) {
   return position;
 }
 
-function formatDate(date) {
-  return new Intl.DateTimeFormat("es-ES", {
+function formatSyncDate(isoString) {
+  const date = new Date(isoString);
+  if (Number.isNaN(date.getTime())) return "—";
+  const formatted = new Intl.DateTimeFormat("es-ES", {
     day: "numeric",
     month: "short",
     year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: SYNC_TIMEZONE,
   }).format(date);
+  return formatted.replace(",", " ·");
+}
+
+function formatRelativeTime(isoString) {
+  const date = new Date(isoString);
+  if (Number.isNaN(date.getTime())) return "Sin datos de sincronización";
+
+  const diffMs = Date.now() - date.getTime();
+  if (diffMs < 0) return "Recién sincronizado";
+
+  const minutes = Math.floor(diffMs / 60000);
+  if (minutes < 1) return "Hace un momento";
+  if (minutes < 60) return `Hace ${minutes} minuto${minutes === 1 ? "" : "s"}`;
+
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `Hace ${hours} hora${hours === 1 ? "" : "s"}`;
+
+  const days = Math.floor(hours / 24);
+  if (days < 30) return `Hace ${days} día${days === 1 ? "" : "s"}`;
+
+  const months = Math.floor(days / 30);
+  return `Hace ${months} mes${months === 1 ? "" : "es"}`;
 }
 
 function formatMatchDateTime(fecha, hora) {
@@ -83,9 +113,34 @@ function formatMatchDateTime(fecha, hora) {
   return `${d}/${m}/${y} · ${hora}`;
 }
 
+function formatMatchDateTimeProminent(fecha, hora) {
+  const date = new Date(`${fecha}T${hora}:00`);
+  if (Number.isNaN(date.getTime())) return formatMatchDateTime(fecha, hora);
+  const formatted = new Intl.DateTimeFormat("es-ES", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: SYNC_TIMEZONE,
+  }).format(date);
+  return formatted.replace(",", " ·");
+}
+
 function formatResultado(value) {
   if (value === null || value === undefined || value === "") return "—";
   return String(value);
+}
+
+const PORRA_LABELS = {
+  1: "1 (Local)",
+  X: "X (Empate)",
+  2: "2 (Visitante)",
+};
+
+function formatPorraPick(value) {
+  if (value === null || value === undefined || value === "") return "—";
+  return PORRA_LABELS[value] || formatResultado(value);
 }
 
 function validateData(data) {
@@ -181,6 +236,24 @@ async function loadResultados() {
   return null;
 }
 
+function loadEmbeddedMarcadores() {
+  return window.__MARCADORES__ || null;
+}
+
+async function fetchMarcadores() {
+  const response = await fetch(MARCADORES_URL);
+  if (!response.ok) throw new Error(`No se pudo acceder a marcadores.json (${response.status}).`);
+  return response.json();
+}
+
+async function loadMarcadores() {
+  const embedded = loadEmbeddedMarcadores();
+  if (embedded) return embedded;
+  const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
+  if (canFetch) return fetchMarcadores();
+  return null;
+}
+
 function loadEmbeddedParticipantes() {
   return window.__PARTICIPANTES__ || null;
 }
@@ -191,6 +264,24 @@ async function fetchParticipantes() {
     throw new Error(`No se pudo acceder a participantes.json (${response.status}).`);
   }
   return response.json();
+}
+
+async function fetchStatus() {
+  const response = await fetch(STATUS_URL);
+  if (!response.ok) {
+    throw new Error(`No se pudo acceder a status.json (${response.status}).`);
+  }
+  return response.json();
+}
+
+async function loadStatus() {
+  const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
+  if (!canFetch) return null;
+  try {
+    return await fetchStatus();
+  } catch {
+    return null;
+  }
 }
 
 async function loadParticipantes() {
@@ -281,19 +372,38 @@ async function openParticipant(nombre) {
 
 /* ── Rendering: home ── */
 
-function renderStats(data, updatedAt) {
+function renderStats(data, status) {
   const leader = data[0];
   const partidosCount = appData.partidos ? appData.partidos.length : "—";
+  const lastSync = status?.lastWorkflowRun || null;
+  const syncOk = Boolean(lastSync && status?.workflowStatus === "ok");
   const stats = {
     participantes: data.length,
     partidos: partidosCount,
     lider: leader ? leader.nombre : "—",
     maxpuntos: PUNTOS_MAXIMOS,
-    actualizacion: formatDate(updatedAt),
+    actualizacion: lastSync ? formatSyncDate(lastSync) : "—",
+    "actualizacion-relativa": lastSync ? formatRelativeTime(lastSync) : "—",
   };
+
   elements.stats.querySelectorAll("[data-stat]").forEach((node) => {
-    node.textContent = stats[node.dataset.stat];
+    const key = node.dataset.stat;
+    if (key === "error-sincronizacion") return;
+    if (stats[key] !== undefined) {
+      node.textContent = stats[key];
+    }
   });
+
+  const errorNode = elements.stats.querySelector('[data-stat="error-sincronizacion"]');
+  if (errorNode) {
+    if (syncOk) {
+      errorNode.hidden = true;
+      errorNode.textContent = "";
+    } else {
+      errorNode.hidden = false;
+      errorNode.textContent = "Error de sincronización";
+    }
+  }
 }
 
 function createPodiumPlayer(entry) {
@@ -438,43 +548,111 @@ function createStatusBadge(status) {
   return `<span class="pred-status ${badge.className}">${badge.icon} ${badge.label}</span>`;
 }
 
-function createPredCard(partido, pronostico, resultado, index) {
+function createScoreboard(partido, marcador) {
+  return `
+    <div class="pred-card__scoreboard">
+      <div class="pred-card__scoreboard-team pred-card__scoreboard-team--home">
+        <span class="pred-card__scoreboard-name">${partido.local}</span>
+        ${flagImg(partido.local, "flag flag--score")}
+      </div>
+      <div class="pred-card__scoreboard-result" aria-label="Marcador final">
+        <span class="pred-card__scoreboard-goals">${marcador.home}</span>
+        <span class="pred-card__scoreboard-sep">-</span>
+        <span class="pred-card__scoreboard-goals">${marcador.away}</span>
+      </div>
+      <div class="pred-card__scoreboard-team pred-card__scoreboard-team--away">
+        ${flagImg(partido.visitante, "flag flag--score")}
+        <span class="pred-card__scoreboard-name">${partido.visitante}</span>
+      </div>
+    </div>
+  `;
+}
+
+function createPendingMatchup(partido) {
+  return `
+    <div class="pred-card__matchup pred-card__matchup--pending">
+      <div class="pred-card__team pred-card__team--home">
+        ${flagImg(partido.local, "flag flag--lg")}
+        <span>${partido.local}</span>
+      </div>
+      <span class="pred-card__vs">vs</span>
+      <div class="pred-card__team pred-card__team--away">
+        ${flagImg(partido.visitante, "flag flag--lg")}
+        <span>${partido.visitante}</span>
+      </div>
+    </div>
+  `;
+}
+
+function createPredDetails({ pronostico, resultado, marcador, status, isFinished }) {
+  const rows = [
+    {
+      label: "Pronóstico",
+      value: formatPorraPick(pronostico),
+      className: "pred-card__detail-value--pick",
+    },
+    {
+      label: "Resultado",
+      value: isFinished ? formatPorraPick(resultado) : "Pendiente",
+      className: isFinished ? "" : "pred-card__detail-value--pending",
+    },
+  ];
+
+  if (isFinished && marcador) {
+    rows.push({
+      label: "Marcador real",
+      value: `${marcador.home} - ${marcador.away}`,
+      className: "pred-card__detail-value--score",
+    });
+  }
+
+  rows.push({
+    label: "Estado",
+    value: createStatusBadge(status),
+    className: "pred-card__detail-value--status",
+    isHtml: true,
+  });
+
+  return `
+    <div class="pred-card__details">
+      ${rows
+        .map(
+          (row) => `
+        <div class="pred-card__detail">
+          <span class="pred-card__detail-label">${row.label}</span>
+          <span class="pred-card__detail-value ${row.className}">${row.isHtml ? row.value : row.value}</span>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function createPredCard(partido, pronostico, resultado, marcador, index) {
   const status = getMatchStatus(pronostico, resultado);
+  const isFinished = status !== "pending";
+  const hasScore = isFinished && marcador && marcador.home !== undefined && marcador.away !== undefined;
   const card = document.createElement("article");
-  card.className = `pred-card pred-card--${status}`;
+  card.className = `pred-card pred-card--${status}${hasScore ? " pred-card--scored" : ""}`;
   card.setAttribute("role", "listitem");
   card.style.animationDelay = `${0.02 * index}s`;
 
   const faseLabel = FASE_LABELS[partido.fase] || partido.fase;
   const faseClass = FASE_BADGE_CLASS[partido.fase] || "fase-badge--grupos";
-  const resultadoTexto =
-    resultado === null || resultado === undefined ? "Pendiente" : formatResultado(resultado);
+  const datetimeClass = isFinished ? "pred-card__datetime" : "pred-card__datetime pred-card__datetime--prominent";
+  const datetimeText = isFinished
+    ? formatMatchDateTime(partido.fecha, partido.hora)
+    : formatMatchDateTimeProminent(partido.fecha, partido.hora);
 
   card.innerHTML = `
     <div class="pred-card__accent pred-card__accent--${status}" aria-hidden="true"></div>
     <div class="pred-card__header">
-      <div class="pred-card__datetime">${formatMatchDateTime(partido.fecha, partido.hora)}</div>
+      <div class="${datetimeClass}">${datetimeText}</div>
       <span class="fase-badge ${faseClass}">${faseLabel}</span>
     </div>
-    <div class="pred-card__matchup">
-      <div class="pred-card__team">${flagImg(partido.local)} <span>${partido.local}</span></div>
-      <span class="pred-card__vs">vs</span>
-      <div class="pred-card__team">${flagImg(partido.visitante)} <span>${partido.visitante}</span></div>
-    </div>
-    <div class="pred-card__results">
-      <div class="pred-card__field">
-        <span class="pred-card__field-label">Pronóstico</span>
-        <span class="pred-card__field-value pred-card__field-value--pick">${formatResultado(pronostico)}</span>
-      </div>
-      <div class="pred-card__field">
-        <span class="pred-card__field-label">Resultado</span>
-        <span class="pred-card__field-value${status === "pending" ? " pred-card__field-value--pending" : ""}">${resultadoTexto}</span>
-      </div>
-      <div class="pred-card__field pred-card__field--status">
-        <span class="pred-card__field-label">Estado</span>
-        ${createStatusBadge(status)}
-      </div>
-    </div>
+    ${hasScore ? createScoreboard(partido, marcador) : createPendingMatchup(partido)}
+    ${createPredDetails({ pronostico, resultado, marcador, status, isFinished })}
   `;
 
   return card;
@@ -482,6 +660,7 @@ function createPredCard(partido, pronostico, resultado, index) {
 
 function renderParticipantDetail(entry, participante) {
   const resultados = appData.resultados || [];
+  const marcadores = appData.marcadores || [];
   const partidos = appData.partidos || [];
   const precision = calcPrecision(entry.aciertos, resultados);
 
@@ -501,13 +680,13 @@ function renderParticipantDetail(entry, participante) {
   partidos.forEach((partido, index) => {
     const pronostico = participante.pronosticos[index] ?? null;
     const resultado = resultados[index] ?? null;
-    elements.predList.appendChild(createPredCard(partido, pronostico, resultado, index));
+    const marcador = marcadores[index] ?? null;
+    elements.predList.appendChild(createPredCard(partido, pronostico, resultado, marcador, index));
   });
 }
 
 function renderApp(data) {
-  const updatedAt = new Date();
-  renderStats(data, updatedAt);
+  renderStats(data, appData.status);
   renderPodium(data);
   renderTable(data);
 }
@@ -539,16 +718,20 @@ async function init() {
   hideError();
   showLoading();
   try {
-    const [clasificacion, partidos, resultados, participantes] = await Promise.all([
+    const [clasificacion, partidos, resultados, marcadores, participantes, status] = await Promise.all([
       loadClasificacion(),
       loadPartidos().catch(() => null),
       loadResultados().catch(() => null),
+      loadMarcadores().catch(() => null),
       loadParticipantes().catch(() => null),
+      loadStatus(),
     ]);
     appData.clasificacion = clasificacion;
     appData.partidos = partidos;
     appData.resultados = resultados;
+    appData.marcadores = marcadores;
     appData.participantes = participantes;
+    appData.status = status;
     renderApp(clasificacion);
     hideError();
     hideLoading();
