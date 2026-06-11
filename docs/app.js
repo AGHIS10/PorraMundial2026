@@ -56,6 +56,8 @@ const elements = {
   btnBack: document.getElementById("btn-back"),
   detailHero: document.getElementById("detail-hero"),
   detailStats: document.getElementById("detail-stats"),
+  detailNav: document.getElementById("detail-nav"),
+  detailMatches: document.getElementById("detail-matches"),
   predList: document.getElementById("pred-list"),
 };
 
@@ -502,18 +504,98 @@ function renderTable(data) {
 
 /* ── Rendering: participant detail ── */
 
-function renderParticipantDetailHeader(entry, precision) {
-  const pct = precision ?? calcPrecision(entry.aciertos, appData.resultados || []);
-  const jugados = countPlayedMatches(appData.resultados || []);
+function buildGroupsMap(partidos) {
+  const adj = {};
+  partidos.forEach((p) => {
+    if (p.fase !== "grupos") return;
+    adj[p.local] = adj[p.local] || new Set();
+    adj[p.visitante] = adj[p.visitante] || new Set();
+    adj[p.local].add(p.visitante);
+    adj[p.visitante].add(p.local);
+  });
+  const visited = new Set();
+  const groups = [];
+  Object.keys(adj).sort().forEach((team) => {
+    if (visited.has(team)) return;
+    const group = new Set();
+    const queue = [team];
+    while (queue.length) {
+      const t = queue.shift();
+      if (visited.has(t)) continue;
+      visited.add(t);
+      group.add(t);
+      (adj[t] || []).forEach((n) => { if (!visited.has(n)) queue.push(n); });
+    }
+    groups.push([...group].sort());
+  });
+  groups.sort((a, b) => a[0].localeCompare(b[0]));
+  return groups;
+}
+
+function getGroupLabel(idx) {
+  return `Grupo ${String.fromCharCode(65 + idx)}`;
+}
+
+function categorizeFases(partidos, pronosticos, resultados) {
+  const fases = {};
+  partidos.forEach((p, i) => {
+    const key = p.fase === "grupos" ? "grupos" : p.fase;
+    if (!fases[key]) fases[key] = [];
+    fases[key].push({ partido: p, index: i, pronostico: pronosticos[i] ?? null, resultado: resultados[i] ?? null });
+  });
+  return fases;
+}
+
+function getGroupForMatch(partido, groups) {
+  for (let i = 0; i < groups.length; i++) {
+    if (groups[i].includes(partido.local) || groups[i].includes(partido.visitante)) return i;
+  }
+  return -1;
+}
+
+function computeGroupStats(groupMatches, pronosticos, resultados) {
+  let hits = 0, misses = 0, pending = 0;
+  groupMatches.forEach(({ index }) => {
+    const r = resultados[index];
+    if (r === null || r === undefined) { pending++; return; }
+    if (pronosticos[index] === r) hits++;
+    else misses++;
+  });
+  return { hits, misses, pending, total: groupMatches.length };
+}
+
+const PICK_INFO = {
+  "1": { label: "Local", short: "1·L" },
+  "X": { label: "Empate", short: "X·E" },
+  "2": { label: "Visit.", short: "2·V" },
+};
+
+function formatMatchDateShort(fecha) {
+  const [, m, d] = fecha.split("-");
+  const months = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  return `${parseInt(d)} ${months[parseInt(m, 10) - 1]}`;
+}
+
+let detailState = { entry: null, participante: null, activeTab: "proximos", activeGroup: 0 };
+
+function renderParticipantDetailHeader(entry) {
+  const resultados = appData.resultados || [];
+  const pct = calcPrecision(entry.aciertos, resultados);
+  const jugados = countPlayedMatches(resultados);
+  const fallos = jugados - entry.aciertos;
 
   const posClass = entry.posicion <= 3 ? ` detail-hero--pos-${entry.posicion}` : "";
   elements.detailHero.innerHTML = `
     <div class="detail-hero__card${posClass}">
       <div class="detail-hero__glow" aria-hidden="true"></div>
-      <span class="detail-hero__badge">${entry.posicion}º</span>
-      <div class="detail-hero__avatar">${getInitials(entry.nombre)}</div>
-      <h1 class="detail-hero__name">${entry.nombre}</h1>
-      <p class="detail-hero__rank">${formatPosition(entry.posicion)} en la clasificación</p>
+      <div class="detail-hero__top">
+        <div class="detail-hero__avatar">${getInitials(entry.nombre)}</div>
+        <div class="detail-hero__info">
+          <h1 class="detail-hero__name">${entry.nombre}</h1>
+          <p class="detail-hero__rank">${formatPosition(entry.posicion)} en la clasificación</p>
+        </div>
+        <span class="detail-hero__badge">${entry.posicion}º</span>
+      </div>
     </div>
   `;
 
@@ -529,160 +611,268 @@ function renderParticipantDetailHeader(entry, precision) {
     <div class="detail-stat">
       <div class="detail-stat__value">${pct}%</div>
       <div class="detail-stat__label">Precisión</div>
-      <div class="detail-stat__sub">${entry.aciertos} de ${jugados} jugados</div>
+      <div class="detail-stat__sub">${entry.aciertos} de ${jugados}</div>
     </div>
     <div class="detail-stat">
-      <div class="detail-stat__value">${entry.posicion}º</div>
-      <div class="detail-stat__label">Posición</div>
+      <div class="detail-stat__value">${fallos}</div>
+      <div class="detail-stat__label">Fallos</div>
     </div>
   `;
 }
 
-function createStatusBadge(status) {
-  const badges = {
-    hit: { className: "pred-status--hit", icon: "✅", label: "Acierto" },
-    miss: { className: "pred-status--miss", icon: "❌", label: "Error" },
-    pending: { className: "pred-status--pending", icon: "⏳", label: "Pendiente" },
-  };
-  const badge = badges[status];
-  return `<span class="pred-status ${badge.className}">${badge.icon} ${badge.label}</span>`;
-}
+function renderGroupNav(groups, pronosticos, resultados, partidos) {
+  const fases = categorizeFases(partidos, pronosticos, resultados);
+  const pendingCount = resultados.filter((r) => r === null || r === undefined).length;
 
-function createScoreboard(partido, marcador) {
-  return `
-    <div class="pred-card__scoreboard">
-      <div class="pred-card__scoreboard-team pred-card__scoreboard-team--home">
-        <span class="pred-card__scoreboard-name">${partido.local}</span>
-        ${flagImg(partido.local, "flag flag--score")}
-      </div>
-      <div class="pred-card__scoreboard-result" aria-label="Marcador final">
-        <span class="pred-card__scoreboard-goals">${marcador.home}</span>
-        <span class="pred-card__scoreboard-sep">-</span>
-        <span class="pred-card__scoreboard-goals">${marcador.away}</span>
-      </div>
-      <div class="pred-card__scoreboard-team pred-card__scoreboard-team--away">
-        ${flagImg(partido.visitante, "flag flag--score")}
-        <span class="pred-card__scoreboard-name">${partido.visitante}</span>
-      </div>
-    </div>
-  `;
-}
+  const faseOrder = ["dieciseisavos", "octavos", "cuartos", "semifinales", "tercer_puesto", "final"];
+  const fasesElim = faseOrder.filter((f) => fases[f]);
 
-function createPendingMatchup(partido) {
-  return `
-    <div class="pred-card__matchup pred-card__matchup--pending">
-      <div class="pred-card__team pred-card__team--home">
-        ${flagImg(partido.local, "flag flag--lg")}
-        <span>${partido.local}</span>
-      </div>
-      <span class="pred-card__vs">vs</span>
-      <div class="pred-card__team pred-card__team--away">
-        ${flagImg(partido.visitante, "flag flag--lg")}
-        <span>${partido.visitante}</span>
-      </div>
-    </div>
-  `;
-}
-
-function createPredDetails({ pronostico, resultado, marcador, status, isFinished }) {
-  const rows = [
-    {
-      label: "Pronóstico",
-      value: formatPorraPick(pronostico),
-      className: "pred-card__detail-value--pick",
-    },
-    {
-      label: "Resultado",
-      value: isFinished ? formatPorraPick(resultado) : "Pendiente",
-      className: isFinished ? "" : "pred-card__detail-value--pending",
-    },
+  const tabs = [
+    { key: "proximos", label: `Próximos${pendingCount > 0 ? ` (${pendingCount})` : ""}` },
+    { key: "grupos", label: "Grupos" },
+    ...fasesElim.map((f) => ({ key: f, label: FASE_LABELS[f] })),
   ];
 
-  if (isFinished && marcador) {
-    rows.push({
-      label: "Marcador real",
-      value: `${marcador.home} - ${marcador.away}`,
-      className: "pred-card__detail-value--score",
-    });
-  }
+  const tabsHtml = `<div class="detail-tabs">` +
+    tabs.map(({ key, label }) =>
+      `<button class="detail-tab${detailState.activeTab === key ? " detail-tab--active" : ""}" data-tab="${key}">${label}</button>`
+    ).join("") + `</div>`;
 
-  rows.push({
-    label: "Estado",
-    value: createStatusBadge(status),
-    className: "pred-card__detail-value--status",
-    isHtml: true,
+  const groupsHtml = groups.map((g, i) => {
+    const matches = (fases.grupos || []).filter(({ partido }) => getGroupForMatch(partido, groups) === i);
+    const stats = computeGroupStats(matches, pronosticos, resultados);
+    const played = stats.hits + stats.misses;
+    const pct = played > 0 ? Math.round((stats.hits / played) * 100) : null;
+    const isActive = detailState.activeTab === "grupos" && detailState.activeGroup === i;
+    return `
+      <button class="group-pill${isActive ? " group-pill--active" : ""}" data-group="${i}">
+        <span class="group-pill__label">${getGroupLabel(i)}</span>
+        <span class="group-pill__stats">${stats.hits}/${stats.total}</span>
+        ${pct !== null ? `<span class="group-pill__pct">${pct}%</span>` : `<span class="group-pill__pct group-pill__pct--empty">—</span>`}
+      </button>
+    `;
+  }).join("");
+
+  const showPills = detailState.activeTab === "grupos";
+  elements.detailNav.classList.toggle("detail-nav--tabs-only", !showPills);
+  elements.detailNav.innerHTML = `
+    ${tabsHtml}
+    ${showPills ? `<div class="group-pills">${groupsHtml}</div>` : ""}
+  `;
+
+  elements.detailNav.querySelectorAll(".detail-tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      detailState.activeTab = btn.dataset.tab;
+      renderGroupNav(groups, pronosticos, resultados, partidos);
+      renderMatchList();
+    });
   });
 
-  return `
-    <div class="pred-card__details">
-      ${rows
-        .map(
-          (row) => `
-        <div class="pred-card__detail">
-          <span class="pred-card__detail-label">${row.label}</span>
-          <span class="pred-card__detail-value ${row.className}">${row.isHtml ? row.value : row.value}</span>
-        </div>
-      `
-        )
-        .join("")}
-    </div>
-  `;
+  elements.detailNav.querySelectorAll(".group-pill").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      detailState.activeGroup = parseInt(btn.dataset.group, 10);
+      renderGroupNav(groups, pronosticos, resultados, partidos);
+      renderMatchList();
+    });
+  });
 }
 
-function createPredCard(partido, pronostico, resultado, marcador, index) {
+function createNextMatchRow(partido, pronostico, index) {
+  const row = document.createElement("div");
+  row.className = "next-row";
+  row.style.animationDelay = `${0.04 * index}s`;
+
+  row.innerHTML = `
+    <div class="next-row__teams">
+      <div class="next-row__team">
+        ${flagImg(partido.local, "flag flag--sm")}
+        <span class="next-row__team-name">${partido.local}</span>
+      </div>
+      <div class="next-row__team">
+        ${flagImg(partido.visitante, "flag flag--sm")}
+        <span class="next-row__team-name">${partido.visitante}</span>
+      </div>
+    </div>
+    <div class="next-row__when">
+      <span class="next-row__date">${formatMatchDateShort(partido.fecha)}</span>
+      <span class="next-row__time">${partido.hora}</span>
+    </div>
+    <div class="next-row__pick-num">${pronostico || "—"}</div>
+  `;
+
+  return row;
+}
+
+function createMatchCard(partido, pronostico, resultado, marcador, index) {
   const status = getMatchStatus(pronostico, resultado);
   const isFinished = status !== "pending";
-  const hasScore = isFinished && marcador && marcador.home !== undefined && marcador.away !== undefined;
-  const card = document.createElement("article");
-  card.className = `pred-card pred-card--${status}${hasScore ? " pred-card--scored" : ""}`;
-  card.setAttribute("role", "listitem");
-  card.style.animationDelay = `${0.02 * index}s`;
+  const hasScore = isFinished && marcador && marcador.home != null && marcador.away != null;
 
-  const faseLabel = FASE_LABELS[partido.fase] || partido.fase;
-  const faseClass = FASE_BADGE_CLASS[partido.fase] || "fase-badge--grupos";
-  const datetimeClass = isFinished ? "pred-card__datetime" : "pred-card__datetime pred-card__datetime--prominent";
-  const datetimeText = isFinished
-    ? formatMatchDateTime(partido.fecha, partido.hora)
-    : formatMatchDateTimeProminent(partido.fecha, partido.hora);
+  const card = document.createElement("div");
+  card.className = `mcard mcard--${status}`;
+  card.style.animationDelay = `${0.04 * index}s`;
 
-  card.innerHTML = `
-    <div class="pred-card__accent pred-card__accent--${status}" aria-hidden="true"></div>
-    <div class="pred-card__header">
-      <div class="${datetimeClass}">${datetimeText}</div>
-      <span class="fase-badge ${faseClass}">${faseLabel}</span>
-    </div>
-    ${hasScore ? createScoreboard(partido, marcador) : createPendingMatchup(partido)}
-    ${createPredDetails({ pronostico, resultado, marcador, status, isFinished })}
-  `;
+  if (isFinished) {
+    const scoreDisplay = hasScore ? `${marcador.home} - ${marcador.away}` : "— - —";
+    const stateIcon = status === "hit" ? "✅" : "❌";
+    const stateLabel = status === "hit" ? "Acierto" : "Error";
+    card.innerHTML = `
+      <div class="mcard__scoreline">
+        <div class="mcard__team mcard__team--home">
+          ${flagImg(partido.local, "flag flag--sm")}
+          <span class="mcard__team-name">${partido.local}</span>
+        </div>
+        <div class="mcard__score">${scoreDisplay}</div>
+        <div class="mcard__team mcard__team--away">
+          <span class="mcard__team-name">${partido.visitante}</span>
+          ${flagImg(partido.visitante, "flag flag--sm")}
+        </div>
+      </div>
+      <div class="mcard__verdict">
+        <span class="mcard__pick">${pronostico || "—"}</span>
+        <span class="mcard__state">${stateIcon} ${stateLabel}</span>
+      </div>
+    `;
+  } else {
+    const [, m, d] = partido.fecha.split("-");
+    const months = ["ENE","FEB","MAR","ABR","MAY","JUN","JUL","AGO","SEP","OCT","NOV","DIC"];
+    const whenStr = `${parseInt(d, 10)} ${months[parseInt(m, 10) - 1]} · ${partido.hora}`;
+    card.innerHTML = `
+      <div class="mcard__matchup">
+        ${flagImg(partido.local, "flag flag--sm")}
+        <span class="mcard__matchup-teams">${partido.local} <span class="mcard__vs">vs</span> ${partido.visitante}</span>
+        ${flagImg(partido.visitante, "flag flag--sm")}
+      </div>
+      <div class="mcard__when">${whenStr}</div>
+      <div class="mcard__pick-big">${pronostico || "—"}</div>
+    `;
+  }
 
   return card;
 }
 
-function renderParticipantDetail(entry, participante) {
+function buildGroupStats(matchesToRender, pronosticos, resultados) {
+  return matchesToRender.reduce((acc, { index }) => {
+    const r = resultados[index];
+    if (r == null) acc.pending++;
+    else if (pronosticos[index] === r) acc.hits++;
+    else acc.misses++;
+    return acc;
+  }, { hits: 0, misses: 0, pending: 0 });
+}
+
+function renderMatchList() {
+  const { participante } = detailState;
+  if (!participante) return;
+
+  const partidos = appData.partidos || [];
   const resultados = appData.resultados || [];
   const marcadores = appData.marcadores || [];
-  const partidos = appData.partidos || [];
-  const precision = calcPrecision(entry.aciertos, resultados);
-
-  renderParticipantDetailHeader(entry, precision);
+  const pronosticos = participante.pronosticos;
+  const groups = buildGroupsMap(partidos);
 
   elements.predList.innerHTML = "";
 
-  if (partidos.length === 0) {
-    elements.predList.innerHTML = `
-      <div class="pred-error">
-        <p>No hay partidos disponibles en partidos.json.</p>
-      </div>
+  if (detailState.activeTab === "proximos") {
+    const pending = [];
+    partidos.forEach((p, i) => {
+      if (resultados[i] === null || resultados[i] === undefined) {
+        pending.push({ partido: p, index: i });
+      }
+    });
+    pending.sort((a, b) => {
+      const da = new Date(`${a.partido.fecha}T${a.partido.hora}:00`);
+      const db = new Date(`${b.partido.fecha}T${b.partido.hora}:00`);
+      return da - db;
+    });
+
+    if (pending.length === 0) {
+      elements.predList.innerHTML = `
+        <div class="pred-error">
+          <span aria-hidden="true">🏆</span>
+          <p>¡Todos los partidos han sido disputados!</p>
+        </div>
+      `;
+      return;
+    }
+
+    const header = document.createElement("div");
+    header.className = "match-list__header";
+    header.innerHTML = `
+      <h3 class="match-list__title">Próximos partidos</h3>
+      <span class="match-list__meta">${pending.length} por jugar</span>
     `;
+    elements.predList.appendChild(header);
+
+    pending.forEach(({ partido, index }, i) => {
+      elements.predList.appendChild(createNextMatchRow(partido, pronosticos[index] ?? null, i));
+    });
     return;
   }
 
-  partidos.forEach((partido, index) => {
-    const pronostico = participante.pronosticos[index] ?? null;
-    const resultado = resultados[index] ?? null;
-    const marcador = marcadores[index] ?? null;
-    elements.predList.appendChild(createPredCard(partido, pronostico, resultado, marcador, index));
+  let matchesToRender = [];
+  if (detailState.activeTab === "grupos") {
+    const groupIdx = detailState.activeGroup;
+    partidos.forEach((p, i) => {
+      if (p.fase !== "grupos") return;
+      if (getGroupForMatch(p, groups) !== groupIdx) return;
+      matchesToRender.push({ partido: p, index: i });
+    });
+  } else {
+    partidos.forEach((p, i) => {
+      if (p.fase === detailState.activeTab) matchesToRender.push({ partido: p, index: i });
+    });
+  }
+
+  if (matchesToRender.length === 0) {
+    elements.predList.innerHTML = `<div class="pred-error"><p>No hay partidos en esta fase.</p></div>`;
+    return;
+  }
+
+  const stats = buildGroupStats(matchesToRender, pronosticos, resultados);
+  const played = stats.hits + stats.misses;
+  const pct = played > 0 ? Math.round((stats.hits / played) * 100) : null;
+
+  const label = detailState.activeTab === "grupos"
+    ? getGroupLabel(detailState.activeGroup)
+    : FASE_LABELS[detailState.activeTab] || detailState.activeTab;
+
+  const header = document.createElement("div");
+  header.className = "gsh";
+  header.innerHTML = `
+    <div class="gsh__top">
+      <h3 class="gsh__name">${label}</h3>
+      <div class="gsh__ratio">${stats.hits}/${matchesToRender.length} <span class="gsh__ratio-label">aciertos</span></div>
+    </div>
+    <div class="gsh__chips">
+      ${played > 0 ? `<span class="gsh__chip">${played} jugado${played !== 1 ? "s" : ""}</span>` : ""}
+      ${stats.pending > 0 ? `<span class="gsh__chip">${stats.pending} pendiente${stats.pending !== 1 ? "s" : ""}</span>` : ""}
+      ${pct !== null ? `<span class="gsh__chip gsh__chip--pct">${pct}% precisión</span>` : ""}
+    </div>
+  `;
+  elements.predList.appendChild(header);
+
+  const grid = document.createElement("div");
+  grid.className = "mcard-grid";
+  matchesToRender.forEach(({ partido, index }, i) => {
+    grid.appendChild(
+      createMatchCard(partido, pronosticos[index] ?? null, resultados[index] ?? null, marcadores[index] ?? null, i)
+    );
   });
+  elements.predList.appendChild(grid);
+}
+
+function renderParticipantDetail(entry, participante) {
+  const resultados = appData.resultados || [];
+  const partidos = appData.partidos || [];
+  const pronosticos = participante.pronosticos;
+  const groups = buildGroupsMap(partidos);
+
+  detailState = { entry, participante, activeTab: "proximos", activeGroup: 0 };
+
+  renderParticipantDetailHeader(entry);
+  renderGroupNav(groups, pronosticos, resultados, partidos);
+  renderMatchList();
 }
 
 function renderApp(data) {
