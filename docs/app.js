@@ -7,6 +7,7 @@ const PARTICIPANTES_URL = `./participantes.json?v=${BUILD}`;
 const STATUS_URL = `./status.json?v=${BUILD}`;
 const PUNTOS_MAXIMOS = 275;
 const SYNC_TIMEZONE = "UTC";
+const SYNC_DISPLAY_TIMEZONE = "Europe/Madrid";
 
 const appData = {
   clasificacion: null,
@@ -84,7 +85,7 @@ function formatSyncDate(isoString) {
     year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-    timeZone: SYNC_TIMEZONE,
+    timeZone: SYNC_DISPLAY_TIMEZONE,
   }).format(date);
   return formatted.replace(",", " ·");
 }
