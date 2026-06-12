@@ -1,6 +1,6 @@
 window.__RESULTADOS__ = [
   "1",
-  null,
+  "1",
   null,
   null,
   null,
