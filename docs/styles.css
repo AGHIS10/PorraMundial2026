@@ -351,12 +351,52 @@ body {
 .stat-card--sync {
   gap: 0.08rem;
   padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .stat-card--sync .stat-card__value--small {
   font-size: 0.84rem;
   line-height: 1.25;
   margin-top: 0.05rem;
+}
+
+.stat-card__admin-hint {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.stat-card__admin-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.stat-card__admin-icon {
+  flex-shrink: 0;
+  color: var(--accent-cyan);
+  opacity: 0.85;
+}
+
+.stat-card--sync:hover .stat-card__admin-hint,
+.stat-card--sync:focus-visible .stat-card__admin-hint {
+  opacity: 1;
+}
+
+.stat-card--sync:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
 }
 
 .stat-card__meta {
