@@ -1428,10 +1428,6 @@ body {
 }
 
 .gsh__top {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.75rem;
   margin-bottom: 0.55rem;
 }
 
@@ -1442,22 +1438,6 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-primary);
-}
-
-.gsh__ratio {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--accent-cyan);
-  white-space: nowrap;
-}
-
-.gsh__ratio-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-muted);
 }
 
 .gsh__chips {
@@ -1539,9 +1519,10 @@ body {
 
 .mcard__score {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 1.3rem;
   font-weight: 800;
-  padding: 0.2rem 0.5rem;
+  letter-spacing: 0.02em;
+  padding: 0.25rem 0.55rem;
   background: rgba(0,0,0,0.25);
   border-radius: 6px;
   border: 1px solid rgba(255,255,255,0.06);
@@ -1551,17 +1532,15 @@ body {
 
 .mcard__verdict {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.12rem;
-  margin-top: 0.75rem;
-  padding-top: 0.65rem;
-  border-top: 1px solid var(--border);
+  justify-content: center;
+  margin-top: 0.65rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .mcard__pick {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 800;
   line-height: 1;
   color: var(--text-primary);
@@ -1569,16 +1548,6 @@ body {
 
 .mcard--hit .mcard__pick { color: var(--accent-hit); }
 .mcard--miss .mcard__pick { color: var(--accent-miss); }
-
-.mcard__state {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-}
-
-.mcard--hit .mcard__state { color: var(--accent-hit); }
-.mcard--miss .mcard__state { color: var(--accent-miss); }
 
 /* Pending match card */
 .mcard__matchup {

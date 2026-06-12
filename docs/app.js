@@ -714,9 +714,7 @@ function createMatchCard(partido, pronostico, resultado, marcador, index) {
   card.style.animationDelay = `${0.04 * index}s`;
 
   if (isFinished) {
-    const scoreDisplay = hasScore ? `${marcador.home} - ${marcador.away}` : "— - —";
-    const stateIcon = status === "hit" ? "✅" : "❌";
-    const stateLabel = status === "hit" ? "Acierto" : "Error";
+    const scoreDisplay = hasScore ? `${marcador.home}-${marcador.away}` : "—";
     card.innerHTML = `
       <div class="mcard__scoreline">
         <div class="mcard__team mcard__team--home">
@@ -731,7 +729,6 @@ function createMatchCard(partido, pronostico, resultado, marcador, index) {
       </div>
       <div class="mcard__verdict">
         <span class="mcard__pick">${pronostico || "—"}</span>
-        <span class="mcard__state">${stateIcon} ${stateLabel}</span>
       </div>
     `;
   } else {
@@ -843,7 +840,6 @@ function renderMatchList() {
   header.innerHTML = `
     <div class="gsh__top">
       <h3 class="gsh__name">${label}</h3>
-      <div class="gsh__ratio">${stats.hits}/${matchesToRender.length} <span class="gsh__ratio-label">aciertos</span></div>
     </div>
     <div class="gsh__chips">
       ${played > 0 ? `<span class="gsh__chip">${played} jugado${played !== 1 ? "s" : ""}</span>` : ""}
