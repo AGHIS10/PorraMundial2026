@@ -1,5 +1,6 @@
 const BUILD = document.querySelector('meta[name="app-build"]')?.content || String(Date.now());
 const DATA_URL = `./clasificacion.json?v=${BUILD}`;
+const PREMIOS_URL = `./premios.json?v=${BUILD}`;
 const PARTIDOS_URL = `./partidos.json?v=${BUILD}`;
 const RESULTADOS_URL = `./resultados.json?v=${BUILD}`;
 const MARCADORES_URL = `./marcadores.json?v=${BUILD}`;
@@ -11,6 +12,7 @@ const SYNC_DISPLAY_TIMEZONE = "Europe/Madrid";
 
 const appData = {
   clasificacion: null,
+  premios: null,
   partidos: null,
   resultados: null,
   marcadores: null,
@@ -50,6 +52,8 @@ const elements = {
   stats: document.getElementById("stats"),
   podiumSection: document.getElementById("podium-section"),
   podium: document.getElementById("podium"),
+  premiosSection: document.getElementById("premios-section"),
+  premiosList: document.getElementById("premios-list"),
   leaderboardBody: document.getElementById("leaderboard-body"),
   mobileCards: document.getElementById("mobile-cards"),
   viewHome: document.getElementById("view-home"),
@@ -74,6 +78,21 @@ function formatPosition(position) {
     return `<span class="medal" aria-label="Posición ${position}">${medal}</span>`;
   }
   return position;
+}
+
+function formatPremioPosition(position) {
+  const medal = getMedal(position);
+  if (medal) return medal;
+  return `${position}º`;
+}
+
+function formatEuro(amount) {
+  return new Intl.NumberFormat("es-ES", {
+    style: "currency",
+    currency: "EUR",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(amount);
 }
 
 function formatSyncDate(isoString) {
@@ -201,6 +220,69 @@ async function loadClasificacion() {
   const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
   if (canFetch) return fetchClasificacion();
   throw new Error("No se encontraron datos. Ejecuta calcular_clasificacion.py para actualizar.");
+}
+
+function validatePremios(data) {
+  if (!Array.isArray(data)) {
+    throw new Error("El fichero no contiene datos de premios válidos.");
+  }
+  data.forEach((entry, index) => {
+    const required = ["posicion", "nombre", "premio_total"];
+    const missing = required.filter((field) => entry[field] === undefined);
+    if (missing.length > 0) {
+      throw new Error(`Premio ${index + 1} incompleto: faltan ${missing.join(", ")}.`);
+    }
+  });
+}
+
+function loadInlinePremios() {
+  const node = document.getElementById("premios-data");
+  if (!node || !node.textContent.trim()) return null;
+  const data = JSON.parse(node.textContent);
+  validatePremios(data);
+  return data;
+}
+
+function loadEmbeddedPremios() {
+  if (!window.__PREMIOS__) return null;
+  validatePremios(window.__PREMIOS__);
+  return window.__PREMIOS__;
+}
+
+async function fetchPremios() {
+  const response = await fetch(PREMIOS_URL);
+  if (!response.ok) {
+    throw new Error(`No se pudo acceder a premios.json (${response.status}).`);
+  }
+  const data = await response.json();
+  validatePremios(data);
+  return data;
+}
+
+function loadPremiosSync() {
+  for (const source of [loadInlinePremios, loadEmbeddedPremios]) {
+    try {
+      const data = source();
+      if (data) return data;
+    } catch {
+      continue;
+    }
+  }
+  return null;
+}
+
+async function loadPremios() {
+  const localData = loadPremiosSync();
+  if (localData) return localData;
+  const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
+  if (canFetch) {
+    try {
+      return await fetchPremios();
+    } catch {
+      return [];
+    }
+  }
+  return [];
 }
 
 function loadEmbeddedPartidos() {
@@ -449,6 +531,36 @@ function renderPodium(data) {
     .map((pos) => topThree.find((e) => e.posicion === pos))
     .filter(Boolean)
     .forEach((entry) => elements.podium.appendChild(createPodiumPlayer(entry)));
+}
+
+function createPremioRow(entry, index) {
+  const pos = entry.posicion;
+  const row = document.createElement("article");
+  const topClass = pos <= 3 ? ` premio-row--top premio-row--pos-${pos}` : "";
+  row.className = `premio-row${topClass}`;
+  row.setAttribute("role", "listitem");
+  row.style.animationDelay = `${0.04 * index}s`;
+
+  row.innerHTML = `
+    <span class="premio-row__pos" aria-label="Posición ${pos}">${formatPremioPosition(pos)}</span>
+    <span class="premio-row__name">${entry.nombre}</span>
+    <span class="premio-row__amount">${formatEuro(entry.premio_total)}</span>
+  `;
+
+  return row;
+}
+
+function renderPremios(data) {
+  if (!elements.premiosList || !elements.premiosSection) return;
+  elements.premiosList.innerHTML = "";
+  if (!data || data.length === 0) {
+    elements.premiosSection.hidden = true;
+    return;
+  }
+  elements.premiosSection.hidden = false;
+  data.forEach((entry, i) => {
+    elements.premiosList.appendChild(createPremioRow(entry, i));
+  });
 }
 
 function createTableRow(entry, index) {
@@ -875,6 +987,7 @@ function renderParticipantDetail(entry, participante) {
 function renderApp(data) {
   renderStats(data, appData.status);
   renderPodium(data);
+  renderPremios(appData.premios);
   renderTable(data);
 }
 
@@ -905,8 +1018,9 @@ async function init() {
   hideError();
   showLoading();
   try {
-    const [clasificacion, partidos, resultados, marcadores, participantes, status] = await Promise.all([
+    const [clasificacion, premios, partidos, resultados, marcadores, participantes, status] = await Promise.all([
       loadClasificacion(),
+      loadPremios(),
       loadPartidos().catch(() => null),
       loadResultados().catch(() => null),
       loadMarcadores().catch(() => null),
@@ -914,6 +1028,7 @@ async function init() {
       loadStatus(),
     ]);
     appData.clasificacion = clasificacion;
+    appData.premios = premios;
     appData.partidos = partidos;
     appData.resultados = resultados;
     appData.marcadores = marcadores;

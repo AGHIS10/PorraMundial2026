@@ -131,8 +131,18 @@
         </div>
       </section>
 
+      <section class="premios-section" id="premios-section" hidden>
+        <div class="section-head">
+          <h2 class="section-head__title">💰 Reparto provisional de premios</h2>
+          <p class="section-head__desc">Estimación según la clasificación actual · GPT y GEMINI no participan</p>
+        </div>
+        <div class="premios-panel table-panel">
+          <div class="premios-list" id="premios-list" role="list" aria-label="Reparto provisional de premios"></div>
+        </div>
+      </section>
+
       <footer class="site-footer">
-        <p>Porra Mundial 2026 · Clasificación oficial</p>
+        <p>Porra Mundial 2026<br>Diseñado y desarrollado por Aguilera<br>© 2026 Agustín Aguilera · Todos los derechos reservados.</p>
       </footer>
     </main>
 
@@ -232,7 +242,68 @@
   }
 ]
   </script>
+  <script type="application/json" id="premios-data">
+[
+  {
+    "posicion": 1,
+    "nombre": "SERGIO",
+    "puntos": 3,
+    "premio_fijo": 40.0,
+    "premio_variable": 10.5,
+    "premio_total": 50.5
+  },
+  {
+    "posicion": 2,
+    "nombre": "AGUSTIN",
+    "puntos": 2,
+    "premio_fijo": 30.0,
+    "premio_variable": 7.0,
+    "premio_total": 37.0
+  },
+  {
+    "posicion": 3,
+    "nombre": "CRISTIAN",
+    "puntos": 2,
+    "premio_fijo": 20.0,
+    "premio_variable": 7.0,
+    "premio_total": 27.0
+  },
+  {
+    "posicion": 4,
+    "nombre": "GABRIEL",
+    "puntos": 2,
+    "premio_fijo": 8.0,
+    "premio_variable": 7.0,
+    "premio_total": 15.0
+  },
+  {
+    "posicion": 5,
+    "nombre": "JORGE",
+    "puntos": 2,
+    "premio_fijo": 0.0,
+    "premio_variable": 7.0,
+    "premio_total": 7.0
+  },
+  {
+    "posicion": 6,
+    "nombre": "MARIO",
+    "puntos": 1,
+    "premio_fijo": 0.0,
+    "premio_variable": 3.5,
+    "premio_total": 3.5
+  },
+  {
+    "posicion": 7,
+    "nombre": "PEDRO",
+    "puntos": 1,
+    "premio_fijo": 0.0,
+    "premio_variable": 0.0,
+    "premio_total": 0.0
+  }
+]
+  </script>
   <script src="clasificacion.js?v=20260613153000"></script>
+  <script src="premios.js?v=20260613153000"></script>
   <script src="partidos.js?v=20260613153000"></script>
   <script src="resultados.js?v=20260613153000"></script>
   <script src="marcadores.js?v=20260613153000"></script>

@@ -1,0 +1,58 @@
+window.__PREMIOS__ = [
+  {
+    "posicion": 1,
+    "nombre": "SERGIO",
+    "puntos": 3,
+    "premio_fijo": 40.0,
+    "premio_variable": 10.5,
+    "premio_total": 50.5
+  },
+  {
+    "posicion": 2,
+    "nombre": "AGUSTIN",
+    "puntos": 2,
+    "premio_fijo": 30.0,
+    "premio_variable": 7.0,
+    "premio_total": 37.0
+  },
+  {
+    "posicion": 3,
+    "nombre": "CRISTIAN",
+    "puntos": 2,
+    "premio_fijo": 20.0,
+    "premio_variable": 7.0,
+    "premio_total": 27.0
+  },
+  {
+    "posicion": 4,
+    "nombre": "GABRIEL",
+    "puntos": 2,
+    "premio_fijo": 8.0,
+    "premio_variable": 7.0,
+    "premio_total": 15.0
+  },
+  {
+    "posicion": 5,
+    "nombre": "JORGE",
+    "puntos": 2,
+    "premio_fijo": 0.0,
+    "premio_variable": 7.0,
+    "premio_total": 7.0
+  },
+  {
+    "posicion": 6,
+    "nombre": "MARIO",
+    "puntos": 1,
+    "premio_fijo": 0.0,
+    "premio_variable": 3.5,
+    "premio_total": 3.5
+  },
+  {
+    "posicion": 7,
+    "nombre": "PEDRO",
+    "puntos": 1,
+    "premio_fijo": 0.0,
+    "premio_variable": 0.0,
+    "premio_total": 0.0
+  }
+];

@@ -26,14 +26,20 @@ PARTIDOS_FILE = PROYECTO_DIR / "partidos.json"
 RESULTADOS_FILE = PROYECTO_DIR / "resultados.json"
 PARTICIPANTES_DIR = PROYECTO_DIR / "participantes"
 CLASIFICACION_FILE = PROYECTO_DIR / "clasificacion.json"
+PREMIOS_FILE = PROYECTO_DIR / "premios.json"
 DOCS_DIR = PROYECTO_DIR / "docs"
 DOCS_CLASIFICACION_FILE = DOCS_DIR / "clasificacion.json"
 DOCS_CLASIFICACION_JS_FILE = DOCS_DIR / "clasificacion.js"
+DOCS_PREMIOS_FILE = DOCS_DIR / "premios.json"
+DOCS_PREMIOS_JS_FILE = DOCS_DIR / "premios.js"
 DOCS_PARTIDOS_FILE = DOCS_DIR / "partidos.json"
 DOCS_PARTIDOS_JS_FILE = DOCS_DIR / "partidos.js"
 DOCS_INDEX_FILE = DOCS_DIR / "index.html"
 
 CAMPOS_PARTIDO = ("id", "fecha", "hora", "local", "visitante", "fase", "peso")
+PARTICIPANTES_VIRTUALES = frozenset({"GPT", "GEMINI"})
+PREMIOS_FIJOS = {1: 40, 2: 30, 3: 20, 4: 8}
+PREMIO_VARIABLE_TOTAL = 42
 
 
 @dataclass(frozen=True)
@@ -66,6 +72,16 @@ class FilaClasificacion:
     nombre: str
     aciertos: int
     puntos: int
+
+
+@dataclass(frozen=True)
+class FilaPremio:
+    posicion: int
+    nombre: str
+    puntos: int
+    premio_fijo: float
+    premio_variable: float
+    premio_total: float
 
 
 @dataclass(frozen=True)
@@ -292,6 +308,61 @@ def filas_a_dict(filas: list[FilaClasificacion]) -> list[dict[str, Any]]:
     ]
 
 
+def es_participante_virtual(nombre: str) -> bool:
+    """Indica si un participante es virtual y queda fuera del reparto."""
+    return nombre.strip().upper() in PARTICIPANTES_VIRTUALES
+
+
+def calcular_premios(filas: list[FilaClasificacion]) -> list[FilaPremio]:
+    """Calcula el reparto provisional de premios entre participantes humanos."""
+    humanos = [fila for fila in filas if not es_participante_virtual(fila.nombre)]
+    if not humanos:
+        return []
+
+    elegibles_variable = humanos[:-1] if len(humanos) > 1 else []
+    suma_puntos = sum(humano.puntos for humano in elegibles_variable)
+
+    reparto: list[FilaPremio] = []
+    for posicion, humano in enumerate(humanos, start=1):
+        premio_fijo = float(PREMIOS_FIJOS.get(posicion, 0))
+
+        if humano in elegibles_variable and elegibles_variable:
+            if suma_puntos == 0:
+                premio_variable = PREMIO_VARIABLE_TOTAL / len(elegibles_variable)
+            else:
+                premio_variable = (humano.puntos / suma_puntos) * PREMIO_VARIABLE_TOTAL
+        else:
+            premio_variable = 0.0
+
+        reparto.append(
+            FilaPremio(
+                posicion=posicion,
+                nombre=humano.nombre,
+                puntos=humano.puntos,
+                premio_fijo=round(premio_fijo, 2),
+                premio_variable=round(premio_variable, 2),
+                premio_total=round(premio_fijo + premio_variable, 2),
+            )
+        )
+
+    return reparto
+
+
+def premios_a_dict(filas: list[FilaPremio]) -> list[dict[str, Any]]:
+    """Convierte filas de premios a diccionarios serializables."""
+    return [
+        {
+            "posicion": fila.posicion,
+            "nombre": fila.nombre,
+            "puntos": fila.puntos,
+            "premio_fijo": fila.premio_fijo,
+            "premio_variable": fila.premio_variable,
+            "premio_total": fila.premio_total,
+        }
+        for fila in filas
+    ]
+
+
 def partidos_a_dict(partidos: list[Partido]) -> list[dict[str, Any]]:
     """Convierte partidos a diccionarios serializables."""
     return [
@@ -343,43 +414,66 @@ def actualizar_cache_bust(html: str, build_id: str) -> str:
     return re.sub(r"\?v=\d+", f"?v={build_id}", html)
 
 
-def actualizar_index_html(contenido: list[dict[str, Any]], ruta: Path) -> None:
-    """Actualiza los datos embebidos de clasificación en index.html."""
-    marcador_inicio = '<script type="application/json" id="clasificacion-data">'
+def actualizar_script_embebido(
+    html: str,
+    script_id: str,
+    contenido: Any,
+) -> str | None:
+    """Actualiza un bloque JSON embebido en index.html."""
+    marcador_inicio = f'<script type="application/json" id="{script_id}">'
     marcador_fin = "</script>"
 
-    html = ruta.read_text(encoding="utf-8")
     inicio = html.find(marcador_inicio)
     fin = html.find(marcador_fin, inicio)
-
     if inicio == -1 or fin == -1:
-        return
+        return None
 
     json_embebido = json.dumps(contenido, ensure_ascii=False, indent=2)
     bloque = f"{marcador_inicio}\n{json_embebido}\n  {marcador_fin}"
-    html_actualizado = html[:inicio] + bloque + html[fin + len(marcador_fin):]
-    html_actualizado = actualizar_cache_bust(html_actualizado, generar_build_id())
-    ruta.write_text(html_actualizado, encoding="utf-8")
+    return html[:inicio] + bloque + html[fin + len(marcador_fin):]
+
+
+def actualizar_index_html(
+    clasificacion: list[dict[str, Any]],
+    premios: list[dict[str, Any]],
+    ruta: Path,
+) -> None:
+    """Actualiza los datos embebidos de clasificación y premios en index.html."""
+    html = ruta.read_text(encoding="utf-8")
+    html_clasificacion = actualizar_script_embebido(html, "clasificacion-data", clasificacion)
+    if html_clasificacion is not None:
+        html = html_clasificacion
+
+    html_premios = actualizar_script_embebido(html, "premios-data", premios)
+    if html_premios is not None:
+        html = html_premios
+
+    html = actualizar_cache_bust(html, generar_build_id())
+    ruta.write_text(html, encoding="utf-8")
 
 
 def sincronizar_docs(
     filas: list[FilaClasificacion],
+    premios: list[FilaPremio],
     partidos: list[Partido],
 ) -> None:
-    """Sincroniza clasificación y partidos con el frontend en docs/."""
+    """Sincroniza clasificación, premios y partidos con el frontend en docs/."""
     if not DOCS_DIR.exists():
         return
 
     clasificacion = filas_a_dict(filas)
+    premios_dict = premios_a_dict(premios)
     partidos_dict = partidos_a_dict(partidos)
 
     guardar_json(clasificacion, DOCS_CLASIFICACION_FILE)
     guardar_modulo_js("__CLASIFICACION__", clasificacion, DOCS_CLASIFICACION_JS_FILE)
+    guardar_json(premios_dict, DOCS_PREMIOS_FILE)
+    guardar_modulo_js("__PREMIOS__", premios_dict, DOCS_PREMIOS_JS_FILE)
     guardar_json(partidos_dict, DOCS_PARTIDOS_FILE)
     guardar_modulo_js("__PARTIDOS__", partidos_dict, DOCS_PARTIDOS_JS_FILE)
 
     if DOCS_INDEX_FILE.exists():
-        actualizar_index_html(clasificacion, DOCS_INDEX_FILE)
+        actualizar_index_html(clasificacion, premios_dict, DOCS_INDEX_FILE)
 
 
 def listar_participantes(directorio: Path) -> list[Path]:
@@ -473,8 +567,10 @@ def main() -> int:
         return 1
 
     filas = asignar_posiciones(ordenar_clasificacion(entradas))
+    premios = calcular_premios(filas)
     guardar_json(filas_a_dict(filas), CLASIFICACION_FILE)
-    sincronizar_docs(filas, partidos)
+    guardar_json(premios_a_dict(premios), PREMIOS_FILE)
+    sincronizar_docs(filas, premios, partidos)
     mostrar_resumen(contexto, len(entradas), filas, CLASIFICACION_FILE)
     return 0
 
