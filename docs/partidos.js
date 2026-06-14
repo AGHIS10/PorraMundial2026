@@ -64,7 +64,7 @@ window.__PARTIDOS__ = [
   },
   {
     "id": 8,
-    "fecha": "2026-06-14",
+    "fecha": "2026-06-15",
     "hora": "04:00",
     "local": "Suecia",
     "visitante": "Túnez",
@@ -83,7 +83,7 @@ window.__PARTIDOS__ = [
   {
     "id": 10,
     "fecha": "2026-06-14",
-    "hora": "22:00",
+    "hora": "19:00",
     "local": "Alemania",
     "visitante": "Curazao",
     "fase": "grupos",
@@ -478,7 +478,7 @@ window.__PARTIDOS__ = [
   },
   {
     "id": 54,
-    "fecha": "2026-06-25",
+    "fecha": "2026-06-24",
     "hora": "21:00",
     "local": "Bosnia y Herzegovina",
     "visitante": "Catar",
