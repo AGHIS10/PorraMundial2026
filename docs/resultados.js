@@ -7,7 +7,7 @@ window.__RESULTADOS__ = [
   "X",
   "2",
   null,
-  null,
+  "1",
   null,
   null,
   null,
