@@ -13,19 +13,19 @@ window.__CLASIFICACION__ = [
   },
   {
     "posicion": 3,
+    "nombre": "PEDRO",
+    "aciertos": 6,
+    "puntos": 6
+  },
+  {
+    "posicion": 4,
     "nombre": "GEMINI",
     "aciertos": 5,
     "puntos": 5
   },
   {
-    "posicion": 4,
-    "nombre": "JORGE",
-    "aciertos": 5,
-    "puntos": 5
-  },
-  {
     "posicion": 5,
-    "nombre": "PEDRO",
+    "nombre": "JORGE",
     "aciertos": 5,
     "puntos": 5
   },

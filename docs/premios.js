@@ -4,48 +4,48 @@ window.__PREMIOS__ = [
     "nombre": "SERGIO",
     "puntos": 8,
     "premio_fijo": 40.0,
-    "premio_variable": 11.2,
-    "premio_total": 51.2
+    "premio_variable": 10.84,
+    "premio_total": 50.84
   },
   {
     "posicion": 2,
-    "nombre": "JORGE",
-    "puntos": 5,
+    "nombre": "PEDRO",
+    "puntos": 6,
     "premio_fijo": 30.0,
-    "premio_variable": 7.0,
-    "premio_total": 37.0
+    "premio_variable": 8.13,
+    "premio_total": 38.13
   },
   {
     "posicion": 3,
-    "nombre": "PEDRO",
+    "nombre": "JORGE",
     "puntos": 5,
     "premio_fijo": 20.0,
-    "premio_variable": 7.0,
-    "premio_total": 27.0
+    "premio_variable": 6.77,
+    "premio_total": 26.77
   },
   {
     "posicion": 4,
     "nombre": "AGUSTIN",
     "puntos": 4,
     "premio_fijo": 8.0,
-    "premio_variable": 5.6,
-    "premio_total": 13.6
+    "premio_variable": 5.42,
+    "premio_total": 13.42
   },
   {
     "posicion": 5,
     "nombre": "CRISTIAN",
     "puntos": 4,
     "premio_fijo": 0.0,
-    "premio_variable": 5.6,
-    "premio_total": 5.6
+    "premio_variable": 5.42,
+    "premio_total": 5.42
   },
   {
     "posicion": 6,
     "nombre": "GABRIEL",
     "puntos": 4,
     "premio_fijo": 0.0,
-    "premio_variable": 5.6,
-    "premio_total": 5.6
+    "premio_variable": 5.42,
+    "premio_total": 5.42
   },
   {
     "posicion": 7,
