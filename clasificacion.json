@@ -43,13 +43,13 @@
   },
   {
     "posicion": 8,
-    "nombre": "MARIO",
-    "aciertos": 3,
-    "puntos": 3
+    "nombre": "PEDRO",
+    "aciertos": 4,
+    "puntos": 4
   },
   {
     "posicion": 9,
-    "nombre": "PEDRO",
+    "nombre": "MARIO",
     "aciertos": 3,
     "puntos": 3
   }
