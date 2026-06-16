@@ -43,6 +43,22 @@ const FASE_BADGE_CLASS = {
   final: "fase-badge--final",
 };
 
+/** Grupos oficiales FIFA A–L (orden fijo para la UI del detalle). */
+const GRUPOS_OFICIALES = [
+  ["México", "Sudáfrica", "Corea del Sur", "República Checa"],
+  ["Canadá", "Bosnia y Herzegovina", "Catar", "Suiza"],
+  ["Brasil", "Marruecos", "Haití", "Escocia"],
+  ["Estados Unidos", "Paraguay", "Australia", "Turquía"],
+  ["Alemania", "Curazao", "Costa de Marfil", "Ecuador"],
+  ["Países Bajos", "Japón", "Suecia", "Túnez"],
+  ["Bélgica", "Egipto", "Irán", "Nueva Zelanda"],
+  ["España", "Cabo Verde", "Arabia Saudí", "Uruguay"],
+  ["Francia", "Senegal", "Irak", "Noruega"],
+  ["Argentina", "Argelia", "Austria", "Jordania"],
+  ["Portugal", "RD Congo", "Uzbekistán", "Colombia"],
+  ["Inglaterra", "Croacia", "Ghana", "Panamá"],
+];
+
 const elements = {
   loading: document.getElementById("loading"),
   error: document.getElementById("error"),
@@ -617,36 +633,26 @@ function renderTable(data) {
 
 /* ── Rendering: participant detail ── */
 
-function buildGroupsMap(partidos) {
-  const adj = {};
-  partidos.forEach((p) => {
-    if (p.fase !== "grupos") return;
-    adj[p.local] = adj[p.local] || new Set();
-    adj[p.visitante] = adj[p.visitante] || new Set();
-    adj[p.local].add(p.visitante);
-    adj[p.visitante].add(p.local);
-  });
-  const visited = new Set();
-  const groups = [];
-  Object.keys(adj).sort().forEach((team) => {
-    if (visited.has(team)) return;
-    const group = new Set();
-    const queue = [team];
-    while (queue.length) {
-      const t = queue.shift();
-      if (visited.has(t)) continue;
-      visited.add(t);
-      group.add(t);
-      (adj[t] || []).forEach((n) => { if (!visited.has(n)) queue.push(n); });
-    }
-    groups.push([...group].sort());
-  });
-  groups.sort((a, b) => a[0].localeCompare(b[0]));
-  return groups;
+function buildGroupsMap() {
+  return GRUPOS_OFICIALES.map((equipos) => [...equipos].sort((a, b) => a.localeCompare(b, "es")));
 }
 
 function getGroupLabel(idx) {
   return `Grupo ${String.fromCharCode(65 + idx)}`;
+}
+
+function getGroupTeamsLabel(idx) {
+  return GRUPOS_OFICIALES[idx]?.join(" · ") || "";
+}
+
+function compareMatchSchedule(a, b) {
+  const da = new Date(`${a.partido.fecha}T${a.partido.hora}:00`);
+  const db = new Date(`${b.partido.fecha}T${b.partido.hora}:00`);
+  return da - db;
+}
+
+function sortMatchesBySchedule(matches) {
+  return [...matches].sort(compareMatchSchedule);
 }
 
 function categorizeFases(partidos, pronosticos, resultados) {
@@ -758,7 +764,7 @@ function renderGroupNav(groups, pronosticos, resultados, partidos) {
     const pct = played > 0 ? Math.round((stats.hits / played) * 100) : null;
     const isActive = detailState.activeTab === "grupos" && detailState.activeGroup === i;
     return `
-      <button class="group-pill${isActive ? " group-pill--active" : ""}" data-group="${i}">
+      <button class="group-pill${isActive ? " group-pill--active" : ""}" data-group="${i}" title="${getGroupTeamsLabel(i)}">
         <span class="group-pill__label">${getGroupLabel(i)}</span>
         <span class="group-pill__stats">${stats.hits}/${stats.total}</span>
         ${pct !== null ? `<span class="group-pill__pct">${pct}%</span>` : `<span class="group-pill__pct group-pill__pct--empty">—</span>`}
@@ -879,7 +885,7 @@ function renderMatchList() {
   const resultados = appData.resultados || [];
   const marcadores = appData.marcadores || [];
   const pronosticos = participante.pronosticos;
-  const groups = buildGroupsMap(partidos);
+  const groups = buildGroupsMap();
 
   elements.predList.innerHTML = "";
 
@@ -939,6 +945,8 @@ function renderMatchList() {
     return;
   }
 
+  matchesToRender = sortMatchesBySchedule(matchesToRender);
+
   const stats = buildGroupStats(matchesToRender, pronosticos, resultados);
   const played = stats.hits + stats.misses;
   const pct = played > 0 ? Math.round((stats.hits / played) * 100) : null;
@@ -947,11 +955,16 @@ function renderMatchList() {
     ? getGroupLabel(detailState.activeGroup)
     : FASE_LABELS[detailState.activeTab] || detailState.activeTab;
 
+  const teamsMeta = detailState.activeTab === "grupos"
+    ? getGroupTeamsLabel(detailState.activeGroup)
+    : "";
+
   const header = document.createElement("div");
   header.className = "gsh";
   header.innerHTML = `
     <div class="gsh__top">
       <h3 class="gsh__name">${label}</h3>
+      ${teamsMeta ? `<p class="gsh__teams">${teamsMeta}</p>` : ""}
     </div>
     <div class="gsh__chips">
       ${played > 0 ? `<span class="gsh__chip">${played} jugado${played !== 1 ? "s" : ""}</span>` : ""}
@@ -975,7 +988,7 @@ function renderParticipantDetail(entry, participante) {
   const resultados = appData.resultados || [];
   const partidos = appData.partidos || [];
   const pronosticos = participante.pronosticos;
-  const groups = buildGroupsMap(partidos);
+  const groups = buildGroupsMap();
 
   detailState = { entry, participante, activeTab: "proximos", activeGroup: 0 };
 
