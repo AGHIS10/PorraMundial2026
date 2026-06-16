@@ -14,43 +14,43 @@
   {
     "posicion": 3,
     "nombre": "PEDRO",
+    "aciertos": 7,
+    "puntos": 7
+  },
+  {
+    "posicion": 4,
+    "nombre": "JORGE",
     "aciertos": 6,
     "puntos": 6
   },
   {
-    "posicion": 4,
-    "nombre": "GEMINI",
-    "aciertos": 5,
-    "puntos": 5
-  },
-  {
     "posicion": 5,
-    "nombre": "JORGE",
+    "nombre": "GABRIEL",
     "aciertos": 5,
     "puntos": 5
   },
   {
     "posicion": 6,
+    "nombre": "GEMINI",
+    "aciertos": 5,
+    "puntos": 5
+  },
+  {
+    "posicion": 7,
     "nombre": "AGUSTIN",
     "aciertos": 4,
     "puntos": 4
   },
   {
-    "posicion": 7,
-    "nombre": "CRISTIAN",
-    "aciertos": 4,
-    "puntos": 4
-  },
-  {
     "posicion": 8,
-    "nombre": "GABRIEL",
+    "nombre": "CRISTIAN",
     "aciertos": 4,
     "puntos": 4
   },
   {
     "posicion": 9,
     "nombre": "MARIO",
-    "aciertos": 3,
-    "puntos": 3
+    "aciertos": 4,
+    "puntos": 4
   }
 ]
