@@ -7,13 +7,13 @@
   },
   {
     "posicion": 2,
-    "nombre": "JORGE",
-    "aciertos": 13,
-    "puntos": 13
+    "nombre": "PEDRO",
+    "aciertos": 14,
+    "puntos": 14
   },
   {
     "posicion": 3,
-    "nombre": "PEDRO",
+    "nombre": "JORGE",
     "aciertos": 13,
     "puntos": 13
   },
@@ -31,15 +31,15 @@
   },
   {
     "posicion": 6,
-    "nombre": "GABRIEL",
+    "nombre": "AGUSTIN",
     "aciertos": 11,
     "puntos": 11
   },
   {
     "posicion": 7,
-    "nombre": "AGUSTIN",
-    "aciertos": 10,
-    "puntos": 10
+    "nombre": "GABRIEL",
+    "aciertos": 11,
+    "puntos": 11
   },
   {
     "posicion": 8,
