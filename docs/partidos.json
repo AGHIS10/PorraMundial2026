@@ -646,5 +646,293 @@
     "visitante": "Argentina",
     "fase": "grupos",
     "peso": 1
+  },
+  {
+    "id": 73,
+    "fecha": "2026-06-28",
+    "hora": "21:00",
+    "local": "2A",
+    "visitante": "2B",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 74,
+    "fecha": "2026-06-29",
+    "hora": "19:00",
+    "local": "1C",
+    "visitante": "2F",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 75,
+    "fecha": "2026-06-29",
+    "hora": "22:30",
+    "local": "1E",
+    "visitante": "3ABCDF",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 76,
+    "fecha": "2026-06-30",
+    "hora": "03:00",
+    "local": "1F",
+    "visitante": "2C",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 77,
+    "fecha": "2026-06-30",
+    "hora": "19:00",
+    "local": "2E",
+    "visitante": "2I",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 78,
+    "fecha": "2026-06-30",
+    "hora": "23:00",
+    "local": "1I",
+    "visitante": "3CDFGH",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 79,
+    "fecha": "2026-07-01",
+    "hora": "03:00",
+    "local": "1A",
+    "visitante": "3CEFHI",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 80,
+    "fecha": "2026-07-01",
+    "hora": "18:00",
+    "local": "1L",
+    "visitante": "3EHIJK",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 81,
+    "fecha": "2026-07-01",
+    "hora": "22:00",
+    "local": "1G",
+    "visitante": "3AEHIJ",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 82,
+    "fecha": "2026-07-02",
+    "hora": "02:00",
+    "local": "1D",
+    "visitante": "3BEFIJ",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 83,
+    "fecha": "2026-07-02",
+    "hora": "21:00",
+    "local": "1H",
+    "visitante": "2J",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 84,
+    "fecha": "2026-07-03",
+    "hora": "01:00",
+    "local": "2K",
+    "visitante": "2L",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 85,
+    "fecha": "2026-07-03",
+    "hora": "05:00",
+    "local": "1B",
+    "visitante": "3EFGIJ",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 86,
+    "fecha": "2026-07-03",
+    "hora": "20:00",
+    "local": "2D",
+    "visitante": "2G",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 87,
+    "fecha": "2026-07-04",
+    "hora": "00:00",
+    "local": "1J",
+    "visitante": "2H",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 88,
+    "fecha": "2026-07-04",
+    "hora": "03:30",
+    "local": "1K",
+    "visitante": "3DEIJL",
+    "fase": "dieciseisavos",
+    "peso": 2
+  },
+  {
+    "id": 89,
+    "fecha": "2026-07-04",
+    "hora": "19:00",
+    "local": "W73",
+    "visitante": "W75",
+    "fase": "octavos",
+    "peso": 4
+  },
+  {
+    "id": 90,
+    "fecha": "2026-07-04",
+    "hora": "23:00",
+    "local": "W74",
+    "visitante": "W77",
+    "fase": "octavos",
+    "peso": 4
+  },
+  {
+    "id": 91,
+    "fecha": "2026-07-05",
+    "hora": "22:00",
+    "local": "W76",
+    "visitante": "W78",
+    "fase": "octavos",
+    "peso": 4
+  },
+  {
+    "id": 92,
+    "fecha": "2026-07-06",
+    "hora": "02:00",
+    "local": "W79",
+    "visitante": "W80",
+    "fase": "octavos",
+    "peso": 4
+  },
+  {
+    "id": 93,
+    "fecha": "2026-07-06",
+    "hora": "21:00",
+    "local": "W83",
+    "visitante": "W84",
+    "fase": "octavos",
+    "peso": 4
+  },
+  {
+    "id": 94,
+    "fecha": "2026-07-07",
+    "hora": "02:00",
+    "local": "W81",
+    "visitante": "W82",
+    "fase": "octavos",
+    "peso": 4
+  },
+  {
+    "id": 95,
+    "fecha": "2026-07-07",
+    "hora": "18:00",
+    "local": "W86",
+    "visitante": "W88",
+    "fase": "octavos",
+    "peso": 4
+  },
+  {
+    "id": 96,
+    "fecha": "2026-07-07",
+    "hora": "22:00",
+    "local": "W85",
+    "visitante": "W87",
+    "fase": "octavos",
+    "peso": 4
+  },
+  {
+    "id": 97,
+    "fecha": "2026-07-09",
+    "hora": "22:00",
+    "local": "W89",
+    "visitante": "W90",
+    "fase": "cuartos",
+    "peso": 8
+  },
+  {
+    "id": 98,
+    "fecha": "2026-07-10",
+    "hora": "21:00",
+    "local": "W93",
+    "visitante": "W94",
+    "fase": "cuartos",
+    "peso": 8
+  },
+  {
+    "id": 99,
+    "fecha": "2026-07-11",
+    "hora": "23:00",
+    "local": "W91",
+    "visitante": "W92",
+    "fase": "cuartos",
+    "peso": 8
+  },
+  {
+    "id": 100,
+    "fecha": "2026-07-12",
+    "hora": "03:00",
+    "local": "W95",
+    "visitante": "W96",
+    "fase": "cuartos",
+    "peso": 8
+  },
+  {
+    "id": 101,
+    "fecha": "2026-07-14",
+    "hora": "21:00",
+    "local": "W97",
+    "visitante": "W98",
+    "fase": "semifinales",
+    "peso": 16
+  },
+  {
+    "id": 102,
+    "fecha": "2026-07-15",
+    "hora": "21:00",
+    "local": "W99",
+    "visitante": "W100",
+    "fase": "semifinales",
+    "peso": 16
+  },
+  {
+    "id": 103,
+    "fecha": "2026-07-18",
+    "hora": "23:00",
+    "local": "Perdedor 101",
+    "visitante": "Perdedor 102",
+    "fase": "tercer_puesto",
+    "peso": 25
+  },
+  {
+    "id": 104,
+    "fecha": "2026-07-19",
+    "hora": "21:00",
+    "local": "W101",
+    "visitante": "W102",
+    "fase": "final",
+    "peso": 50
   }
 ]

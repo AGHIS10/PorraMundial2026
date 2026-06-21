@@ -10,6 +10,7 @@ import unicodedata
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -27,6 +28,16 @@ ESTADOS_FINALIZADOS = frozenset({"FINISHED", "AWARDED"})
 MAX_DIFERENCIA_DIAS = 2
 MAX_IDS_POR_PETICION = 50
 STAGE_GRUPOS = "GROUP_STAGE"
+ZONA_CEST = ZoneInfo("Europe/Madrid")
+TOLERANCIA_SEGUNDOS_ELIMINATORIA = 5400
+FASE_A_STAGE: dict[str, str] = {
+    "dieciseisavos": "LAST_32",
+    "octavos": "LAST_16",
+    "cuartos": "QUARTER_FINALS",
+    "semifinales": "SEMI_FINALS",
+    "tercer_puesto": "THIRD_PLACE",
+    "final": "FINAL",
+}
 
 
 def cargar_json(ruta: Path) -> Any:
@@ -156,15 +167,46 @@ def equipos_coinciden(
     )
 
 
-def filtrar_partidos_grupos_api(
-    partidos_api: list[dict[str, Any]],
-) -> list[dict[str, Any]]:
-    """Conserva solo los partidos de fase de grupos de la API."""
-    return [
-        partido
-        for partido in partidos_api
-        if partido.get("stage") == STAGE_GRUPOS
-    ]
+def instante_partido_local(partido: dict[str, Any]) -> datetime:
+    """Convierte fecha/hora local (CEST) del partido a datetime."""
+    hora = partido.get("hora") or "00:00"
+    instante = datetime.strptime(
+        f"{partido['fecha']} {hora}",
+        "%Y-%m-%d %H:%M",
+    )
+    return instante.replace(tzinfo=ZONA_CEST)
+
+
+def instante_partido_api(partido_api: dict[str, Any]) -> datetime | None:
+    """Convierte utcDate de la API a datetime en CEST."""
+    utc_date = partido_api.get("utcDate")
+    if not utc_date:
+        return None
+    instante = datetime.fromisoformat(utc_date.replace("Z", "+00:00"))
+    return instante.astimezone(ZONA_CEST)
+
+
+def eliminatoria_coincide(
+    partido: dict[str, Any],
+    partido_api: dict[str, Any],
+) -> bool:
+    """Empareja eliminatorias por fase (stage API) y fecha/hora en CEST."""
+    stage_esperado = FASE_A_STAGE.get(partido.get("fase", ""))
+    if not stage_esperado or partido_api.get("stage") != stage_esperado:
+        return False
+
+    instante_local = instante_partido_local(partido)
+    instante_api = instante_partido_api(partido_api)
+    if instante_api is None:
+        return False
+
+    diferencia = abs((instante_local - instante_api).total_seconds())
+    return diferencia <= TOLERANCIA_SEGUNDOS_ELIMINATORIA
+
+
+def contar_partidos_grupos_api(partidos_api: list[dict[str, Any]]) -> int:
+    """Cuenta partidos de fase de grupos en la respuesta de la API."""
+    return sum(1 for partido in partidos_api if partido.get("stage") == STAGE_GRUPOS)
 
 
 def resultado_desde_marcador(goles_local: int, goles_visitante: int) -> str:
@@ -274,22 +316,41 @@ def buscar_partido_api(
     alias: dict[str, str | list[str]],
 ) -> dict[str, Any] | None:
     """Empareja un partido local con su equivalente en la API."""
+    if partido.get("fase") == "grupos":
+        candidatos = [
+            candidato
+            for candidato in partidos_api
+            if equipos_coinciden(partido, candidato, alias)
+            and fechas_compatibles(partido["fecha"], candidato.get("utcDate", ""))
+        ]
+        if not candidatos:
+            return None
+        if len(candidatos) == 1:
+            return candidatos[0]
+
+        fecha_objetivo = date.fromisoformat(partido["fecha"])
+        return min(
+            candidatos,
+            key=lambda candidato: abs(
+                (parsear_fecha_api(candidato.get("utcDate", "")) - fecha_objetivo).days
+            ),
+        )
+
     candidatos = [
         candidato
         for candidato in partidos_api
-        if equipos_coinciden(partido, candidato, alias)
-        and fechas_compatibles(partido["fecha"], candidato.get("utcDate", ""))
+        if eliminatoria_coincide(partido, candidato)
     ]
     if not candidatos:
         return None
     if len(candidatos) == 1:
         return candidatos[0]
 
-    fecha_objetivo = date.fromisoformat(partido["fecha"])
+    instante_local = instante_partido_local(partido)
     return min(
         candidatos,
         key=lambda candidato: abs(
-            (parsear_fecha_api(candidato.get("utcDate", "")) - fecha_objetivo).days
+            (instante_local - instante_partido_api(candidato)).total_seconds()
         ),
     )
 
@@ -303,6 +364,14 @@ def diagnosticar_partido(
     emparejado = buscar_partido_api(partido, partidos_api, alias)
     if emparejado is not None:
         return emparejado, None
+
+    if partido.get("fase") != "grupos":
+        stage_esperado = FASE_A_STAGE.get(partido.get("fase", ""), "?")
+        instante_local = instante_partido_local(partido)
+        return None, (
+            f"No hay partido en la API con stage {stage_esperado} "
+            f"y hora {instante_local.strftime('%Y-%m-%d %H:%M')} CEST."
+        )
 
     por_equipos = [
         candidato
@@ -651,7 +720,7 @@ def main() -> int:
             api_key,
             partidos_api_total,
         )
-        partidos_api = filtrar_partidos_grupos_api(partidos_api_total)
+        partidos_api = partidos_api_total
         nuevos_resultados, nuevos_marcadores, estadisticas = actualizar_resultados(
             partidos,
             partidos_api,
@@ -669,7 +738,7 @@ def main() -> int:
         mostrar_resumen(
             len(partidos),
             len(partidos_api_total),
-            len(partidos_api),
+            contar_partidos_grupos_api(partidos_api),
             estadisticas,
             marcadores_enriquecidos,
         )

@@ -20,8 +20,8 @@ from actualizar_resultados import (  # noqa: E402
     RESULTADOS_FILE,
     cargar_json,
     consultar_partidos_api,
+    contar_partidos_grupos_api,
     diagnosticar_partido,
-    filtrar_partidos_grupos_api,
     formatear_partido,
     nombre_equipo_api,
     nombres_equipo_coinciden,
@@ -45,7 +45,14 @@ def auditar_alias(
 ) -> list[str]:
     """Detecta equipos locales sin cobertura clara en la API."""
     avisos: list[str] = []
-    equipos_locales = sorted({nombre for p in partidos for nombre in (p["local"], p["visitante"])})
+    equipos_locales = sorted(
+        {
+            nombre
+            for partido in partidos
+            if partido.get("fase") == "grupos"
+            for nombre in (partido["local"], partido["visitante"])
+        }
+    )
 
     for equipo in equipos_locales:
         coincidencias = sorted(
@@ -89,12 +96,14 @@ def main() -> int:
         print(f"[ERROR] No se pudo consultar la API: {exc}", file=sys.stderr)
         return 1
 
-    partidos_api = filtrar_partidos_grupos_api(partidos_api_total)
-    equipos_api = listar_equipos_api(partidos_api)
+    partidos_api = partidos_api_total
+    equipos_api = listar_equipos_api(
+        [partido for partido in partidos_api if partido.get("stage") == "GROUP_STAGE"]
+    )
 
     print(f"Partidos en partidos.json: {len(partidos)}")
     print(f"Partidos en API (total): {len(partidos_api_total)}")
-    print(f"Partidos en API (fase de grupos): {len(partidos_api)}")
+    print(f"Partidos en API (fase de grupos): {contar_partidos_grupos_api(partidos_api)}")
     print(f"Equipos distintos en API (grupos): {len(equipos_api)}")
     print()
 
