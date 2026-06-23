@@ -7,19 +7,19 @@ window.__CLASIFICACION__ = [
   },
   {
     "posicion": 2,
+    "nombre": "SERGIO",
+    "aciertos": 28,
+    "puntos": 28
+  },
+  {
+    "posicion": 3,
     "nombre": "GABRIEL",
     "aciertos": 27,
     "puntos": 27
   },
   {
-    "posicion": 3,
-    "nombre": "JORGE",
-    "aciertos": 27,
-    "puntos": 27
-  },
-  {
     "posicion": 4,
-    "nombre": "SERGIO",
+    "nombre": "JORGE",
     "aciertos": 27,
     "puntos": 27
   },

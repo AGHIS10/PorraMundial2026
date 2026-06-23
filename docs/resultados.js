@@ -44,7 +44,7 @@ window.__RESULTADOS__ = [
   "1",
   "2",
   "1",
-  null,
+  "X",
   null,
   null,
   null,
