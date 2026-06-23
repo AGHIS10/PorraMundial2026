@@ -2,50 +2,50 @@
   {
     "posicion": 1,
     "nombre": "GABRIEL",
-    "puntos": 25,
+    "puntos": 26,
     "premio_fijo": 40.0,
-    "premio_variable": 7.39,
-    "premio_total": 47.39
+    "premio_variable": 7.48,
+    "premio_total": 47.48
   },
   {
     "posicion": 2,
     "nombre": "JORGE",
-    "puntos": 25,
+    "puntos": 26,
     "premio_fijo": 30.0,
-    "premio_variable": 7.39,
-    "premio_total": 37.39
+    "premio_variable": 7.48,
+    "premio_total": 37.48
   },
   {
     "posicion": 3,
     "nombre": "SERGIO",
-    "puntos": 25,
+    "puntos": 26,
     "premio_fijo": 20.0,
-    "premio_variable": 7.39,
-    "premio_total": 27.39
+    "premio_variable": 7.48,
+    "premio_total": 27.48
   },
   {
     "posicion": 4,
     "nombre": "MARIO",
     "puntos": 23,
     "premio_fijo": 8.0,
-    "premio_variable": 6.8,
-    "premio_total": 14.8
+    "premio_variable": 6.62,
+    "premio_total": 14.62
   },
   {
     "posicion": 5,
     "nombre": "PEDRO",
     "puntos": 23,
     "premio_fijo": 0.0,
-    "premio_variable": 6.8,
-    "premio_total": 6.8
+    "premio_variable": 6.62,
+    "premio_total": 6.62
   },
   {
     "posicion": 6,
     "nombre": "AGUSTIN",
-    "puntos": 21,
+    "puntos": 22,
     "premio_fijo": 0.0,
-    "premio_variable": 6.21,
-    "premio_total": 6.21
+    "premio_variable": 6.33,
+    "premio_total": 6.33
   },
   {
     "posicion": 7,
