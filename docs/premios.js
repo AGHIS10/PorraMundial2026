@@ -40,7 +40,7 @@ window.__PREMIOS__ = [
     "premio_total": 6.59
   },
   {
-    "posicion": 6,
+    "posicion": 5,
     "nombre": "PEDRO",
     "puntos": 27,
     "premio_fijo": 0.0,

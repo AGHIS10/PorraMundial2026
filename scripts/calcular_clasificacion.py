@@ -21,6 +21,11 @@ from puntuacion_fases import (  # noqa: E402
     validar_fase_y_peso,
     validar_integridad_partidos,
 )
+from reparto_premios import (  # noqa: E402
+    FilaPremio,
+    calcular_reparto_economico,
+    premios_a_dict,
+)
 
 PARTIDOS_FILE = PROYECTO_DIR / "partidos.json"
 RESULTADOS_FILE = PROYECTO_DIR / "resultados.json"
@@ -37,9 +42,6 @@ DOCS_PARTIDOS_JS_FILE = DOCS_DIR / "partidos.js"
 DOCS_INDEX_FILE = DOCS_DIR / "index.html"
 
 CAMPOS_PARTIDO = ("id", "fecha", "hora", "local", "visitante", "fase", "peso")
-PARTICIPANTES_VIRTUALES = frozenset({"GPT", "GEMINI"})
-PREMIOS_FIJOS = {1: 40, 2: 30, 3: 20, 4: 8}
-PREMIO_VARIABLE_TOTAL = 42
 
 
 @dataclass(frozen=True)
@@ -72,16 +74,6 @@ class FilaClasificacion:
     nombre: str
     aciertos: int
     puntos: int
-
-
-@dataclass(frozen=True)
-class FilaPremio:
-    posicion: int
-    nombre: str
-    puntos: int
-    premio_fijo: float
-    premio_variable: float
-    premio_total: float
 
 
 @dataclass(frozen=True)
@@ -308,61 +300,6 @@ def filas_a_dict(filas: list[FilaClasificacion]) -> list[dict[str, Any]]:
     ]
 
 
-def es_participante_virtual(nombre: str) -> bool:
-    """Indica si un participante es virtual y queda fuera del reparto."""
-    return nombre.strip().upper() in PARTICIPANTES_VIRTUALES
-
-
-def calcular_premios(filas: list[FilaClasificacion]) -> list[FilaPremio]:
-    """Calcula el reparto provisional de premios entre participantes humanos."""
-    humanos = [fila for fila in filas if not es_participante_virtual(fila.nombre)]
-    if not humanos:
-        return []
-
-    elegibles_variable = humanos[:-1] if len(humanos) > 1 else []
-    suma_puntos = sum(humano.puntos for humano in elegibles_variable)
-
-    reparto: list[FilaPremio] = []
-    for posicion, humano in enumerate(humanos, start=1):
-        premio_fijo = float(PREMIOS_FIJOS.get(posicion, 0))
-
-        if humano in elegibles_variable and elegibles_variable:
-            if suma_puntos == 0:
-                premio_variable = PREMIO_VARIABLE_TOTAL / len(elegibles_variable)
-            else:
-                premio_variable = (humano.puntos / suma_puntos) * PREMIO_VARIABLE_TOTAL
-        else:
-            premio_variable = 0.0
-
-        reparto.append(
-            FilaPremio(
-                posicion=posicion,
-                nombre=humano.nombre,
-                puntos=humano.puntos,
-                premio_fijo=round(premio_fijo, 2),
-                premio_variable=round(premio_variable, 2),
-                premio_total=round(premio_fijo + premio_variable, 2),
-            )
-        )
-
-    return reparto
-
-
-def premios_a_dict(filas: list[FilaPremio]) -> list[dict[str, Any]]:
-    """Convierte filas de premios a diccionarios serializables."""
-    return [
-        {
-            "posicion": fila.posicion,
-            "nombre": fila.nombre,
-            "puntos": fila.puntos,
-            "premio_fijo": fila.premio_fijo,
-            "premio_variable": fila.premio_variable,
-            "premio_total": fila.premio_total,
-        }
-        for fila in filas
-    ]
-
-
 def partidos_a_dict(partidos: list[Partido]) -> list[dict[str, Any]]:
     """Convierte partidos a diccionarios serializables."""
     return [
@@ -567,7 +504,7 @@ def main() -> int:
         return 1
 
     filas = asignar_posiciones(ordenar_clasificacion(entradas))
-    premios = calcular_premios(filas)
+    premios = calcular_reparto_economico(filas)
     guardar_json(filas_a_dict(filas), CLASIFICACION_FILE)
     guardar_json(premios_a_dict(premios), PREMIOS_FILE)
     sincronizar_docs(filas, premios, partidos)
