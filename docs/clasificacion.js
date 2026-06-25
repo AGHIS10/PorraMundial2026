@@ -13,39 +13,39 @@ window.__CLASIFICACION__ = [
   },
   {
     "posicion": 3,
-    "nombre": "SERGIO",
+    "nombre": "GEMINI",
     "aciertos": 32,
     "puntos": 32
   },
   {
     "posicion": 4,
-    "nombre": "GEMINI",
-    "aciertos": 31,
-    "puntos": 31
+    "nombre": "JORGE",
+    "aciertos": 32,
+    "puntos": 32
   },
   {
     "posicion": 5,
-    "nombre": "JORGE",
-    "aciertos": 31,
-    "puntos": 31
+    "nombre": "SERGIO",
+    "aciertos": 32,
+    "puntos": 32
   },
   {
     "posicion": 6,
-    "nombre": "MARIO",
+    "nombre": "AGUSTIN",
     "aciertos": 30,
     "puntos": 30
   },
   {
     "posicion": 7,
-    "nombre": "AGUSTIN",
-    "aciertos": 29,
-    "puntos": 29
+    "nombre": "MARIO",
+    "aciertos": 30,
+    "puntos": 30
   },
   {
     "posicion": 8,
     "nombre": "PEDRO",
-    "aciertos": 29,
-    "puntos": 29
+    "aciertos": 30,
+    "puntos": 30
   },
   {
     "posicion": 9,
