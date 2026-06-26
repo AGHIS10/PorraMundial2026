@@ -1,0 +1,8050 @@
+{
+  "generado": "2026-06-26T12:10:28Z",
+  "total_partidos": 104,
+  "partidos_jugados": 60,
+  "participantes": [
+    {
+      "nombre": "AGUSTIN",
+      "inicial": "A",
+      "color": "#2ee6d6",
+      "es_ia": false,
+      "puntos_final": 34,
+      "serie": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        6,
+        7,
+        8,
+        8,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        13,
+        14,
+        14,
+        15,
+        15,
+        16,
+        17,
+        17,
+        18,
+        19,
+        19,
+        19,
+        20,
+        20,
+        21,
+        21,
+        22,
+        23,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        30,
+        31,
+        31,
+        31,
+        32,
+        33,
+        34
+      ],
+      "detalle": [
+        {
+          "orden": 1,
+          "match_id": 1,
+          "puntos": 1,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 2,
+          "match_id": 2,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 3,
+          "match_id": 3,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 4,
+          "match_id": 4,
+          "puntos": 1,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 5,
+          "match_id": 5,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 6,
+          "match_id": 6,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 7,
+          "match_id": 7,
+          "puntos": 1,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 8,
+          "match_id": 9,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 9,
+          "match_id": 10,
+          "puntos": 1,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 10,
+          "match_id": 11,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 11,
+          "match_id": 12,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 12,
+          "match_id": 8,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 13,
+          "match_id": 13,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 14,
+          "match_id": 14,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 15,
+          "match_id": 15,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 16,
+          "match_id": 16,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 17,
+          "match_id": 17,
+          "puntos": 1,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 18,
+          "match_id": 18,
+          "puntos": 1,
+          "acumulado": 6,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 19,
+          "match_id": 19,
+          "puntos": 1,
+          "acumulado": 7,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 20,
+          "match_id": 20,
+          "puntos": 1,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 21,
+          "match_id": 21,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 22,
+          "match_id": 22,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 23,
+          "match_id": 23,
+          "puntos": 1,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 24,
+          "match_id": 24,
+          "puntos": 1,
+          "acumulado": 10,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 25,
+          "match_id": 25,
+          "puntos": 1,
+          "acumulado": 11,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 26,
+          "match_id": 26,
+          "puntos": 1,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 27,
+          "match_id": 27,
+          "puntos": 1,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 28,
+          "match_id": 28,
+          "puntos": 0,
+          "acumulado": 13,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 29,
+          "match_id": 29,
+          "puntos": 1,
+          "acumulado": 14,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 30,
+          "match_id": 30,
+          "puntos": 0,
+          "acumulado": 14,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 31,
+          "match_id": 31,
+          "puntos": 1,
+          "acumulado": 15,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 32,
+          "match_id": 32,
+          "puntos": 0,
+          "acumulado": 15,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 33,
+          "match_id": 33,
+          "puntos": 1,
+          "acumulado": 16,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 34,
+          "match_id": 34,
+          "puntos": 1,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 35,
+          "match_id": 35,
+          "puntos": 0,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 36,
+          "match_id": 36,
+          "puntos": 1,
+          "acumulado": 18,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 37,
+          "match_id": 37,
+          "puntos": 1,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 38,
+          "match_id": 38,
+          "puntos": 0,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 39,
+          "match_id": 39,
+          "puntos": 0,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 40,
+          "match_id": 40,
+          "puntos": 1,
+          "acumulado": 20,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 41,
+          "match_id": 41,
+          "puntos": 0,
+          "acumulado": 20,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 42,
+          "match_id": 42,
+          "puntos": 1,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 43,
+          "match_id": 43,
+          "puntos": 0,
+          "acumulado": 21,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 44,
+          "match_id": 44,
+          "puntos": 1,
+          "acumulado": 22,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 45,
+          "match_id": 45,
+          "puntos": 1,
+          "acumulado": 23,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 46,
+          "match_id": 46,
+          "puntos": 0,
+          "acumulado": 23,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 47,
+          "match_id": 47,
+          "puntos": 1,
+          "acumulado": 24,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 48,
+          "match_id": 48,
+          "puntos": 1,
+          "acumulado": 25,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 49,
+          "match_id": 49,
+          "puntos": 1,
+          "acumulado": 26,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 50,
+          "match_id": 54,
+          "puntos": 1,
+          "acumulado": 27,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 51,
+          "match_id": 50,
+          "puntos": 1,
+          "acumulado": 28,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 52,
+          "match_id": 51,
+          "puntos": 1,
+          "acumulado": 29,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 53,
+          "match_id": 52,
+          "puntos": 1,
+          "acumulado": 30,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 54,
+          "match_id": 53,
+          "puntos": 0,
+          "acumulado": 30,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 55,
+          "match_id": 55,
+          "puntos": 1,
+          "acumulado": 31,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 56,
+          "match_id": 56,
+          "puntos": 0,
+          "acumulado": 31,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 57,
+          "match_id": 57,
+          "puntos": 0,
+          "acumulado": 31,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 58,
+          "match_id": 58,
+          "puntos": 1,
+          "acumulado": 32,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 59,
+          "match_id": 59,
+          "puntos": 1,
+          "acumulado": 33,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 60,
+          "match_id": 60,
+          "puntos": 1,
+          "acumulado": 34,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        }
+      ]
+    },
+    {
+      "nombre": "CRISTIAN",
+      "inicial": "C",
+      "color": "#f0883e",
+      "es_ia": false,
+      "puntos_final": 29,
+      "serie": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        6,
+        7,
+        8,
+        8,
+        9,
+        9,
+        9,
+        9,
+        10,
+        11,
+        11,
+        11,
+        12,
+        13,
+        13,
+        14,
+        14,
+        14,
+        15,
+        16,
+        17,
+        17,
+        18,
+        19,
+        20,
+        21,
+        21,
+        22,
+        22,
+        23,
+        24,
+        24,
+        25,
+        26,
+        26,
+        26,
+        26,
+        27,
+        28,
+        28,
+        28,
+        28,
+        29
+      ],
+      "detalle": [
+        {
+          "orden": 1,
+          "match_id": 1,
+          "puntos": 1,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 2,
+          "match_id": 2,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 3,
+          "match_id": 3,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 4,
+          "match_id": 4,
+          "puntos": 1,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 5,
+          "match_id": 5,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 6,
+          "match_id": 6,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 7,
+          "match_id": 7,
+          "puntos": 1,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 8,
+          "match_id": 9,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 9,
+          "match_id": 10,
+          "puntos": 1,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 10,
+          "match_id": 11,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 11,
+          "match_id": 12,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 12,
+          "match_id": 8,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 13,
+          "match_id": 13,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 14,
+          "match_id": 14,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 15,
+          "match_id": 15,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 16,
+          "match_id": 16,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 17,
+          "match_id": 17,
+          "puntos": 1,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 18,
+          "match_id": 18,
+          "puntos": 1,
+          "acumulado": 6,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 19,
+          "match_id": 19,
+          "puntos": 1,
+          "acumulado": 7,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 20,
+          "match_id": 20,
+          "puntos": 1,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 21,
+          "match_id": 21,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 22,
+          "match_id": 22,
+          "puntos": 1,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 23,
+          "match_id": 23,
+          "puntos": 0,
+          "acumulado": 9,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 24,
+          "match_id": 24,
+          "puntos": 0,
+          "acumulado": 9,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 25,
+          "match_id": 25,
+          "puntos": 0,
+          "acumulado": 9,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 26,
+          "match_id": 26,
+          "puntos": 1,
+          "acumulado": 10,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 27,
+          "match_id": 27,
+          "puntos": 1,
+          "acumulado": 11,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 28,
+          "match_id": 28,
+          "puntos": 0,
+          "acumulado": 11,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 29,
+          "match_id": 29,
+          "puntos": 0,
+          "acumulado": 11,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 30,
+          "match_id": 30,
+          "puntos": 1,
+          "acumulado": 12,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 31,
+          "match_id": 31,
+          "puntos": 1,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 32,
+          "match_id": 32,
+          "puntos": 0,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 33,
+          "match_id": 33,
+          "puntos": 1,
+          "acumulado": 14,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 34,
+          "match_id": 34,
+          "puntos": 0,
+          "acumulado": 14,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 35,
+          "match_id": 35,
+          "puntos": 0,
+          "acumulado": 14,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 36,
+          "match_id": 36,
+          "puntos": 1,
+          "acumulado": 15,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 37,
+          "match_id": 37,
+          "puntos": 1,
+          "acumulado": 16,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 38,
+          "match_id": 38,
+          "puntos": 1,
+          "acumulado": 17,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 39,
+          "match_id": 39,
+          "puntos": 0,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 40,
+          "match_id": 40,
+          "puntos": 1,
+          "acumulado": 18,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 41,
+          "match_id": 41,
+          "puntos": 1,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 42,
+          "match_id": 42,
+          "puntos": 1,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 43,
+          "match_id": 43,
+          "puntos": 1,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 44,
+          "match_id": 44,
+          "puntos": 0,
+          "acumulado": 21,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 45,
+          "match_id": 45,
+          "puntos": 1,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 46,
+          "match_id": 46,
+          "puntos": 0,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 47,
+          "match_id": 47,
+          "puntos": 1,
+          "acumulado": 23,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 48,
+          "match_id": 48,
+          "puntos": 1,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 49,
+          "match_id": 49,
+          "puntos": 0,
+          "acumulado": 24,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 50,
+          "match_id": 54,
+          "puntos": 1,
+          "acumulado": 25,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 51,
+          "match_id": 50,
+          "puntos": 1,
+          "acumulado": 26,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 52,
+          "match_id": 51,
+          "puntos": 0,
+          "acumulado": 26,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 53,
+          "match_id": 52,
+          "puntos": 0,
+          "acumulado": 26,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 54,
+          "match_id": 53,
+          "puntos": 0,
+          "acumulado": 26,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 55,
+          "match_id": 55,
+          "puntos": 1,
+          "acumulado": 27,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 56,
+          "match_id": 56,
+          "puntos": 1,
+          "acumulado": 28,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 57,
+          "match_id": 57,
+          "puntos": 0,
+          "acumulado": 28,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 58,
+          "match_id": 58,
+          "puntos": 0,
+          "acumulado": 28,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 59,
+          "match_id": 59,
+          "puntos": 0,
+          "acumulado": 28,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 60,
+          "match_id": 60,
+          "puntos": 1,
+          "acumulado": 29,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        }
+      ]
+    },
+    {
+      "nombre": "GABRIEL",
+      "inicial": "G",
+      "color": "#9b8cff",
+      "es_ia": false,
+      "puntos_final": 35,
+      "serie": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        9,
+        10,
+        10,
+        11,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        17,
+        18,
+        19,
+        19,
+        20,
+        21,
+        21,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        27,
+        28,
+        29,
+        29,
+        30,
+        31,
+        32,
+        32,
+        32,
+        33,
+        33,
+        33,
+        34,
+        34,
+        35
+      ],
+      "detalle": [
+        {
+          "orden": 1,
+          "match_id": 1,
+          "puntos": 1,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 2,
+          "match_id": 2,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 3,
+          "match_id": 3,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 4,
+          "match_id": 4,
+          "puntos": 1,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 5,
+          "match_id": 5,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 6,
+          "match_id": 6,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 7,
+          "match_id": 7,
+          "puntos": 1,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 8,
+          "match_id": 9,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 9,
+          "match_id": 10,
+          "puntos": 1,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 10,
+          "match_id": 11,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 11,
+          "match_id": 12,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 12,
+          "match_id": 8,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 13,
+          "match_id": 13,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 14,
+          "match_id": 14,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 15,
+          "match_id": 15,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 16,
+          "match_id": 16,
+          "puntos": 1,
+          "acumulado": 5,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 17,
+          "match_id": 17,
+          "puntos": 1,
+          "acumulado": 6,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 18,
+          "match_id": 18,
+          "puntos": 1,
+          "acumulado": 7,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 19,
+          "match_id": 19,
+          "puntos": 1,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 20,
+          "match_id": 20,
+          "puntos": 1,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 21,
+          "match_id": 21,
+          "puntos": 0,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 5,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 22,
+          "match_id": 22,
+          "puntos": 1,
+          "acumulado": 10,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 23,
+          "match_id": 23,
+          "puntos": 0,
+          "acumulado": 10,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 24,
+          "match_id": 24,
+          "puntos": 1,
+          "acumulado": 11,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 25,
+          "match_id": 25,
+          "puntos": 0,
+          "acumulado": 11,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 26,
+          "match_id": 26,
+          "puntos": 1,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 27,
+          "match_id": 27,
+          "puntos": 1,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 28,
+          "match_id": 28,
+          "puntos": 1,
+          "acumulado": 14,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 29,
+          "match_id": 29,
+          "puntos": 1,
+          "acumulado": 15,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 30,
+          "match_id": 30,
+          "puntos": 1,
+          "acumulado": 16,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 31,
+          "match_id": 31,
+          "puntos": 1,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 32,
+          "match_id": 32,
+          "puntos": 0,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 33,
+          "match_id": 33,
+          "puntos": 1,
+          "acumulado": 18,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 34,
+          "match_id": 34,
+          "puntos": 1,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 35,
+          "match_id": 35,
+          "puntos": 0,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 36,
+          "match_id": 36,
+          "puntos": 1,
+          "acumulado": 20,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 37,
+          "match_id": 37,
+          "puntos": 1,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 38,
+          "match_id": 38,
+          "puntos": 0,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 39,
+          "match_id": 39,
+          "puntos": 0,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 40,
+          "match_id": 40,
+          "puntos": 1,
+          "acumulado": 22,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 41,
+          "match_id": 41,
+          "puntos": 1,
+          "acumulado": 23,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 42,
+          "match_id": 42,
+          "puntos": 1,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 43,
+          "match_id": 43,
+          "puntos": 1,
+          "acumulado": 25,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 44,
+          "match_id": 44,
+          "puntos": 1,
+          "acumulado": 26,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 45,
+          "match_id": 45,
+          "puntos": 1,
+          "acumulado": 27,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 46,
+          "match_id": 46,
+          "puntos": 0,
+          "acumulado": 27,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 47,
+          "match_id": 47,
+          "puntos": 1,
+          "acumulado": 28,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 48,
+          "match_id": 48,
+          "puntos": 1,
+          "acumulado": 29,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 49,
+          "match_id": 49,
+          "puntos": 0,
+          "acumulado": 29,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 50,
+          "match_id": 54,
+          "puntos": 1,
+          "acumulado": 30,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 51,
+          "match_id": 50,
+          "puntos": 1,
+          "acumulado": 31,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 52,
+          "match_id": 51,
+          "puntos": 1,
+          "acumulado": 32,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 53,
+          "match_id": 52,
+          "puntos": 0,
+          "acumulado": 32,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 54,
+          "match_id": 53,
+          "puntos": 0,
+          "acumulado": 32,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 55,
+          "match_id": 55,
+          "puntos": 1,
+          "acumulado": 33,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 56,
+          "match_id": 56,
+          "puntos": 0,
+          "acumulado": 33,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 57,
+          "match_id": 57,
+          "puntos": 0,
+          "acumulado": 33,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 58,
+          "match_id": 58,
+          "puntos": 1,
+          "acumulado": 34,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 59,
+          "match_id": 59,
+          "puntos": 0,
+          "acumulado": 34,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 60,
+          "match_id": 60,
+          "puntos": 1,
+          "acumulado": 35,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 1
+        }
+      ]
+    },
+    {
+      "nombre": "GEMINI",
+      "inicial": "G",
+      "color": "#c0b3e0",
+      "es_ia": true,
+      "puntos_final": 36,
+      "serie": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        6,
+        7,
+        8,
+        9,
+        9,
+        10,
+        11,
+        12,
+        12,
+        13,
+        14,
+        14,
+        15,
+        16,
+        17,
+        17,
+        18,
+        19,
+        19,
+        20,
+        21,
+        21,
+        21,
+        22,
+        23,
+        24,
+        24,
+        25,
+        26,
+        26,
+        27,
+        28,
+        28,
+        29,
+        30,
+        31,
+        32,
+        32,
+        33,
+        33,
+        34,
+        35,
+        36,
+        36
+      ],
+      "detalle": [
+        {
+          "orden": 1,
+          "match_id": 1,
+          "puntos": 1,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 2,
+          "match_id": 2,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 3,
+          "match_id": 3,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 4,
+          "match_id": 4,
+          "puntos": 1,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 5,
+          "match_id": 5,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 6,
+          "match_id": 6,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 7,
+          "match_id": 7,
+          "puntos": 1,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 8,
+          "match_id": 9,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 9,
+          "match_id": 10,
+          "puntos": 1,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 10,
+          "match_id": 11,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 11,
+          "match_id": 12,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 12,
+          "match_id": 8,
+          "puntos": 1,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 13,
+          "match_id": 13,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 14,
+          "match_id": 14,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 15,
+          "match_id": 15,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 16,
+          "match_id": 16,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 17,
+          "match_id": 17,
+          "puntos": 1,
+          "acumulado": 6,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 18,
+          "match_id": 18,
+          "puntos": 1,
+          "acumulado": 7,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 19,
+          "match_id": 19,
+          "puntos": 1,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 20,
+          "match_id": 20,
+          "puntos": 1,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 21,
+          "match_id": 21,
+          "puntos": 0,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 22,
+          "match_id": 22,
+          "puntos": 1,
+          "acumulado": 10,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 23,
+          "match_id": 23,
+          "puntos": 1,
+          "acumulado": 11,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 24,
+          "match_id": 24,
+          "puntos": 1,
+          "acumulado": 12,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 25,
+          "match_id": 25,
+          "puntos": 0,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 26,
+          "match_id": 26,
+          "puntos": 1,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 27,
+          "match_id": 27,
+          "puntos": 1,
+          "acumulado": 14,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 28,
+          "match_id": 28,
+          "puntos": 0,
+          "acumulado": 14,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 29,
+          "match_id": 29,
+          "puntos": 1,
+          "acumulado": 15,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 30,
+          "match_id": 30,
+          "puntos": 1,
+          "acumulado": 16,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 31,
+          "match_id": 31,
+          "puntos": 1,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 32,
+          "match_id": 32,
+          "puntos": 0,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 33,
+          "match_id": 33,
+          "puntos": 1,
+          "acumulado": 18,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 34,
+          "match_id": 34,
+          "puntos": 1,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 35,
+          "match_id": 35,
+          "puntos": 0,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 36,
+          "match_id": 36,
+          "puntos": 1,
+          "acumulado": 20,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 37,
+          "match_id": 37,
+          "puntos": 1,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 38,
+          "match_id": 38,
+          "puntos": 0,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 39,
+          "match_id": 39,
+          "puntos": 0,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 40,
+          "match_id": 40,
+          "puntos": 1,
+          "acumulado": 22,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 41,
+          "match_id": 41,
+          "puntos": 1,
+          "acumulado": 23,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 42,
+          "match_id": 42,
+          "puntos": 1,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 43,
+          "match_id": 43,
+          "puntos": 0,
+          "acumulado": 24,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 44,
+          "match_id": 44,
+          "puntos": 1,
+          "acumulado": 25,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 45,
+          "match_id": 45,
+          "puntos": 1,
+          "acumulado": 26,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 46,
+          "match_id": 46,
+          "puntos": 0,
+          "acumulado": 26,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 47,
+          "match_id": 47,
+          "puntos": 1,
+          "acumulado": 27,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 5,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 48,
+          "match_id": 48,
+          "puntos": 1,
+          "acumulado": 28,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 49,
+          "match_id": 49,
+          "puntos": 0,
+          "acumulado": 28,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 50,
+          "match_id": 54,
+          "puntos": 1,
+          "acumulado": 29,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 51,
+          "match_id": 50,
+          "puntos": 1,
+          "acumulado": 30,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 52,
+          "match_id": 51,
+          "puntos": 1,
+          "acumulado": 31,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 53,
+          "match_id": 52,
+          "puntos": 1,
+          "acumulado": 32,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 54,
+          "match_id": 53,
+          "puntos": 0,
+          "acumulado": 32,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 55,
+          "match_id": 55,
+          "puntos": 1,
+          "acumulado": 33,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 56,
+          "match_id": 56,
+          "puntos": 0,
+          "acumulado": 33,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 57,
+          "match_id": 57,
+          "puntos": 1,
+          "acumulado": 34,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 58,
+          "match_id": 58,
+          "puntos": 1,
+          "acumulado": 35,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 59,
+          "match_id": 59,
+          "puntos": 1,
+          "acumulado": 36,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 60,
+          "match_id": 60,
+          "puntos": 0,
+          "acumulado": 36,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": null
+        }
+      ]
+    },
+    {
+      "nombre": "GPT",
+      "inicial": "G",
+      "color": "#8c99b0",
+      "es_ia": true,
+      "puntos_final": 37,
+      "serie": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        6,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        9,
+        10,
+        11,
+        12,
+        12,
+        13,
+        14,
+        15,
+        15,
+        16,
+        17,
+        18,
+        19,
+        19,
+        20,
+        20,
+        21,
+        22,
+        22,
+        23,
+        24,
+        24,
+        24,
+        25,
+        26,
+        27,
+        27,
+        28,
+        29,
+        29,
+        30,
+        31,
+        31,
+        32,
+        33,
+        34,
+        34,
+        34,
+        35,
+        35,
+        35,
+        36,
+        37,
+        37
+      ],
+      "detalle": [
+        {
+          "orden": 1,
+          "match_id": 1,
+          "puntos": 1,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 2,
+          "match_id": 2,
+          "puntos": 1,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 3,
+          "match_id": 3,
+          "puntos": 1,
+          "acumulado": 3,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 4,
+          "match_id": 4,
+          "puntos": 1,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 5,
+          "match_id": 5,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 6,
+          "match_id": 6,
+          "puntos": 0,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 7,
+          "match_id": 7,
+          "puntos": 1,
+          "acumulado": 5,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 8,
+          "match_id": 9,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 9,
+          "match_id": 10,
+          "puntos": 1,
+          "acumulado": 6,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 10,
+          "match_id": 11,
+          "puntos": 1,
+          "acumulado": 7,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 11,
+          "match_id": 12,
+          "puntos": 0,
+          "acumulado": 7,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 12,
+          "match_id": 8,
+          "puntos": 1,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 13,
+          "match_id": 13,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 14,
+          "match_id": 14,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 15,
+          "match_id": 15,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 16,
+          "match_id": 16,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 17,
+          "match_id": 17,
+          "puntos": 1,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 18,
+          "match_id": 18,
+          "puntos": 1,
+          "acumulado": 10,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 19,
+          "match_id": 19,
+          "puntos": 1,
+          "acumulado": 11,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 20,
+          "match_id": 20,
+          "puntos": 1,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 21,
+          "match_id": 21,
+          "puntos": 0,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 22,
+          "match_id": 22,
+          "puntos": 1,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 23,
+          "match_id": 23,
+          "puntos": 1,
+          "acumulado": 14,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 24,
+          "match_id": 24,
+          "puntos": 1,
+          "acumulado": 15,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 25,
+          "match_id": 25,
+          "puntos": 0,
+          "acumulado": 15,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 26,
+          "match_id": 26,
+          "puntos": 1,
+          "acumulado": 16,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 27,
+          "match_id": 27,
+          "puntos": 1,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 28,
+          "match_id": 28,
+          "puntos": 1,
+          "acumulado": 18,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 29,
+          "match_id": 29,
+          "puntos": 1,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 30,
+          "match_id": 30,
+          "puntos": 0,
+          "acumulado": 19,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 31,
+          "match_id": 31,
+          "puntos": 1,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 32,
+          "match_id": 32,
+          "puntos": 0,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 33,
+          "match_id": 33,
+          "puntos": 1,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 34,
+          "match_id": 34,
+          "puntos": 1,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 35,
+          "match_id": 35,
+          "puntos": 0,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 36,
+          "match_id": 36,
+          "puntos": 1,
+          "acumulado": 23,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 37,
+          "match_id": 37,
+          "puntos": 1,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 38,
+          "match_id": 38,
+          "puntos": 0,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 39,
+          "match_id": 39,
+          "puntos": 0,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 40,
+          "match_id": 40,
+          "puntos": 1,
+          "acumulado": 25,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 41,
+          "match_id": 41,
+          "puntos": 1,
+          "acumulado": 26,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 42,
+          "match_id": 42,
+          "puntos": 1,
+          "acumulado": 27,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 43,
+          "match_id": 43,
+          "puntos": 0,
+          "acumulado": 27,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 44,
+          "match_id": 44,
+          "puntos": 1,
+          "acumulado": 28,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 45,
+          "match_id": 45,
+          "puntos": 1,
+          "acumulado": 29,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 46,
+          "match_id": 46,
+          "puntos": 0,
+          "acumulado": 29,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 47,
+          "match_id": 47,
+          "puntos": 1,
+          "acumulado": 30,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 48,
+          "match_id": 48,
+          "puntos": 1,
+          "acumulado": 31,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 49,
+          "match_id": 49,
+          "puntos": 0,
+          "acumulado": 31,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 50,
+          "match_id": 54,
+          "puntos": 1,
+          "acumulado": 32,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 51,
+          "match_id": 50,
+          "puntos": 1,
+          "acumulado": 33,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 52,
+          "match_id": 51,
+          "puntos": 1,
+          "acumulado": 34,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 53,
+          "match_id": 52,
+          "puntos": 0,
+          "acumulado": 34,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 54,
+          "match_id": 53,
+          "puntos": 0,
+          "acumulado": 34,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 55,
+          "match_id": 55,
+          "puntos": 1,
+          "acumulado": 35,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 56,
+          "match_id": 56,
+          "puntos": 0,
+          "acumulado": 35,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 57,
+          "match_id": 57,
+          "puntos": 0,
+          "acumulado": 35,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 58,
+          "match_id": 58,
+          "puntos": 1,
+          "acumulado": 36,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 59,
+          "match_id": 59,
+          "puntos": 1,
+          "acumulado": 37,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": null
+        },
+        {
+          "orden": 60,
+          "match_id": 60,
+          "puntos": 0,
+          "acumulado": 37,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
+        }
+      ]
+    },
+    {
+      "nombre": "JORGE",
+      "inicial": "J",
+      "color": "#ef6f6c",
+      "es_ia": false,
+      "puntos_final": 35,
+      "serie": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        11,
+        12,
+        13,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        19,
+        20,
+        20,
+        20,
+        21,
+        22,
+        22,
+        22,
+        23,
+        24,
+        25,
+        25,
+        26,
+        27,
+        27,
+        28,
+        28,
+        28,
+        29,
+        30,
+        31,
+        32,
+        32,
+        33,
+        33,
+        33,
+        34,
+        35,
+        35
+      ],
+      "detalle": [
+        {
+          "orden": 1,
+          "match_id": 1,
+          "puntos": 1,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 2,
+          "match_id": 2,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 3,
+          "match_id": 3,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 4,
+          "match_id": 4,
+          "puntos": 1,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 5,
+          "match_id": 5,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 6,
+          "match_id": 6,
+          "puntos": 1,
+          "acumulado": 3,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 7,
+          "match_id": 7,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 8,
+          "match_id": 9,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 9,
+          "match_id": 10,
+          "puntos": 1,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 10,
+          "match_id": 11,
+          "puntos": 1,
+          "acumulado": 5,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 11,
+          "match_id": 12,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 12,
+          "match_id": 8,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 13,
+          "match_id": 13,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 14,
+          "match_id": 14,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 15,
+          "match_id": 15,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 16,
+          "match_id": 16,
+          "puntos": 1,
+          "acumulado": 6,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 17,
+          "match_id": 17,
+          "puntos": 1,
+          "acumulado": 7,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 18,
+          "match_id": 18,
+          "puntos": 1,
+          "acumulado": 8,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 19,
+          "match_id": 19,
+          "puntos": 1,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 20,
+          "match_id": 20,
+          "puntos": 1,
+          "acumulado": 10,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 21,
+          "match_id": 21,
+          "puntos": 1,
+          "acumulado": 11,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 22,
+          "match_id": 22,
+          "puntos": 0,
+          "acumulado": 11,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 23,
+          "match_id": 23,
+          "puntos": 1,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 24,
+          "match_id": 24,
+          "puntos": 1,
+          "acumulado": 13,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 25,
+          "match_id": 25,
+          "puntos": 0,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 26,
+          "match_id": 26,
+          "puntos": 1,
+          "acumulado": 14,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 27,
+          "match_id": 27,
+          "puntos": 1,
+          "acumulado": 15,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 28,
+          "match_id": 28,
+          "puntos": 1,
+          "acumulado": 16,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 29,
+          "match_id": 29,
+          "puntos": 1,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 30,
+          "match_id": 30,
+          "puntos": 1,
+          "acumulado": 18,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 31,
+          "match_id": 31,
+          "puntos": 1,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 32,
+          "match_id": 32,
+          "puntos": 0,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 33,
+          "match_id": 33,
+          "puntos": 1,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 34,
+          "match_id": 34,
+          "puntos": 0,
+          "acumulado": 20,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 35,
+          "match_id": 35,
+          "puntos": 0,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 36,
+          "match_id": 36,
+          "puntos": 1,
+          "acumulado": 21,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 37,
+          "match_id": 37,
+          "puntos": 1,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 38,
+          "match_id": 38,
+          "puntos": 0,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 39,
+          "match_id": 39,
+          "puntos": 0,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 40,
+          "match_id": 40,
+          "puntos": 1,
+          "acumulado": 23,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 41,
+          "match_id": 41,
+          "puntos": 1,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 42,
+          "match_id": 42,
+          "puntos": 1,
+          "acumulado": 25,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 43,
+          "match_id": 43,
+          "puntos": 0,
+          "acumulado": 25,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 44,
+          "match_id": 44,
+          "puntos": 1,
+          "acumulado": 26,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 45,
+          "match_id": 45,
+          "puntos": 1,
+          "acumulado": 27,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 46,
+          "match_id": 46,
+          "puntos": 0,
+          "acumulado": 27,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 47,
+          "match_id": 47,
+          "puntos": 1,
+          "acumulado": 28,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 48,
+          "match_id": 48,
+          "puntos": 0,
+          "acumulado": 28,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 49,
+          "match_id": 49,
+          "puntos": 0,
+          "acumulado": 28,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 50,
+          "match_id": 54,
+          "puntos": 1,
+          "acumulado": 29,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 51,
+          "match_id": 50,
+          "puntos": 1,
+          "acumulado": 30,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 52,
+          "match_id": 51,
+          "puntos": 1,
+          "acumulado": 31,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 53,
+          "match_id": 52,
+          "puntos": 1,
+          "acumulado": 32,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 54,
+          "match_id": 53,
+          "puntos": 0,
+          "acumulado": 32,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 55,
+          "match_id": 55,
+          "puntos": 1,
+          "acumulado": 33,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 56,
+          "match_id": 56,
+          "puntos": 0,
+          "acumulado": 33,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 57,
+          "match_id": 57,
+          "puntos": 0,
+          "acumulado": 33,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 58,
+          "match_id": 58,
+          "puntos": 1,
+          "acumulado": 34,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 59,
+          "match_id": 59,
+          "puntos": 1,
+          "acumulado": 35,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 60,
+          "match_id": 60,
+          "puntos": 0,
+          "acumulado": 35,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 1
+        }
+      ]
+    },
+    {
+      "nombre": "PEDRO",
+      "inicial": "P",
+      "color": "#58d68d",
+      "es_ia": false,
+      "puntos_final": 32,
+      "serie": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        5,
+        5,
+        6,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        11,
+        11,
+        12,
+        13,
+        14,
+        15,
+        15,
+        15,
+        15,
+        16,
+        17,
+        17,
+        18,
+        19,
+        19,
+        19,
+        20,
+        20,
+        20,
+        21,
+        22,
+        23,
+        23,
+        23,
+        24,
+        24,
+        25,
+        26,
+        27,
+        27,
+        28,
+        29,
+        30,
+        30,
+        30,
+        30,
+        30,
+        31,
+        32,
+        32
+      ],
+      "detalle": [
+        {
+          "orden": 1,
+          "match_id": 1,
+          "puntos": 1,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 2,
+          "match_id": 2,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 3,
+          "match_id": 3,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 4,
+          "match_id": 4,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 5,
+          "match_id": 5,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 6,
+          "match_id": 6,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 7,
+          "match_id": 7,
+          "puntos": 1,
+          "acumulado": 2,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 8,
+          "match_id": 9,
+          "puntos": 0,
+          "acumulado": 2,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 9,
+          "match_id": 10,
+          "puntos": 1,
+          "acumulado": 3,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 10,
+          "match_id": 11,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 11,
+          "match_id": 12,
+          "puntos": 1,
+          "acumulado": 4,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 12,
+          "match_id": 8,
+          "puntos": 1,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 13,
+          "match_id": 13,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 14,
+          "match_id": 14,
+          "puntos": 1,
+          "acumulado": 6,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 15,
+          "match_id": 15,
+          "puntos": 0,
+          "acumulado": 6,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 16,
+          "match_id": 16,
+          "puntos": 1,
+          "acumulado": 7,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 17,
+          "match_id": 17,
+          "puntos": 1,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 18,
+          "match_id": 18,
+          "puntos": 1,
+          "acumulado": 9,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 19,
+          "match_id": 19,
+          "puntos": 1,
+          "acumulado": 10,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 20,
+          "match_id": 20,
+          "puntos": 1,
+          "acumulado": 11,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 21,
+          "match_id": 21,
+          "puntos": 0,
+          "acumulado": 11,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 22,
+          "match_id": 22,
+          "puntos": 0,
+          "acumulado": 11,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 23,
+          "match_id": 23,
+          "puntos": 1,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 24,
+          "match_id": 24,
+          "puntos": 1,
+          "acumulado": 13,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 25,
+          "match_id": 25,
+          "puntos": 1,
+          "acumulado": 14,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 26,
+          "match_id": 26,
+          "puntos": 1,
+          "acumulado": 15,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 27,
+          "match_id": 27,
+          "puntos": 0,
+          "acumulado": 15,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 28,
+          "match_id": 28,
+          "puntos": 0,
+          "acumulado": 15,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 29,
+          "match_id": 29,
+          "puntos": 0,
+          "acumulado": 15,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 30,
+          "match_id": 30,
+          "puntos": 1,
+          "acumulado": 16,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 31,
+          "match_id": 31,
+          "puntos": 1,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 32,
+          "match_id": 32,
+          "puntos": 0,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 33,
+          "match_id": 33,
+          "puntos": 1,
+          "acumulado": 18,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 34,
+          "match_id": 34,
+          "puntos": 1,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 35,
+          "match_id": 35,
+          "puntos": 0,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 36,
+          "match_id": 36,
+          "puntos": 0,
+          "acumulado": 19,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 37,
+          "match_id": 37,
+          "puntos": 1,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 38,
+          "match_id": 38,
+          "puntos": 0,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 39,
+          "match_id": 39,
+          "puntos": 0,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 40,
+          "match_id": 40,
+          "puntos": 1,
+          "acumulado": 21,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 41,
+          "match_id": 41,
+          "puntos": 1,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 42,
+          "match_id": 42,
+          "puntos": 1,
+          "acumulado": 23,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 43,
+          "match_id": 43,
+          "puntos": 0,
+          "acumulado": 23,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 44,
+          "match_id": 44,
+          "puntos": 0,
+          "acumulado": 23,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 45,
+          "match_id": 45,
+          "puntos": 1,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 46,
+          "match_id": 46,
+          "puntos": 0,
+          "acumulado": 24,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 47,
+          "match_id": 47,
+          "puntos": 1,
+          "acumulado": 25,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 48,
+          "match_id": 48,
+          "puntos": 1,
+          "acumulado": 26,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 49,
+          "match_id": 49,
+          "puntos": 1,
+          "acumulado": 27,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 50,
+          "match_id": 54,
+          "puntos": 0,
+          "acumulado": 27,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 51,
+          "match_id": 50,
+          "puntos": 1,
+          "acumulado": 28,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 52,
+          "match_id": 51,
+          "puntos": 1,
+          "acumulado": 29,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 53,
+          "match_id": 52,
+          "puntos": 1,
+          "acumulado": 30,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 54,
+          "match_id": 53,
+          "puntos": 0,
+          "acumulado": 30,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 55,
+          "match_id": 55,
+          "puntos": 0,
+          "acumulado": 30,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 56,
+          "match_id": 56,
+          "puntos": 0,
+          "acumulado": 30,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 57,
+          "match_id": 57,
+          "puntos": 0,
+          "acumulado": 30,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 58,
+          "match_id": 58,
+          "puntos": 1,
+          "acumulado": 31,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 59,
+          "match_id": 59,
+          "puntos": 1,
+          "acumulado": 32,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 60,
+          "match_id": 60,
+          "puntos": 0,
+          "acumulado": 32,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        }
+      ]
+    },
+    {
+      "nombre": "SERGIO",
+      "inicial": "S",
+      "color": "#f5c518",
+      "es_ia": false,
+      "puntos_final": 35,
+      "serie": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5,
+        5,
+        6,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        9,
+        10,
+        11,
+        12,
+        12,
+        12,
+        13,
+        13,
+        13,
+        14,
+        14,
+        15,
+        16,
+        17,
+        18,
+        18,
+        18,
+        19,
+        19,
+        20,
+        21,
+        22,
+        22,
+        23,
+        24,
+        25,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        30,
+        31,
+        31,
+        32,
+        32,
+        32,
+        33,
+        33,
+        33,
+        33,
+        34,
+        35
+      ],
+      "detalle": [
+        {
+          "orden": 1,
+          "match_id": 1,
+          "puntos": 1,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 2,
+          "match_id": 2,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 3,
+          "match_id": 3,
+          "puntos": 1,
+          "acumulado": 2,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 4,
+          "match_id": 4,
+          "puntos": 1,
+          "acumulado": 3,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 5,
+          "match_id": 5,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 6,
+          "match_id": 6,
+          "puntos": 1,
+          "acumulado": 4,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 7,
+          "match_id": 7,
+          "puntos": 1,
+          "acumulado": 5,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 8,
+          "match_id": 9,
+          "puntos": 0,
+          "acumulado": 5,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 9,
+          "match_id": 10,
+          "puntos": 1,
+          "acumulado": 6,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 10,
+          "match_id": 11,
+          "puntos": 1,
+          "acumulado": 7,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 11,
+          "match_id": 12,
+          "puntos": 0,
+          "acumulado": 7,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 12,
+          "match_id": 8,
+          "puntos": 1,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 13,
+          "match_id": 13,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 14,
+          "match_id": 14,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 15,
+          "match_id": 15,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 16,
+          "match_id": 16,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 17,
+          "match_id": 17,
+          "puntos": 1,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 18,
+          "match_id": 18,
+          "puntos": 1,
+          "acumulado": 10,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 19,
+          "match_id": 19,
+          "puntos": 1,
+          "acumulado": 11,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 20,
+          "match_id": 20,
+          "puntos": 1,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 21,
+          "match_id": 21,
+          "puntos": 0,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 22,
+          "match_id": 22,
+          "puntos": 0,
+          "acumulado": 12,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 23,
+          "match_id": 23,
+          "puntos": 1,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 24,
+          "match_id": 24,
+          "puntos": 0,
+          "acumulado": 13,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 25,
+          "match_id": 25,
+          "puntos": 0,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 26,
+          "match_id": 26,
+          "puntos": 1,
+          "acumulado": 14,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 27,
+          "match_id": 27,
+          "puntos": 0,
+          "acumulado": 14,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 4,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 28,
+          "match_id": 28,
+          "puntos": 1,
+          "acumulado": 15,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 29,
+          "match_id": 29,
+          "puntos": 1,
+          "acumulado": 16,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 30,
+          "match_id": 30,
+          "puntos": 1,
+          "acumulado": 17,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 31,
+          "match_id": 31,
+          "puntos": 1,
+          "acumulado": 18,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 32,
+          "match_id": 32,
+          "puntos": 0,
+          "acumulado": 18,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 33,
+          "match_id": 33,
+          "puntos": 0,
+          "acumulado": 18,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 34,
+          "match_id": 34,
+          "puntos": 1,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 35,
+          "match_id": 35,
+          "puntos": 0,
+          "acumulado": 19,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 36,
+          "match_id": 36,
+          "puntos": 1,
+          "acumulado": 20,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 37,
+          "match_id": 37,
+          "puntos": 1,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 38,
+          "match_id": 38,
+          "puntos": 1,
+          "acumulado": 22,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 39,
+          "match_id": 39,
+          "puntos": 0,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 40,
+          "match_id": 40,
+          "puntos": 1,
+          "acumulado": 23,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 41,
+          "match_id": 41,
+          "puntos": 1,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 42,
+          "match_id": 42,
+          "puntos": 1,
+          "acumulado": 25,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 43,
+          "match_id": 43,
+          "puntos": 0,
+          "acumulado": 25,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 44,
+          "match_id": 44,
+          "puntos": 1,
+          "acumulado": 26,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 45,
+          "match_id": 45,
+          "puntos": 1,
+          "acumulado": 27,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 46,
+          "match_id": 46,
+          "puntos": 1,
+          "acumulado": 28,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 47,
+          "match_id": 47,
+          "puntos": 1,
+          "acumulado": 29,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 48,
+          "match_id": 48,
+          "puntos": 1,
+          "acumulado": 30,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 49,
+          "match_id": 49,
+          "puntos": 0,
+          "acumulado": 30,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 50,
+          "match_id": 54,
+          "puntos": 1,
+          "acumulado": 31,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 51,
+          "match_id": 50,
+          "puntos": 0,
+          "acumulado": 31,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 52,
+          "match_id": 51,
+          "puntos": 1,
+          "acumulado": 32,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 53,
+          "match_id": 52,
+          "puntos": 0,
+          "acumulado": 32,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 54,
+          "match_id": 53,
+          "puntos": 0,
+          "acumulado": 32,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 55,
+          "match_id": 55,
+          "puntos": 1,
+          "acumulado": 33,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 56,
+          "match_id": 56,
+          "puntos": 0,
+          "acumulado": 33,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 57,
+          "match_id": 57,
+          "puntos": 0,
+          "acumulado": 33,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 58,
+          "match_id": 58,
+          "puntos": 0,
+          "acumulado": 33,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 5,
+          "posicion_humanos": 3
+        },
+        {
+          "orden": 59,
+          "match_id": 59,
+          "puntos": 1,
+          "acumulado": 34,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 60,
+          "match_id": 60,
+          "puntos": 1,
+          "acumulado": 35,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 1
+        }
+      ]
+    },
+    {
+      "nombre": "MARIO",
+      "inicial": "M",
+      "color": "#5aa9ff",
+      "es_ia": false,
+      "puntos_final": 34,
+      "serie": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        8,
+        9,
+        9,
+        10,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        16,
+        17,
+        18,
+        18,
+        19,
+        20,
+        20,
+        20,
+        20,
+        21,
+        22,
+        23,
+        23,
+        24,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        30,
+        30,
+        31,
+        31,
+        31,
+        32,
+        33,
+        34
+      ],
+      "detalle": [
+        {
+          "orden": 1,
+          "match_id": 1,
+          "puntos": 1,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 2,
+          "match_id": 2,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 2,
+          "posicion_humanos": 1
+        },
+        {
+          "orden": 3,
+          "match_id": 3,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 3,
+          "posicion_humanos": 2
+        },
+        {
+          "orden": 4,
+          "match_id": 4,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 5,
+          "match_id": 5,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 6,
+          "match_id": 6,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 7,
+          "match_id": 7,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 8,
+          "match_id": 9,
+          "puntos": 0,
+          "acumulado": 1,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 9,
+          "match_id": 10,
+          "puntos": 1,
+          "acumulado": 2,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 10,
+          "match_id": 11,
+          "puntos": 1,
+          "acumulado": 3,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 11,
+          "match_id": 12,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 12,
+          "match_id": 8,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 13,
+          "match_id": 13,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 14,
+          "match_id": 14,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 15,
+          "match_id": 15,
+          "puntos": 0,
+          "acumulado": 3,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": 7
+        },
+        {
+          "orden": 16,
+          "match_id": 16,
+          "puntos": 1,
+          "acumulado": 4,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 17,
+          "match_id": 17,
+          "puntos": 1,
+          "acumulado": 5,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 18,
+          "match_id": 18,
+          "puntos": 1,
+          "acumulado": 6,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 19,
+          "match_id": 19,
+          "puntos": 1,
+          "acumulado": 7,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 20,
+          "match_id": 20,
+          "puntos": 1,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 21,
+          "match_id": 21,
+          "puntos": 0,
+          "acumulado": 8,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 22,
+          "match_id": 22,
+          "puntos": 1,
+          "acumulado": 9,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 23,
+          "match_id": 23,
+          "puntos": 0,
+          "acumulado": 9,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 24,
+          "match_id": 24,
+          "puntos": 1,
+          "acumulado": 10,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 25,
+          "match_id": 25,
+          "puntos": 0,
+          "acumulado": 10,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 26,
+          "match_id": 26,
+          "puntos": 1,
+          "acumulado": 11,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 27,
+          "match_id": 27,
+          "puntos": 1,
+          "acumulado": 12,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 6
+        },
+        {
+          "orden": 28,
+          "match_id": 28,
+          "puntos": 1,
+          "acumulado": 13,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 29,
+          "match_id": 29,
+          "puntos": 1,
+          "acumulado": 14,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 30,
+          "match_id": 30,
+          "puntos": 1,
+          "acumulado": 15,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 31,
+          "match_id": 31,
+          "puntos": 1,
+          "acumulado": 16,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 32,
+          "match_id": 32,
+          "puntos": 0,
+          "acumulado": 16,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 33,
+          "match_id": 33,
+          "puntos": 1,
+          "acumulado": 17,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 34,
+          "match_id": 34,
+          "puntos": 1,
+          "acumulado": 18,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 35,
+          "match_id": 35,
+          "puntos": 0,
+          "acumulado": 18,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 36,
+          "match_id": 36,
+          "puntos": 1,
+          "acumulado": 19,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 37,
+          "match_id": 37,
+          "puntos": 1,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 38,
+          "match_id": 38,
+          "puntos": 0,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 39,
+          "match_id": 39,
+          "puntos": 0,
+          "acumulado": 20,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 40,
+          "match_id": 40,
+          "puntos": 0,
+          "acumulado": 20,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 41,
+          "match_id": 41,
+          "puntos": 1,
+          "acumulado": 21,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 42,
+          "match_id": 42,
+          "puntos": 1,
+          "acumulado": 22,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": 5
+        },
+        {
+          "orden": 43,
+          "match_id": 43,
+          "puntos": 1,
+          "acumulado": 23,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 44,
+          "match_id": 44,
+          "puntos": 0,
+          "acumulado": 23,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 45,
+          "match_id": 45,
+          "puntos": 1,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 46,
+          "match_id": 46,
+          "puntos": 0,
+          "acumulado": 24,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 47,
+          "match_id": 47,
+          "puntos": 1,
+          "acumulado": 25,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 48,
+          "match_id": 48,
+          "puntos": 1,
+          "acumulado": 26,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 49,
+          "match_id": 49,
+          "puntos": 1,
+          "acumulado": 27,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 50,
+          "match_id": 54,
+          "puntos": 1,
+          "acumulado": 28,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 51,
+          "match_id": 50,
+          "puntos": 1,
+          "acumulado": 29,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 52,
+          "match_id": 51,
+          "puntos": 1,
+          "acumulado": 30,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 53,
+          "match_id": 52,
+          "puntos": 0,
+          "acumulado": 30,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 54,
+          "match_id": 53,
+          "puntos": 0,
+          "acumulado": 30,
+          "pronostico": "X",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 55,
+          "match_id": 55,
+          "puntos": 1,
+          "acumulado": 31,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 56,
+          "match_id": 56,
+          "puntos": 0,
+          "acumulado": 31,
+          "pronostico": "2",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 57,
+          "match_id": 57,
+          "puntos": 0,
+          "acumulado": 31,
+          "pronostico": "1",
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 58,
+          "match_id": 58,
+          "puntos": 1,
+          "acumulado": 32,
+          "pronostico": "2",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 59,
+          "match_id": 59,
+          "puntos": 1,
+          "acumulado": 33,
+          "pronostico": "X",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 60,
+          "match_id": 60,
+          "puntos": 1,
+          "acumulado": 34,
+          "pronostico": "1",
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 4
+        }
+      ]
+    }
+  ],
+  "partidos": [
+    {
+      "orden": 1,
+      "match_id": 1,
+      "fecha": "2026-06-11",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "México",
+      "visitante": "Sudáfrica",
+      "marcador": "2-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 2,
+      "match_id": 2,
+      "fecha": "2026-06-12",
+      "hora": "04:00",
+      "fase": "grupos",
+      "local": "Corea del Sur",
+      "visitante": "República Checa",
+      "marcador": "2-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 3,
+      "match_id": 3,
+      "fecha": "2026-06-12",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "Canadá",
+      "visitante": "Bosnia y Herzegovina",
+      "marcador": "1-1",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 4,
+      "match_id": 4,
+      "fecha": "2026-06-13",
+      "hora": "03:00",
+      "fase": "grupos",
+      "local": "Estados Unidos",
+      "visitante": "Paraguay",
+      "marcador": "4-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 5,
+      "match_id": 5,
+      "fecha": "2026-06-13",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "Catar",
+      "visitante": "Suiza",
+      "marcador": "1-1",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 6,
+      "match_id": 6,
+      "fecha": "2026-06-14",
+      "hora": "00:00",
+      "fase": "grupos",
+      "local": "Brasil",
+      "visitante": "Marruecos",
+      "marcador": "1-1",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 7,
+      "match_id": 7,
+      "fecha": "2026-06-14",
+      "hora": "03:00",
+      "fase": "grupos",
+      "local": "Haití",
+      "visitante": "Escocia",
+      "marcador": "0-1",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 8,
+      "match_id": 9,
+      "fecha": "2026-06-14",
+      "hora": "06:00",
+      "fase": "grupos",
+      "local": "Australia",
+      "visitante": "Turquía",
+      "marcador": "2-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 9,
+      "match_id": 10,
+      "fecha": "2026-06-14",
+      "hora": "19:00",
+      "fase": "grupos",
+      "local": "Alemania",
+      "visitante": "Curazao",
+      "marcador": "7-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 10,
+      "match_id": 11,
+      "fecha": "2026-06-14",
+      "hora": "22:00",
+      "fase": "grupos",
+      "local": "Países Bajos",
+      "visitante": "Japón",
+      "marcador": "2-2",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 11,
+      "match_id": 12,
+      "fecha": "2026-06-15",
+      "hora": "01:00",
+      "fase": "grupos",
+      "local": "Costa de Marfil",
+      "visitante": "Ecuador",
+      "marcador": "1-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 12,
+      "match_id": 8,
+      "fecha": "2026-06-15",
+      "hora": "04:00",
+      "fase": "grupos",
+      "local": "Suecia",
+      "visitante": "Túnez",
+      "marcador": "5-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 13,
+      "match_id": 13,
+      "fecha": "2026-06-15",
+      "hora": "18:00",
+      "fase": "grupos",
+      "local": "España",
+      "visitante": "Cabo Verde",
+      "marcador": "0-0",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 14,
+      "match_id": 14,
+      "fecha": "2026-06-15",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "Bélgica",
+      "visitante": "Egipto",
+      "marcador": "1-1",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 15,
+      "match_id": 15,
+      "fecha": "2026-06-16",
+      "hora": "00:00",
+      "fase": "grupos",
+      "local": "Arabia Saudí",
+      "visitante": "Uruguay",
+      "marcador": "1-1",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 16,
+      "match_id": 16,
+      "fecha": "2026-06-16",
+      "hora": "03:00",
+      "fase": "grupos",
+      "local": "Irán",
+      "visitante": "Nueva Zelanda",
+      "marcador": "2-2",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 17,
+      "match_id": 17,
+      "fecha": "2026-06-16",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "Francia",
+      "visitante": "Senegal",
+      "marcador": "3-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 18,
+      "match_id": 18,
+      "fecha": "2026-06-17",
+      "hora": "00:00",
+      "fase": "grupos",
+      "local": "Irak",
+      "visitante": "Noruega",
+      "marcador": "1-4",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 19,
+      "match_id": 19,
+      "fecha": "2026-06-17",
+      "hora": "03:00",
+      "fase": "grupos",
+      "local": "Argentina",
+      "visitante": "Argelia",
+      "marcador": "3-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 20,
+      "match_id": 20,
+      "fecha": "2026-06-17",
+      "hora": "06:00",
+      "fase": "grupos",
+      "local": "Austria",
+      "visitante": "Jordania",
+      "marcador": "3-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 21,
+      "match_id": 21,
+      "fecha": "2026-06-17",
+      "hora": "19:00",
+      "fase": "grupos",
+      "local": "Portugal",
+      "visitante": "RD Congo",
+      "marcador": "1-1",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 22,
+      "match_id": 22,
+      "fecha": "2026-06-17",
+      "hora": "22:00",
+      "fase": "grupos",
+      "local": "Inglaterra",
+      "visitante": "Croacia",
+      "marcador": "4-2",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 23,
+      "match_id": 23,
+      "fecha": "2026-06-18",
+      "hora": "01:00",
+      "fase": "grupos",
+      "local": "Ghana",
+      "visitante": "Panamá",
+      "marcador": "1-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 24,
+      "match_id": 24,
+      "fecha": "2026-06-18",
+      "hora": "04:00",
+      "fase": "grupos",
+      "local": "Uzbekistán",
+      "visitante": "Colombia",
+      "marcador": "1-3",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 25,
+      "match_id": 25,
+      "fecha": "2026-06-18",
+      "hora": "18:00",
+      "fase": "grupos",
+      "local": "República Checa",
+      "visitante": "Sudáfrica",
+      "marcador": "1-1",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 26,
+      "match_id": 26,
+      "fecha": "2026-06-18",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "Suiza",
+      "visitante": "Bosnia y Herzegovina",
+      "marcador": "4-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 27,
+      "match_id": 27,
+      "fecha": "2026-06-19",
+      "hora": "00:00",
+      "fase": "grupos",
+      "local": "Canadá",
+      "visitante": "Catar",
+      "marcador": "6-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 28,
+      "match_id": 28,
+      "fecha": "2026-06-19",
+      "hora": "03:00",
+      "fase": "grupos",
+      "local": "México",
+      "visitante": "Corea del Sur",
+      "marcador": "1-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 29,
+      "match_id": 29,
+      "fecha": "2026-06-19",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "Estados Unidos",
+      "visitante": "Australia",
+      "marcador": "2-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 30,
+      "match_id": 30,
+      "fecha": "2026-06-20",
+      "hora": "00:00",
+      "fase": "grupos",
+      "local": "Escocia",
+      "visitante": "Marruecos",
+      "marcador": "0-1",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 31,
+      "match_id": 31,
+      "fecha": "2026-06-20",
+      "hora": "02:30",
+      "fase": "grupos",
+      "local": "Brasil",
+      "visitante": "Haití",
+      "marcador": "3-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 32,
+      "match_id": 32,
+      "fecha": "2026-06-20",
+      "hora": "05:00",
+      "fase": "grupos",
+      "local": "Turquía",
+      "visitante": "Paraguay",
+      "marcador": "0-1",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 33,
+      "match_id": 33,
+      "fecha": "2026-06-20",
+      "hora": "19:00",
+      "fase": "grupos",
+      "local": "Países Bajos",
+      "visitante": "Suecia",
+      "marcador": "5-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 34,
+      "match_id": 34,
+      "fecha": "2026-06-20",
+      "hora": "22:00",
+      "fase": "grupos",
+      "local": "Alemania",
+      "visitante": "Costa de Marfil",
+      "marcador": "2-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 35,
+      "match_id": 35,
+      "fecha": "2026-06-21",
+      "hora": "02:00",
+      "fase": "grupos",
+      "local": "Ecuador",
+      "visitante": "Curazao",
+      "marcador": "0-0",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 36,
+      "match_id": 36,
+      "fecha": "2026-06-21",
+      "hora": "06:00",
+      "fase": "grupos",
+      "local": "Túnez",
+      "visitante": "Japón",
+      "marcador": "0-4",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 37,
+      "match_id": 37,
+      "fecha": "2026-06-21",
+      "hora": "18:00",
+      "fase": "grupos",
+      "local": "España",
+      "visitante": "Arabia Saudí",
+      "marcador": "4-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 38,
+      "match_id": 38,
+      "fecha": "2026-06-21",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "Bélgica",
+      "visitante": "Irán",
+      "marcador": "0-0",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 39,
+      "match_id": 39,
+      "fecha": "2026-06-22",
+      "hora": "00:00",
+      "fase": "grupos",
+      "local": "Uruguay",
+      "visitante": "Cabo Verde",
+      "marcador": "2-2",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 40,
+      "match_id": 40,
+      "fecha": "2026-06-22",
+      "hora": "03:00",
+      "fase": "grupos",
+      "local": "Nueva Zelanda",
+      "visitante": "Egipto",
+      "marcador": "1-3",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 41,
+      "match_id": 41,
+      "fecha": "2026-06-22",
+      "hora": "19:00",
+      "fase": "grupos",
+      "local": "Argentina",
+      "visitante": "Austria",
+      "marcador": "2-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 42,
+      "match_id": 42,
+      "fecha": "2026-06-22",
+      "hora": "23:00",
+      "fase": "grupos",
+      "local": "Francia",
+      "visitante": "Irak",
+      "marcador": "3-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 43,
+      "match_id": 43,
+      "fecha": "2026-06-23",
+      "hora": "02:00",
+      "fase": "grupos",
+      "local": "Noruega",
+      "visitante": "Senegal",
+      "marcador": "3-2",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 44,
+      "match_id": 44,
+      "fecha": "2026-06-23",
+      "hora": "05:00",
+      "fase": "grupos",
+      "local": "Jordania",
+      "visitante": "Argelia",
+      "marcador": "1-2",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 45,
+      "match_id": 45,
+      "fecha": "2026-06-23",
+      "hora": "19:00",
+      "fase": "grupos",
+      "local": "Portugal",
+      "visitante": "Uzbekistán",
+      "marcador": "5-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 46,
+      "match_id": 46,
+      "fecha": "2026-06-23",
+      "hora": "22:00",
+      "fase": "grupos",
+      "local": "Inglaterra",
+      "visitante": "Ghana",
+      "marcador": "0-0",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 47,
+      "match_id": 47,
+      "fecha": "2026-06-24",
+      "hora": "01:00",
+      "fase": "grupos",
+      "local": "Panamá",
+      "visitante": "Croacia",
+      "marcador": "0-1",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 48,
+      "match_id": 48,
+      "fecha": "2026-06-24",
+      "hora": "04:00",
+      "fase": "grupos",
+      "local": "Colombia",
+      "visitante": "RD Congo",
+      "marcador": "1-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 49,
+      "match_id": 49,
+      "fecha": "2026-06-24",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "Suiza",
+      "visitante": "Canadá",
+      "marcador": "2-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 50,
+      "match_id": 54,
+      "fecha": "2026-06-24",
+      "hora": "21:00",
+      "fase": "grupos",
+      "local": "Bosnia y Herzegovina",
+      "visitante": "Catar",
+      "marcador": "3-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 51,
+      "match_id": 50,
+      "fecha": "2026-06-25",
+      "hora": "00:00",
+      "fase": "grupos",
+      "local": "Escocia",
+      "visitante": "Brasil",
+      "marcador": "0-3",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 52,
+      "match_id": 51,
+      "fecha": "2026-06-25",
+      "hora": "00:00",
+      "fase": "grupos",
+      "local": "Marruecos",
+      "visitante": "Haití",
+      "marcador": "4-2",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 53,
+      "match_id": 52,
+      "fecha": "2026-06-25",
+      "hora": "03:00",
+      "fase": "grupos",
+      "local": "República Checa",
+      "visitante": "México",
+      "marcador": "0-3",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 54,
+      "match_id": 53,
+      "fecha": "2026-06-25",
+      "hora": "03:00",
+      "fase": "grupos",
+      "local": "Sudáfrica",
+      "visitante": "Corea del Sur",
+      "marcador": "1-0",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 55,
+      "match_id": 55,
+      "fecha": "2026-06-25",
+      "hora": "22:00",
+      "fase": "grupos",
+      "local": "Curazao",
+      "visitante": "Costa de Marfil",
+      "marcador": "0-2",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 56,
+      "match_id": 56,
+      "fecha": "2026-06-25",
+      "hora": "22:00",
+      "fase": "grupos",
+      "local": "Ecuador",
+      "visitante": "Alemania",
+      "marcador": "2-1",
+      "resultado": "1",
+      "peso": 1
+    },
+    {
+      "orden": 57,
+      "match_id": 57,
+      "fecha": "2026-06-26",
+      "hora": "01:00",
+      "fase": "grupos",
+      "local": "Japón",
+      "visitante": "Suecia",
+      "marcador": "1-1",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 58,
+      "match_id": 58,
+      "fecha": "2026-06-26",
+      "hora": "01:00",
+      "fase": "grupos",
+      "local": "Túnez",
+      "visitante": "Países Bajos",
+      "marcador": "1-3",
+      "resultado": "2",
+      "peso": 1
+    },
+    {
+      "orden": 59,
+      "match_id": 59,
+      "fecha": "2026-06-26",
+      "hora": "04:00",
+      "fase": "grupos",
+      "local": "Paraguay",
+      "visitante": "Australia",
+      "marcador": "0-0",
+      "resultado": "X",
+      "peso": 1
+    },
+    {
+      "orden": 60,
+      "match_id": 60,
+      "fecha": "2026-06-26",
+      "hora": "04:00",
+      "fase": "grupos",
+      "local": "Turquía",
+      "visitante": "Estados Unidos",
+      "marcador": "3-2",
+      "resultado": "1",
+      "peso": 1
+    }
+  ],
+  "fases": [
+    {
+      "fase": "grupos",
+      "desde": 1,
+      "hasta": 60
+    }
+  ],
+  "eventos": [
+    {
+      "tipo": "primer_lider",
+      "nivel": 1,
+      "titulo": "Primer líder del Mundial",
+      "protagonista": "SERGIO",
+      "detalle": "SERGIO se coloca en cabeza con 2 puntos.",
+      "datos": {
+        "puntos": 2
+      },
+      "match_id": 3,
+      "orden": 3,
+      "fase": "grupos",
+      "equipos": "Canadá 1 – 1 Bosnia y Herzegovina",
+      "fecha": "2026-06-12",
+      "id": "primer_lider-3-SERGIO"
+    },
+    {
+      "tipo": "mayor_remontada",
+      "nivel": 2,
+      "titulo": "Mayor remontada hasta ahora",
+      "protagonista": "PEDRO",
+      "detalle": "PEDRO recupera 3 posiciones desde su peor momento.",
+      "datos": {
+        "posiciones": 3,
+        "hasta": 3
+      },
+      "match_id": 12,
+      "orden": 11,
+      "fase": "grupos",
+      "equipos": "Costa de Marfil 1 – 0 Ecuador",
+      "fecha": "2026-06-15",
+      "id": "mayor_remontada-11-PEDRO"
+    },
+    {
+      "tipo": "mayor_ventaja",
+      "nivel": 2,
+      "titulo": "Mayor ventaja del torneo",
+      "protagonista": "SERGIO",
+      "detalle": "SERGIO abre 3 puntos de ventaja sobre el 2.º.",
+      "datos": {
+        "ventaja": 3,
+        "puntos": 8
+      },
+      "match_id": 8,
+      "orden": 12,
+      "fase": "grupos",
+      "equipos": "Suecia 5 – 1 Túnez",
+      "fecha": "2026-06-15",
+      "id": "mayor_ventaja-12-SERGIO"
+    },
+    {
+      "tipo": "mayor_remontada",
+      "nivel": 2,
+      "titulo": "Mayor remontada hasta ahora",
+      "protagonista": "PEDRO",
+      "detalle": "PEDRO recupera 4 posiciones desde su peor momento.",
+      "datos": {
+        "posiciones": 4,
+        "hasta": 2
+      },
+      "match_id": 8,
+      "orden": 12,
+      "fase": "grupos",
+      "equipos": "Suecia 5 – 1 Túnez",
+      "fecha": "2026-06-15",
+      "id": "mayor_remontada-12-PEDRO"
+    },
+    {
+      "tipo": "empate_lider",
+      "nivel": 2,
+      "titulo": "Empate en cabeza",
+      "protagonista": "JORGE",
+      "detalle": "JORGE y PEDRO alcanzan a SERGIO en lo más alto (13 pts).",
+      "datos": {
+        "empatados": [
+          "JORGE",
+          "PEDRO",
+          "SERGIO"
+        ],
+        "puntos": 13
+      },
+      "match_id": 24,
+      "orden": 24,
+      "fase": "grupos",
+      "equipos": "Uzbekistán 1 – 3 Colombia",
+      "fecha": "2026-06-18",
+      "id": "empate_lider-24-JORGE"
+    },
+    {
+      "tipo": "mayor_remontada",
+      "nivel": 2,
+      "titulo": "Mayor remontada hasta ahora",
+      "protagonista": "PEDRO",
+      "detalle": "PEDRO recupera 5 posiciones desde su peor momento.",
+      "datos": {
+        "posiciones": 5,
+        "hasta": 1
+      },
+      "match_id": 24,
+      "orden": 24,
+      "fase": "grupos",
+      "equipos": "Uzbekistán 1 – 3 Colombia",
+      "fecha": "2026-06-18",
+      "id": "mayor_remontada-24-PEDRO"
+    },
+    {
+      "tipo": "cambio_lider",
+      "nivel": 1,
+      "titulo": "Líder en solitario",
+      "protagonista": "PEDRO",
+      "detalle": "PEDRO se desmarca de JORGE y SERGIO y lidera en solitario.",
+      "datos": {
+        "puntos": 14,
+        "supera_a": [
+          "JORGE",
+          "SERGIO"
+        ]
+      },
+      "match_id": 25,
+      "orden": 25,
+      "fase": "grupos",
+      "equipos": "República Checa 1 – 1 Sudáfrica",
+      "fecha": "2026-06-18",
+      "id": "cambio_lider-25-PEDRO"
+    },
+    {
+      "tipo": "empate_lider",
+      "nivel": 2,
+      "titulo": "Empate en cabeza",
+      "protagonista": "JORGE",
+      "detalle": "JORGE alcanza a PEDRO en lo más alto (15 pts).",
+      "datos": {
+        "empatados": [
+          "JORGE",
+          "PEDRO"
+        ],
+        "puntos": 15
+      },
+      "match_id": 27,
+      "orden": 27,
+      "fase": "grupos",
+      "equipos": "Canadá 6 – 0 Catar",
+      "fecha": "2026-06-19",
+      "id": "empate_lider-27-JORGE"
+    },
+    {
+      "tipo": "cambio_lider",
+      "nivel": 1,
+      "titulo": "Líder en solitario",
+      "protagonista": "JORGE",
+      "detalle": "JORGE se desmarca de PEDRO y lidera en solitario.",
+      "datos": {
+        "puntos": 16,
+        "supera_a": [
+          "PEDRO"
+        ]
+      },
+      "match_id": 28,
+      "orden": 28,
+      "fase": "grupos",
+      "equipos": "México 1 – 0 Corea del Sur",
+      "fecha": "2026-06-19",
+      "id": "cambio_lider-28-JORGE"
+    },
+    {
+      "tipo": "empate_lider",
+      "nivel": 2,
+      "titulo": "Empate en cabeza",
+      "protagonista": "SERGIO",
+      "detalle": "SERGIO alcanza a JORGE en lo más alto (22 pts).",
+      "datos": {
+        "empatados": [
+          "JORGE",
+          "SERGIO"
+        ],
+        "puntos": 22
+      },
+      "match_id": 38,
+      "orden": 38,
+      "fase": "grupos",
+      "equipos": "Bélgica 0 – 0 Irán",
+      "fecha": "2026-06-21",
+      "id": "empate_lider-38-SERGIO"
+    },
+    {
+      "tipo": "cambio_lider",
+      "nivel": 1,
+      "titulo": "Líder en solitario",
+      "protagonista": "SERGIO",
+      "detalle": "SERGIO se desmarca de GABRIEL y JORGE y lidera en solitario.",
+      "datos": {
+        "puntos": 28,
+        "supera_a": [
+          "GABRIEL",
+          "JORGE"
+        ]
+      },
+      "match_id": 46,
+      "orden": 46,
+      "fase": "grupos",
+      "equipos": "Inglaterra 0 – 0 Ghana",
+      "fecha": "2026-06-23",
+      "id": "cambio_lider-46-SERGIO"
+    },
+    {
+      "tipo": "empate_lider",
+      "nivel": 2,
+      "titulo": "Empate en cabeza",
+      "protagonista": "GABRIEL",
+      "detalle": "GABRIEL alcanza a SERGIO en lo más alto (31 pts).",
+      "datos": {
+        "empatados": [
+          "GABRIEL",
+          "SERGIO"
+        ],
+        "puntos": 31
+      },
+      "match_id": 50,
+      "orden": 51,
+      "fase": "grupos",
+      "equipos": "Escocia 0 – 3 Brasil",
+      "fecha": "2026-06-25",
+      "id": "empate_lider-51-GABRIEL"
+    },
+    {
+      "tipo": "cambio_lider",
+      "nivel": 1,
+      "titulo": "Líder en solitario",
+      "protagonista": "JORGE",
+      "detalle": "JORGE se desmarca de GABRIEL y lidera en solitario.",
+      "datos": {
+        "puntos": 35,
+        "supera_a": [
+          "GABRIEL"
+        ]
+      },
+      "match_id": 59,
+      "orden": 59,
+      "fase": "grupos",
+      "equipos": "Paraguay 0 – 0 Australia",
+      "fecha": "2026-06-26",
+      "id": "cambio_lider-59-JORGE"
+    },
+    {
+      "tipo": "empate_lider",
+      "nivel": 2,
+      "titulo": "Empate en cabeza",
+      "protagonista": "GABRIEL",
+      "detalle": "GABRIEL y SERGIO alcanzan a JORGE en lo más alto (35 pts).",
+      "datos": {
+        "empatados": [
+          "GABRIEL",
+          "JORGE",
+          "SERGIO"
+        ],
+        "puntos": 35
+      },
+      "match_id": 60,
+      "orden": 60,
+      "fase": "grupos",
+      "equipos": "Turquía 3 – 2 Estados Unidos",
+      "fecha": "2026-06-26",
+      "id": "empate_lider-60-GABRIEL"
+    },
+    {
+      "tipo": "partido_clave",
+      "nivel": 2,
+      "titulo": "Partido que sacudió la clasificación",
+      "protagonista": null,
+      "detalle": "Este resultado provocó el mayor vuelco de toda la porra.",
+      "datos": {
+        "impacto": 8
+      },
+      "match_id": 4,
+      "orden": 4,
+      "fase": "grupos",
+      "equipos": "Estados Unidos 4 – 1 Paraguay",
+      "fecha": "2026-06-13",
+      "id": "partido_clave-4"
+    }
+  ],
+  "narrativa": {
+    "humanos": {
+      "columnas": [
+        {
+          "tipo": "snapshot",
+          "orden": 1,
+          "motivos": [
+            "inicio"
+          ],
+          "fase": "grupos",
+          "match_id": 1
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 2,
+          "hasta_orden": 2
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 3,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 3
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 4,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 4
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 5,
+          "hasta_orden": 5
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 6,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 6
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 7,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 7
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 2,
+          "desde_orden": 8,
+          "hasta_orden": 9
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 10,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 11
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 11,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 12
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 12,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 8
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 13,
+          "hasta_orden": 13
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 14,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 14
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 15,
+          "hasta_orden": 15
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 16,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 16
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 4,
+          "desde_orden": 17,
+          "hasta_orden": 20
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 21,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 21
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 22,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 22
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 23,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 23
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 24,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 24
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 25,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 25
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 26,
+          "hasta_orden": 26
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 27,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 27
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 28,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 28
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 29,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 29
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 30,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 30
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 2,
+          "desde_orden": 31,
+          "hasta_orden": 32
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 33,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 33
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 2,
+          "desde_orden": 34,
+          "hasta_orden": 35
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 36,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 36
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 37,
+          "hasta_orden": 37
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 38,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 38
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 39,
+          "hasta_orden": 39
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 40,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 40
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 41,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 41
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 42,
+          "hasta_orden": 42
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 43,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 43
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 44,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 44
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 45,
+          "hasta_orden": 45
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 46,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 46
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 47,
+          "hasta_orden": 47
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 48,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 48
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 49,
+          "hasta_orden": 49
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 50,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 54
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 51,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 50
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 52,
+          "hasta_orden": 52
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 53,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 52
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 54,
+          "hasta_orden": 54
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 55,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 55
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 2,
+          "desde_orden": 56,
+          "hasta_orden": 57
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 58,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 58
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 59,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 59
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 60,
+          "motivos": [
+            "fase_fin",
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 60
+        }
+      ],
+      "snapshots_total": 35,
+      "partidos_total": 60
+    },
+    "global": {
+      "columnas": [
+        {
+          "tipo": "snapshot",
+          "orden": 1,
+          "motivos": [
+            "inicio"
+          ],
+          "fase": "grupos",
+          "match_id": 1
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 2,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 2
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 3,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 3
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 4,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 4
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 5,
+          "hasta_orden": 5
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 6,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 6
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 7,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 7
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 2,
+          "desde_orden": 8,
+          "hasta_orden": 9
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 10,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 11
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 11,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 12
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 12,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 8
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 13,
+          "hasta_orden": 13
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 14,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 14
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 15,
+          "hasta_orden": 15
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 16,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 16
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 4,
+          "desde_orden": 17,
+          "hasta_orden": 20
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 21,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 21
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 22,
+          "motivos": [
+            "cambio_lider",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 22
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 23,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 23
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 24,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 24
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 25,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 25
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 26,
+          "hasta_orden": 26
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 27,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 27
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 28,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 28
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 29,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 29
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 30,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 30
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 2,
+          "desde_orden": 31,
+          "hasta_orden": 32
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 33,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 33
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 2,
+          "desde_orden": 34,
+          "hasta_orden": 35
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 36,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 36
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 37,
+          "hasta_orden": 37
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 38,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 38
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 39,
+          "hasta_orden": 39
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 40,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 40
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 41,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 41
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 42,
+          "hasta_orden": 42
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 43,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 43
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 44,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 44
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 45,
+          "hasta_orden": 45
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 46,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 46
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 47,
+          "hasta_orden": 47
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 48,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 48
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 49,
+          "hasta_orden": 49
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 50,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 54
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 51,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 50
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 52,
+          "hasta_orden": 52
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 53,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 52
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 54,
+          "hasta_orden": 54
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 55,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 55
+        },
+        {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 56,
+          "hasta_orden": 56
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 57,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "grupos",
+          "match_id": 57
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 58,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 58
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 59,
+          "motivos": [
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 59
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 60,
+          "motivos": [
+            "fase_fin",
+            "cambio_posicion",
+            "cambio_empate",
+            "top3"
+          ],
+          "fase": "grupos",
+          "match_id": 60
+        }
+      ],
+      "snapshots_total": 37,
+      "partidos_total": 60
+    }
+  }
+}

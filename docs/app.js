@@ -17,6 +17,7 @@ const appData = {
   resultados: null,
   marcadores: null,
   participantes: null,
+  evolucion: null,
   status: null,
 };
 
@@ -70,6 +71,12 @@ const elements = {
   podium: document.getElementById("podium"),
   premiosSection: document.getElementById("premios-section"),
   premiosList: document.getElementById("premios-list"),
+  evolucionSection: document.getElementById("evolucion-section"),
+  evolucionPanel: document.getElementById("evolucion-panel"),
+  evolucionChart: document.getElementById("evolucion-chart"),
+  evolucionRoster: document.getElementById("evolucion-roster"),
+  evolucionTooltip: document.getElementById("evolucion-tooltip"),
+  iaToggleInput: document.getElementById("ia-toggle-input"),
   leaderboardBody: document.getElementById("leaderboard-body"),
   mobileCards: document.getElementById("mobile-cards"),
   viewHome: document.getElementById("view-home"),
@@ -355,6 +362,24 @@ async function loadMarcadores() {
   return null;
 }
 
+function loadEmbeddedEvolucion() {
+  return window.__EVOLUCION__ || null;
+}
+
+async function fetchEvolucion() {
+  const response = await fetch(`./evolucion.json?v=${BUILD}`);
+  if (!response.ok) throw new Error(`No se pudo acceder a evolucion.json (${response.status}).`);
+  return response.json();
+}
+
+async function loadEvolucion() {
+  const embedded = loadEmbeddedEvolucion();
+  if (embedded) return embedded;
+  const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
+  if (canFetch) return fetchEvolucion();
+  return null;
+}
+
 function loadEmbeddedParticipantes() {
   return window.__PARTICIPANTES__ || null;
 }
@@ -552,6 +577,444 @@ function renderProgress() {
     if (fillPuntos) fillPuntos.style.width = `${pctPuntos}%`;
   });
 }
+
+/* ── Rendering: evolución (storytelling) ── */
+
+const evolucionState = { showIA: false, selectedPlayers: [], hoverPlayer: null };
+const EVENT_LABELS = {
+  primer_lider: "Primer líder",
+  cambio_lider: "Cambio de líder",
+  empate_lider: "Empate en cabeza",
+  adelantamiento: "Adelantamiento",
+  adelantamiento_multiple: "Gran remontada",
+  mayor_remontada: "Mayor remontada",
+  mayor_ventaja: "Mayor ventaja",
+  partido_clave: "Partido clave",
+  campeon_matematico: "Campeón matemático",
+};
+
+function evolVisibles(evol) {
+  return evol.participantes.filter((p) => evolucionState.showIA || !p.es_ia);
+}
+
+function evolPlayer(evol, nombre) {
+  return evol.participantes.find((p) => p.nombre === nombre) || null;
+}
+
+/* ── Bump chart helpers ── */
+
+/**
+ * Posición del jugador tras el partido `step` (1-indexed).
+ * Usa posicion_humanos cuando solo se muestran humanos.
+ */
+function bumpPosAt(p, step) {
+  if (!p || step < 1 || step > p.detalle.length) return null;
+  const d = p.detalle[step - 1];
+  return (evolucionState.showIA ? d.posicion : d.posicion_humanos) ?? d.posicion;
+}
+
+/** Posición final (menor = mejor). Usada para ordenar el roster. */
+function evolFinal(p) {
+  return bumpPosAt(p, p.detalle.length) ?? 99;
+}
+
+function setupEvolucionToggle() {
+  const input = elements.iaToggleInput;
+  if (!input || input.dataset.bound === "1") return;
+  input.dataset.bound = "1";
+  input.checked = evolucionState.showIA;
+  input.addEventListener("change", () => {
+    evolucionState.showIA = input.checked;
+    evolucionState.selectedPlayers = [];
+    evolucionState.hoverPlayer = null;
+    renderEvolucion();
+  });
+}
+
+function renderEvolucion() {
+  const evol = appData.evolucion;
+  const section = elements.evolucionSection;
+  if (!section) return;
+  if (!evol || !Array.isArray(evol.participantes) || (evol.partidos_jugados || 0) < 1) {
+    section.hidden = true;
+    return;
+  }
+  section.hidden = false;
+  setupEvolucionToggle();
+  renderEvolucionRoster(evol);
+  drawEvolucionChart(evol);
+  applyEvolucionHighlight();
+}
+
+/** Hitos del eje X — infografía por fases del torneo. */
+const EVOL_MILESTONES = [
+  { id: "inicio", label: "Inicio", orden: 0 },
+  { id: "mitad_grupos", label: "Mitad grupos", fase: "grupos", at: "mid" },
+  { id: "fin_grupos", label: "Fin grupos", fase: "grupos", at: "end" },
+  { id: "octavos", label: "Octavos", fase: "octavos", at: "end" },
+  { id: "cuartos", label: "Cuartos", fase: "cuartos", at: "end" },
+  { id: "semifinales", label: "Semifinales", fase: "semifinales", at: "end" },
+  { id: "final", label: "Final", fase: "final", at: "end" },
+];
+
+function resolveMilestoneOrden(evol, milestone) {
+  if (milestone.orden === 0) return 0;
+  const inPhase = evol.partidos.filter((p) => p.fase === milestone.fase);
+  if (!inPhase.length) return null;
+  if (milestone.at === "mid") {
+    return inPhase[Math.floor((inPhase.length - 1) / 2)].orden;
+  }
+  return inPhase[inPhase.length - 1].orden;
+}
+
+/** Hitos visibles según el progreso actual del torneo. */
+function buildEvolMilestones(evol) {
+  const resolved = [];
+  for (const def of EVOL_MILESTONES) {
+    const orden = resolveMilestoneOrden(evol, def);
+    if (orden === null) continue;
+    if (def.orden !== 0 && orden > evol.partidos_jugados) continue;
+    resolved.push({ ...def, orden });
+  }
+  // Evitar hitos duplicados (p. ej. mitad = fin con pocos partidos)
+  const seen = new Set();
+  return resolved.filter((m) => {
+    if (seen.has(m.orden)) return false;
+    seen.add(m.orden);
+    return true;
+  });
+}
+
+/** Posición en un hito. Inicio = línea de salida (centro visual). */
+function bumpPosAtMilestone(p, orden, nPos) {
+  if (orden === 0) return Math.ceil(nPos / 2);
+  return bumpPosAt(p, orden);
+}
+
+function evolPremio(nombre) {
+  const entry = (appData.premios || []).find((x) => x.nombre === nombre);
+  return entry ? entry.premio_total : null;
+}
+
+/** Curva Bézier suave entre hitos (estilo infografía deportiva). */
+function makeSmoothPath(pts, tension = 0.42) {
+  if (!pts.length) return "";
+  if (pts.length === 1) return `M ${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`;
+  let d = `M ${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`;
+  for (let i = 1; i < pts.length; i++) {
+    const p0 = pts[i - 1];
+    const p1 = pts[i];
+    const dx = p1.x - p0.x;
+    const cx1 = p0.x + dx * tension;
+    const cx2 = p1.x - dx * tension;
+    d += ` C ${cx1.toFixed(1)},${p0.y.toFixed(1)} ${cx2.toFixed(1)},${p1.y.toFixed(1)} ${p1.x.toFixed(1)},${p1.y.toFixed(1)}`;
+  }
+  return d;
+}
+
+function renderEvolucionRoster(evol) {
+  const roster = elements.evolucionRoster;
+  if (!roster) return;
+  // Ordenar por posición ascendente (1º primero)
+  const visibles = [...evolVisibles(evol)].sort((a, b) => evolFinal(a) - evolFinal(b));
+  roster.innerHTML = visibles
+    .map(
+      (p) => `
+      <button class="evol-chip" data-player="${p.nombre}" type="button" role="listitem" style="--chip:${p.color}">
+        <span class="evol-chip__avatar">${p.inicial}</span>
+        <span class="evol-chip__name">${p.nombre}</span>
+        <span class="evol-chip__pts">${evolFinal(p)}º</span>
+      </button>`
+    )
+    .join("");
+
+  roster.querySelectorAll(".evol-chip").forEach((chip) => {
+    const name = chip.dataset.player;
+    chip.addEventListener("mouseenter", () => setEvolucionHover(name));
+    chip.addEventListener("mouseleave", () => clearEvolucionHover());
+    chip.addEventListener("click", () => toggleEvolucionPlayer(name));
+  });
+}
+
+function drawEvolucionChart(evol) {
+  const chart = elements.evolucionChart;
+  if (!chart) return;
+
+  const milestones = buildEvolMilestones(evol);
+  if (milestones.length < 2) return;
+
+  const visibles = evolVisibles(evol);
+  const nPos = visibles.length;
+  const nM = milestones.length;
+
+  const width = Math.max(Math.round(chart.getBoundingClientRect().width) || 680, 280);
+  const isMobile = width < 560;
+  const rowH = isMobile ? 52 : 64;
+  const mL = isMobile ? 36 : 44;
+  const mR = isMobile ? 36 : 44;
+  const mT = 24;
+  const mB = 36;
+  const plotH = rowH * Math.max(nPos - 1, 1);
+  const totalH = plotH + mT + mB;
+  const plotW = width - mL - mR;
+
+  const xAt = (idx) => mL + (idx / (nM - 1)) * plotW;
+  const yAt = (pos) => mT + ((pos - 1) / Math.max(nPos - 1, 1)) * plotH;
+
+  const milestoneLayout = milestones.map((m, idx) => ({
+    ...m,
+    idx,
+    x: xAt(idx),
+  }));
+
+  const getY = (nombre, orden) => {
+    const p = evolPlayer(evol, nombre);
+    const pos = bumpPosAtMilestone(p, orden, nPos);
+    if (pos == null) return null;
+    return yAt(pos);
+  };
+
+  const grid = Array.from({ length: nPos }, (_, i) => {
+    const pos = i + 1;
+    const y = yAt(pos);
+    return `<line class="evol-grid__line" x1="${mL}" y1="${y.toFixed(1)}" x2="${mL + plotW}" y2="${y.toFixed(1)}" />
+            <text class="evol-grid__label evol-grid__label--pos" x="${(mL - 6).toFixed(1)}" y="${(y + 4).toFixed(1)}" text-anchor="end">${pos}º</text>`;
+  }).join("");
+
+  const axisLabels = milestoneLayout
+    .map((m) => `<text class="evol-milestone__label" x="${m.x.toFixed(1)}" y="${(totalH - 10).toFixed(1)}" text-anchor="middle">${m.label}</text>`)
+    .join("");
+
+  const axisTicks = milestoneLayout
+    .map((m) => `<line class="evol-milestone__tick" x1="${m.x.toFixed(1)}" y1="${mT}" x2="${m.x.toFixed(1)}" y2="${(mT + plotH).toFixed(1)}" />`)
+    .join("");
+
+  const firstM = milestones[0];
+  const lastM = milestones[milestones.length - 1];
+  const avR = isMobile ? 12 : 14;
+
+  const lines = visibles.map((p) => {
+    const pts = milestones
+      .map((m, idx) => {
+        const y = getY(p.nombre, m.orden);
+        return y != null ? { x: xAt(idx), y } : null;
+      })
+      .filter(Boolean);
+    const d = makeSmoothPath(pts);
+    if (!d) return "";
+    return `<path class="evol-line evol-line--visible" data-player="${p.nombre}"
+        fill="none" stroke="${p.color}" style="color:${p.color}" d="${d}" />
+      <path class="evol-line evol-line--hit" data-player="${p.nombre}"
+        fill="none" stroke="transparent" stroke-width="18" d="${d}" />`;
+  }).join("");
+
+  const avatars = visibles.map((p) => {
+    const yStart = getY(p.nombre, firstM.orden);
+    const yEnd = getY(p.nombre, lastM.orden);
+    if (yStart == null || yEnd == null) return "";
+    const xStart = xAt(0);
+    const xEnd = xAt(nM - 1);
+    return `<g class="evol-avatar evol-avatar--start" data-player="${p.nombre}">
+        <circle class="evol-avatar__bg" cx="${xStart.toFixed(1)}" cy="${yStart.toFixed(1)}" r="${avR}" style="--c:${p.color}" />
+        <text class="evol-avatar__txt" x="${xStart.toFixed(1)}" y="${(yStart + 4).toFixed(1)}" text-anchor="middle">${p.inicial}</text>
+      </g>
+      <g class="evol-avatar evol-avatar--end" data-player="${p.nombre}">
+        <circle class="evol-avatar__bg" cx="${xEnd.toFixed(1)}" cy="${yEnd.toFixed(1)}" r="${avR}" style="--c:${p.color}" />
+        <text class="evol-avatar__txt" x="${xEnd.toFixed(1)}" y="${(yEnd + 4).toFixed(1)}" text-anchor="middle">${p.inicial}</text>
+      </g>`;
+  }).join("");
+
+  chart.innerHTML = `<svg class="evol-svg evol-svg--infographic"
+      viewBox="0 0 ${width} ${totalH}"
+      width="100%" height="${totalH}"
+      preserveAspectRatio="xMidYMid meet"
+      role="img" aria-label="Evolución de la clasificación por fases">
+    <g class="evol-grid">${grid}</g>
+    <g class="evol-milestones">${axisTicks}${axisLabels}</g>
+    <g class="evol-lines">${lines}</g>
+    <g class="evol-avatars">${avatars}</g>
+  </svg>`;
+
+  bindEvolucionInteractions(evol, { milestones: milestoneLayout, mL, mT, plotW, plotH, getY, xAt, nM });
+}
+
+function bindEvolucionInteractions(evol, geo) {
+  const chart = elements.evolucionChart;
+
+  const nearestMilestone = (mx) => {
+    let best = geo.milestones[0];
+    let bestDist = Infinity;
+    geo.milestones.forEach((m) => {
+      const d = Math.abs(mx - m.x);
+      if (d < bestDist) { bestDist = d; best = m; }
+    });
+    return best;
+  };
+
+  chart.querySelectorAll(".evol-line--hit").forEach((node) => {
+    const name = node.dataset.player;
+    node.addEventListener("mouseenter", () => setEvolucionHover(name));
+    node.addEventListener("mouseleave", () => {
+      clearEvolucionHover();
+      hideEvolucionTooltip();
+    });
+    node.addEventListener("mousemove", (event) => {
+      const rect = chart.querySelector(".evol-svg").getBoundingClientRect();
+      const mx = geo.mL + ((event.clientX - rect.left) / rect.width) * geo.plotW;
+      const milestone = nearestMilestone(mx);
+      showMilestoneTooltip(evol, milestone, name, geo.milestones, event);
+    });
+    node.addEventListener("click", () => toggleEvolucionPlayer(name));
+  });
+
+  chart.querySelectorAll(".evol-avatar").forEach((node) => {
+    const name = node.dataset.player;
+    node.addEventListener("mouseenter", () => setEvolucionHover(name));
+    node.addEventListener("mouseleave", () => clearEvolucionHover());
+    node.addEventListener("click", () => toggleEvolucionPlayer(name));
+  });
+}
+
+function evolEventsInSegment(evol, fromOrden, toOrden, playerName) {
+  return (evol.eventos || []).filter((ev) => {
+    if (ev.orden <= fromOrden || ev.orden > toOrden) return false;
+    if (playerName && ev.protagonista && ev.protagonista !== playerName) return false;
+    return true;
+  });
+}
+
+function showMilestoneTooltip(evol, milestone, playerName, milestones, event) {
+  const tip = elements.evolucionTooltip;
+  if (!tip) return;
+  const p = evolPlayer(evol, playerName);
+  if (!p) return;
+
+  const visibles = evolVisibles(evol);
+  const nPos = visibles.length;
+  const pos = bumpPosAtMilestone(p, milestone.orden, nPos);
+  const orden = milestone.orden;
+  const d = orden > 0 ? p.detalle[orden - 1] : null;
+  const acc = d ? d.acumulado : 0;
+
+  const leaderAcc = orden > 0
+    ? Math.max(...visibles.map((x) => x.detalle[orden - 1]?.acumulado ?? 0))
+    : 0;
+  const diff = leaderAcc - acc;
+  const diffStr = orden === 0 ? "—" : diff === 0 ? "Líder" : `-${diff} pts`;
+  const premio = evolPremio(playerName);
+
+  const mIdx = milestone.idx ?? 0;
+  const prevOrden = mIdx > 0 ? milestones[mIdx - 1].orden : 0;
+  const events = evolEventsInSegment(evol, prevOrden, orden, playerName);
+  const eventsHtml = events.length
+    ? `<div class="evol-tip__events">${events.slice(0, 3).map((ev) =>
+        `<div class="evol-tip__event-row"><span class="evol-tip__badge evol-tip__badge--sm">${EVENT_LABELS[ev.tipo] || ev.titulo}</span><span>${ev.titulo}</span></div>`
+      ).join("")}</div>`
+    : "";
+
+  tip.innerHTML = `
+    <div class="evol-tip__head">
+      <span class="evol-tip__title">${milestone.label}</span>
+    </div>
+    <div class="evol-tip__player">
+      <span class="evol-tip__avatar" style="--c:${p.color}">${p.inicial}</span>
+      <span class="evol-tip__pname">${p.nombre}</span>
+      <span class="evol-tip__pos evol-tip__pos--${pos === 1 ? "lead" : "rest"}">${pos != null ? pos + "º" : "—"}</span>
+    </div>
+    <div class="evol-tip__grid">
+      <div><span class="evol-tip__k">Acumulado</span><span class="evol-tip__v">${orden === 0 ? "0" : acc} pts</span></div>
+      <div><span class="evol-tip__k">Vs líder</span><span class="evol-tip__v evol-tip__v--diff ${diff === 0 && orden > 0 ? "is-lead" : ""}">${diffStr}</span></div>
+      ${premio != null ? `<div><span class="evol-tip__k">Premio</span><span class="evol-tip__v">${formatEuro(premio)}</span></div>` : ""}
+      ${d ? `<div><span class="evol-tip__k">Pronóstico</span><span class="evol-tip__v">${evolPickLabel(d.pronostico)}</span></div>` : ""}
+    </div>
+    ${eventsHtml}`;
+  positionEvolucionTooltip(event);
+}
+
+function evolHighlightedSet() {
+  if (evolucionState.selectedPlayers.length > 0) {
+    return new Set(evolucionState.selectedPlayers);
+  }
+  if (evolucionState.hoverPlayer) {
+    return new Set([evolucionState.hoverPlayer]);
+  }
+  return null;
+}
+
+function toggleEvolucionPlayer(name) {
+  const idx = evolucionState.selectedPlayers.indexOf(name);
+  if (idx >= 0) {
+    evolucionState.selectedPlayers.splice(idx, 1);
+  } else {
+    evolucionState.selectedPlayers.push(name);
+  }
+  evolucionState.hoverPlayer = null;
+  applyEvolucionHighlight();
+}
+
+function setEvolucionHover(name) {
+  if (evolucionState.selectedPlayers.length > 0) return;
+  evolucionState.hoverPlayer = name;
+  applyEvolucionHighlight();
+}
+
+function clearEvolucionHover() {
+  if (evolucionState.selectedPlayers.length > 0) return;
+  evolucionState.hoverPlayer = null;
+  applyEvolucionHighlight();
+}
+
+function applyEvolucionHighlight() {
+  const chart = elements.evolucionChart;
+  const roster = elements.evolucionRoster;
+  if (!chart) return;
+  const highlighted = evolHighlightedSet();
+
+  const setState = (node) => {
+    const name = node.dataset.player;
+    const isOn = highlighted && highlighted.has(name);
+    const isDim = highlighted && !isOn && name !== "";
+    node.classList.toggle("is-active", Boolean(isOn));
+    node.classList.toggle("is-dim", Boolean(isDim));
+  };
+  chart.querySelectorAll(".evol-line--visible").forEach(setState);
+  chart.querySelectorAll(".evol-avatar").forEach(setState);
+  if (roster) roster.querySelectorAll(".evol-chip").forEach(setState);
+}
+
+function evolPickLabel(pick) {
+  if (pick === null || pick === undefined || pick === "") return "—";
+  return (PICK_INFO[pick] && PICK_INFO[pick].label) || pick;
+}
+
+function positionEvolucionTooltip(event) {
+  const tip = elements.evolucionTooltip;
+  const panel = elements.evolucionPanel;
+  if (!tip || !panel) return;
+  tip.hidden = false;
+  const panelRect = panel.getBoundingClientRect();
+  const tipRect = tip.getBoundingClientRect();
+  let left = event.clientX - panelRect.left - tipRect.width / 2;
+  let top = event.clientY - panelRect.top - tipRect.height - 14;
+  left = Math.min(Math.max(left, 6), panelRect.width - tipRect.width - 6);
+  if (top < 4) top = event.clientY - panelRect.top + 18;
+  tip.style.left = `${left}px`;
+  tip.style.top = `${top}px`;
+}
+
+function hideEvolucionTooltip() {
+  if (elements.evolucionTooltip) elements.evolucionTooltip.hidden = true;
+}
+
+let evolResizeTimer = null;
+window.addEventListener("resize", () => {
+  if (!appData.evolucion) return;
+  clearTimeout(evolResizeTimer);
+  evolResizeTimer = setTimeout(() => {
+    if (elements.evolucionSection && !elements.evolucionSection.hidden) drawEvolucionChart(appData.evolucion);
+    applyEvolucionHighlight();
+  }, 180);
+});
 
 function createPodiumPlayer(entry) {
   const pos = entry.posicion;
@@ -1047,6 +1510,7 @@ function renderApp(data) {
   renderStats(data, appData.status);
   renderProgress();
   renderPodium(data);
+  renderEvolucion();
   renderPremios(appData.premios);
   renderTable(data);
 }
@@ -1078,13 +1542,14 @@ async function init() {
   hideError();
   showLoading();
   try {
-    const [clasificacion, premios, partidos, resultados, marcadores, participantes, status] = await Promise.all([
+    const [clasificacion, premios, partidos, resultados, marcadores, participantes, evolucion, status] = await Promise.all([
       loadClasificacion(),
       loadPremios(),
       loadPartidos().catch(() => null),
       loadResultados().catch(() => null),
       loadMarcadores().catch(() => null),
       loadParticipantes().catch(() => null),
+      loadEvolucion().catch(() => null),
       loadStatus(),
     ]);
     appData.clasificacion = clasificacion;
@@ -1093,6 +1558,7 @@ async function init() {
     appData.resultados = resultados;
     appData.marcadores = marcadores;
     appData.participantes = participantes;
+    appData.evolucion = evolucion;
     appData.status = status;
     renderApp(clasificacion);
     hideError();

@@ -32,6 +32,9 @@ jobs:
       - name: Ejecutar clasificacion
         run: python scripts/calcular_clasificacion.py
 
+      - name: Generar evolucion del torneo
+        run: python scripts/generar_evolucion.py
+
       - name: Sincronizar frontend
         run: python scripts/sync_frontend.py
 
