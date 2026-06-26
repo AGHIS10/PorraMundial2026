@@ -231,8 +231,14 @@ window.__MARCADORES__ = [
     "home": 1,
     "away": 3
   },
-  null,
-  null,
+  {
+    "home": 0,
+    "away": 0
+  },
+  {
+    "home": 3,
+    "away": 2
+  },
   null,
   null,
   null,
