@@ -51,29 +51,38 @@
         </div>
       </header>
 
-      <section class="stats-grid" id="stats" aria-label="Estadísticas generales">
-        <article class="stat-card">
-          <span class="stat-card__icon" aria-hidden="true">👥</span>
-          <span class="stat-card__label">Participantes</span>
-          <span class="stat-card__value" data-stat="participantes">—</span>
-        </article>
-        <article class="stat-card">
-          <span class="stat-card__icon" aria-hidden="true">⚽</span>
-          <span class="stat-card__label">Partidos</span>
-          <span class="stat-card__value" data-stat="partidos">—</span>
-        </article>
-        <article class="stat-card stat-card--gold">
-          <span class="stat-card__icon" aria-hidden="true">🏅</span>
-          <span class="stat-card__label">Líder actual</span>
-          <span class="stat-card__value" data-stat="lider">—</span>
-        </article>
-        <article class="stat-card">
-          <span class="stat-card__icon" aria-hidden="true">🎯</span>
-          <span class="stat-card__label">Puntos máximos</span>
-          <span class="stat-card__value" data-stat="maxpuntos">275</span>
-        </article>
+      <div class="progress-card" id="mundial-progress">
+        <div class="progress-row">
+          <div class="progress-row__top">
+            <span class="progress-row__icon" aria-hidden="true">⚽</span>
+            <span class="progress-row__label">Progreso del Mundial</span>
+            <span class="progress-row__value">
+              <span data-stat="partidos-jugados">—</span> / <span data-stat="partidos-total">—</span>
+              <span class="progress-row__hint"><span data-stat="partidos-restantes">—</span> restantes</span>
+            </span>
+          </div>
+          <div class="progress-row__track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progress-track-partidos">
+            <div class="progress-row__fill progress-row__fill--cyan" id="progress-fill-partidos"></div>
+          </div>
+        </div>
+        <div class="progress-row">
+          <div class="progress-row__top">
+            <span class="progress-row__icon" aria-hidden="true">🎯</span>
+            <span class="progress-row__label">Puntos en juego</span>
+            <span class="progress-row__value">
+              <span data-stat="puntos-consumidos">—</span> / <span data-stat="puntos-maximos-total">—</span>
+              <span class="progress-row__hint"><span data-stat="puntos-por-disputar">—</span> por disputar</span>
+            </span>
+          </div>
+          <div class="progress-row__track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progress-track-puntos">
+            <div class="progress-row__fill progress-row__fill--gold" id="progress-fill-puntos"></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="stats-grid" id="stats" aria-label="Estado de sincronización">
         <a
-          class="stat-card stat-card--wide stat-card--sync"
+          class="stat-card stat-card--sync"
           href="https://github.com/AGHIS10/PorraMundial2026/actions/workflows/actualizar.yml"
           target="_blank"
           rel="noopener noreferrer"

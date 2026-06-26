@@ -473,16 +473,25 @@ async function openParticipant(nombre) {
 
 /* ── Rendering: home ── */
 
+function calcularEstadisticasPartidos() {
+  const partidos = appData.partidos || [];
+  const resultados = appData.resultados || [];
+  const total = partidos.length;
+  const finalizados = resultados.filter((r) => r !== null && r !== undefined).length;
+  const restantes = total - finalizados;
+  const puntosPorDisputar = partidos.reduce((acc, p, i) => {
+    const resultado = resultados[i];
+    return resultado === null || resultado === undefined ? acc + (p.peso || 0) : acc;
+  }, 0);
+  const puntosConsumidos = PUNTOS_MAXIMOS - puntosPorDisputar;
+  return { total, finalizados, restantes, puntosPorDisputar, puntosConsumidos };
+}
+
 function renderStats(data, status) {
-  const leader = data[0];
-  const partidosCount = appData.partidos ? appData.partidos.length : "—";
   const lastSync = status?.lastWorkflowRun || null;
   const syncOk = Boolean(lastSync && status?.workflowStatus === "ok");
+
   const stats = {
-    participantes: data.length,
-    partidos: partidosCount,
-    lider: leader ? leader.nombre : "—",
-    maxpuntos: PUNTOS_MAXIMOS,
     actualizacion: lastSync ? formatSyncDate(lastSync) : "—",
     "actualizacion-relativa": lastSync ? formatRelativeTime(lastSync) : "—",
   };
@@ -490,9 +499,7 @@ function renderStats(data, status) {
   elements.stats.querySelectorAll("[data-stat]").forEach((node) => {
     const key = node.dataset.stat;
     if (key === "error-sincronizacion") return;
-    if (stats[key] !== undefined) {
-      node.textContent = stats[key];
-    }
+    if (stats[key] !== undefined) node.textContent = stats[key];
   });
 
   const errorNode = elements.stats.querySelector('[data-stat="error-sincronizacion"]');
@@ -505,6 +512,45 @@ function renderStats(data, status) {
       errorNode.textContent = "Error de sincronización";
     }
   }
+}
+
+function renderProgress() {
+  const { total, finalizados, restantes, puntosPorDisputar, puntosConsumidos } =
+    calcularEstadisticasPartidos();
+  if (!total) return;
+
+  const pctPartidos = Math.round((finalizados / total) * 100);
+  const pctPuntos = Math.round((puntosConsumidos / PUNTOS_MAXIMOS) * 100);
+
+  const section = document.getElementById("mundial-progress");
+  if (!section) return;
+
+  const valores = {
+    "partidos-jugados": finalizados,
+    "partidos-total": total,
+    "partidos-restantes": restantes,
+    "puntos-consumidos": puntosConsumidos,
+    "puntos-maximos-total": PUNTOS_MAXIMOS,
+    "puntos-por-disputar": puntosPorDisputar,
+  };
+
+  section.querySelectorAll("[data-stat]").forEach((node) => {
+    const key = node.dataset.stat;
+    if (valores[key] !== undefined) node.textContent = valores[key];
+  });
+
+  const trackPartidos = document.getElementById("progress-track-partidos");
+  const fillPartidos = document.getElementById("progress-fill-partidos");
+  const trackPuntos = document.getElementById("progress-track-puntos");
+  const fillPuntos = document.getElementById("progress-fill-puntos");
+
+  if (trackPartidos) trackPartidos.setAttribute("aria-valuenow", pctPartidos);
+  if (trackPuntos) trackPuntos.setAttribute("aria-valuenow", pctPuntos);
+
+  requestAnimationFrame(() => {
+    if (fillPartidos) fillPartidos.style.width = `${pctPartidos}%`;
+    if (fillPuntos) fillPuntos.style.width = `${pctPuntos}%`;
+  });
 }
 
 function createPodiumPlayer(entry) {
@@ -999,6 +1045,7 @@ function renderParticipantDetail(entry, participante) {
 
 function renderApp(data) {
   renderStats(data, appData.status);
+  renderProgress();
   renderPodium(data);
   renderPremios(appData.premios);
   renderTable(data);
