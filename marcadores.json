@@ -239,14 +239,8 @@
     "home": 3,
     "away": 2
   },
-  {
-    "home": 1,
-    "away": 4
-  },
-  {
-    "home": 5,
-    "away": 0
-  },
+  null,
+  null,
   {
     "home": 0,
     "away": 0
@@ -257,7 +251,7 @@
   },
   {
     "home": 1,
-    "away": 1
+    "away": 2
   },
   {
     "home": 1,
