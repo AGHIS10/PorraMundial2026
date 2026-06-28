@@ -10,6 +10,8 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any
 
+from apuestas import apuesta_completa, puntos_apuesta
+
 PARTICIPANTES_IA = frozenset({"GPT", "GEMINI"})
 
 # Colores fijos para todo el torneo. Asignados por nombre para que NUNCA cambien
@@ -155,10 +157,11 @@ def construir_evolucion(
             "peso": peso,
         })
 
+        fase = partido.get("fase", "grupos")
+
         for nombre in nombres:
             pron = pronos[nombre][idx] if idx < len(pronos[nombre]) else None
-            acierto = pron is not None and pron == resultado
-            obtenidos = peso if acierto else 0
+            obtenidos = puntos_apuesta(pron, resultado, fase)
             acumulado[nombre] += obtenidos
             series[nombre].append(acumulado[nombre])
 
@@ -172,11 +175,12 @@ def construir_evolucion(
 
         for nombre in nombres:
             pron = pronos[nombre][idx] if idx < len(pronos[nombre]) else None
-            acierto = pron is not None and pron == resultado
+            obtenidos = puntos_apuesta(pron, resultado, fase)
+            acierto = apuesta_completa(pron, resultado, fase)
             detalle[nombre].append({
                 "orden": paso,
                 "match_id": partido.get("id", idx + 1),
-                "puntos": peso if acierto else 0,
+                "puntos": obtenidos,
                 "acumulado": acumulado[nombre],
                 "pronostico": pron,
                 "acierto": acierto,

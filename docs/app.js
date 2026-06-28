@@ -34,6 +34,9 @@ const FASE_LABELS = {
   final: "Final",
 };
 
+/** Fase eliminatoria que muestra la pestaña «Próximos». Cambiar al avanzar el torneo. */
+const PROXIMOS_FASE = "dieciseisavos";
+
 const FASE_BADGE_CLASS = {
   grupos: "fase-badge--grupos",
   dieciseisavos: "fase-badge--dieciseisavos",
@@ -178,9 +181,9 @@ function formatResultado(value) {
 }
 
 const PORRA_LABELS = {
-  1: "1 (Local)",
-  X: "X (Empate)",
-  2: "2 (Visitante)",
+  1: "1",
+  X: "X",
+  2: "2",
 };
 
 function formatPorraPick(value) {
@@ -429,24 +432,166 @@ async function getParticipante(nombre) {
   return participante;
 }
 
+const PICK_INFO = {
+  "1": { label: "1", short: "1" },
+  "X": { label: "X", short: "X" },
+  "2": { label: "2", short: "2" },
+};
+
 /* ── Match status helpers ── */
 
-function getMatchStatus(pronostico, resultado) {
+function isEliminatoriaFase(fase) {
+  return Boolean(fase && fase !== "grupos");
+}
+
+function normalizePick(pick, fase) {
+  if (pick === null || pick === undefined) {
+    return { resultado: null, clasifica: null };
+  }
+  if (typeof pick === "object") {
+    return {
+      resultado: pick.resultado ?? null,
+      clasifica: pick.clasifica ?? null,
+    };
+  }
+  if (isEliminatoriaFase(fase)) {
+    return { resultado: pick, clasifica: null };
+  }
+  return { resultado: pick, clasifica: null };
+}
+
+function normalizeResultado(resultado, fase) {
   if (resultado === null || resultado === undefined) {
-    return "pending";
+    return { resultado: null, clasifica: null };
   }
-  if (pronostico === resultado) {
-    return "hit";
+  if (typeof resultado === "object") {
+    return {
+      resultado: resultado.resultado ?? null,
+      clasifica: resultado.clasifica ?? null,
+    };
   }
+  if (isEliminatoriaFase(fase)) {
+    return { resultado: resultado, clasifica: null };
+  }
+  return { resultado: resultado, clasifica: null };
+}
+
+function isMatchPending(resultado) {
+  return resultado === null || resultado === undefined;
+}
+
+function isProximosPartido(partido, index, resultados) {
+  return partido.fase === PROXIMOS_FASE && isMatchPending(resultados[index]);
+}
+
+function countProximosPartidos(partidos, resultados) {
+  return partidos.filter((p, i) => isProximosPartido(p, i, resultados)).length;
+}
+
+function isMatchPlayed(resultado, fase) {
+  if (resultado === null || resultado === undefined) return false;
+  if (isEliminatoriaFase(fase)) {
+    return normalizeResultado(resultado, fase).resultado !== null;
+  }
+  return true;
+}
+
+function clasificaSideLabel(clasifica, partido) {
+  if (clasifica === "1" || clasifica === "2") return clasifica;
+  return "—";
+}
+
+function formatPickValue(value) {
+  if (value === null || value === undefined || value === "") return "—";
+  const texto = String(value).trim().toUpperCase();
+  if (texto === "1" || texto === "X" || texto === "2") return texto;
+  return texto;
+}
+
+function formatPickDisplay(pick, fase, partido) {
+  const p = normalizePick(pick, fase);
+  if (!isEliminatoriaFase(fase)) {
+    return formatPickValue(p.resultado);
+  }
+  const res = formatPickValue(p.resultado);
+  const cls = p.clasifica ? clasificaSideLabel(p.clasifica, partido) : "—";
+  return `${res} · ↑ ${cls}`;
+}
+
+function formatResultDisplay(resultado, fase, partido) {
+  const r = normalizeResultado(resultado, fase);
+  if (!isEliminatoriaFase(fase)) {
+    return formatPickValue(r.resultado);
+  }
+  const res = formatPickValue(r.resultado);
+  const cls = r.clasifica ? clasificaSideLabel(r.clasifica, partido) : "—";
+  return `${res} · ↑ ${cls}`;
+}
+
+function scoreMatchBets(pronostico, resultado, fase) {
+  if (!isMatchPlayed(resultado, fase)) {
+    return { hits: 0, misses: 0, pending: isEliminatoriaFase(fase) ? 2 : 1 };
+  }
+
+  const p = normalizePick(pronostico, fase);
+  const r = normalizeResultado(resultado, fase);
+
+  if (!isEliminatoriaFase(fase)) {
+    return p.resultado === r.resultado
+      ? { hits: 1, misses: 0, pending: 0 }
+      : { hits: 0, misses: 1, pending: 0 };
+  }
+
+  let hits = 0;
+  let misses = 0;
+  let pending = 0;
+
+  if (p.resultado && r.resultado) {
+    if (p.resultado === r.resultado) hits++;
+    else misses++;
+  } else if (r.resultado) {
+    pending++;
+  }
+
+  if (p.clasifica && r.clasifica) {
+    if (p.clasifica === r.clasifica) hits++;
+    else misses++;
+  } else if (r.clasifica) {
+    pending++;
+  }
+
+  return { hits, misses, pending };
+}
+
+function getMatchStatus(pronostico, resultado, fase = "grupos") {
+  if (!isMatchPlayed(resultado, fase)) return "pending";
+  const { hits, misses, pending } = scoreMatchBets(pronostico, resultado, fase);
+  if (hits > 0 && misses === 0 && pending === 0) return "hit";
+  if (hits > 0 && misses > 0) return "partial";
   return "miss";
 }
 
-function countPlayedMatches(resultados) {
-  return resultados.filter((r) => r !== null && r !== undefined).length;
+function countPlayedMatches(resultados, partidos = appData.partidos || []) {
+  return resultados.filter((r, i) => isMatchPlayed(r, partidos[i]?.fase)).length;
 }
 
-function calcPrecision(aciertos, resultados) {
-  const jugados = countPlayedMatches(resultados);
+function countEvaluatedBets(resultados, partidos = appData.partidos || []) {
+  let total = 0;
+  resultados.forEach((r, i) => {
+    if (!isMatchPlayed(r, partidos[i]?.fase)) return;
+    const nr = normalizeResultado(r, partidos[i]?.fase);
+    if (isEliminatoriaFase(partidos[i]?.fase)) {
+      if (nr.resultado !== null) total++;
+      if (nr.clasifica !== null) total++;
+    } else {
+      total++;
+    }
+  });
+  return total;
+}
+
+function calcPrecision(aciertos, resultados, partidos = appData.partidos || []) {
+  const jugados = countEvaluatedBets(resultados, partidos);
   if (jugados === 0) return 0;
   return Math.round((aciertos / jugados) * 100);
 }
@@ -502,7 +647,7 @@ function calcularEstadisticasPartidos() {
   const partidos = appData.partidos || [];
   const resultados = appData.resultados || [];
   const total = partidos.length;
-  const finalizados = resultados.filter((r) => r !== null && r !== undefined).length;
+  const finalizados = countPlayedMatches(resultados, partidos);
   const restantes = total - finalizados;
   const puntosPorDisputar = partidos.reduce((acc, p, i) => {
     const resultado = resultados[i];
@@ -984,7 +1129,12 @@ function applyEvolucionHighlight() {
 
 function evolPickLabel(pick) {
   if (pick === null || pick === undefined || pick === "") return "—";
-  return (PICK_INFO[pick] && PICK_INFO[pick].label) || pick;
+  if (typeof pick === "object") {
+    const res = formatPickValue(pick.resultado);
+    const cls = pick.clasifica === "1" || pick.clasifica === "2" ? pick.clasifica : "—";
+    return `${res} · Clasifica: ${cls}`;
+  }
+  return formatPickValue(pick);
 }
 
 function positionEvolucionTooltip(event) {
@@ -1183,20 +1333,18 @@ function getGroupForMatch(partido, groups) {
 
 function computeGroupStats(groupMatches, pronosticos, resultados) {
   let hits = 0, misses = 0, pending = 0;
-  groupMatches.forEach(({ index }) => {
-    const r = resultados[index];
-    if (r === null || r === undefined) { pending++; return; }
-    if (pronosticos[index] === r) hits++;
-    else misses++;
+  groupMatches.forEach(({ index, partido }) => {
+    const stats = scoreMatchBets(
+      pronosticos[index],
+      resultados[index],
+      partido?.fase || "grupos",
+    );
+    hits += stats.hits;
+    misses += stats.misses;
+    pending += stats.pending;
   });
   return { hits, misses, pending, total: groupMatches.length };
 }
-
-const PICK_INFO = {
-  "1": { label: "Local", short: "1·L" },
-  "X": { label: "Empate", short: "X·E" },
-  "2": { label: "Visit.", short: "2·V" },
-};
 
 function formatMatchDateShort(fecha) {
   const [, m, d] = fecha.split("-");
@@ -1207,9 +1355,10 @@ function formatMatchDateShort(fecha) {
 let detailState = { entry: null, participante: null, activeTab: "proximos", activeGroup: 0 };
 
 function renderParticipantDetailHeader(entry) {
+  const partidos = appData.partidos || [];
   const resultados = appData.resultados || [];
-  const pct = calcPrecision(entry.aciertos, resultados);
-  const jugados = countPlayedMatches(resultados);
+  const pct = calcPrecision(entry.aciertos, resultados, partidos);
+  const jugados = countEvaluatedBets(resultados, partidos);
   const fallos = jugados - entry.aciertos;
 
   const posClass = entry.posicion <= 3 ? ` detail-hero--pos-${entry.posicion}` : "";
@@ -1250,7 +1399,7 @@ function renderParticipantDetailHeader(entry) {
 
 function renderGroupNav(groups, pronosticos, resultados, partidos) {
   const fases = categorizeFases(partidos, pronosticos, resultados);
-  const pendingCount = resultados.filter((r) => r === null || r === undefined).length;
+  const pendingCount = countProximosPartidos(partidos, resultados);
 
   const faseOrder = ["dieciseisavos", "octavos", "cuartos", "semifinales", "tercer_puesto", "final"];
   const fasesElim = faseOrder.filter((f) => fases[f]);
@@ -1307,42 +1456,118 @@ function renderGroupNav(groups, pronosticos, resultados, partidos) {
 
 function createNextMatchRow(partido, pronostico, index) {
   const row = document.createElement("div");
-  row.className = "next-row";
+  const dual = isEliminatoriaFase(partido.fase);
+  row.className = `next-row${dual ? " next-row--dual" : ""}`;
   row.style.animationDelay = `${0.04 * index}s`;
 
+  const pickHtml = dual
+    ? formatDualPicksHtml(pronostico, partido)
+    : `<div class="next-row__picks next-row__picks--single"><div class="next-row__pick-res">${formatPickValue(normalizePick(pronostico, partido.fase).resultado)}</div></div>`;
+
   row.innerHTML = `
-    <div class="next-row__teams">
-      <div class="next-row__team">
-        ${flagImg(partido.local, "flag flag--sm")}
-        <span class="next-row__team-name">${partido.local}</span>
-      </div>
-      <div class="next-row__team">
-        ${flagImg(partido.visitante, "flag flag--sm")}
-        <span class="next-row__team-name">${partido.visitante}</span>
+    <div class="next-row__info">
+      ${formatWhenSpainHtml(partido)}
+      <div class="next-row__teams">
+        <div class="next-row__team">
+          ${flagImg(partido.local, "flag flag--sm")}
+          <span class="next-row__team-name">${partido.local}</span>
+        </div>
+        <div class="next-row__team">
+          ${flagImg(partido.visitante, "flag flag--sm")}
+          <span class="next-row__team-name">${partido.visitante}</span>
+        </div>
       </div>
     </div>
-    <div class="next-row__when">
-      <span class="next-row__date">${formatMatchDateShort(partido.fecha)}</span>
-      <span class="next-row__time">${partido.hora}</span>
-    </div>
-    <div class="next-row__pick-num">${pronostico || "—"}</div>
+    ${pickHtml}
   `;
 
   return row;
 }
 
+function clasificaTeamName(clasifica, partido) {
+  if (clasifica === "1") return partido?.local || null;
+  if (clasifica === "2") return partido?.visitante || null;
+  return null;
+}
+
+function formatWhenSpainHtml(partido, prefix = "next-row") {
+  const time = partido?.hora || "—";
+  return `
+    <div class="${prefix}__schedule">
+      <span class="${prefix}__date">${formatMatchDateShort(partido.fecha)}</span>
+      <span class="${prefix}__sched-sep" aria-hidden="true">·</span>
+      <span class="${prefix}__time">${time}<span class="${prefix}__time-suffix">h</span></span>
+      <span class="${prefix}__sched-sep" aria-hidden="true">·</span>
+      <span class="${prefix}__tz">España</span>
+    </div>
+  `;
+}
+
+function formatClasificaFlagHtml(clasifica, partido, flagClass = "flag flag--pick") {
+  const team = clasificaTeamName(clasifica, partido);
+  if (!team) {
+    return `<span class="pick-flag pick-flag--empty" aria-hidden="true">—</span>`;
+  }
+  return `<span class="pick-flag" title="${team}">${flagImg(team, flagClass)}</span>`;
+}
+
+function formatDualPicksHtml(pick, partido, prefix = "next-row") {
+  const p = normalizePick(pick, partido.fase);
+  const resultado = formatPickValue(p.resultado);
+  return `
+    <div class="${prefix}__picks">
+      <div class="${prefix}__pick-res" title="Resultado del partido">${resultado}</div>
+      <div class="${prefix}__pick-cls" title="Clasifica">
+        ${formatClasificaFlagHtml(p.clasifica, partido)}
+      </div>
+    </div>
+  `;
+}
+
+function formatDualVerdictHtml(pronostico, resultado, partido) {
+  const p = normalizePick(pronostico, partido.fase);
+  const r = normalizeResultado(resultado, partido.fase);
+  const resStatus = p.resultado && r.resultado
+    ? (p.resultado === r.resultado ? "hit" : "miss")
+    : "pending";
+  const clsStatus = p.clasifica && r.clasifica
+    ? (p.clasifica === r.clasifica ? "hit" : "miss")
+    : "pending";
+
+  return `
+    <div class="mcard__picks">
+      <div class="mcard__pick-res mcard__pick-res--${resStatus}" title="Resultado">${formatPickValue(p.resultado)}</div>
+      <div class="mcard__pick-cls mcard__pick-cls--${clsStatus}" title="Clasifica">
+        ${formatClasificaFlagHtml(p.clasifica, partido)}
+      </div>
+    </div>
+  `;
+}
+
 function createMatchCard(partido, pronostico, resultado, marcador, index) {
-  const status = getMatchStatus(pronostico, resultado);
+  const status = getMatchStatus(pronostico, resultado, partido.fase);
   const isFinished = status !== "pending";
+  const dual = isEliminatoriaFase(partido.fase);
+
+  if (!isFinished && dual) {
+    const row = createNextMatchRow(partido, pronostico, index);
+    row.classList.add("next-row--phase");
+    return row;
+  }
+
   const hasScore = isFinished && marcador && marcador.home != null && marcador.away != null;
 
   const card = document.createElement("div");
-  card.className = `mcard mcard--${status}`;
+  card.className = `mcard mcard--${status}${dual ? " mcard--dual" : ""}`;
   card.style.animationDelay = `${0.04 * index}s`;
 
   if (isFinished) {
     const scoreDisplay = hasScore ? `${marcador.home}-${marcador.away}` : "—";
+    const verdictHtml = dual
+      ? formatDualVerdictHtml(pronostico, resultado, partido)
+      : `<span class="mcard__pick">${formatPickDisplay(pronostico, partido.fase, partido)}</span>`;
     card.innerHTML = `
+      ${formatWhenSpainHtml(partido, "mcard")}
       <div class="mcard__scoreline">
         <div class="mcard__team mcard__team--home">
           ${flagImg(partido.local, "flag flag--sm")}
@@ -1354,22 +1579,17 @@ function createMatchCard(partido, pronostico, resultado, marcador, index) {
           ${flagImg(partido.visitante, "flag flag--sm")}
         </div>
       </div>
-      <div class="mcard__verdict">
-        <span class="mcard__pick">${pronostico || "—"}</span>
-      </div>
+      <div class="mcard__verdict">${verdictHtml}</div>
     `;
   } else {
-    const [, m, d] = partido.fecha.split("-");
-    const months = ["ENE","FEB","MAR","ABR","MAY","JUN","JUL","AGO","SEP","OCT","NOV","DIC"];
-    const whenStr = `${parseInt(d, 10)} ${months[parseInt(m, 10) - 1]} · ${partido.hora}`;
     card.innerHTML = `
+      ${formatWhenSpainHtml(partido, "mcard")}
       <div class="mcard__matchup">
         ${flagImg(partido.local, "flag flag--sm")}
         <span class="mcard__matchup-teams">${partido.local} <span class="mcard__vs">vs</span> ${partido.visitante}</span>
         ${flagImg(partido.visitante, "flag flag--sm")}
       </div>
-      <div class="mcard__when">${whenStr}</div>
-      <div class="mcard__pick-big">${pronostico || "—"}</div>
+      <div class="mcard__pick-big">${formatPickValue(normalizePick(pronostico, partido.fase).resultado)}</div>
     `;
   }
 
@@ -1377,11 +1597,15 @@ function createMatchCard(partido, pronostico, resultado, marcador, index) {
 }
 
 function buildGroupStats(matchesToRender, pronosticos, resultados) {
-  return matchesToRender.reduce((acc, { index }) => {
-    const r = resultados[index];
-    if (r == null) acc.pending++;
-    else if (pronosticos[index] === r) acc.hits++;
-    else acc.misses++;
+  return matchesToRender.reduce((acc, { index, partido }) => {
+    const stats = scoreMatchBets(
+      pronosticos[index],
+      resultados[index],
+      partido?.fase || "grupos",
+    );
+    acc.hits += stats.hits;
+    acc.misses += stats.misses;
+    acc.pending += stats.pending;
     return acc;
   }, { hits: 0, misses: 0, pending: 0 });
 }
@@ -1401,9 +1625,8 @@ function renderMatchList() {
   if (detailState.activeTab === "proximos") {
     const pending = [];
     partidos.forEach((p, i) => {
-      if (resultados[i] === null || resultados[i] === undefined) {
-        pending.push({ partido: p, index: i });
-      }
+      if (!isProximosPartido(p, i, resultados)) return;
+      pending.push({ partido: p, index: i });
     });
     pending.sort((a, b) => {
       const da = new Date(`${a.partido.fecha}T${a.partido.hora}:00`);
@@ -1415,7 +1638,7 @@ function renderMatchList() {
       elements.predList.innerHTML = `
         <div class="pred-error">
           <span aria-hidden="true">🏆</span>
-          <p>¡Todos los partidos han sido disputados!</p>
+          <p>No quedan partidos de ${FASE_LABELS[PROXIMOS_FASE].toLowerCase()} por jugar.</p>
         </div>
       `;
       return;
@@ -1424,7 +1647,7 @@ function renderMatchList() {
     const header = document.createElement("div");
     header.className = "match-list__header";
     header.innerHTML = `
-      <h3 class="match-list__title">Próximos partidos</h3>
+      <h3 class="match-list__title">${FASE_LABELS[PROXIMOS_FASE]}</h3>
       <span class="match-list__meta">${pending.length} por jugar</span>
     `;
     elements.predList.appendChild(header);
@@ -1484,7 +1707,9 @@ function renderMatchList() {
   elements.predList.appendChild(header);
 
   const grid = document.createElement("div");
-  grid.className = "mcard-grid";
+  grid.className = isEliminatoriaFase(detailState.activeTab)
+    ? "knockout-list"
+    : "mcard-grid";
   matchesToRender.forEach(({ partido, index }, i) => {
     grid.appendChild(
       createMatchCard(partido, pronosticos[index] ?? null, resultados[index] ?? null, marcadores[index] ?? null, i)

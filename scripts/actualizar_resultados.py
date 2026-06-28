@@ -15,6 +15,10 @@ from zoneinfo import ZoneInfo
 import requests
 
 PROYECTO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROYECTO_DIR))
+
+from apuestas import es_eliminatoria  # noqa: E402
+
 PARTIDOS_FILE = PROYECTO_DIR / "partidos.json"
 RESULTADOS_FILE = PROYECTO_DIR / "resultados.json"
 MARCADORES_FILE = PROYECTO_DIR / "marcadores.json"
@@ -231,14 +235,47 @@ def extraer_goles_marcador(marcador: dict[str, Any]) -> tuple[int | None, int | 
     return goles_local, goles_visitante
 
 
-def extraer_marcador_final(partido_api: dict[str, Any]) -> tuple[int, int] | None:
-    """Obtiene el marcador a los 90 minutos desde la respuesta de la API."""
-    score = partido_api.get("score") or {}
-    full_time = score.get("fullTime") or {}
-    goles_local, goles_visitante = extraer_goles_marcador(full_time)
+def extraer_marcador_desde_nodo(
+    score: dict[str, Any],
+    nodo: str,
+) -> tuple[int, int] | None:
+    """Lee un subnodo de score (fullTime, regularTime…) como marcador."""
+    datos = score.get(nodo) or {}
+    goles_local, goles_visitante = extraer_goles_marcador(datos)
     if goles_local is None or goles_visitante is None:
         return None
     return int(goles_local), int(goles_visitante)
+
+
+def duracion_partido_api(partido_api: dict[str, Any]) -> str:
+    """REGULAR, EXTRA_TIME o PENALTY_SHOOTOUT según la API."""
+    score = partido_api.get("score") or {}
+    return str(score.get("duration") or "REGULAR")
+
+
+def extraer_marcador_90min(partido_api: dict[str, Any]) -> tuple[int, int] | None:
+    """Marcador tras 90 minutos (1/X/2 de la porra).
+
+    En eliminatorias con prórroga o penaltis, fullTime puede incluir la tanda
+    o el marcador global; la API expone score.regularTime para los 90 minutos.
+    Ver: https://docs.football-data.org/general/v4/overtime.html
+    """
+    score = partido_api.get("score") or {}
+    duration = duracion_partido_api(partido_api)
+
+    marcador_regular = extraer_marcador_desde_nodo(score, "regularTime")
+    if marcador_regular is not None:
+        return marcador_regular
+
+    if duration == "REGULAR":
+        return extraer_marcador_desde_nodo(score, "fullTime")
+
+    return None
+
+
+def extraer_marcador_final(partido_api: dict[str, Any]) -> tuple[int, int] | None:
+    """Alias: marcador de apuesta (90 minutos)."""
+    return extraer_marcador_90min(partido_api)
 
 
 def marcador_final_incompleto(partido_api: dict[str, Any]) -> bool:
@@ -451,7 +488,38 @@ def diagnosticar_partido(
     return None, ". ".join(detalles)
 
 
-def cargar_resultados_actuales(total_partidos: int) -> list[str | None]:
+def clasifica_desde_api(partido_api: dict[str, Any]) -> str | None:
+    """Devuelve 1 o 2 según quién clasifica (score.winner de la API)."""
+    if not partido_finalizado(partido_api):
+        return None
+
+    score = partido_api.get("score") or {}
+    ganador = score.get("winner")
+    if ganador == "HOME_TEAM":
+        return "1"
+    if ganador == "AWAY_TEAM":
+        return "2"
+    if ganador == "DRAW":
+        return None
+
+    return None
+
+
+def resultado_entrada_desde_api(
+    partido: dict[str, Any],
+    partido_api: dict[str, Any],
+) -> str | dict[str, str | None] | None:
+    """Genera entrada de resultados.json (simple o dual según fase)."""
+    resultado = resultado_desde_api(partido_api)
+    if resultado is None:
+        return None
+    fase = str(partido.get("fase", "grupos"))
+    if not es_eliminatoria(fase):
+        return resultado
+    return {"resultado": resultado, "clasifica": clasifica_desde_api(partido_api)}
+
+
+def cargar_resultados_actuales(total_partidos: int) -> list[Any]:
     """Carga resultados existentes o inicializa una lista vacía."""
     if not RESULTADOS_FILE.exists():
         return [None] * total_partidos
@@ -601,9 +669,9 @@ def actualizar_resultados(
     partidos: list[dict[str, Any]],
     partidos_api: list[dict[str, Any]],
     alias: dict[str, str | list[str]],
-    resultados_actuales: list[str | None],
+    resultados_actuales: list[Any],
     marcadores_actuales: list[dict[str, int] | None],
-) -> tuple[list[str | None], list[dict[str, int] | None], dict[str, int]]:
+) -> tuple[list[Any], list[dict[str, int] | None], dict[str, int]]:
     """Genera resultados y marcadores conservando el orden de partidos.json."""
     nuevos_resultados = list(resultados_actuales)
     nuevos_marcadores = list(marcadores_actuales)
@@ -636,7 +704,7 @@ def actualizar_resultados(
             api_usados.add(api_id)
 
         estadisticas["encontrados"] += 1
-        resultado = resultado_desde_api(partido_api)
+        resultado = resultado_entrada_desde_api(partido, partido_api)
         home_api = nombre_equipo_api(partido_api, "home") or "?"
         away_api = nombre_equipo_api(partido_api, "away") or "?"
 
@@ -662,10 +730,17 @@ def actualizar_resultados(
         )
         print(
             f"[OK] {etiqueta} → Emparejado con {home_api} vs {away_api} → "
-            f"{resultado}{extra}"
+            f"{resultado}{extra}{_etiqueta_clasifica(resultado)}"
         )
 
     return nuevos_resultados, nuevos_marcadores, estadisticas
+
+
+def _etiqueta_clasifica(resultado: Any) -> str:
+    """Texto auxiliar para logs de eliminatoria."""
+    if isinstance(resultado, dict) and resultado.get("clasifica"):
+        return f" (clasifica {resultado['clasifica']})"
+    return ""
 
 
 def mostrar_resumen(

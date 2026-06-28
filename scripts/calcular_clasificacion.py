@@ -8,11 +8,12 @@ import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Protocol
+from typing import Any
 
 PROYECTO_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROYECTO_DIR))
 
+from apuestas import contar_aciertos_apuesta, puntos_apuesta  # noqa: E402
 from puntuacion_fases import (  # noqa: E402
     PUNTOS_MAXIMOS,
     TOTAL_PARTIDOS,
@@ -58,7 +59,7 @@ class Partido:
 @dataclass(frozen=True)
 class Participante:
     nombre: str
-    pronosticos: list[str | None]
+    pronosticos: list[Any]
 
 
 @dataclass(frozen=True)
@@ -79,24 +80,7 @@ class FilaClasificacion:
 @dataclass(frozen=True)
 class ContextoPorra:
     partidos: list[Partido]
-    resultados: list[str | None]
-
-
-class EstrategiaPuntuacion(Protocol):
-    """Contrato para distintos sistemas de puntuación."""
-
-    def puntos_por_partido(self, indice_partido: int) -> int:
-        """Devuelve los puntos otorgados por acertar un partido concreto."""
-
-
-class PuntuacionPorPeso:
-    """Otorga los puntos definidos en el peso de cada partido."""
-
-    def __init__(self, partidos: list[Partido]) -> None:
-        self._partidos = partidos
-
-    def puntos_por_partido(self, indice_partido: int) -> int:
-        return self._partidos[indice_partido].peso
+    resultados: list[Any]
 
 
 def cargar_json(ruta: Path) -> Any:
@@ -156,7 +140,7 @@ def cargar_partidos(ruta: Path) -> tuple[list[Partido], list[str]]:
     return partidos, advertencias
 
 
-def cargar_resultados(ruta: Path) -> list[str | None]:
+def cargar_resultados(ruta: Path) -> list[Any]:
     """Carga y valida el fichero de resultados."""
     datos = cargar_json(ruta)
 
@@ -209,38 +193,32 @@ def validar_coherencia_longitudes(
 
 
 def contar_aciertos(
-    pronosticos: list[str | None],
-    resultados: list[str | None],
+    pronosticos: list[Any],
+    resultados: list[Any],
+    partidos: list[Partido],
 ) -> int:
-    """Cuenta aciertos solo en partidos con resultado conocido."""
+    """Cuenta aciertos parciales en partidos con resultado conocido."""
     aciertos = 0
-    for pronostico, resultado in zip(pronosticos, resultados):
-        if resultado is None:
-            continue
-        if pronostico == resultado:
-            aciertos += 1
+    for pronostico, resultado, partido in zip(pronosticos, resultados, partidos):
+        aciertos += contar_aciertos_apuesta(pronostico, resultado, partido.fase)
     return aciertos
 
 
 def calcular_puntos(
-    pronosticos: list[str | None],
-    resultados: list[str | None],
-    estrategia: EstrategiaPuntuacion,
+    pronosticos: list[Any],
+    resultados: list[Any],
+    partidos: list[Partido],
 ) -> int:
-    """Calcula puntos partido a partido para facilitar pesos por ronda."""
+    """Calcula puntos partido a partido (dual en eliminatoria)."""
     puntos = 0
-    for indice, (pronostico, resultado) in enumerate(zip(pronosticos, resultados)):
-        if resultado is None:
-            continue
-        if pronostico == resultado:
-            puntos += estrategia.puntos_por_partido(indice)
+    for pronostico, resultado, partido in zip(pronosticos, resultados, partidos):
+        puntos += puntos_apuesta(pronostico, resultado, partido.fase)
     return puntos
 
 
 def evaluar_participante(
     participante: Participante,
     contexto: ContextoPorra,
-    estrategia: EstrategiaPuntuacion,
 ) -> EntradaClasificacion:
     """Calcula aciertos y puntos de un participante."""
     validar_coherencia_longitudes(
@@ -249,11 +227,15 @@ def evaluar_participante(
         len(participante.pronosticos),
         participante.nombre,
     )
-    aciertos = contar_aciertos(participante.pronosticos, contexto.resultados)
+    aciertos = contar_aciertos(
+        participante.pronosticos,
+        contexto.resultados,
+        contexto.partidos,
+    )
     puntos = calcular_puntos(
         participante.pronosticos,
         contexto.resultados,
-        estrategia,
+        contexto.partidos,
     )
     return EntradaClasificacion(
         nombre=participante.nombre,
@@ -421,7 +403,6 @@ def listar_participantes(directorio: Path) -> list[Path]:
 def procesar_participantes(
     directorio: Path,
     contexto: ContextoPorra,
-    estrategia: EstrategiaPuntuacion,
 ) -> tuple[list[EntradaClasificacion], list[tuple[str, str]]]:
     """Carga participantes válidos e ignora los corruptos con advertencia."""
     if not directorio.exists():
@@ -439,7 +420,7 @@ def procesar_participantes(
     for ruta in listar_participantes(directorio):
         try:
             participante = cargar_participante(ruta)
-            entradas.append(evaluar_participante(participante, contexto, estrategia))
+            entradas.append(evaluar_participante(participante, contexto))
         except ValueError as exc:
             advertencias.append((ruta.stem, str(exc)))
 
@@ -485,11 +466,9 @@ def main() -> int:
         partidos, advertencias_partidos = cargar_partidos(PARTIDOS_FILE)
         resultados = cargar_resultados(RESULTADOS_FILE)
         contexto = ContextoPorra(partidos=partidos, resultados=resultados)
-        estrategia = PuntuacionPorPeso(partidos)
         entradas, advertencias_participantes = procesar_participantes(
             PARTICIPANTES_DIR,
             contexto,
-            estrategia,
         )
     except (FileNotFoundError, ValueError) as exc:
         print(f"Error: {exc}", file=sys.stderr)
