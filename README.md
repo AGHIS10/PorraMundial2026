@@ -19,6 +19,8 @@ porra-mundial/
 │   ├── index.html
 │   ├── styles.css
 │   ├── app.js
+│   ├── config.js            # Configuración del frontend (analítica, etc.)
+│   ├── analytics.js         # Carga dinámica de analítica
 │   ├── clasificacion.json   # Sincronizado automáticamente
 │   └── partidos.json        # Sincronizado automáticamente
 └── README.md
@@ -217,6 +219,40 @@ python3 -m http.server 8080
 Abre en el navegador: `http://localhost:8080`
 
 También puedes abrir `docs/index.html` directamente: los datos embebidos en `clasificacion.js` permiten ver la clasificación sin servidor.
+
+### Analítica (Cloudflare Web Analytics)
+
+El frontend usa [Cloudflare Web Analytics](https://developers.cloudflare.com/web-analytics/) para medir visitas en GitHub Pages. La integración es estática, sin dependencias ni build: el script se inserta dinámicamente desde JavaScript solo cuando está activado.
+
+**Configuración:** editar `docs/config.js` (no hace falta tocar `index.html`).
+
+```javascript
+window.APP_CONFIG = {
+  analytics: {
+    enabled: true,
+    cloudflareToken: "YOUR_CLOUDFLARE_ANALYTICS_TOKEN",
+  },
+};
+```
+
+| Campo | Descripción |
+|-------|-------------|
+| `enabled` | `true` activa la analítica; `false` no inserta nada en el DOM |
+| `cloudflareToken` | Token del sitio en Cloudflare Web Analytics |
+
+**Activar por primera vez:**
+
+1. Crear la propiedad en [Cloudflare Web Analytics](https://dash.cloudflare.com/) → **Web Analytics** → **Add a site**.
+2. Copiar el token que proporciona Cloudflare.
+3. Pegarlo en `cloudflareToken` dentro de `docs/config.js`.
+4. Confirmar que `enabled` es `true`.
+5. Hacer commit y push a GitHub Pages.
+
+Mientras el token siga siendo el placeholder `YOUR_CLOUDFLARE_ANALYTICS_TOKEN`, no se carga ningún script aunque `enabled` sea `true`.
+
+**Desactivar:** poner `enabled: false` en `docs/config.js`.
+
+La lógica de carga está en `docs/analytics.js` (`initAnalytics()`), llamada al arrancar la aplicación. Está preparada para añadir otros proveedores en el futuro sin modificar el HTML.
 
 ### Características
 

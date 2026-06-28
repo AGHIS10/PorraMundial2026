@@ -1839,6 +1839,7 @@ function hideError() {
 /* ── Init ── */
 
 async function init() {
+  initAnalytics();
   hideError();
   showLoading();
   try {
