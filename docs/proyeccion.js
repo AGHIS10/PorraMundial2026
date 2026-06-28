@@ -1,5 +1,5 @@
 window.__PROYECCION__ = {
-  "generatedAt": "2026-06-28T16:26:00Z",
+  "generatedAt": "2026-06-28T17:03:39Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 32,
@@ -7,7 +7,7 @@ window.__PROYECCION__ = {
   "partidos_jugados": 72,
   "movimiento": {
     "hay_cambio": false,
-    "desde": "2026-06-28T16:09:38Z",
+    "desde": "2026-06-28T16:26:00Z",
     "ultimo_partido": {
       "id": 71,
       "local": "Argelia",
