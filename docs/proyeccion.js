@@ -1,13 +1,13 @@
 window.__PROYECCION__ = {
-  "generatedAt": "2026-06-28T21:04:01Z",
+  "generatedAt": "2026-06-28T22:58:33Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 31,
   "puntos_max_restantes": 201,
   "partidos_jugados": 73,
   "movimiento": {
-    "hay_cambio": true,
-    "desde": "2026-06-28T20:56:11Z",
+    "hay_cambio": false,
+    "desde": "2026-06-28T21:04:01Z",
     "ultimo_partido": {
       "id": 73,
       "local": "Sudáfrica",
@@ -15,20 +15,8 @@ window.__PROYECCION__ = {
       "fase": "dieciseisavos",
       "marcador": "0-1"
     },
-    "beneficiado": {
-      "nombre": "JORGE",
-      "inicial": "J",
-      "color": "#ef6f6c",
-      "probabilidad": 13.53,
-      "delta": 1.05
-    },
-    "perjudicado": {
-      "nombre": "MARIO",
-      "inicial": "M",
-      "color": "#5aa9ff",
-      "probabilidad": 9.09,
-      "delta": -1.96
-    }
+    "beneficiado": null,
+    "perjudicado": null
   },
   "indice_emocion": {
     "nivel": "muy_abierto",
@@ -42,7 +30,7 @@ window.__PROYECCION__ = {
     {
       "nombre": "GPT",
       "probabilidad": 17.61,
-      "delta": 0.36,
+      "delta": 0.0,
       "inicial": "G",
       "color": "#8c99b0",
       "es_ia": true
@@ -50,25 +38,25 @@ window.__PROYECCION__ = {
     {
       "nombre": "GABRIEL",
       "probabilidad": 13.63,
-      "delta": -0.39,
+      "delta": 0.0,
       "inicial": "G",
       "color": "#9b8cff",
       "es_ia": false,
-      "delta_sin_ia": -0.28
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "JORGE",
       "probabilidad": 13.53,
-      "delta": 1.05,
+      "delta": 0.0,
       "inicial": "J",
       "color": "#ef6f6c",
       "es_ia": false,
-      "delta_sin_ia": 1.71
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "GEMINI",
       "probabilidad": 11.18,
-      "delta": 0.6,
+      "delta": 0.0,
       "inicial": "G",
       "color": "#c0b3e0",
       "es_ia": true
@@ -76,96 +64,96 @@ window.__PROYECCION__ = {
     {
       "nombre": "AGUSTIN",
       "probabilidad": 10.88,
-      "delta": -0.07,
+      "delta": 0.0,
       "inicial": "A",
       "color": "#2ee6d6",
       "es_ia": false,
-      "delta_sin_ia": 0.11
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "PEDRO",
       "probabilidad": 10.28,
-      "delta": 0.56,
+      "delta": 0.0,
       "inicial": "P",
       "color": "#58d68d",
       "es_ia": false,
-      "delta_sin_ia": 0.97
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "SERGIO",
       "probabilidad": 9.8,
-      "delta": 0.5,
+      "delta": 0.0,
       "inicial": "S",
       "color": "#f5c518",
       "es_ia": false,
-      "delta_sin_ia": 0.88
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "MARIO",
       "probabilidad": 9.09,
-      "delta": -1.96,
+      "delta": 0.0,
       "inicial": "M",
       "color": "#5aa9ff",
       "es_ia": false,
-      "delta_sin_ia": -2.55
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "CRISTIAN",
       "probabilidad": 4.01,
-      "delta": -0.66,
+      "delta": 0.0,
       "inicial": "C",
       "color": "#f0883e",
       "es_ia": false,
-      "delta_sin_ia": -0.84
+      "delta_sin_ia": 0.0
     }
   ],
   "top3": [
     {
       "nombre": "GABRIEL",
       "probabilidad": 50.98,
-      "delta": -0.79,
+      "delta": 0.0,
       "inicial": "G",
       "color": "#9b8cff"
     },
     {
       "nombre": "JORGE",
       "probabilidad": 50.76,
-      "delta": 1.91,
+      "delta": 0.0,
       "inicial": "J",
       "color": "#ef6f6c"
     },
     {
       "nombre": "AGUSTIN",
       "probabilidad": 45.89,
-      "delta": 1.76,
+      "delta": 0.0,
       "inicial": "A",
       "color": "#2ee6d6"
     },
     {
       "nombre": "PEDRO",
       "probabilidad": 42.91,
-      "delta": 0.79,
+      "delta": 0.0,
       "inicial": "P",
       "color": "#58d68d"
     },
     {
       "nombre": "SERGIO",
       "probabilidad": 42.76,
-      "delta": 1.06,
+      "delta": 0.0,
       "inicial": "S",
       "color": "#f5c518"
     },
     {
       "nombre": "MARIO",
       "probabilidad": 41.22,
-      "delta": -2.8,
+      "delta": 0.0,
       "inicial": "M",
       "color": "#5aa9ff"
     },
     {
       "nombre": "CRISTIAN",
       "probabilidad": 25.5,
-      "delta": -1.9,
+      "delta": 0.0,
       "inicial": "C",
       "color": "#f0883e"
     }
