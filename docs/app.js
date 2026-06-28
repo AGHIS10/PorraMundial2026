@@ -6,6 +6,7 @@ const RESULTADOS_URL = `./resultados.json?v=${BUILD}`;
 const MARCADORES_URL = `./marcadores.json?v=${BUILD}`;
 const PARTICIPANTES_URL = `./participantes.json?v=${BUILD}`;
 const STATUS_URL = `./status.json?v=${BUILD}`;
+const PROYECCION_URL = `./proyeccion.json?v=${BUILD}`;
 const PUNTOS_MAXIMOS = 275;
 const SYNC_TIMEZONE = "UTC";
 const SYNC_DISPLAY_TIMEZONE = "Europe/Madrid";
@@ -19,6 +20,7 @@ const appData = {
   participantes: null,
   evolucion: null,
   status: null,
+  proyeccion: null,
 };
 
 const MEDALS = { 1: "🥇", 2: "🥈", 3: "🥉" };
@@ -80,6 +82,17 @@ const elements = {
   evolucionRoster: document.getElementById("evolucion-roster"),
   evolucionTooltip: document.getElementById("evolucion-tooltip"),
   iaToggleInput: document.getElementById("ia-toggle-input"),
+  proyeccionSection: document.getElementById("proyeccion-section"),
+  proyeccionSub: document.getElementById("proyeccion-sub"),
+  projListCampeon: document.getElementById("proj-list-campeon"),
+  projListTop3: document.getElementById("proj-list-top3"),
+  projIaToggleInput: document.getElementById("proj-ia-toggle-input"),
+  snapshotSection: document.getElementById("snapshot-section"),
+  snapshotRise: document.getElementById("snapshot-rise"),
+  snapshotDrop: document.getElementById("snapshot-drop"),
+  snapshotLeader: document.getElementById("snapshot-leader"),
+  snapshotTop3: document.getElementById("snapshot-top3"),
+  snapshotPulse: document.getElementById("snapshot-pulse"),
   leaderboardBody: document.getElementById("leaderboard-body"),
   mobileCards: document.getElementById("mobile-cards"),
   viewHome: document.getElementById("view-home"),
@@ -380,6 +393,24 @@ async function loadEvolucion() {
   if (embedded) return embedded;
   const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
   if (canFetch) return fetchEvolucion();
+  return null;
+}
+
+function loadEmbeddedProyeccion() {
+  return window.__PROYECCION__ || null;
+}
+
+async function fetchProyeccion() {
+  const response = await fetch(PROYECCION_URL);
+  if (!response.ok) throw new Error(`No se pudo acceder a proyeccion.json (${response.status}).`);
+  return response.json();
+}
+
+async function loadProyeccion() {
+  const embedded = loadEmbeddedProyeccion();
+  if (embedded) return embedded;
+  const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
+  if (canFetch) return fetchProyeccion();
   return null;
 }
 
@@ -726,6 +757,8 @@ function renderProgress() {
 /* ── Rendering: evolución (storytelling) ── */
 
 const evolucionState = { showIA: false, selectedPlayers: [], hoverPlayer: null };
+const proyeccionState = { showIA: false };
+const PROYECCION_FADE_MS = 180;
 const EVENT_LABELS = {
   primer_lider: "Primer líder",
   cambio_lider: "Cambio de líder",
@@ -1809,10 +1842,314 @@ function renderParticipantDetail(entry, participante) {
 function renderApp(data) {
   renderStats(data, appData.status);
   renderProgress();
+  renderSnapshot();
   renderPodium(data);
   renderEvolucion();
+  renderProyeccion();
   renderPremios(appData.premios);
   renderTable(data);
+}
+
+/* ── Snapshot: estado del campeonato (cabecera) ── */
+
+function snapshotPartidoLinea(ultimo, verbo) {
+  if (!ultimo || !ultimo.local || !ultimo.visitante) {
+    return "Sin cambios recientes";
+  }
+  const marcador = ultimo.marcador ? ` ${ultimo.marcador}` : "";
+  return `${verbo} ${ultimo.local}${marcador} ${ultimo.visitante}`;
+}
+
+function renderSnapshotPlayerCard(card, config) {
+  if (!card) return;
+  const {
+    icon, label, jugador, delta, verbo, tipo, vacio,
+  } = config;
+
+  card.style.setProperty("--snap-color", jugador?.color || "var(--accent-cyan)");
+  card.className = `snapshot-card snapshot-card--${tipo}`;
+
+  if (vacio || !jugador) {
+    card.innerHTML = `
+      <span class="snapshot-card__icon" aria-hidden="true">${icon}</span>
+      <span class="snapshot-card__label">${label}</span>
+      <span class="snapshot-card__name snapshot-card__name--muted">—</span>
+      <span class="snapshot-card__context">Sin movimiento reciente</span>
+    `;
+    return;
+  }
+
+  const deltaNum = Number(delta) || 0;
+  const sube = deltaNum >= 0;
+  const flecha = sube ? "▲" : "▼";
+  const signo = sube ? "+" : "−";
+  const deltaCls = sube ? "snapshot-card__delta--up" : "snapshot-card__delta--down";
+  const contexto = snapshotPartidoLinea(config.ultimoPartido, verbo);
+
+  card.innerHTML = `
+    <span class="snapshot-card__icon" aria-hidden="true">${icon}</span>
+    <span class="snapshot-card__label">${label}</span>
+    <div class="snapshot-card__player">
+      <span class="snapshot-card__avatar">${jugador.inicial || getInitials(jugador.nombre)}</span>
+      <span class="snapshot-card__name">${jugador.nombre}</span>
+    </div>
+    <span class="snapshot-card__delta ${deltaCls}">${flecha} ${signo}${Math.abs(deltaNum).toFixed(1)}<small>pp</small></span>
+    <span class="snapshot-card__context">${contexto}</span>
+  `;
+}
+
+function renderSnapshotLeader(card, lider) {
+  if (!card || !lider) return;
+  card.style.setProperty("--snap-color", lider.color || "var(--accent-gold)");
+  card.innerHTML = `
+    <span class="snapshot-card__icon" aria-hidden="true">🏆</span>
+    <span class="snapshot-card__label">Favorito actual</span>
+    <div class="snapshot-card__player snapshot-card__player--center">
+      <span class="snapshot-card__avatar snapshot-card__avatar--lg">${lider.inicial || getInitials(lider.nombre)}</span>
+      <span class="snapshot-card__name snapshot-card__name--lg">${lider.nombre}</span>
+    </div>
+    <span class="snapshot-card__pct">${formatProbabilidad(lider.probabilidad)}</span>
+  `;
+}
+
+function renderSnapshotTop3(card, entradas) {
+  if (!card) return;
+  const top = (entradas || []).slice(0, 3);
+  card.innerHTML = `
+    <span class="snapshot-card__icon" aria-hidden="true">🥉</span>
+    <span class="snapshot-card__label">Top 3 más probable</span>
+    <ul class="snapshot-top3-list">
+      ${top.map((e, i) => `
+        <li class="snapshot-top3-item">
+          <span class="snapshot-top3-item__avatar" style="--snap-color:${e.color || "var(--accent-cyan)"}">${e.inicial || getInitials(e.nombre)}</span>
+          <span class="snapshot-top3-item__name">${e.nombre}</span>
+          <span class="snapshot-top3-item__pct">${formatProbabilidad(e.probabilidad)}</span>
+        </li>
+      `).join("")}
+    </ul>
+  `;
+}
+
+function renderSnapshotPulse(card, indice) {
+  if (!card || !indice) return;
+  const cls = `snapshot-card--pulse-${indice.nivel || "abierto"}`;
+  card.className = `snapshot-card snapshot-card--pulse ${cls}`;
+  card.innerHTML = `
+    <span class="snapshot-card__icon snapshot-card__icon--pulse" aria-hidden="true">${indice.emoji || "🟡"}</span>
+    <span class="snapshot-card__label">Estado del campeonato</span>
+    <span class="snapshot-card__pulse-label">${indice.etiqueta || "Abierto"}</span>
+    <span class="snapshot-card__context">Favorito al ${indice.lider_pct ?? "—"}%</span>
+  `;
+}
+
+function renderSnapshot() {
+  const proy = appData.proyeccion;
+  const section = elements.snapshotSection;
+  if (!section) return;
+
+  if (!proy || !Array.isArray(proy.campeon) || proy.campeon.length === 0) {
+    section.hidden = true;
+    return;
+  }
+  section.hidden = false;
+
+  const mom = proy.movimiento || {};
+  const hayCambio = Boolean(mom.hay_cambio);
+  const ultimo = mom.ultimo_partido;
+
+  renderSnapshotPlayerCard(elements.snapshotRise, {
+    icon: "📈",
+    label: "Mayor subida",
+    jugador: hayCambio ? mom.beneficiado : null,
+    delta: hayCambio ? mom.beneficiado?.delta : 0,
+    verbo: "Sube tras",
+    tipo: "rise",
+    vacio: !hayCambio || !mom.beneficiado,
+    ultimoPartido: ultimo,
+  });
+
+  renderSnapshotPlayerCard(elements.snapshotDrop, {
+    icon: "📉",
+    label: "Mayor bajada",
+    jugador: hayCambio ? mom.perjudicado : null,
+    delta: hayCambio ? mom.perjudicado?.delta : 0,
+    verbo: "Pierde tras",
+    tipo: "drop",
+    vacio: !hayCambio || !mom.perjudicado,
+    ultimoPartido: ultimo,
+  });
+
+  renderSnapshotLeader(elements.snapshotLeader, proy.campeon[0]);
+  renderSnapshotTop3(elements.snapshotTop3, proy.top3);
+  renderSnapshotPulse(elements.snapshotPulse, proy.indice_emocion);
+}
+
+/* ── Proyección del campeonato (Monte Carlo) ── */
+
+function formatProbabilidad(valor) {
+  const num = Number(valor) || 0;
+  return `${num.toFixed(1)}%`;
+}
+
+/** Indicador de variación (▲/▼ pp) respecto a la proyección anterior. */
+const DELTA_VISIBLE_PP = 0.1;
+
+function formatDeltaHtml(delta, mostrar) {
+  const valor = Number(delta) || 0;
+  if (!mostrar || Math.abs(valor) < DELTA_VISIBLE_PP) {
+    return "";
+  }
+  const sube = valor > 0;
+  const cls = sube ? "proj-delta--up" : "proj-delta--down";
+  const flecha = sube ? "▲" : "▼";
+  const signo = sube ? "+" : "−";
+  return `<span class="proj-delta ${cls}" title="Variación desde el último partido">${flecha} ${signo}${Math.abs(valor).toFixed(1)}</span>`;
+}
+
+function createProyeccionRow(entry, posicion, mostrarDelta, animarEntrada) {
+  const prob = Number(entry.probabilidad) || 0;
+  const color = entry.color || "var(--accent-cyan)";
+  // Escala absoluta 0–100 %: la barra refleja la probabilidad real, no el
+  // máximo de la tarjeta. Así un 17 % se ve claramente corto y un favorito
+  // al 50 % ocupa media pista.
+  const ancho = Math.min(100, Math.max(0, prob));
+
+  const row = document.createElement("div");
+  row.className = `proj-row${animarEntrada ? "" : " proj-row--static"}`;
+  row.setAttribute("role", "listitem");
+  row.dataset.nombre = entry.nombre;
+  row.style.setProperty("--proj-color", color);
+  if (animarEntrada) {
+    row.style.animationDelay = `${0.04 * (posicion - 1)}s`;
+  }
+  row.innerHTML = `
+    <span class="proj-row__avatar">${entry.inicial || getInitials(entry.nombre)}</span>
+    <div class="proj-row__body">
+      <div class="proj-row__top">
+        <span class="proj-row__name"><span class="proj-row__rank">${posicion}.</span>${entry.nombre}</span>
+        <span class="proj-row__meta">
+          ${formatDeltaHtml(entry.delta, mostrarDelta)}
+          <span class="proj-row__pct">${formatProbabilidad(prob)}</span>
+        </span>
+      </div>
+      <div class="proj-row__track" aria-hidden="true">
+        <div class="proj-row__fill"></div>
+      </div>
+    </div>
+  `;
+  const fill = row.querySelector(".proj-row__fill");
+  // Arranca en 0 y anima al valor real (transición CSS en .proj-row__fill).
+  requestAnimationFrame(() => {
+    fill.style.width = `${ancho.toFixed(1)}%`;
+  });
+  return row;
+}
+
+function roundProbProyeccion(valor) {
+  return Math.round(Number(valor) * 100) / 100;
+}
+
+/**
+ * Reparte el 100 % entre los participantes visibles.
+ * Solo tiene sentido en «campeón»: las probabilidades son excluyentes (un ganador
+ * por simulación). P(win | gana un humano) = P(humano) / Σ P(humanos).
+ */
+function renormalizarProyeccion(entradas) {
+  const suma = entradas.reduce((s, e) => s + (Number(e.probabilidad) || 0), 0);
+  if (suma <= 0) return entradas;
+  return entradas.map((e) => ({
+    ...e,
+    probabilidad: roundProbProyeccion(((Number(e.probabilidad) || 0) / suma) * 100),
+  }));
+}
+
+function filtrarProyeccionCampeon(entradas, incluirIA) {
+  let lista = [...entradas];
+  if (!incluirIA) {
+    lista = lista.filter((e) => !e.es_ia);
+    lista = renormalizarProyeccion(lista);
+  }
+  lista.sort((a, b) => {
+    const diff = (Number(b.probabilidad) || 0) - (Number(a.probabilidad) || 0);
+    return diff !== 0 ? diff : String(a.nombre).localeCompare(String(b.nombre));
+  });
+  return lista;
+}
+
+/** Top 3: ya solo incluye humanos; al ocultar IA no cambia la lista ni los %. */
+function filtrarProyeccionTop3(entradas, incluirIA) {
+  let lista = [...entradas];
+  if (!incluirIA) {
+    lista = lista.filter((e) => !e.es_ia);
+  }
+  lista.sort((a, b) => {
+    const diff = (Number(b.probabilidad) || 0) - (Number(a.probabilidad) || 0);
+    return diff !== 0 ? diff : String(a.nombre).localeCompare(String(b.nombre));
+  });
+  return lista;
+}
+
+function renderProyeccionLista(contenedor, entradas, mostrarDelta, animarEntrada = true) {
+  if (!contenedor) return;
+  contenedor.innerHTML = "";
+  entradas.forEach((entry, i) => {
+    contenedor.appendChild(createProyeccionRow(entry, i + 1, mostrarDelta, animarEntrada));
+  });
+}
+
+function renderProyeccionListas(proy, animar = true) {
+  const incluirIA = proyeccionState.showIA;
+  // Los deltas vienen calculados sobre el ranking completo; no aplican al reparto condicional.
+  const mostrarDelta = Boolean(proy.movimiento && proy.movimiento.hay_cambio) && incluirIA;
+  const campeon = filtrarProyeccionCampeon(proy.campeon || [], incluirIA);
+  const top3 = filtrarProyeccionTop3(proy.top3 || [], incluirIA);
+
+  const fade = (lista, datos) => {
+    if (!lista) return;
+    if (animar && lista.children.length > 0) {
+      lista.classList.add("proj-card__list--fading");
+      window.setTimeout(() => {
+        renderProyeccionLista(lista, datos, mostrarDelta, animar);
+        lista.classList.remove("proj-card__list--fading");
+      }, PROYECCION_FADE_MS);
+    } else {
+      renderProyeccionLista(lista, datos, mostrarDelta, animar);
+    }
+  };
+
+  fade(elements.projListCampeon, campeon);
+  fade(elements.projListTop3, top3);
+}
+
+function setupProyeccionToggle() {
+  const input = elements.projIaToggleInput;
+  if (!input || input.dataset.bound === "1") return;
+  input.dataset.bound = "1";
+  input.checked = proyeccionState.showIA;
+  input.addEventListener("change", () => {
+    proyeccionState.showIA = input.checked;
+    const proy = appData.proyeccion;
+    if (proy) renderProyeccionListas(proy, true);
+  });
+}
+
+function renderProyeccion() {
+  const proy = appData.proyeccion;
+  const section = elements.proyeccionSection;
+  if (!section) return;
+  if (!proy || !Array.isArray(proy.campeon) || proy.campeon.length === 0) {
+    section.hidden = true;
+    return;
+  }
+  section.hidden = false;
+  setupProyeccionToggle();
+
+  if (elements.proyeccionSub && proy.simulaciones) {
+    const n = Number(proy.simulaciones).toLocaleString("es-ES");
+    elements.proyeccionSub.textContent = `Basado en ${n} simulaciones del resto del Mundial.`;
+  }
+
+  renderProyeccionListas(proy, false);
 }
 
 /* ── UI state ── */
@@ -1843,7 +2180,7 @@ async function init() {
   hideError();
   showLoading();
   try {
-    const [clasificacion, premios, partidos, resultados, marcadores, participantes, evolucion, status] = await Promise.all([
+    const [clasificacion, premios, partidos, resultados, marcadores, participantes, evolucion, status, proyeccion] = await Promise.all([
       loadClasificacion(),
       loadPremios(),
       loadPartidos().catch(() => null),
@@ -1852,6 +2189,7 @@ async function init() {
       loadParticipantes().catch(() => null),
       loadEvolucion().catch(() => null),
       loadStatus(),
+      loadProyeccion().catch(() => null),
     ]);
     appData.clasificacion = clasificacion;
     appData.premios = premios;
@@ -1861,6 +2199,7 @@ async function init() {
     appData.participantes = participantes;
     appData.evolucion = evolucion;
     appData.status = status;
+    appData.proyeccion = proyeccion;
     renderApp(clasificacion);
     hideError();
     hideLoading();

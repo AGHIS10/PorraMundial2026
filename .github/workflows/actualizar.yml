@@ -35,6 +35,9 @@ jobs:
       - name: Generar evolucion del torneo
         run: python scripts/generar_evolucion.py
 
+      - name: Calcular proyeccion del campeonato
+        run: python scripts/calcular_proyeccion.py
+
       - name: Sincronizar frontend
         run: python scripts/sync_frontend.py
 

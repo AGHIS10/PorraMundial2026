@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Clasificación en directo de la Porra Mundial 2026">
   <meta name="theme-color" content="#0d1f4d">
-  <meta name="app-build" content="20260628132559">
+  <meta name="app-build" content="20260628160937">
   <title>Porra Mundial 2026 · Clasificación en directo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260628132559">
+  <link rel="stylesheet" href="styles.css?v=20260628160937">
 </head>
 <body>
   <div class="bg-layer bg-layer--gradient"></div>
@@ -80,6 +80,16 @@
         </div>
       </div>
 
+      <section class="snapshot-section" id="snapshot-section" hidden aria-label="Estado del campeonato">
+        <div class="snapshot-grid">
+          <article class="snapshot-card snapshot-card--rise" id="snapshot-rise"></article>
+          <article class="snapshot-card snapshot-card--drop" id="snapshot-drop"></article>
+          <article class="snapshot-card snapshot-card--leader" id="snapshot-leader"></article>
+          <article class="snapshot-card snapshot-card--top3" id="snapshot-top3"></article>
+          <article class="snapshot-card snapshot-card--pulse" id="snapshot-pulse"></article>
+        </div>
+      </section>
+
       <section class="stats-grid" id="stats" aria-label="Estado de sincronización">
         <a
           class="stat-card stat-card--sync"
@@ -147,6 +157,37 @@
         </div>
         <div class="premios-panel table-panel">
           <div class="premios-list" id="premios-list" role="list" aria-label="Reparto provisional de premios"></div>
+        </div>
+      </section>
+
+      <section class="proyeccion-section" id="proyeccion-section" hidden>
+        <div class="section-head section-head--evolucion">
+          <div>
+            <h2 class="section-head__title">🔮 Proyección del campeonato</h2>
+            <p class="section-head__desc" id="proyeccion-sub">Basado en 20.000 simulaciones del resto del Mundial.</p>
+          </div>
+          <label class="ia-toggle" id="proj-ia-toggle">
+            <input type="checkbox" class="ia-toggle__input" id="proj-ia-toggle-input">
+            <span class="ia-toggle__track" aria-hidden="true"><span class="ia-toggle__thumb"></span></span>
+            <span class="ia-toggle__label">Mostrar IA</span>
+          </label>
+        </div>
+        <div class="proyeccion-grid">
+          <article class="proj-card">
+            <header class="proj-card__head">
+              <span class="proj-card__icon" aria-hidden="true">🏆</span>
+              <h3 class="proj-card__title">Probabilidad de ganar la porra</h3>
+            </header>
+            <div class="proj-card__list" id="proj-list-campeon" role="list"></div>
+          </article>
+          <article class="proj-card">
+            <header class="proj-card__head">
+              <span class="proj-card__icon" aria-hidden="true">🥉</span>
+              <h3 class="proj-card__title">Probabilidad de terminar entre los tres primeros</h3>
+            </header>
+            <div class="proj-card__list" id="proj-list-top3" role="list"></div>
+            <p class="proj-card__note">GPT y Gemini no participan en el Top 3.</p>
+          </article>
         </div>
       </section>
 
@@ -330,16 +371,17 @@
   }
 ]
   </script>
-  <script src="clasificacion.js?v=20260628132559"></script>
-  <script src="premios.js?v=20260628132559"></script>
-  <script src="partidos.js?v=20260628132559"></script>
-  <script src="resultados.js?v=20260628132559"></script>
-  <script src="marcadores.js?v=20260628132559"></script>
-  <script src="participantes.js?v=20260628132559"></script>
-  <script src="evolucion.js?v=20260628132559"></script>
-  <script src="flags.js?v=20260628132559"></script>
-  <script src="config.js?v=20260628132559"></script>
-  <script src="analytics.js?v=20260628132559"></script>
-  <script src="app.js?v=20260628132559"></script>
+  <script src="clasificacion.js?v=20260628160937"></script>
+  <script src="premios.js?v=20260628160937"></script>
+  <script src="partidos.js?v=20260628160937"></script>
+  <script src="resultados.js?v=20260628160937"></script>
+  <script src="marcadores.js?v=20260628160937"></script>
+  <script src="participantes.js?v=20260628160937"></script>
+  <script src="evolucion.js?v=20260628160937"></script>
+  <script src="proyeccion.js?v=20260628160937"></script>
+  <script src="flags.js?v=20260628160937"></script>
+  <script src="config.js?v=20260628160937"></script>
+  <script src="analytics.js?v=20260628160937"></script>
+  <script src="app.js?v=20260628160937"></script>
 </body>
 </html>

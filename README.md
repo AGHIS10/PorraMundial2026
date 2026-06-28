@@ -13,8 +13,11 @@ porra-mundial/
 ├── partidos.json            # Metadatos de los partidos
 ├── resultados.json          # Resultados reales de los partidos
 ├── clasificacion.json       # Clasificación generada (salida)
+├── proyeccion.py            # Motor Monte Carlo (proyección del campeonato)
+├── probabilidades.py        # Proveedor de probabilidades (desacoplado)
 ├── scripts/
-│   └── calcular_clasificacion.py
+│   ├── calcular_clasificacion.py
+│   └── calcular_proyeccion.py
 ├── docs/                    # Frontend (GitHub Pages)
 │   ├── index.html
 │   ├── styles.css
@@ -263,6 +266,106 @@ La lógica de carga está en `docs/analytics.js` (`initAnalytics()`), llamada al
 - Diseño responsive optimizado para móvil
 - Skeleton loading mientras carga el JSON
 - Carga de `partidos.json` preparada para futuras vistas (detalle de jugador, estadísticas)
+
+## Proyección del campeonato (Monte Carlo)
+
+Motor de simulación que estima cómo puede terminar la porra. No son porcentajes
+inventados ni una IA prediciendo: es un Monte Carlo que simula miles de veces el
+resto del Mundial reutilizando **exactamente el mismo motor de puntuación** que
+la clasificación real.
+
+Calcula dos métricas:
+
+- 🏆 **Probabilidad de ganar la porra** — participan todos (incluidas las IA).
+- 🥉 **Probabilidad de terminar en el Top 3** — solo participantes reales; GPT y
+  GEMINI se eliminan de cada clasificación simulada *antes* de recortar el Top 3
+  (criterio idéntico al del reparto de premios).
+
+### Arquitectura
+
+| Fichero | Responsabilidad |
+|---------|-----------------|
+| `proyeccion.py` | Motor Monte Carlo (lógica pura, vectorizada con NumPy) |
+| `probabilidades.py` | Proveedor de probabilidades desacoplado del simulador |
+| `scripts/calcular_proyeccion.py` | Orquestador: carga datos, simula y genera `proyeccion.json` |
+
+El motor **no duplica reglas**: la puntuación usa `apuestas.puntos_apuesta` /
+`contar_aciertos_apuesta` y el desempate replica el de `calcular_clasificacion`.
+Solo sustituye los partidos pendientes por resultados simulados.
+
+### Configuración
+
+En `proyeccion.py`:
+
+```python
+SIMULACIONES = 20000   # desarrollo: 5000 · producción: 20000
+RANDOM_SEED = 2026     # semilla fija → resultados reproducibles
+```
+
+Con la misma semilla y los mismos datos, la simulación produce **exactamente**
+los mismos porcentajes. Solo cambian cuando cambian los resultados reales.
+
+### Probabilidades de los partidos
+
+El simulador nunca conoce el origen de las probabilidades: solo consume el
+contrato `ProveedorProbabilidades`. Hoy son manuales; mañana pueden venir de
+ELO, casas de apuestas, Football-Data o una IA sin tocar el motor.
+
+Formato opcional de `probabilidades.json` (en la raíz de `porra-mundial/`),
+indexado por id de partido:
+
+```json
+{
+  "89": {
+    "resultado": { "1": 0.47, "X": 0.28, "2": 0.25 },
+    "clasifica": { "1": 0.59, "2": 0.41 }
+  }
+}
+```
+
+Lo que no se especifique usa los valores por defecto de `probabilidades.py`.
+`clasifica` solo se aplica en eliminatorias.
+
+### Salida (`docs/proyeccion.json`)
+
+```json
+{
+  "generatedAt": "2026-06-20T20:30:00Z",
+  "simulaciones": 20000,
+  "seed": 2026,
+  "partidos_pendientes": 32,
+  "partidos_jugados": 80,
+  "movimiento": {
+    "hay_cambio": true,
+    "desde": "2026-06-20T18:30:00Z",
+    "ultimo_partido": { "id": 81, "local": "Bélgica", "visitante": "Senegal", "fase": "dieciseisavos", "marcador": "2-1" },
+    "beneficiado": { "nombre": "SERGIO", "inicial": "S", "color": "#f5c518", "probabilidad": 11.14, "delta": 1.02 },
+    "perjudicado": { "nombre": "GEMINI", "inicial": "G", "color": "#c0b3e0", "probabilidad": 7.70, "delta": -1.49 }
+  },
+  "campeon": [ { "nombre": "SERGIO", "inicial": "S", "color": "#f5c518", "es_ia": false, "probabilidad": 46.31, "delta": 1.02 } ],
+  "top3":    [ { "nombre": "SERGIO", "inicial": "S", "color": "#f5c518", "probabilidad": 98.42, "delta": 0.40 } ],
+  "distribucion": { "SERGIO": [46.31, 22.10, 11.0, 7.2, "…"] }
+}
+```
+
+El esquema está diseñado para ampliarse sin romper compatibilidad:
+
+- **`distribucion`** — probabilidad (%) de terminar en cada puesto del ranking
+  global, por participante. Es el artefacto central: `campeon` no es más que la
+  columna del puesto 1. Habilita métricas futuras (valor esperado del premio,
+  probabilidad de quedar último, etc.) sin volver a tocar el motor.
+- **`movimiento`** — evolución respecto a la proyección anterior. Solo se marca
+  `hay_cambio: true` cuando se ha jugado algún partido nuevo (con semilla fija,
+  sin nuevos resultados el delta es nulo, así que no hay ruido). Incluye el
+  partido que provocó el cambio y el mayor beneficiado/perjudicado.
+- **`delta`** — variación en puntos porcentuales de cada probabilidad respecto a
+  la ejecución previa; el frontend lo muestra como ▲/▼ junto a cada jugador.
+
+El frontend pinta una franja de *momentum* («cómo cambió el campeonato tras el
+último partido») sobre las dos tarjetas de probabilidad.
+
+Se recalcula automáticamente en el workflow tras cada actualización de
+resultados (paso *Calcular proyeccion*, entre la evolución y la sincronización).
 
 ## Ordenación
 
