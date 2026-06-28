@@ -1524,23 +1524,93 @@ function formatDualPicksHtml(pick, partido, prefix = "next-row") {
   `;
 }
 
-function formatDualVerdictHtml(pronostico, resultado, partido) {
+function calcPuntosPartido(pronostico, resultado, partido) {
+  const fase = partido.fase || "grupos";
+  if (!isMatchPlayed(resultado, fase)) return 0;
+  const p = normalizePick(pronostico, fase);
+  const r = normalizeResultado(resultado, fase);
+  const ptApuesta = isEliminatoriaFase(fase)
+    ? Math.floor((partido.peso || 2) / 2)
+    : 1;
+  let total = 0;
+  if (isEliminatoriaFase(fase)) {
+    if (p.resultado && r.resultado && p.resultado === r.resultado) total += ptApuesta;
+    if (p.clasifica && r.clasifica && p.clasifica === r.clasifica) total += ptApuesta;
+  } else if (p.resultado === r.resultado) {
+    total = ptApuesta;
+  }
+  return total;
+}
+
+function betFieldStatus(pronVal, realVal) {
+  if (!realVal || !pronVal) return "pending";
+  return pronVal === realVal ? "hit" : "miss";
+}
+
+function formatPointsBadge(pts) {
+  const cls = pts > 0 ? "mcard__pts--gain" : "mcard__pts--zero";
+  const label = pts > 0 ? `+${pts} pt${pts !== 1 ? "s" : ""}` : "0 pts";
+  return `<div class="mcard__pts ${cls}">${label}</div>`;
+}
+
+function formatComparePickRow(resultadoVal, clasificaVal, partido, options = {}) {
+  const { statusRes, statusCls, isPrediction } = options;
+  const resClass = isPrediction && statusRes
+    ? ` mcard__compare-val--${statusRes}`
+    : " mcard__compare-val--real";
+  const clsWrapClass = isPrediction && statusCls
+    ? `mcard__compare-cls mcard__compare-cls--${statusCls}`
+    : "mcard__compare-cls mcard__compare-cls--real";
+  return `
+    <div class="mcard__compare-picks">
+      <span class="mcard__compare-val${resClass}">${formatPickValue(resultadoVal)}</span>
+      <span class="${clsWrapClass}">${formatClasificaFlagHtml(clasificaVal, partido)}</span>
+    </div>
+  `;
+}
+
+function formatFinishedCompareHtml(pronostico, resultado, partido) {
   const p = normalizePick(pronostico, partido.fase);
   const r = normalizeResultado(resultado, partido.fase);
-  const resStatus = p.resultado && r.resultado
-    ? (p.resultado === r.resultado ? "hit" : "miss")
-    : "pending";
-  const clsStatus = p.clasifica && r.clasifica
-    ? (p.clasifica === r.clasifica ? "hit" : "miss")
-    : "pending";
+  const pts = calcPuntosPartido(pronostico, resultado, partido);
+  const dual = isEliminatoriaFase(partido.fase);
+
+  if (!dual) {
+    const status = betFieldStatus(p.resultado, r.resultado);
+    return `
+      <div class="mcard__compare mcard__compare--single">
+        <div class="mcard__compare-col">
+          <span class="mcard__compare-k">Quedó</span>
+          <span class="mcard__compare-val mcard__compare-val--real mcard__compare-val--lg">${formatPickValue(r.resultado)}</span>
+        </div>
+        <div class="mcard__compare-col">
+          <span class="mcard__compare-k">Apostaste</span>
+          <span class="mcard__compare-val mcard__compare-val--${status} mcard__compare-val--lg">${formatPickValue(p.resultado)}</span>
+        </div>
+      </div>
+      ${formatPointsBadge(pts)}
+    `;
+  }
+
+  const statusRes = betFieldStatus(p.resultado, r.resultado);
+  const statusCls = betFieldStatus(p.clasifica, r.clasifica);
 
   return `
-    <div class="mcard__picks">
-      <div class="mcard__pick-res mcard__pick-res--${resStatus}" title="Resultado">${formatPickValue(p.resultado)}</div>
-      <div class="mcard__pick-cls mcard__pick-cls--${clsStatus}" title="Clasifica">
-        ${formatClasificaFlagHtml(p.clasifica, partido)}
+    <div class="mcard__compare mcard__compare--dual">
+      <div class="mcard__compare-col">
+        <span class="mcard__compare-k">Quedó</span>
+        ${formatComparePickRow(r.resultado, r.clasifica, partido, {})}
+      </div>
+      <div class="mcard__compare-col">
+        <span class="mcard__compare-k">Apostaste</span>
+        ${formatComparePickRow(p.resultado, p.clasifica, partido, {
+          statusRes,
+          statusCls,
+          isPrediction: true,
+        })}
       </div>
     </div>
+    ${formatPointsBadge(pts)}
   `;
 }
 
@@ -1562,10 +1632,8 @@ function createMatchCard(partido, pronostico, resultado, marcador, index) {
   card.style.animationDelay = `${0.04 * index}s`;
 
   if (isFinished) {
-    const scoreDisplay = hasScore ? `${marcador.home}-${marcador.away}` : "—";
-    const verdictHtml = dual
-      ? formatDualVerdictHtml(pronostico, resultado, partido)
-      : `<span class="mcard__pick">${formatPickDisplay(pronostico, partido.fase, partido)}</span>`;
+    const scoreDisplay = hasScore ? `${marcador.home}-${marcador.away}` : "vs";
+    const verdictHtml = formatFinishedCompareHtml(pronostico, resultado, partido);
     card.innerHTML = `
       ${formatWhenSpainHtml(partido, "mcard")}
       <div class="mcard__scoreline">
@@ -1573,13 +1641,13 @@ function createMatchCard(partido, pronostico, resultado, marcador, index) {
           ${flagImg(partido.local, "flag flag--sm")}
           <span class="mcard__team-name">${partido.local}</span>
         </div>
-        <div class="mcard__score">${scoreDisplay}</div>
+        <div class="mcard__score${hasScore ? "" : " mcard__score--vs"}">${scoreDisplay}</div>
         <div class="mcard__team mcard__team--away">
           <span class="mcard__team-name">${partido.visitante}</span>
           ${flagImg(partido.visitante, "flag flag--sm")}
         </div>
       </div>
-      <div class="mcard__verdict">${verdictHtml}</div>
+      <div class="mcard__verdict mcard__verdict--finished">${verdictHtml}</div>
     `;
   } else {
     card.innerHTML = `
