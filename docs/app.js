@@ -2006,9 +2006,17 @@ function formatDeltaHtml(delta, mostrar) {
   return `<span class="proj-delta ${cls}" title="Variación desde el último partido">${flecha} ${signo}${Math.abs(valor).toFixed(1)}</span>`;
 }
 
-function createProyeccionRow(entry, posicion, mostrarDelta, animarEntrada) {
+function deltaProyeccionEntry(entry, incluirIA) {
+  if (!incluirIA && entry.delta_sin_ia != null) {
+    return Number(entry.delta_sin_ia) || 0;
+  }
+  return Number(entry.delta) || 0;
+}
+
+function createProyeccionRow(entry, posicion, mostrarDelta, animarEntrada, incluirIA = true) {
   const prob = Number(entry.probabilidad) || 0;
   const color = entry.color || "var(--accent-cyan)";
+  const delta = deltaProyeccionEntry(entry, incluirIA);
   // Escala absoluta 0–100 %: la barra refleja la probabilidad real, no el
   // máximo de la tarjeta. Así un 17 % se ve claramente corto y un favorito
   // al 50 % ocupa media pista.
@@ -2028,7 +2036,7 @@ function createProyeccionRow(entry, posicion, mostrarDelta, animarEntrada) {
       <div class="proj-row__top">
         <span class="proj-row__name"><span class="proj-row__rank">${posicion}.</span>${entry.nombre}</span>
         <span class="proj-row__meta">
-          ${formatDeltaHtml(entry.delta, mostrarDelta)}
+          ${formatDeltaHtml(delta, mostrarDelta)}
           <span class="proj-row__pct">${formatProbabilidad(prob)}</span>
         </span>
       </div>
@@ -2089,18 +2097,17 @@ function filtrarProyeccionTop3(entradas, incluirIA) {
   return lista;
 }
 
-function renderProyeccionLista(contenedor, entradas, mostrarDelta, animarEntrada = true) {
+function renderProyeccionLista(contenedor, entradas, mostrarDelta, animarEntrada = true, incluirIA = true) {
   if (!contenedor) return;
   contenedor.innerHTML = "";
   entradas.forEach((entry, i) => {
-    contenedor.appendChild(createProyeccionRow(entry, i + 1, mostrarDelta, animarEntrada));
+    contenedor.appendChild(createProyeccionRow(entry, i + 1, mostrarDelta, animarEntrada, incluirIA));
   });
 }
 
 function renderProyeccionListas(proy, animar = true) {
   const incluirIA = proyeccionState.showIA;
-  // Los deltas vienen calculados sobre el ranking completo; no aplican al reparto condicional.
-  const mostrarDelta = Boolean(proy.movimiento && proy.movimiento.hay_cambio) && incluirIA;
+  const mostrarDelta = Boolean(proy.movimiento && proy.movimiento.hay_cambio);
   const campeon = filtrarProyeccionCampeon(proy.campeon || [], incluirIA);
   const top3 = filtrarProyeccionTop3(proy.top3 || [], incluirIA);
 
@@ -2109,11 +2116,11 @@ function renderProyeccionListas(proy, animar = true) {
     if (animar && lista.children.length > 0) {
       lista.classList.add("proj-card__list--fading");
       window.setTimeout(() => {
-        renderProyeccionLista(lista, datos, mostrarDelta, animar);
+        renderProyeccionLista(lista, datos, mostrarDelta, animar, incluirIA);
         lista.classList.remove("proj-card__list--fading");
       }, PROYECCION_FADE_MS);
     } else {
-      renderProyeccionLista(lista, datos, mostrarDelta, animar);
+      renderProyeccionLista(lista, datos, mostrarDelta, animar, incluirIA);
     }
   };
 

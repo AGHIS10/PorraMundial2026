@@ -676,7 +676,7 @@ window.__PARTIDOS__ = [
   },
   {
     "id": 76,
-    "fecha": "2026-06-29",
+    "fecha": "2026-06-30",
     "hora": "03:00",
     "local": "Países Bajos",
     "visitante": "Marruecos",
@@ -703,7 +703,7 @@ window.__PARTIDOS__ = [
   },
   {
     "id": 79,
-    "fecha": "2026-06-30",
+    "fecha": "2026-07-01",
     "hora": "03:00",
     "local": "México",
     "visitante": "Ecuador",
@@ -730,7 +730,7 @@ window.__PARTIDOS__ = [
   },
   {
     "id": 82,
-    "fecha": "2026-07-01",
+    "fecha": "2026-07-02",
     "hora": "02:00",
     "local": "Estados Unidos",
     "visitante": "Bosnia y Herzegovina",
@@ -748,7 +748,7 @@ window.__PARTIDOS__ = [
   },
   {
     "id": 84,
-    "fecha": "2026-07-02",
+    "fecha": "2026-07-03",
     "hora": "01:00",
     "local": "Portugal",
     "visitante": "Croacia",
@@ -757,7 +757,7 @@ window.__PARTIDOS__ = [
   },
   {
     "id": 85,
-    "fecha": "2026-07-02",
+    "fecha": "2026-07-03",
     "hora": "05:00",
     "local": "Suiza",
     "visitante": "Argelia",
@@ -775,7 +775,7 @@ window.__PARTIDOS__ = [
   },
   {
     "id": 87,
-    "fecha": "2026-07-03",
+    "fecha": "2026-07-04",
     "hora": "00:00",
     "local": "Argentina",
     "visitante": "Cabo Verde",
@@ -784,7 +784,7 @@ window.__PARTIDOS__ = [
   },
   {
     "id": 88,
-    "fecha": "2026-07-03",
+    "fecha": "2026-07-04",
     "hora": "03:30",
     "local": "Colombia",
     "visitante": "Ghana",

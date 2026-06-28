@@ -168,6 +168,46 @@ def _con_delta(
     return salida
 
 
+def _renorm_humanos(campeon: list[dict[str, Any]]) -> dict[str, float]:
+    """Probabilidades de campeón renormalizadas al 100 % entre humanos."""
+    humanos = [fila for fila in campeon if not fila.get("es_ia")]
+    suma = sum(float(fila.get("probabilidad", 0.0)) for fila in humanos)
+    if suma <= 0:
+        return {}
+    return {
+        str(fila["nombre"]): round(float(fila["probabilidad"]) / suma * 100, 2)
+        for fila in humanos
+    }
+
+
+def _aplicar_delta_sin_ia(
+    campeon: list[dict[str, Any]],
+    previa: dict[str, Any] | None,
+    hay_previa: bool,
+) -> None:
+    """Delta en la vista sin IA: coherente con el reparto condicional del frontend."""
+    if not hay_previa or not isinstance(previa, dict):
+        for fila in campeon:
+            if not fila.get("es_ia"):
+                fila["delta_sin_ia"] = 0.0
+        return
+
+    prev_campeon = previa.get("campeon")
+    if not isinstance(prev_campeon, list):
+        for fila in campeon:
+            if not fila.get("es_ia"):
+                fila["delta_sin_ia"] = 0.0
+        return
+
+    actual = _renorm_humanos(campeon)
+    anterior = _renorm_humanos(prev_campeon)
+    for fila in campeon:
+        if fila.get("es_ia"):
+            continue
+        nombre = str(fila["nombre"])
+        fila["delta_sin_ia"] = round(actual.get(nombre, 0.0) - anterior.get(nombre, 0.0), 2)
+
+
 def _contar_jugados(partidos: list[Any], resultados: list[Any]) -> int:
     """Número de partidos con resultado oficial."""
     return sum(
@@ -288,6 +328,7 @@ def construir_salida(
         }
         for fila in _con_delta(resultado.campeon, prev_campeon, hay_previa)
     ]
+    _aplicar_delta_sin_ia(campeon, previa, hay_previa)
     top3 = [
         {
             **fila,

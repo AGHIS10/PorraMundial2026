@@ -53,7 +53,8 @@ window.__PROYECCION__ = {
       "delta": -0.39,
       "inicial": "G",
       "color": "#9b8cff",
-      "es_ia": false
+      "es_ia": false,
+      "delta_sin_ia": -0.28
     },
     {
       "nombre": "JORGE",
@@ -61,7 +62,8 @@ window.__PROYECCION__ = {
       "delta": 1.05,
       "inicial": "J",
       "color": "#ef6f6c",
-      "es_ia": false
+      "es_ia": false,
+      "delta_sin_ia": 1.71
     },
     {
       "nombre": "GEMINI",
@@ -77,7 +79,8 @@ window.__PROYECCION__ = {
       "delta": -0.07,
       "inicial": "A",
       "color": "#2ee6d6",
-      "es_ia": false
+      "es_ia": false,
+      "delta_sin_ia": 0.11
     },
     {
       "nombre": "PEDRO",
@@ -85,7 +88,8 @@ window.__PROYECCION__ = {
       "delta": 0.56,
       "inicial": "P",
       "color": "#58d68d",
-      "es_ia": false
+      "es_ia": false,
+      "delta_sin_ia": 0.97
     },
     {
       "nombre": "SERGIO",
@@ -93,7 +97,8 @@ window.__PROYECCION__ = {
       "delta": 0.5,
       "inicial": "S",
       "color": "#f5c518",
-      "es_ia": false
+      "es_ia": false,
+      "delta_sin_ia": 0.88
     },
     {
       "nombre": "MARIO",
@@ -101,7 +106,8 @@ window.__PROYECCION__ = {
       "delta": -1.96,
       "inicial": "M",
       "color": "#5aa9ff",
-      "es_ia": false
+      "es_ia": false,
+      "delta_sin_ia": -2.55
     },
     {
       "nombre": "CRISTIAN",
@@ -109,7 +115,8 @@ window.__PROYECCION__ = {
       "delta": -0.66,
       "inicial": "C",
       "color": "#f0883e",
-      "es_ia": false
+      "es_ia": false,
+      "delta_sin_ia": -0.84
     }
   ],
   "top3": [
