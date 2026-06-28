@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T17:06:35Z",
+  "generatedAt": "2026-06-28T17:07:05Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 32,
@@ -7,7 +7,7 @@
   "partidos_jugados": 72,
   "movimiento": {
     "hay_cambio": false,
-    "desde": "2026-06-28T17:06:18Z",
+    "desde": "2026-06-28T17:06:35Z",
     "ultimo_partido": {
       "id": 71,
       "local": "Argelia",
@@ -30,7 +30,7 @@
     {
       "nombre": "GPT",
       "probabilidad": 17.25,
-      "delta": 17.25,
+      "delta": 0.0,
       "inicial": "G",
       "color": "#8c99b0",
       "es_ia": true
@@ -38,7 +38,7 @@
     {
       "nombre": "GABRIEL",
       "probabilidad": 14.02,
-      "delta": -5.24,
+      "delta": 0.0,
       "inicial": "G",
       "color": "#9b8cff",
       "es_ia": false
@@ -46,7 +46,7 @@
     {
       "nombre": "JORGE",
       "probabilidad": 12.48,
-      "delta": -4.8,
+      "delta": 0.0,
       "inicial": "J",
       "color": "#ef6f6c",
       "es_ia": false
@@ -54,7 +54,7 @@
     {
       "nombre": "MARIO",
       "probabilidad": 11.05,
-      "delta": -4.07,
+      "delta": 0.0,
       "inicial": "M",
       "color": "#5aa9ff",
       "es_ia": false
@@ -62,7 +62,7 @@
     {
       "nombre": "AGUSTIN",
       "probabilidad": 10.95,
-      "delta": -3.78,
+      "delta": 0.0,
       "inicial": "A",
       "color": "#2ee6d6",
       "es_ia": false
@@ -70,7 +70,7 @@
     {
       "nombre": "GEMINI",
       "probabilidad": 10.58,
-      "delta": 10.58,
+      "delta": 0.0,
       "inicial": "G",
       "color": "#c0b3e0",
       "es_ia": true
@@ -78,7 +78,7 @@
     {
       "nombre": "PEDRO",
       "probabilidad": 9.72,
-      "delta": -3.74,
+      "delta": 0.0,
       "inicial": "P",
       "color": "#58d68d",
       "es_ia": false
@@ -86,7 +86,7 @@
     {
       "nombre": "SERGIO",
       "probabilidad": 9.3,
-      "delta": -3.74,
+      "delta": 0.0,
       "inicial": "S",
       "color": "#f5c518",
       "es_ia": false
@@ -94,7 +94,7 @@
     {
       "nombre": "CRISTIAN",
       "probabilidad": 4.67,
-      "delta": -2.21,
+      "delta": 0.0,
       "inicial": "C",
       "color": "#f0883e",
       "es_ia": false
@@ -104,49 +104,49 @@
     {
       "nombre": "GABRIEL",
       "probabilidad": 51.77,
-      "delta": 0.46,
+      "delta": 0.0,
       "inicial": "G",
       "color": "#9b8cff"
     },
     {
       "nombre": "JORGE",
       "probabilidad": 48.85,
-      "delta": 0.41,
+      "delta": 0.0,
       "inicial": "J",
       "color": "#ef6f6c"
     },
     {
       "nombre": "AGUSTIN",
       "probabilidad": 44.13,
-      "delta": 0.39,
+      "delta": 0.0,
       "inicial": "A",
       "color": "#2ee6d6"
     },
     {
       "nombre": "MARIO",
       "probabilidad": 44.02,
-      "delta": 0.36,
+      "delta": 0.0,
       "inicial": "M",
       "color": "#5aa9ff"
     },
     {
       "nombre": "PEDRO",
       "probabilidad": 42.12,
-      "delta": 0.45,
+      "delta": 0.0,
       "inicial": "P",
       "color": "#58d68d"
     },
     {
       "nombre": "SERGIO",
       "probabilidad": 41.7,
-      "delta": 0.39,
+      "delta": 0.0,
       "inicial": "S",
       "color": "#f5c518"
     },
     {
       "nombre": "CRISTIAN",
       "probabilidad": 27.4,
-      "delta": 0.26,
+      "delta": 0.0,
       "inicial": "C",
       "color": "#f0883e"
     }
