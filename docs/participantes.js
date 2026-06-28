@@ -74,70 +74,22 @@ window.__PARTICIPANTES__ = {
       "1",
       "1",
       "2",
-      {
-        "resultado": "2",
-        "clasifica": "2"
-      },
-      {
-        "resultado": "1",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "1",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "X",
-        "clasifica": "2"
-      },
-      {
-        "resultado": "2",
-        "clasifica": "2"
-      },
-      {
-        "resultado": "1",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "X",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "1",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "1",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "X",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "1",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "X",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "1",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "2",
-        "clasifica": "2"
-      },
-      {
-        "resultado": "1",
-        "clasifica": "1"
-      },
-      {
-        "resultado": "1",
-        "clasifica": "1"
-      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
       null,
       null,
       null,
