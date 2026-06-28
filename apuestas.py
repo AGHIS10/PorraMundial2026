@@ -8,6 +8,7 @@ from puntuacion_fases import PESO_POR_FASE
 
 RESULTADOS_VALIDOS = frozenset({"1", "X", "2"})
 CLASIFICA_VALIDOS = frozenset({"1", "2"})
+PUNTOS_TERCER_PUESTO = {"resultado": 13, "clasifica": 12}
 
 
 def es_eliminatoria(fase: str) -> bool:
@@ -19,6 +20,8 @@ def puntos_por_tipo_apuesta(fase: str, tipo: str) -> int:
     """Puntos por acertar resultado o clasifica en una fase."""
     if fase == "grupos":
         return 1 if tipo == "resultado" else 0
+    if fase == "tercer_puesto":
+        return PUNTOS_TERCER_PUESTO[tipo]
     return PESO_POR_FASE[fase] // 2
 
 

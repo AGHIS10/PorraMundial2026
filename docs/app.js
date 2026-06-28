@@ -1524,20 +1524,27 @@ function formatDualPicksHtml(pick, partido, prefix = "next-row") {
   `;
 }
 
+function puntosPorTipoApuesta(fase, tipo, peso) {
+  if (fase === "grupos") return tipo === "resultado" ? 1 : 0;
+  if (fase === "tercer_puesto") return tipo === "resultado" ? 13 : 12;
+  return Math.floor((peso || 2) / 2);
+}
+
 function calcPuntosPartido(pronostico, resultado, partido) {
   const fase = partido.fase || "grupos";
   if (!isMatchPlayed(resultado, fase)) return 0;
   const p = normalizePick(pronostico, fase);
   const r = normalizeResultado(resultado, fase);
-  const ptApuesta = isEliminatoriaFase(fase)
-    ? Math.floor((partido.peso || 2) / 2)
-    : 1;
   let total = 0;
   if (isEliminatoriaFase(fase)) {
-    if (p.resultado && r.resultado && p.resultado === r.resultado) total += ptApuesta;
-    if (p.clasifica && r.clasifica && p.clasifica === r.clasifica) total += ptApuesta;
+    if (p.resultado && r.resultado && p.resultado === r.resultado) {
+      total += puntosPorTipoApuesta(fase, "resultado", partido.peso);
+    }
+    if (p.clasifica && r.clasifica && p.clasifica === r.clasifica) {
+      total += puntosPorTipoApuesta(fase, "clasifica", partido.peso);
+    }
   } else if (p.resultado === r.resultado) {
-    total = ptApuesta;
+    total = puntosPorTipoApuesta(fase, "resultado", partido.peso);
   }
   return total;
 }
