@@ -252,56 +252,137 @@ def _ultimo_partido_jugado(
     }
 
 
-def _movimiento(
+def _hay_partido_nuevo(previa: dict[str, Any] | None, partidos_jugados: int) -> bool:
+    """True si hay al menos un partido más que en la proyección anterior."""
+    if not isinstance(previa, dict):
+        return False
+    jugados_previos = previa.get("partidos_jugados")
+    return isinstance(jugados_previos, int) and partidos_jugados > jugados_previos
+
+
+def _aplicar_deltas_almacenados(
     campeon: list[dict[str, Any]],
+    top3: list[dict[str, Any]],
+    ultimo_movimiento: dict[str, Any],
+) -> None:
+    """Restaura deltas del último partido sin tocar las probabilidades actuales."""
+    deltas_campeon = ultimo_movimiento.get("deltas_campeon") or {}
+    deltas_top3 = ultimo_movimiento.get("deltas_top3") or {}
+    for fila in campeon:
+        nombre = str(fila["nombre"])
+        guardado = deltas_campeon.get(nombre, {})
+        if isinstance(guardado, dict):
+            fila["delta"] = float(guardado.get("delta", 0.0))
+            fila["delta_sin_ia"] = float(guardado.get("delta_sin_ia", 0.0))
+        else:
+            fila["delta"] = float(guardado or 0.0)
+            fila["delta_sin_ia"] = 0.0
+    for fila in top3:
+        fila["delta"] = float(deltas_top3.get(str(fila["nombre"]), 0.0))
+
+
+def _tarjeta_movimiento(
+    fila: dict[str, Any],
+    meta: dict[str, dict[str, str]],
+) -> dict[str, Any]:
+    nombre = fila["nombre"]
+    return {
+        "nombre": nombre,
+        "inicial": meta[nombre]["inicial"],
+        "color": meta[nombre]["color"],
+        "probabilidad": fila["probabilidad"],
+        "delta": fila["delta"],
+    }
+
+
+def _beneficiado_perjudicado(
+    campeon: list[dict[str, Any]],
+    meta: dict[str, dict[str, str]],
+) -> tuple[dict[str, Any] | None, dict[str, Any] | None]:
+    """Mayor subida y bajada entre quienes superan el umbral de ruido."""
+    con_delta = [f for f in campeon if abs(f.get("delta", 0.0)) >= UMBRAL_MOVIMIENTO_PP]
+    if not con_delta:
+        return None, None
+    mejor = max(con_delta, key=lambda f: f["delta"])
+    peor = min(con_delta, key=lambda f: f["delta"])
+    beneficiado = _tarjeta_movimiento(mejor, meta) if mejor["delta"] > 0 else None
+    perjudicado = _tarjeta_movimiento(peor, meta) if peor["delta"] < 0 else None
+    return beneficiado, perjudicado
+
+
+def _crear_ultimo_movimiento(
+    campeon: list[dict[str, Any]],
+    top3: list[dict[str, Any]],
     previa: dict[str, Any] | None,
     partidos_jugados: int,
     ultimo_partido: dict[str, Any] | None,
     meta: dict[str, dict[str, str]],
 ) -> dict[str, Any]:
-    """Mayor beneficiado y perjudicado desde la proyección anterior.
-
-    Solo se considera un cambio real cuando se ha jugado algún partido nuevo
-    (la semilla fija garantiza que sin nuevos resultados el delta sería nulo).
-    """
-    jugados_previos = previa.get("partidos_jugados") if isinstance(previa, dict) else None
-    hay_cambio = (
-        isinstance(jugados_previos, int) and partidos_jugados > jugados_previos
-    )
-
-    base = {
-        "hay_cambio": False,
+    """Instantánea de deltas tras un partido nuevo (persiste hasta el siguiente)."""
+    beneficiado, perjudicado = _beneficiado_perjudicado(campeon, meta)
+    hay_cambio = beneficiado is not None or perjudicado is not None
+    return {
+        "partidos_jugados": partidos_jugados,
         "desde": previa.get("generatedAt") if isinstance(previa, dict) else None,
         "ultimo_partido": ultimo_partido,
+        "hay_cambio": hay_cambio,
+        "beneficiado": beneficiado,
+        "perjudicado": perjudicado,
+        "deltas_campeon": {
+            str(fila["nombre"]): {
+                "delta": fila.get("delta", 0.0),
+                "delta_sin_ia": fila.get("delta_sin_ia", 0.0),
+            }
+            for fila in campeon
+        },
+        "deltas_top3": {str(fila["nombre"]): fila.get("delta", 0.0) for fila in top3},
+    }
+
+
+def _ultimo_movimiento_vacio(
+    partidos_jugados: int,
+    ultimo_partido: dict[str, Any] | None,
+) -> dict[str, Any]:
+    return {
+        "partidos_jugados": partidos_jugados,
+        "desde": None,
+        "ultimo_partido": ultimo_partido,
+        "hay_cambio": False,
         "beneficiado": None,
         "perjudicado": None,
+        "deltas_campeon": {},
+        "deltas_top3": {},
     }
-    if not hay_cambio:
-        return base
 
-    con_delta = [f for f in campeon if abs(f.get("delta", 0.0)) >= UMBRAL_MOVIMIENTO_PP]
-    if not con_delta:
-        return base
 
-    def tarjeta(fila: dict[str, Any]) -> dict[str, Any]:
-        nombre = fila["nombre"]
-        return {
-            "nombre": nombre,
-            "inicial": meta[nombre]["inicial"],
-            "color": meta[nombre]["color"],
-            "probabilidad": fila["probabilidad"],
-            "delta": fila["delta"],
-        }
+def _refrescar_tarjetas_movimiento(
+    ultimo_movimiento: dict[str, Any],
+    campeon: list[dict[str, Any]],
+    meta: dict[str, dict[str, str]],
+) -> None:
+    """Actualiza la probabilidad actual en beneficiado/perjudicado; conserva el delta."""
+    campeon_por_nombre = {str(f["nombre"]): f for f in campeon}
+    for clave in ("beneficiado", "perjudicado"):
+        tarjeta = ultimo_movimiento.get(clave)
+        if not isinstance(tarjeta, dict):
+            continue
+        fila = campeon_por_nombre.get(str(tarjeta.get("nombre")))
+        if not fila:
+            continue
+        tarjeta["probabilidad"] = fila["probabilidad"]
+        tarjeta["inicial"] = meta[fila["nombre"]]["inicial"]
+        tarjeta["color"] = meta[fila["nombre"]]["color"]
 
-    mejor = max(con_delta, key=lambda f: f["delta"])
-    peor = min(con_delta, key=lambda f: f["delta"])
 
-    base["hay_cambio"] = True
-    if mejor["delta"] > 0:
-        base["beneficiado"] = tarjeta(mejor)
-    if peor["delta"] < 0:
-        base["perjudicado"] = tarjeta(peor)
-    return base
+def _movimiento_para_frontend(ultimo_movimiento: dict[str, Any]) -> dict[str, Any]:
+    """Vista compatible con el frontend a partir del bloque persistente."""
+    return {
+        "hay_cambio": bool(ultimo_movimiento.get("hay_cambio")),
+        "desde": ultimo_movimiento.get("desde"),
+        "ultimo_partido": ultimo_movimiento.get("ultimo_partido"),
+        "beneficiado": ultimo_movimiento.get("beneficiado"),
+        "perjudicado": ultimo_movimiento.get("perjudicado"),
+    }
 
 
 def construir_salida(
@@ -315,9 +396,13 @@ def construir_salida(
 ) -> dict[str, Any]:
     """Estructura serializable, diseñada para ampliarse sin romper compatibilidad."""
     meta = _meta_visual(nombres)
-    hay_previa = isinstance(previa, dict) and bool(previa.get("campeon"))
-    prev_campeon = _mapa_probabilidades(previa.get("campeon") if previa else None)
-    prev_top3 = _mapa_probabilidades(previa.get("top3") if previa else None)
+    partido_nuevo = _hay_partido_nuevo(previa, partidos_jugados)
+    prev_ultimo = previa.get("ultimo_movimiento") if isinstance(previa, dict) else None
+
+    # Solo recalcular deltas respecto al fichero anterior si entró un partido nuevo.
+    hay_baseline = partido_nuevo and isinstance(previa, dict) and bool(previa.get("campeon"))
+    prev_campeon = _mapa_probabilidades(previa.get("campeon") if hay_baseline else None)
+    prev_top3 = _mapa_probabilidades(previa.get("top3") if hay_baseline else None)
 
     campeon = [
         {
@@ -326,21 +411,35 @@ def construir_salida(
             "color": meta[fila["nombre"]]["color"],
             "es_ia": es_participante_virtual(fila["nombre"]),
         }
-        for fila in _con_delta(resultado.campeon, prev_campeon, hay_previa)
+        for fila in _con_delta(resultado.campeon, prev_campeon, hay_baseline)
     ]
-    _aplicar_delta_sin_ia(campeon, previa, hay_previa)
+    if hay_baseline:
+        _aplicar_delta_sin_ia(campeon, previa, True)
+    else:
+        _aplicar_delta_sin_ia(campeon, None, False)
+
     top3 = [
         {
             **fila,
             "inicial": meta[fila["nombre"]]["inicial"],
             "color": meta[fila["nombre"]]["color"],
         }
-        for fila in _con_delta(resultado.top3, prev_top3, hay_previa)
+        for fila in _con_delta(resultado.top3, prev_top3, hay_baseline)
     ]
 
-    movimiento = _movimiento(
-        campeon, previa, partidos_jugados, ultimo_partido, meta
-    )
+    if partido_nuevo:
+        ultimo_movimiento = _crear_ultimo_movimiento(
+            campeon, top3, previa, partidos_jugados, ultimo_partido, meta
+        )
+    elif isinstance(prev_ultimo, dict) and prev_ultimo.get("partidos_jugados") == partidos_jugados:
+        ultimo_movimiento = dict(prev_ultimo)
+        ultimo_movimiento["ultimo_partido"] = ultimo_partido
+        _aplicar_deltas_almacenados(campeon, top3, ultimo_movimiento)
+        _refrescar_tarjetas_movimiento(ultimo_movimiento, campeon, meta)
+    else:
+        ultimo_movimiento = _ultimo_movimiento_vacio(partidos_jugados, ultimo_partido)
+
+    movimiento = _movimiento_para_frontend(ultimo_movimiento)
     indice_emocion = _calcular_indice_emocion(resultado.campeon)
 
     return {
@@ -351,6 +450,7 @@ def construir_salida(
         "puntos_max_restantes": resultado.puntos_max_restantes,
         "partidos_jugados": partidos_jugados,
         "movimiento": movimiento,
+        "ultimo_movimiento": ultimo_movimiento,
         "indice_emocion": indice_emocion,
         "campeon": campeon,
         "top3": top3,
