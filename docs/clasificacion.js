@@ -2,55 +2,55 @@ window.__CLASIFICACION__ = [
   {
     "posicion": 1,
     "nombre": "GPT",
-    "aciertos": 49,
-    "puntos": 49
+    "aciertos": 51,
+    "puntos": 51
   },
   {
     "posicion": 2,
     "nombre": "GABRIEL",
-    "aciertos": 46,
-    "puntos": 46
+    "aciertos": 48,
+    "puntos": 48
   },
   {
     "posicion": 3,
     "nombre": "JORGE",
-    "aciertos": 46,
-    "puntos": 46
+    "aciertos": 48,
+    "puntos": 48
   },
   {
     "posicion": 4,
     "nombre": "AGUSTIN",
-    "aciertos": 44,
-    "puntos": 44
+    "aciertos": 46,
+    "puntos": 46
   },
   {
     "posicion": 5,
     "nombre": "GEMINI",
-    "aciertos": 44,
-    "puntos": 44
+    "aciertos": 46,
+    "puntos": 46
   },
   {
     "posicion": 6,
     "nombre": "PEDRO",
-    "aciertos": 43,
-    "puntos": 43
+    "aciertos": 45,
+    "puntos": 45
   },
   {
     "posicion": 7,
-    "nombre": "SERGIO",
-    "aciertos": 43,
-    "puntos": 43
+    "nombre": "MARIO",
+    "aciertos": 44,
+    "puntos": 44
   },
   {
     "posicion": 8,
-    "nombre": "MARIO",
-    "aciertos": 42,
-    "puntos": 42
+    "nombre": "SERGIO",
+    "aciertos": 44,
+    "puntos": 44
   },
   {
     "posicion": 9,
     "nombre": "CRISTIAN",
-    "aciertos": 35,
-    "puntos": 35
+    "aciertos": 36,
+    "puntos": 36
   }
 ];
