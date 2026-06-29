@@ -1942,6 +1942,44 @@ function renderSnapshotPulse(card, indice) {
   `;
 }
 
+function snapshotCampeonHumanos(campeon) {
+  return filtrarProyeccionCampeon(campeon || [], false);
+}
+
+/** Mayor subida/bajada entre humanos (delta_sin_ia, coherente con la vista sin IA). */
+function snapshotMovimientoHumanos(proy) {
+  const mom = proy.movimiento || {};
+  if (!mom.hay_cambio) {
+    return { hayCambio: false, beneficiado: null, perjudicado: null };
+  }
+
+  const humanos = snapshotCampeonHumanos(proy.campeon).map((e) => ({
+    ...e,
+    delta: Number(e.delta_sin_ia ?? e.delta) || 0,
+  }));
+  const conDelta = humanos.filter((e) => Math.abs(e.delta) >= DELTA_VISIBLE_PP);
+  if (conDelta.length === 0) {
+    return { hayCambio: true, beneficiado: null, perjudicado: null };
+  }
+
+  const mejor = conDelta.reduce((a, b) => (b.delta > a.delta ? b : a));
+  const peor = conDelta.reduce((a, b) => (b.delta < a.delta ? b : a));
+  return {
+    hayCambio: true,
+    beneficiado: mejor.delta > 0 ? mejor : null,
+    perjudicado: peor.delta < 0 ? peor : null,
+  };
+}
+
+function snapshotIndiceHumanos(proy, liderHumano) {
+  const base = proy.indice_emocion || {};
+  if (!liderHumano) return base;
+  return {
+    ...base,
+    lider_pct: Math.round(Number(liderHumano.probabilidad) * 10) / 10,
+  };
+}
+
 function renderSnapshot() {
   const proy = appData.proyeccion;
   const section = elements.snapshotSection;
@@ -1953,35 +1991,36 @@ function renderSnapshot() {
   }
   section.hidden = false;
 
-  const mom = proy.movimiento || {};
-  const hayCambio = Boolean(mom.hay_cambio);
-  const ultimo = mom.ultimo_partido;
+  const ultimo = proy.movimiento?.ultimo_partido;
+  const movHum = snapshotMovimientoHumanos(proy);
+  const liderHum = snapshotCampeonHumanos(proy.campeon)[0] || null;
+  const top3Hum = (proy.top3 || []).filter((e) => !e.es_ia).slice(0, 3);
 
   renderSnapshotPlayerCard(elements.snapshotRise, {
     icon: "📈",
     label: "Mayor subida",
-    jugador: hayCambio ? mom.beneficiado : null,
-    delta: hayCambio ? mom.beneficiado?.delta : 0,
+    jugador: movHum.beneficiado,
+    delta: movHum.beneficiado?.delta ?? 0,
     verbo: "Sube tras",
     tipo: "rise",
-    vacio: !hayCambio || !mom.beneficiado,
+    vacio: !movHum.hayCambio || !movHum.beneficiado,
     ultimoPartido: ultimo,
   });
 
   renderSnapshotPlayerCard(elements.snapshotDrop, {
     icon: "📉",
     label: "Mayor bajada",
-    jugador: hayCambio ? mom.perjudicado : null,
-    delta: hayCambio ? mom.perjudicado?.delta : 0,
+    jugador: movHum.perjudicado,
+    delta: movHum.perjudicado?.delta ?? 0,
     verbo: "Pierde tras",
     tipo: "drop",
-    vacio: !hayCambio || !mom.perjudicado,
+    vacio: !movHum.hayCambio || !movHum.perjudicado,
     ultimoPartido: ultimo,
   });
 
-  renderSnapshotLeader(elements.snapshotLeader, proy.campeon[0]);
-  renderSnapshotTop3(elements.snapshotTop3, proy.top3);
-  renderSnapshotPulse(elements.snapshotPulse, proy.indice_emocion);
+  renderSnapshotLeader(elements.snapshotLeader, liderHum);
+  renderSnapshotTop3(elements.snapshotTop3, top3Hum);
+  renderSnapshotPulse(elements.snapshotPulse, snapshotIndiceHumanos(proy, liderHum));
 }
 
 /* ── Proyección del campeonato (Monte Carlo) ── */
