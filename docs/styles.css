@@ -3292,6 +3292,14 @@ body {
 .evol-chip.is-dim { opacity: 0.35; }
 
 .evolucion-chart { position: relative; width: 100%; padding: 0.25rem 0 0.5rem; }
+.evolucion-chart--scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+.evolucion-chart--scroll .evol-svg { min-width: 100%; }
 
 .evol-svg { display: block; width: 100%; overflow: visible; }
 .evol-svg--infographic { overflow: visible; }
@@ -3317,9 +3325,18 @@ body {
   font-family: var(--font-display);
   font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  opacity: 0.65;
+}
+.evol-milestone__label--match {
+  font-size: 0.54rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  fill: var(--text-secondary);
+}
+.evol-milestone__tick--match {
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-dasharray: 1 4;
 }
 
 /* Curvas — infografía deportiva */

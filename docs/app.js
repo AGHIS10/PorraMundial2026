@@ -824,43 +824,114 @@ function renderEvolucion() {
   applyEvolucionHighlight();
 }
 
-/** Hitos del eje X — infografía por fases del torneo. */
-const EVOL_MILESTONES = [
-  { id: "inicio", label: "Inicio", orden: 0 },
-  { id: "mitad_grupos", label: "Mitad grupos", fase: "grupos", at: "mid" },
-  { id: "fin_grupos", label: "Fin grupos", fase: "grupos", at: "end" },
-  { id: "octavos", label: "Octavos", fase: "octavos", at: "end" },
-  { id: "cuartos", label: "Cuartos", fase: "cuartos", at: "end" },
-  { id: "semifinales", label: "Semifinales", fase: "semifinales", at: "end" },
-  { id: "final", label: "Final", fase: "final", at: "end" },
+/** Orden fijo de fases eliminatorias en el eje X. */
+const EVOL_KNOCKOUT_PHASES = [
+  "dieciseisavos",
+  "octavos",
+  "cuartos",
+  "semifinales",
+  "tercer_puesto",
+  "final",
 ];
 
-function resolveMilestoneOrden(evol, milestone) {
-  if (milestone.orden === 0) return 0;
-  const inPhase = evol.partidos.filter((p) => p.fase === milestone.fase);
-  if (!inPhase.length) return null;
-  if (milestone.at === "mid") {
-    return inPhase[Math.floor((inPhase.length - 1) / 2)].orden;
-  }
-  return inPhase[inPhase.length - 1].orden;
+function evolPhaseMatches(evol, fase) {
+  return (evol.partidos || []).filter((p) => p.fase === fase);
 }
 
-/** Hitos visibles según el progreso actual del torneo. */
-function buildEvolMilestones(evol) {
-  const resolved = [];
-  for (const def of EVOL_MILESTONES) {
-    const orden = resolveMilestoneOrden(evol, def);
-    if (orden === null) continue;
-    if (def.orden !== 0 && orden > evol.partidos_jugados) continue;
-    resolved.push({ ...def, orden });
+function evolPhaseScheduled(fase) {
+  return (appData.partidos || []).filter((p) => p.fase === fase);
+}
+
+function evolPhasePlayedCount(fase) {
+  const resultados = appData.resultados || [];
+  const partidos = appData.partidos || [];
+  return partidos.filter((p, i) => p.fase === fase && isMatchPlayed(resultados[i], p.fase)).length;
+}
+
+function evolLastOrdenInPhase(evol, fase) {
+  const matches = evolPhaseMatches(evol, fase);
+  return matches.length ? matches[matches.length - 1].orden : null;
+}
+
+function evolTeamAbbr(name) {
+  const parts = String(name).trim().split(/\s+/);
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[1].slice(0, 2)).toUpperCase();
   }
-  // Evitar hitos duplicados (p. ej. mitad = fin con pocos partidos)
-  const seen = new Set();
-  return resolved.filter((m) => {
-    if (seen.has(m.orden)) return false;
-    seen.add(m.orden);
-    return true;
-  });
+  return String(name).slice(0, 3).toUpperCase();
+}
+
+/** Etiqueta compacta para un partido en el eje X. */
+function evolMatchMilestoneLabel(partido) {
+  if (partido.marcador) {
+    const [home, away] = partido.marcador.split("-");
+    return `${home}:${away}`;
+  }
+  return `${evolTeamAbbr(partido.local)}–${evolTeamAbbr(partido.visitante)}`;
+}
+
+/**
+ * Hitos del eje X:
+ * - Salida (orden 0, sin etiqueta)
+ * - Grupos: siempre un único hito (colapsado)
+ * - Fases eliminatorias completadas: un hito por fase
+ * - Fase eliminatoria en curso: un hito por partido jugado
+ */
+function buildEvolMilestones(evol) {
+  const jugados = evol.partidos_jugados || 0;
+  if (jugados < 1) return [];
+
+  const milestones = [
+    { id: "salida", label: "", orden: 0, kind: "salida", hideLabel: true },
+  ];
+
+  const gruposPlayed = evolPhasePlayedCount("grupos");
+  if (gruposPlayed > 0) {
+    const orden = evolLastOrdenInPhase(evol, "grupos") ?? Math.min(jugados, gruposPlayed);
+    milestones.push({
+      id: "grupos",
+      label: FASE_LABELS.grupos,
+      fase: "grupos",
+      orden,
+      kind: "phase",
+    });
+  }
+
+  for (const fase of EVOL_KNOCKOUT_PHASES) {
+    const scheduled = evolPhaseScheduled(fase);
+    if (!scheduled.length) continue;
+
+    const playedCount = evolPhasePlayedCount(fase);
+    if (playedCount === 0) break;
+
+    if (playedCount >= scheduled.length) {
+      const orden = evolLastOrdenInPhase(evol, fase);
+      if (orden != null) {
+        milestones.push({
+          id: fase,
+          label: FASE_LABELS[fase],
+          fase,
+          orden,
+          kind: "phase",
+        });
+      }
+      continue;
+    }
+
+    for (const partido of evolPhaseMatches(evol, fase)) {
+      milestones.push({
+        id: `match-${partido.match_id}`,
+        label: evolMatchMilestoneLabel(partido),
+        fase,
+        orden: partido.orden,
+        kind: "match",
+        partido,
+      });
+    }
+    break;
+  }
+
+  return milestones;
 }
 
 /** Posición en un hito. Inicio = línea de salida (centro visual). */
@@ -925,16 +996,20 @@ function drawEvolucionChart(evol) {
   const nPos = visibles.length;
   const nM = milestones.length;
 
-  const width = Math.max(Math.round(chart.getBoundingClientRect().width) || 680, 280);
-  const isMobile = width < 560;
+  const containerW = Math.max(Math.round(chart.getBoundingClientRect().width) || 680, 280);
+  const isMobile = containerW < 560;
   const rowH = isMobile ? 52 : 64;
   const mL = isMobile ? 36 : 44;
   const mR = isMobile ? 36 : 44;
   const mT = 24;
-  const mB = 36;
+  const mB = isMobile ? 44 : 36;
   const plotH = rowH * Math.max(nPos - 1, 1);
   const totalH = plotH + mT + mB;
-  const plotW = width - mL - mR;
+  const minColW = isMobile ? 38 : 46;
+  const plotW = Math.max(containerW - mL - mR, (nM - 1) * minColW);
+  const width = plotW + mL + mR;
+  const needsScroll = width > containerW + 4;
+  chart.classList.toggle("evolucion-chart--scroll", needsScroll);
 
   const xAt = (idx) => mL + (idx / (nM - 1)) * plotW;
   const yAt = (pos) => mT + ((pos - 1) / Math.max(nPos - 1, 1)) * plotH;
@@ -960,11 +1035,17 @@ function drawEvolucionChart(evol) {
   }).join("");
 
   const axisLabels = milestoneLayout
-    .map((m) => `<text class="evol-milestone__label" x="${m.x.toFixed(1)}" y="${(totalH - 10).toFixed(1)}" text-anchor="middle">${m.label}</text>`)
+    .filter((m) => !m.hideLabel)
+    .map((m) => {
+      const cls = m.kind === "match" ? " evol-milestone__label--match" : "";
+      const y = m.kind === "match" ? totalH - 6 : totalH - 10;
+      return `<text class="evol-milestone__label${cls}" x="${m.x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle">${m.label}</text>`;
+    })
     .join("");
 
   const axisTicks = milestoneLayout
-    .map((m) => `<line class="evol-milestone__tick" x1="${m.x.toFixed(1)}" y1="${mT}" x2="${m.x.toFixed(1)}" y2="${(mT + plotH).toFixed(1)}" />`)
+    .filter((m) => !m.hideLabel)
+    .map((m) => `<line class="evol-milestone__tick${m.kind === "match" ? " evol-milestone__tick--match" : ""}" x1="${m.x.toFixed(1)}" y1="${mT}" x2="${m.x.toFixed(1)}" y2="${(mT + plotH).toFixed(1)}" />`)
     .join("");
 
   const firstM = milestones[0];
@@ -1004,8 +1085,8 @@ function drawEvolucionChart(evol) {
 
   chart.innerHTML = `<svg class="evol-svg evol-svg--infographic"
       viewBox="0 0 ${width} ${totalH}"
-      width="100%" height="${totalH}"
-      preserveAspectRatio="xMidYMid meet"
+      width="${width}" height="${totalH}"
+      preserveAspectRatio="xMinYMid meet"
       role="img" aria-label="Evolución de la clasificación por fases">
     <g class="evol-grid">${grid}</g>
     <g class="evol-milestones">${axisTicks}${axisLabels}</g>
@@ -1014,6 +1095,12 @@ function drawEvolucionChart(evol) {
   </svg>`;
 
   bindEvolucionInteractions(evol, { milestones: milestoneLayout, mL, mT, plotW, plotH, getY, xAt, nM });
+
+  if (needsScroll) {
+    requestAnimationFrame(() => {
+      chart.scrollLeft = chart.scrollWidth - chart.clientWidth;
+    });
+  }
 }
 
 function bindEvolucionInteractions(evol, geo) {
@@ -1090,10 +1177,21 @@ function showMilestoneTooltip(evol, milestone, playerName, milestones, event) {
       ).join("")}</div>`
     : "";
 
+  const partido = milestone.partido;
+  const matchHtml = partido
+    ? `<div class="evol-tip__match evol-tip__match--sm">${partido.local}${partido.marcador ? ` <b>${partido.marcador.replace("-", "–")}</b> ` : " vs "}${partido.visitante}</div>`
+    : "";
+
+  const tipTitle = milestone.kind === "match"
+    ? (FASE_LABELS[milestone.fase] || milestone.label)
+    : (milestone.label || FASE_LABELS[milestone.fase] || "Salida");
+
   tip.innerHTML = `
     <div class="evol-tip__head">
-      <span class="evol-tip__title">${milestone.label}</span>
+      <span class="evol-tip__title">${tipTitle}</span>
+      ${partido?.fecha ? `<span class="evol-tip__date">${formatMatchDateShort(partido.fecha)}</span>` : ""}
     </div>
+    ${matchHtml}
     <div class="evol-tip__player">
       <span class="evol-tip__avatar" style="--c:${p.color}">${p.inicial}</span>
       <span class="evol-tip__pname">${p.nombre}</span>
