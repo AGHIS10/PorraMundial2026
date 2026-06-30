@@ -83,7 +83,10 @@
     "resultado": "X",
     "clasifica": null
   },
-  null,
+  {
+    "resultado": "X",
+    "clasifica": null
+  },
   null,
   null,
   null,
