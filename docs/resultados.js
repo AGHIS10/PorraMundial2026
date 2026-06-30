@@ -81,11 +81,11 @@ window.__RESULTADOS__ = [
   },
   {
     "resultado": "X",
-    "clasifica": null
+    "clasifica": "2"
   },
   {
     "resultado": "X",
-    "clasifica": null
+    "clasifica": "2"
   },
   null,
   null,

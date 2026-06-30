@@ -1,5 +1,5 @@
 {
-  "generado": "2026-06-30T05:37:22Z",
+  "generado": "2026-06-30T07:49:10Z",
   "total_partidos": 104,
   "partidos_jugados": 76,
   "participantes": [
@@ -8,7 +8,7 @@
       "inicial": "A",
       "color": "#2ee6d6",
       "es_ia": false,
-      "puntos_final": 47,
+      "puntos_final": 48,
       "serie": [
         0,
         1,
@@ -86,7 +86,7 @@
         44,
         46,
         46,
-        47
+        48
       ],
       "detalle": [
         {
@@ -851,8 +851,8 @@
         {
           "orden": 76,
           "match_id": 76,
-          "puntos": 1,
-          "acumulado": 47,
+          "puntos": 2,
+          "acumulado": 48,
           "pronostico": {
             "resultado": "X",
             "clasifica": "2"
@@ -868,7 +868,7 @@
       "inicial": "C",
       "color": "#f0883e",
       "es_ia": false,
-      "puntos_final": 36,
+      "puntos_final": 37,
       "serie": [
         0,
         1,
@@ -946,7 +946,7 @@
         35,
         36,
         36,
-        36
+        37
       ],
       "detalle": [
         {
@@ -1711,8 +1711,8 @@
         {
           "orden": 76,
           "match_id": 76,
-          "puntos": 0,
-          "acumulado": 36,
+          "puntos": 1,
+          "acumulado": 37,
           "pronostico": {
             "resultado": "2",
             "clasifica": "2"
@@ -2577,7 +2577,7 @@
             "resultado": "X",
             "clasifica": "1"
           },
-          "acierto": true,
+          "acierto": false,
           "posicion": 2,
           "posicion_humanos": 1
         }
@@ -2588,7 +2588,7 @@
       "inicial": "G",
       "color": "#c0b3e0",
       "es_ia": true,
-      "puntos_final": 47,
+      "puntos_final": 48,
       "serie": [
         0,
         1,
@@ -2666,7 +2666,7 @@
         44,
         46,
         46,
-        47
+        48
       ],
       "detalle": [
         {
@@ -3431,8 +3431,8 @@
         {
           "orden": 76,
           "match_id": 76,
-          "puntos": 1,
-          "acumulado": 47,
+          "puntos": 2,
+          "acumulado": 48,
           "pronostico": {
             "resultado": "X",
             "clasifica": "2"
@@ -3448,7 +3448,7 @@
       "inicial": "G",
       "color": "#8c99b0",
       "es_ia": true,
-      "puntos_final": 52,
+      "puntos_final": 53,
       "serie": [
         0,
         1,
@@ -3526,7 +3526,7 @@
         49,
         51,
         51,
-        52
+        53
       ],
       "detalle": [
         {
@@ -4291,8 +4291,8 @@
         {
           "orden": 76,
           "match_id": 76,
-          "puntos": 1,
-          "acumulado": 52,
+          "puntos": 2,
+          "acumulado": 53,
           "pronostico": {
             "resultado": "X",
             "clasifica": "2"
@@ -4308,7 +4308,7 @@
       "inicial": "J",
       "color": "#ef6f6c",
       "es_ia": false,
-      "puntos_final": 48,
+      "puntos_final": 49,
       "serie": [
         0,
         1,
@@ -4386,7 +4386,7 @@
         46,
         48,
         48,
-        48
+        49
       ],
       "detalle": [
         {
@@ -5151,15 +5151,15 @@
         {
           "orden": 76,
           "match_id": 76,
-          "puntos": 0,
-          "acumulado": 48,
+          "puntos": 1,
+          "acumulado": 49,
           "pronostico": {
             "resultado": "2",
             "clasifica": "2"
           },
           "acierto": false,
-          "posicion": 3,
-          "posicion_humanos": 2
+          "posicion": 2,
+          "posicion_humanos": 1
         }
       ]
     },
@@ -5168,7 +5168,7 @@
       "inicial": "P",
       "color": "#58d68d",
       "es_ia": false,
-      "puntos_final": 45,
+      "puntos_final": 46,
       "serie": [
         0,
         1,
@@ -5246,7 +5246,7 @@
         43,
         45,
         45,
-        45
+        46
       ],
       "detalle": [
         {
@@ -6011,8 +6011,8 @@
         {
           "orden": 76,
           "match_id": 76,
-          "puntos": 0,
-          "acumulado": 45,
+          "puntos": 1,
+          "acumulado": 46,
           "pronostico": {
             "resultado": "2",
             "clasifica": "2"
@@ -6877,9 +6877,9 @@
             "resultado": "X",
             "clasifica": "1"
           },
-          "acierto": true,
-          "posicion": 6,
-          "posicion_humanos": 4
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 5
         }
       ]
     },
@@ -6888,7 +6888,7 @@
       "inicial": "M",
       "color": "#5aa9ff",
       "es_ia": false,
-      "puntos_final": 44,
+      "puntos_final": 45,
       "serie": [
         0,
         1,
@@ -6966,7 +6966,7 @@
         42,
         44,
         44,
-        44
+        45
       ],
       "detalle": [
         {
@@ -7731,15 +7731,15 @@
         {
           "orden": 76,
           "match_id": 76,
-          "puntos": 0,
-          "acumulado": 44,
+          "puntos": 1,
+          "acumulado": 45,
           "pronostico": {
             "resultado": "2",
             "clasifica": "2"
           },
           "acierto": false,
-          "posicion": 8,
-          "posicion_humanos": 6
+          "posicion": 7,
+          "posicion_humanos": 5
         }
       ]
     }
@@ -8650,7 +8650,7 @@
       "marcador": "1-1",
       "resultado": {
         "resultado": "X",
-        "clasifica": null
+        "clasifica": "2"
       },
       "peso": 2
     },
@@ -8665,7 +8665,7 @@
       "marcador": "1-1",
       "resultado": {
         "resultado": "X",
-        "clasifica": null
+        "clasifica": "2"
       },
       "peso": 2
     }
@@ -9022,25 +9022,6 @@
       "equipos": "Sudáfrica 0 – 1 Canadá",
       "fecha": "2026-06-28",
       "id": "adelantamiento-73-SERGIO"
-    },
-    {
-      "tipo": "cambio_lider",
-      "nivel": 1,
-      "titulo": "Líder en solitario",
-      "protagonista": "GABRIEL",
-      "detalle": "GABRIEL se desmarca de JORGE y lidera en solitario.",
-      "datos": {
-        "puntos": 49,
-        "supera_a": [
-          "JORGE"
-        ]
-      },
-      "match_id": 76,
-      "orden": 76,
-      "fase": "dieciseisavos",
-      "equipos": "Países Bajos 1 – 1 Marruecos",
-      "fecha": "2026-06-30",
-      "id": "cambio_lider-76-GABRIEL"
     },
     {
       "tipo": "partido_clave",
@@ -9662,10 +9643,7 @@
           "tipo": "snapshot",
           "orden": 76,
           "motivos": [
-            "fase_fin",
-            "cambio_lider",
-            "cambio_posicion",
-            "cambio_empate"
+            "fase_fin"
           ],
           "fase": "dieciseisavos",
           "match_id": 76
@@ -10291,9 +10269,7 @@
           "tipo": "snapshot",
           "orden": 76,
           "motivos": [
-            "fase_fin",
-            "cambio_posicion",
-            "cambio_empate"
+            "fase_fin"
           ],
           "fase": "dieciseisavos",
           "match_id": 76
