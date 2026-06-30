@@ -934,9 +934,9 @@ function buildEvolMilestones(evol) {
   return milestones;
 }
 
-/** Posición en un hito. Inicio = línea de salida (centro visual). */
+/** Posición en un hito. Salida = última fila (todos parten abajo). */
 function bumpPosAtMilestone(p, orden, nPos) {
-  if (orden === 0) return Math.ceil(nPos / 2);
+  if (orden === 0) return nPos;
   return bumpPosAt(p, orden);
 }
 
