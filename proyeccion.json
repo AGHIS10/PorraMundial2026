@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T23:06:09Z",
+  "generatedAt": "2026-07-01T02:56:30Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 26,
@@ -106,7 +106,8 @@
       "delta": 0.51,
       "inicial": "G",
       "color": "#8c99b0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "GABRIEL",
@@ -141,7 +142,8 @@
       "delta": 0.16,
       "inicial": "G",
       "color": "#c0b3e0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "MARIO",
