@@ -104,7 +104,7 @@ window.__RESULTADOS__ = [
     "clasifica": "1"
   },
   {
-    "resultado": "X",
+    "resultado": "1",
     "clasifica": "1"
   },
   {
