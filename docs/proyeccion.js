@@ -1,5 +1,5 @@
 window.__PROYECCION__ = {
-  "generatedAt": "2026-07-02T21:58:52Z",
+  "generatedAt": "2026-07-02T22:59:43Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 21,
@@ -118,7 +118,8 @@ window.__PROYECCION__ = {
       "delta": 0.32,
       "inicial": "G",
       "color": "#8c99b0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "GABRIEL",
@@ -144,7 +145,8 @@ window.__PROYECCION__ = {
       "delta": -1.03,
       "inicial": "G",
       "color": "#c0b3e0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "AGUSTIN",
