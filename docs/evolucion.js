@@ -1,5 +1,5 @@
 window.__EVOLUCION__ = {
-  "generado": "2026-07-02T07:01:29Z",
+  "generado": "2026-07-02T07:03:33Z",
   "total_partidos": 104,
   "partidos_jugados": 82,
   "participantes": [
@@ -8509,7 +8509,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "México",
       "visitante": "Sudáfrica",
-      "marcador": null,
+      "marcador": "2-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8521,7 +8521,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Corea del Sur",
       "visitante": "República Checa",
-      "marcador": null,
+      "marcador": "2-1",
       "resultado": "1",
       "peso": 1
     },
@@ -8533,7 +8533,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Canadá",
       "visitante": "Bosnia y Herzegovina",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": "X",
       "peso": 1
     },
@@ -8545,7 +8545,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Estados Unidos",
       "visitante": "Paraguay",
-      "marcador": null,
+      "marcador": "4-1",
       "resultado": "1",
       "peso": 1
     },
@@ -8557,7 +8557,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Catar",
       "visitante": "Suiza",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": "X",
       "peso": 1
     },
@@ -8569,7 +8569,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Brasil",
       "visitante": "Marruecos",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": "X",
       "peso": 1
     },
@@ -8581,7 +8581,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Haití",
       "visitante": "Escocia",
-      "marcador": null,
+      "marcador": "0-1",
       "resultado": "2",
       "peso": 1
     },
@@ -8593,7 +8593,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Australia",
       "visitante": "Turquía",
-      "marcador": null,
+      "marcador": "2-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8605,7 +8605,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Alemania",
       "visitante": "Curazao",
-      "marcador": null,
+      "marcador": "7-1",
       "resultado": "1",
       "peso": 1
     },
@@ -8617,7 +8617,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Países Bajos",
       "visitante": "Japón",
-      "marcador": null,
+      "marcador": "2-2",
       "resultado": "X",
       "peso": 1
     },
@@ -8629,7 +8629,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Costa de Marfil",
       "visitante": "Ecuador",
-      "marcador": null,
+      "marcador": "1-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8641,7 +8641,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Suecia",
       "visitante": "Túnez",
-      "marcador": null,
+      "marcador": "5-1",
       "resultado": "1",
       "peso": 1
     },
@@ -8653,7 +8653,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "España",
       "visitante": "Cabo Verde",
-      "marcador": null,
+      "marcador": "0-0",
       "resultado": "X",
       "peso": 1
     },
@@ -8665,7 +8665,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Bélgica",
       "visitante": "Egipto",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": "X",
       "peso": 1
     },
@@ -8677,7 +8677,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Arabia Saudí",
       "visitante": "Uruguay",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": "X",
       "peso": 1
     },
@@ -8689,7 +8689,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Irán",
       "visitante": "Nueva Zelanda",
-      "marcador": null,
+      "marcador": "2-2",
       "resultado": "X",
       "peso": 1
     },
@@ -8701,7 +8701,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Francia",
       "visitante": "Senegal",
-      "marcador": null,
+      "marcador": "3-1",
       "resultado": "1",
       "peso": 1
     },
@@ -8713,7 +8713,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Irak",
       "visitante": "Noruega",
-      "marcador": null,
+      "marcador": "1-4",
       "resultado": "2",
       "peso": 1
     },
@@ -8725,7 +8725,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Argentina",
       "visitante": "Argelia",
-      "marcador": null,
+      "marcador": "3-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8737,7 +8737,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Austria",
       "visitante": "Jordania",
-      "marcador": null,
+      "marcador": "3-1",
       "resultado": "1",
       "peso": 1
     },
@@ -8749,7 +8749,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Portugal",
       "visitante": "RD Congo",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": "X",
       "peso": 1
     },
@@ -8761,7 +8761,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Inglaterra",
       "visitante": "Croacia",
-      "marcador": null,
+      "marcador": "4-2",
       "resultado": "1",
       "peso": 1
     },
@@ -8773,7 +8773,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Ghana",
       "visitante": "Panamá",
-      "marcador": null,
+      "marcador": "1-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8785,7 +8785,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Uzbekistán",
       "visitante": "Colombia",
-      "marcador": null,
+      "marcador": "1-3",
       "resultado": "2",
       "peso": 1
     },
@@ -8797,7 +8797,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "República Checa",
       "visitante": "Sudáfrica",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": "X",
       "peso": 1
     },
@@ -8809,7 +8809,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Suiza",
       "visitante": "Bosnia y Herzegovina",
-      "marcador": null,
+      "marcador": "4-1",
       "resultado": "1",
       "peso": 1
     },
@@ -8821,7 +8821,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Canadá",
       "visitante": "Catar",
-      "marcador": null,
+      "marcador": "6-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8833,7 +8833,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "México",
       "visitante": "Corea del Sur",
-      "marcador": null,
+      "marcador": "1-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8845,7 +8845,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Estados Unidos",
       "visitante": "Australia",
-      "marcador": null,
+      "marcador": "2-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8857,7 +8857,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Escocia",
       "visitante": "Marruecos",
-      "marcador": null,
+      "marcador": "0-1",
       "resultado": "2",
       "peso": 1
     },
@@ -8869,7 +8869,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Brasil",
       "visitante": "Haití",
-      "marcador": null,
+      "marcador": "3-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8881,7 +8881,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Turquía",
       "visitante": "Paraguay",
-      "marcador": null,
+      "marcador": "0-1",
       "resultado": "2",
       "peso": 1
     },
@@ -8893,7 +8893,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Países Bajos",
       "visitante": "Suecia",
-      "marcador": null,
+      "marcador": "5-1",
       "resultado": "1",
       "peso": 1
     },
@@ -8905,7 +8905,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Alemania",
       "visitante": "Costa de Marfil",
-      "marcador": null,
+      "marcador": "2-1",
       "resultado": "1",
       "peso": 1
     },
@@ -8917,7 +8917,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Ecuador",
       "visitante": "Curazao",
-      "marcador": null,
+      "marcador": "0-0",
       "resultado": "X",
       "peso": 1
     },
@@ -8929,7 +8929,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Túnez",
       "visitante": "Japón",
-      "marcador": null,
+      "marcador": "0-4",
       "resultado": "2",
       "peso": 1
     },
@@ -8941,7 +8941,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "España",
       "visitante": "Arabia Saudí",
-      "marcador": null,
+      "marcador": "4-0",
       "resultado": "1",
       "peso": 1
     },
@@ -8953,7 +8953,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Bélgica",
       "visitante": "Irán",
-      "marcador": null,
+      "marcador": "0-0",
       "resultado": "X",
       "peso": 1
     },
@@ -8965,7 +8965,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Uruguay",
       "visitante": "Cabo Verde",
-      "marcador": null,
+      "marcador": "2-2",
       "resultado": "X",
       "peso": 1
     },
@@ -8977,7 +8977,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Nueva Zelanda",
       "visitante": "Egipto",
-      "marcador": null,
+      "marcador": "1-3",
       "resultado": "2",
       "peso": 1
     },
@@ -8989,7 +8989,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Argentina",
       "visitante": "Austria",
-      "marcador": null,
+      "marcador": "2-0",
       "resultado": "1",
       "peso": 1
     },
@@ -9001,7 +9001,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Francia",
       "visitante": "Irak",
-      "marcador": null,
+      "marcador": "3-0",
       "resultado": "1",
       "peso": 1
     },
@@ -9013,7 +9013,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Noruega",
       "visitante": "Senegal",
-      "marcador": null,
+      "marcador": "3-2",
       "resultado": "1",
       "peso": 1
     },
@@ -9025,7 +9025,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Jordania",
       "visitante": "Argelia",
-      "marcador": null,
+      "marcador": "1-2",
       "resultado": "2",
       "peso": 1
     },
@@ -9037,7 +9037,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Portugal",
       "visitante": "Uzbekistán",
-      "marcador": null,
+      "marcador": "5-0",
       "resultado": "1",
       "peso": 1
     },
@@ -9049,7 +9049,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Inglaterra",
       "visitante": "Ghana",
-      "marcador": null,
+      "marcador": "0-0",
       "resultado": "X",
       "peso": 1
     },
@@ -9061,7 +9061,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Panamá",
       "visitante": "Croacia",
-      "marcador": null,
+      "marcador": "0-1",
       "resultado": "2",
       "peso": 1
     },
@@ -9073,7 +9073,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Colombia",
       "visitante": "RD Congo",
-      "marcador": null,
+      "marcador": "1-0",
       "resultado": "1",
       "peso": 1
     },
@@ -9085,7 +9085,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Suiza",
       "visitante": "Canadá",
-      "marcador": null,
+      "marcador": "2-1",
       "resultado": "1",
       "peso": 1
     },
@@ -9097,7 +9097,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Bosnia y Herzegovina",
       "visitante": "Catar",
-      "marcador": null,
+      "marcador": "3-1",
       "resultado": "1",
       "peso": 1
     },
@@ -9109,7 +9109,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Escocia",
       "visitante": "Brasil",
-      "marcador": null,
+      "marcador": "0-3",
       "resultado": "2",
       "peso": 1
     },
@@ -9121,7 +9121,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Marruecos",
       "visitante": "Haití",
-      "marcador": null,
+      "marcador": "4-2",
       "resultado": "1",
       "peso": 1
     },
@@ -9133,7 +9133,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "República Checa",
       "visitante": "México",
-      "marcador": null,
+      "marcador": "0-3",
       "resultado": "2",
       "peso": 1
     },
@@ -9145,7 +9145,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Sudáfrica",
       "visitante": "Corea del Sur",
-      "marcador": null,
+      "marcador": "1-0",
       "resultado": "1",
       "peso": 1
     },
@@ -9157,7 +9157,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Curazao",
       "visitante": "Costa de Marfil",
-      "marcador": null,
+      "marcador": "0-2",
       "resultado": "2",
       "peso": 1
     },
@@ -9169,7 +9169,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Ecuador",
       "visitante": "Alemania",
-      "marcador": null,
+      "marcador": "2-1",
       "resultado": "1",
       "peso": 1
     },
@@ -9181,7 +9181,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Japón",
       "visitante": "Suecia",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": "X",
       "peso": 1
     },
@@ -9193,7 +9193,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Túnez",
       "visitante": "Países Bajos",
-      "marcador": null,
+      "marcador": "1-3",
       "resultado": "2",
       "peso": 1
     },
@@ -9205,7 +9205,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Paraguay",
       "visitante": "Australia",
-      "marcador": null,
+      "marcador": "0-0",
       "resultado": "X",
       "peso": 1
     },
@@ -9217,7 +9217,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Turquía",
       "visitante": "Estados Unidos",
-      "marcador": null,
+      "marcador": "3-2",
       "resultado": "1",
       "peso": 1
     },
@@ -9229,7 +9229,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Noruega",
       "visitante": "Francia",
-      "marcador": null,
+      "marcador": "1-4",
       "resultado": "2",
       "peso": 1
     },
@@ -9241,7 +9241,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Senegal",
       "visitante": "Irak",
-      "marcador": null,
+      "marcador": "5-0",
       "resultado": "1",
       "peso": 1
     },
@@ -9253,7 +9253,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Cabo Verde",
       "visitante": "Arabia Saudí",
-      "marcador": null,
+      "marcador": "0-0",
       "resultado": "X",
       "peso": 1
     },
@@ -9265,7 +9265,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Uruguay",
       "visitante": "España",
-      "marcador": null,
+      "marcador": "0-1",
       "resultado": "2",
       "peso": 1
     },
@@ -9277,7 +9277,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Egipto",
       "visitante": "Irán",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": "X",
       "peso": 1
     },
@@ -9289,7 +9289,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Nueva Zelanda",
       "visitante": "Bélgica",
-      "marcador": null,
+      "marcador": "1-5",
       "resultado": "2",
       "peso": 1
     },
@@ -9301,7 +9301,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Croacia",
       "visitante": "Ghana",
-      "marcador": null,
+      "marcador": "2-1",
       "resultado": "1",
       "peso": 1
     },
@@ -9313,7 +9313,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Panamá",
       "visitante": "Inglaterra",
-      "marcador": null,
+      "marcador": "0-2",
       "resultado": "2",
       "peso": 1
     },
@@ -9325,7 +9325,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Colombia",
       "visitante": "Portugal",
-      "marcador": null,
+      "marcador": "0-0",
       "resultado": "X",
       "peso": 1
     },
@@ -9337,7 +9337,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "RD Congo",
       "visitante": "Uzbekistán",
-      "marcador": null,
+      "marcador": "3-1",
       "resultado": "1",
       "peso": 1
     },
@@ -9349,7 +9349,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Argelia",
       "visitante": "Austria",
-      "marcador": null,
+      "marcador": "3-3",
       "resultado": "X",
       "peso": 1
     },
@@ -9361,7 +9361,7 @@ window.__EVOLUCION__ = {
       "fase": "grupos",
       "local": "Jordania",
       "visitante": "Argentina",
-      "marcador": null,
+      "marcador": "1-3",
       "resultado": "2",
       "peso": 1
     },
@@ -9373,7 +9373,7 @@ window.__EVOLUCION__ = {
       "fase": "dieciseisavos",
       "local": "Sudáfrica",
       "visitante": "Canadá",
-      "marcador": null,
+      "marcador": "0-1",
       "resultado": {
         "resultado": "2",
         "clasifica": "2"
@@ -9388,7 +9388,7 @@ window.__EVOLUCION__ = {
       "fase": "dieciseisavos",
       "local": "Brasil",
       "visitante": "Japón",
-      "marcador": null,
+      "marcador": "2-1",
       "resultado": {
         "resultado": "1",
         "clasifica": "1"
@@ -9403,7 +9403,7 @@ window.__EVOLUCION__ = {
       "fase": "dieciseisavos",
       "local": "Alemania",
       "visitante": "Paraguay",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": {
         "resultado": "X",
         "clasifica": "2"
@@ -9418,7 +9418,7 @@ window.__EVOLUCION__ = {
       "fase": "dieciseisavos",
       "local": "Países Bajos",
       "visitante": "Marruecos",
-      "marcador": null,
+      "marcador": "1-1",
       "resultado": {
         "resultado": "X",
         "clasifica": "2"
@@ -9433,7 +9433,7 @@ window.__EVOLUCION__ = {
       "fase": "dieciseisavos",
       "local": "Costa de Marfil",
       "visitante": "Noruega",
-      "marcador": null,
+      "marcador": "1-2",
       "resultado": {
         "resultado": "2",
         "clasifica": "2"
@@ -9448,7 +9448,7 @@ window.__EVOLUCION__ = {
       "fase": "dieciseisavos",
       "local": "Francia",
       "visitante": "Suecia",
-      "marcador": null,
+      "marcador": "3-0",
       "resultado": {
         "resultado": "1",
         "clasifica": "1"
@@ -9463,7 +9463,7 @@ window.__EVOLUCION__ = {
       "fase": "dieciseisavos",
       "local": "México",
       "visitante": "Ecuador",
-      "marcador": null,
+      "marcador": "2-0",
       "resultado": {
         "resultado": "1",
         "clasifica": "1"
@@ -9478,7 +9478,7 @@ window.__EVOLUCION__ = {
       "fase": "dieciseisavos",
       "local": "Inglaterra",
       "visitante": "RD Congo",
-      "marcador": null,
+      "marcador": "2-1",
       "resultado": {
         "resultado": "1",
         "clasifica": "1"
@@ -9508,7 +9508,7 @@ window.__EVOLUCION__ = {
       "fase": "dieciseisavos",
       "local": "Estados Unidos",
       "visitante": "Bosnia y Herzegovina",
-      "marcador": null,
+      "marcador": "2-0",
       "resultado": {
         "resultado": "1",
         "clasifica": "1"
@@ -9541,7 +9541,7 @@ window.__EVOLUCION__ = {
       "match_id": 3,
       "orden": 3,
       "fase": "grupos",
-      "equipos": "Canadá vs Bosnia y Herzegovina",
+      "equipos": "Canadá 1 – 1 Bosnia y Herzegovina",
       "fecha": "2026-06-12",
       "id": "primer_lider-3-SERGIO"
     },
@@ -9558,7 +9558,7 @@ window.__EVOLUCION__ = {
       "match_id": 12,
       "orden": 11,
       "fase": "grupos",
-      "equipos": "Costa de Marfil vs Ecuador",
+      "equipos": "Costa de Marfil 1 – 0 Ecuador",
       "fecha": "2026-06-15",
       "id": "mayor_remontada-11-PEDRO"
     },
@@ -9575,7 +9575,7 @@ window.__EVOLUCION__ = {
       "match_id": 8,
       "orden": 12,
       "fase": "grupos",
-      "equipos": "Suecia vs Túnez",
+      "equipos": "Suecia 5 – 1 Túnez",
       "fecha": "2026-06-15",
       "id": "mayor_ventaja-12-SERGIO"
     },
@@ -9592,7 +9592,7 @@ window.__EVOLUCION__ = {
       "match_id": 8,
       "orden": 12,
       "fase": "grupos",
-      "equipos": "Suecia vs Túnez",
+      "equipos": "Suecia 5 – 1 Túnez",
       "fecha": "2026-06-15",
       "id": "mayor_remontada-12-PEDRO"
     },
@@ -9613,7 +9613,7 @@ window.__EVOLUCION__ = {
       "match_id": 24,
       "orden": 24,
       "fase": "grupos",
-      "equipos": "Uzbekistán vs Colombia",
+      "equipos": "Uzbekistán 1 – 3 Colombia",
       "fecha": "2026-06-18",
       "id": "empate_lider-24-JORGE"
     },
@@ -9630,7 +9630,7 @@ window.__EVOLUCION__ = {
       "match_id": 24,
       "orden": 24,
       "fase": "grupos",
-      "equipos": "Uzbekistán vs Colombia",
+      "equipos": "Uzbekistán 1 – 3 Colombia",
       "fecha": "2026-06-18",
       "id": "mayor_remontada-24-PEDRO"
     },
@@ -9650,7 +9650,7 @@ window.__EVOLUCION__ = {
       "match_id": 25,
       "orden": 25,
       "fase": "grupos",
-      "equipos": "República Checa vs Sudáfrica",
+      "equipos": "República Checa 1 – 1 Sudáfrica",
       "fecha": "2026-06-18",
       "id": "cambio_lider-25-PEDRO"
     },
@@ -9670,7 +9670,7 @@ window.__EVOLUCION__ = {
       "match_id": 27,
       "orden": 27,
       "fase": "grupos",
-      "equipos": "Canadá vs Catar",
+      "equipos": "Canadá 6 – 0 Catar",
       "fecha": "2026-06-19",
       "id": "empate_lider-27-JORGE"
     },
@@ -9689,7 +9689,7 @@ window.__EVOLUCION__ = {
       "match_id": 28,
       "orden": 28,
       "fase": "grupos",
-      "equipos": "México vs Corea del Sur",
+      "equipos": "México 1 – 0 Corea del Sur",
       "fecha": "2026-06-19",
       "id": "cambio_lider-28-JORGE"
     },
@@ -9709,7 +9709,7 @@ window.__EVOLUCION__ = {
       "match_id": 38,
       "orden": 38,
       "fase": "grupos",
-      "equipos": "Bélgica vs Irán",
+      "equipos": "Bélgica 0 – 0 Irán",
       "fecha": "2026-06-21",
       "id": "empate_lider-38-SERGIO"
     },
@@ -9729,7 +9729,7 @@ window.__EVOLUCION__ = {
       "match_id": 46,
       "orden": 46,
       "fase": "grupos",
-      "equipos": "Inglaterra vs Ghana",
+      "equipos": "Inglaterra 0 – 0 Ghana",
       "fecha": "2026-06-23",
       "id": "cambio_lider-46-SERGIO"
     },
@@ -9749,7 +9749,7 @@ window.__EVOLUCION__ = {
       "match_id": 50,
       "orden": 51,
       "fase": "grupos",
-      "equipos": "Escocia vs Brasil",
+      "equipos": "Escocia 0 – 3 Brasil",
       "fecha": "2026-06-25",
       "id": "empate_lider-51-GABRIEL"
     },
@@ -9768,7 +9768,7 @@ window.__EVOLUCION__ = {
       "match_id": 59,
       "orden": 59,
       "fase": "grupos",
-      "equipos": "Paraguay vs Australia",
+      "equipos": "Paraguay 0 – 0 Australia",
       "fecha": "2026-06-26",
       "id": "cambio_lider-59-JORGE"
     },
@@ -9789,7 +9789,7 @@ window.__EVOLUCION__ = {
       "match_id": 60,
       "orden": 60,
       "fase": "grupos",
-      "equipos": "Turquía vs Estados Unidos",
+      "equipos": "Turquía 3 – 2 Estados Unidos",
       "fecha": "2026-06-26",
       "id": "empate_lider-60-GABRIEL"
     },
@@ -9809,7 +9809,7 @@ window.__EVOLUCION__ = {
       "match_id": 63,
       "orden": 63,
       "fase": "grupos",
-      "equipos": "Cabo Verde vs Arabia Saudí",
+      "equipos": "Cabo Verde 0 – 0 Arabia Saudí",
       "fecha": "2026-06-27",
       "id": "cambio_lider-63-GABRIEL"
     },
@@ -9829,7 +9829,7 @@ window.__EVOLUCION__ = {
       "match_id": 73,
       "orden": 73,
       "fase": "dieciseisavos",
-      "equipos": "Sudáfrica vs Canadá",
+      "equipos": "Sudáfrica 0 – 1 Canadá",
       "fecha": "2026-06-28",
       "id": "empate_lider-73-JORGE"
     },
@@ -9847,7 +9847,7 @@ window.__EVOLUCION__ = {
       "match_id": 73,
       "orden": 73,
       "fase": "dieciseisavos",
-      "equipos": "Sudáfrica vs Canadá",
+      "equipos": "Sudáfrica 0 – 1 Canadá",
       "fecha": "2026-06-28",
       "id": "adelantamiento-73-PEDRO"
     },
@@ -9865,7 +9865,7 @@ window.__EVOLUCION__ = {
       "match_id": 73,
       "orden": 73,
       "fase": "dieciseisavos",
-      "equipos": "Sudáfrica vs Canadá",
+      "equipos": "Sudáfrica 0 – 1 Canadá",
       "fecha": "2026-06-28",
       "id": "adelantamiento-73-SERGIO"
     },
@@ -9884,7 +9884,7 @@ window.__EVOLUCION__ = {
       "match_id": 77,
       "orden": 77,
       "fase": "dieciseisavos",
-      "equipos": "Costa de Marfil vs Noruega",
+      "equipos": "Costa de Marfil 1 – 2 Noruega",
       "fecha": "2026-06-30",
       "id": "cambio_lider-77-GABRIEL"
     },
@@ -9900,7 +9900,7 @@ window.__EVOLUCION__ = {
       "match_id": 4,
       "orden": 4,
       "fase": "grupos",
-      "equipos": "Estados Unidos vs Paraguay",
+      "equipos": "Estados Unidos 4 – 1 Paraguay",
       "fecha": "2026-06-13",
       "id": "partido_clave-4"
     }
