@@ -104,10 +104,13 @@ window.__RESULTADOS__ = [
     "clasifica": "1"
   },
   {
+    "resultado": "X",
+    "clasifica": "1"
+  },
+  {
     "resultado": "1",
     "clasifica": "1"
   },
-  null,
   null,
   null,
   null,
