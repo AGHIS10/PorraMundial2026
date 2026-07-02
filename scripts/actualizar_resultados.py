@@ -294,6 +294,16 @@ def duracion_partido_api(partido_api: dict[str, Any]) -> str:
     return str(score.get("duration") or "REGULAR")
 
 
+def necesita_enriquecer_regular_time_ko(partido_api: dict[str, Any]) -> bool:
+    """Eliminatoria finalizada en prórroga/penaltis sin score.regularTime."""
+    if not partido_finalizado(partido_api) or not es_stage_eliminatoria_api(partido_api):
+        return False
+    score = partido_api.get("score") or {}
+    if extraer_marcador_desde_nodo(score, "regularTime") is not None:
+        return False
+    return partido_con_prorroga_o_penaltis(partido_api)
+
+
 def extraer_marcador_90min(partido_api: dict[str, Any]) -> tuple[int, int] | None:
     """Marcador tras 90 minutos (1/X/2 de la porra).
 
@@ -316,10 +326,6 @@ def extraer_marcador_90min(partido_api: dict[str, Any]) -> tuple[int, int] | Non
                 derivado = _derivar_marcador_90_desde_extra(full, extra)
                 if derivado is not None:
                     return derivado
-        return None
-
-    if es_stage_eliminatoria_api(partido_api):
-        # Sin regularTime no usar fullTime: en KO puede ser marcador tras prórroga/penaltis.
         return None
 
     if duration == "REGULAR":
@@ -675,6 +681,7 @@ def enriquecer_marcadores_partidos(
         partido_id
         for partido_id, partido in por_id.items()
         if marcador_final_incompleto(partido)
+        or necesita_enriquecer_regular_time_ko(partido)
     ]
     if not incompletos:
         return partidos_api, 0
@@ -683,7 +690,7 @@ def enriquecer_marcadores_partidos(
 
     for partido in consultar_partidos_finalizados(api_key):
         partido_id = partido.get("id")
-        if partido_id not in incompletos or not extraer_marcador_final(partido):
+        if partido_id not in incompletos:
             continue
         por_id[partido_id] = fusionar_partido_api(por_id[partido_id], partido)
         enriquecidos_ids.add(partido_id)
@@ -692,11 +699,12 @@ def enriquecer_marcadores_partidos(
         partido_id
         for partido_id in incompletos
         if marcador_final_incompleto(por_id[partido_id])
+        or necesita_enriquecer_regular_time_ko(por_id[partido_id])
     ]
     if incompletos:
         for partido in consultar_partidos_por_ids(api_key, incompletos):
             partido_id = partido.get("id")
-            if partido_id not in por_id or not extraer_marcador_final(partido):
+            if partido_id not in por_id:
                 continue
             por_id[partido_id] = fusionar_partido_api(por_id[partido_id], partido)
             enriquecidos_ids.add(partido_id)
@@ -764,6 +772,17 @@ def actualizar_resultados(
         away_api = nombre_equipo_api(partido_api, "away") or "?"
 
         if resultado is None:
+            if (
+                partido_finalizado(partido_api)
+                and nuevos_resultados[indice] is not None
+            ):
+                estadisticas["conservados"] = estadisticas.get("conservados", 0) + 1
+                print(
+                    f"[WARN] {etiqueta} → FINISHED sin marcador 90 min; "
+                    "se conserva el resultado previo",
+                    file=sys.stderr,
+                )
+                continue
             estadisticas["pendientes"] += 1
             nuevos_resultados[indice] = None
             nuevos_marcadores[indice] = None
