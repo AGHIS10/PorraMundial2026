@@ -42,6 +42,7 @@ FASE_A_STAGE: dict[str, str] = {
     "tercer_puesto": "THIRD_PLACE",
     "final": "FINAL",
 }
+STAGES_ELIMINATORIA = frozenset(FASE_A_STAGE.values())
 
 
 def cargar_json(ruta: Path) -> Any:
@@ -247,6 +248,46 @@ def extraer_marcador_desde_nodo(
     return int(goles_local), int(goles_visitante)
 
 
+def es_stage_eliminatoria_api(partido_api: dict[str, Any]) -> bool:
+    """True si el partido API es fase eliminatoria (no fase de grupos)."""
+    return partido_api.get("stage") in STAGES_ELIMINATORIA
+
+
+def nodo_marcador_presente(score: dict[str, Any], nodo: str) -> bool:
+    """Indica si un subnodo de score trae goles local y visitante."""
+    return extraer_marcador_desde_nodo(score, nodo) is not None
+
+
+def partido_con_prorroga_o_penaltis(partido_api: dict[str, Any]) -> bool:
+    """Detecta prórroga o penaltis aunque duration venga desactualizado."""
+    score = partido_api.get("score") or {}
+    duration = duracion_partido_api(partido_api)
+    if duration in {"EXTRA_TIME", "PENALTY_SHOOTOUT"}:
+        return True
+    if nodo_marcador_presente(score, "penalties"):
+        return True
+    if not nodo_marcador_presente(score, "extraTime"):
+        return False
+    extra = extraer_marcador_desde_nodo(score, "extraTime")
+    if extra and (extra[0] > 0 or extra[1] > 0):
+        return True
+    regular = extraer_marcador_desde_nodo(score, "regularTime")
+    full = extraer_marcador_desde_nodo(score, "fullTime")
+    return bool(regular and full and regular != full)
+
+
+def _derivar_marcador_90_desde_extra(
+    full: tuple[int, int],
+    extra: tuple[int, int],
+) -> tuple[int, int] | None:
+    """Resta goles de prórroga cuando la API no trae regularTime."""
+    home = full[0] - extra[0]
+    away = full[1] - extra[1]
+    if home < 0 or away < 0:
+        return None
+    return home, away
+
+
 def duracion_partido_api(partido_api: dict[str, Any]) -> str:
     """REGULAR, EXTRA_TIME o PENALTY_SHOOTOUT según la API."""
     score = partido_api.get("score") or {}
@@ -266,6 +307,20 @@ def extraer_marcador_90min(partido_api: dict[str, Any]) -> tuple[int, int] | Non
     marcador_regular = extraer_marcador_desde_nodo(score, "regularTime")
     if marcador_regular is not None:
         return marcador_regular
+
+    if partido_con_prorroga_o_penaltis(partido_api):
+        if duration == "EXTRA_TIME":
+            full = extraer_marcador_desde_nodo(score, "fullTime")
+            extra = extraer_marcador_desde_nodo(score, "extraTime")
+            if full and extra:
+                derivado = _derivar_marcador_90_desde_extra(full, extra)
+                if derivado is not None:
+                    return derivado
+        return None
+
+    if es_stage_eliminatoria_api(partido_api):
+        # Sin regularTime no usar fullTime: en KO puede ser marcador tras prórroga/penaltis.
+        return None
 
     if duration == "REGULAR":
         return extraer_marcador_desde_nodo(score, "fullTime")
