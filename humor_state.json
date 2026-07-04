@@ -148,7 +148,12 @@
     "ULTIMO_CLASIFICADO:frases2:2": 88,
     "LIDER_RESISTE:frases1:1": 88,
     "ZONA_MEDIA:frases3:0": 88,
-    "ZONA_BAJA:frases4:0": 88
+    "ZONA_BAJA:frases4:0": 88,
+    "SUBIDA_1_POSICION:frases1:5": 88,
+    "CAMBIO_SIMULACIONES:frases4:0": 88,
+    "LIDER_HUMANO:frases1:1": 88,
+    "ULTIMO_CLASIFICADO:frases3:2": 88,
+    "LIDER_RESISTE:frases1:2": 88
   },
-  "actualizado": "2026-07-04T10:49:11Z"
+  "actualizado": "2026-07-04T10:51:16Z"
 }

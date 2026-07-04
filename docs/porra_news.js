@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-04T10:49:11Z",
+  "generado": "2026-07-04T10:51:16Z",
   "partidos_jugados": 88,
   "noticias": [
     {
-      "id": "SUBIDA_1_POSICION:frases3:0",
-      "tipo": "COMUNICADO",
+      "id": "SUBIDA_1_POSICION:frases1:5",
+      "tipo": "TITULAR",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases3:0",
+      "frase_id": "SUBIDA_1_POSICION:frases1:5",
       "jugador": "MARIO",
-      "titulo": "MARIO adelanta a GEMINI.",
-      "texto": "El marcador cambia poco; la conversación del grupo cambia mucho.",
+      "titulo": "MARIO sube una posición en la clasificación.",
+      "texto": "El grupo ya empieza a notarlo.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 73,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "📰 TITULAR"
     },
     {
       "id": "RACHA_FALLOS:frases4:1",
@@ -27,76 +27,76 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases3:1",
-      "tipo": "INVESTIGACION",
+      "id": "CAMBIO_SIMULACIONES:frases4:0",
+      "tipo": "EDITORIAL",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases3:1",
+      "frase_id": "CAMBIO_SIMULACIONES:frases4:0",
       "jugador": "AGUSTIN",
-      "titulo": "El algoritmo tiene preferencias y después de Colombia 1-0 Ghana, AGUSTIN sube puestos en las proyecciones.",
-      "texto": "No es magia: es matemática.",
+      "titulo": "Colombia 1-0 Ghana ha movido el tablero: AGUSTIN sube en las simulaciones y se sitúa con un 11.3% de ganar la porra.",
+      "texto": null,
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 68,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "LIDER_HUMANO:frases1:0",
-      "tipo": "INVESTIGACION",
+      "id": "LIDER_HUMANO:frases1:1",
+      "tipo": "TITULAR",
       "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases1:0",
+      "frase_id": "LIDER_HUMANO:frases1:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL encabeza la clasificación entre humanos.",
-      "texto": "GPT lidera la general, pero la porra de carne y hueso tiene un referente claro.",
+      "titulo": "GABRIEL lidera entre los humanos.",
+      "texto": "Las simulaciones también lo tienen en el punto de mira.",
       "partido": null,
       "prioridad": 67,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "GPT_LIDER:frases1:0",
+      "id": "GPT_LIDER:frases4:0",
       "tipo": "TITULAR",
       "categoria": "GPT_LIDER",
-      "frase_id": "GPT_LIDER:frases1:0",
+      "frase_id": "GPT_LIDER:frases4:0",
       "jugador": "GPT",
-      "titulo": "GPT lidera la porra.",
-      "texto": "Los humanos piden una auditoría... o un milagro.",
+      "titulo": "GPT manda en la clasificación.",
+      "texto": "La humanidad solicita la revancha en 2030.",
       "partido": null,
       "prioridad": 60,
       "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "MUNDIAL_ABIERTO:frases1:0",
+      "id": "MUNDIAL_ABIERTO:frases4:1",
       "tipo": "EDITORIAL",
       "categoria": "MUNDIAL_ABIERTO",
-      "frase_id": "MUNDIAL_ABIERTO:frases1:0",
+      "frase_id": "MUNDIAL_ABIERTO:frases4:1",
       "jugador": "GPT",
-      "titulo": "La porra sigue tan abierta que hasta el algoritmo duda antes de hablar.",
+      "titulo": "Nadie manda lo suficiente como para comprar ya el champán.",
       "texto": null,
       "partido": null,
       "prioridad": 50,
       "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases2:2",
-      "tipo": "COMUNICADO",
+      "id": "ULTIMO_CLASIFICADO:frases3:2",
+      "tipo": "EL_BAR",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases2:2",
+      "frase_id": "ULTIMO_CLASIFICADO:frases3:2",
       "jugador": "CRISTIAN",
-      "titulo": "La organización recuerda a CRISTIAN que mirar la clasificación del revés no cambia el resultado.",
-      "texto": null,
+      "titulo": "CRISTIAN ya no persigue al líder.",
+      "texto": "Ahora persigue al penúltimo con prismáticos.",
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "LIDER_RESISTE:frases1:1",
-      "tipo": "EDITORIAL",
+      "id": "LIDER_RESISTE:frases1:2",
+      "tipo": "INVESTIGACION",
       "categoria": "LIDER_RESISTE",
-      "frase_id": "LIDER_RESISTE:frases1:1",
+      "frase_id": "LIDER_RESISTE:frases1:2",
       "jugador": "GPT",
-      "titulo": "Los perseguidores prometieron una revolución.",
-      "texto": "GPT ha respondido bostezando.",
+      "titulo": "Los expertos siguen sin encontrar el botón de 'bajar del liderato' de GPT.",
+      "texto": null,
       "partido": null,
       "prioridad": 39,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
       "id": "ZONA_MEDIA:frases3:0",
@@ -111,16 +111,16 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "ZONA_BAJA:frases4:0",
-      "tipo": "EDITORIAL",
+      "id": "ZONA_BAJA:frases3:1",
+      "tipo": "INVESTIGACION",
       "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases4:0",
+      "frase_id": "ZONA_BAJA:frases3:1",
       "jugador": "SERGIO",
-      "titulo": "SERGIO ocupa la zona baja de la tabla.",
-      "texto": "No todo está perdido, pero la remontada requiere urgencia.",
+      "titulo": "Los analistas se preguntan cuándo empieza SERGIO a preocuparse de verdad.",
+      "texto": "La zona baja empieza a tener demasiado mueble.",
       "partido": null,
       "prioridad": 33,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     }
   ]
 };
