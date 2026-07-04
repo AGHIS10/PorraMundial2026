@@ -1,7 +1,7 @@
 {
-  "lastWorkflowRun": "2026-07-04T15:10:32Z",
-  "lastApiCheck": "2026-06-11T22:02:00Z",
+  "lastWorkflowRun": "2026-07-04T15:21:09Z",
+  "lastApiCheck": "2026-07-04T15:21:08Z",
   "workflowStatus": "ok",
-  "matchesUpdated": 1,
-  "finishedMatches": 1
+  "matchesUpdated": 0,
+  "finishedMatches": 88
 }

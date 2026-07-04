@@ -1,5 +1,5 @@
 {
-  "generado": "2026-07-04T15:10:58Z",
+  "generado": "2026-07-04T15:21:09Z",
   "partidos_jugados": 88,
   "noticias": [
     {
@@ -39,28 +39,28 @@
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "GEMINI_ULTIMO:frases3:0",
-      "tipo": "DECLARACIONES",
+      "id": "GEMINI_ULTIMO:frases1:0",
+      "tipo": "RUMOR",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases3:0",
+      "frase_id": "GEMINI_ULTIMO:frases1:0",
       "jugador": "GABRIEL",
-      "titulo": "Seguimos aprendiendo.",
-      "texto": "— GEMINI, mientras ocupa el farolillo rojo.",
-      "partido": null,
-      "prioridad": 58,
-      "etiqueta": "🎙️ DECLARACIONES"
-    },
-    {
-      "id": "GEMINI_ULTIMO:frases2:0",
-      "tipo": "INVESTIGACION",
-      "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases2:0",
-      "jugador": "GEMINI",
-      "titulo": "Los ingenieros analizan si GEMINI está participando o simplemente improvisando.",
+      "titulo": "Fuentes cercanas a GEMINI aseguran que hoy prefiere no responder preguntas.",
       "texto": null,
       "partido": null,
+      "prioridad": 58,
+      "etiqueta": "🟡 RUMOR"
+    },
+    {
+      "id": "GEMINI_ULTIMO:frases4:0",
+      "tipo": "EL_BAR",
+      "categoria": "GEMINI_ULTIMO",
+      "frase_id": "GEMINI_ULTIMO:frases4:0",
+      "jugador": "GEMINI",
+      "titulo": "GEMINI va última.",
+      "texto": "Por fin alguien demuestra que la inteligencia artificial también puede tener lunes.",
+      "partido": null,
       "prioridad": 48,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "MUNDIAL_ABIERTO:frases4:1",
