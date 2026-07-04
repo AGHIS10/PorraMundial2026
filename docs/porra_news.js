@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-04T15:31:42Z",
+  "generado": "2026-07-04T15:33:54Z",
   "partidos_jugados": 88,
   "noticias": [
     {
-      "id": "SUBIDA_1_POSICION:frases4:0",
-      "tipo": "TITULAR",
+      "id": "SUBIDA_1_POSICION:frases1:0",
+      "tipo": "ULTIMA_HORA",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases4:0",
+      "frase_id": "SUBIDA_1_POSICION:frases1:0",
       "jugador": "MARIO",
-      "titulo": "MARIO supera a GEMINI.",
-      "texto": "Un pequeño paso para la clasificación, un gran argumento para el WhatsApp.",
+      "titulo": "MARIO adelanta a GEMINI.",
+      "texto": "Parece poca cosa... hasta que toca aguantar el WhatsApp.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 73,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
       "id": "RACHA_FALLOS:frases4:1",
