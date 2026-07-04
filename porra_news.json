@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-04T10:53:18Z",
+  "generado": "2026-07-04T10:57:21Z",
   "partidos_jugados": 88,
   "noticias": [
     {
-      "id": "SUBIDA_1_POSICION:frases2:4",
-      "tipo": "COMUNICADO",
+      "id": "SUBIDA_1_POSICION:frases1:1",
+      "tipo": "EL_BAR",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases2:4",
+      "frase_id": "SUBIDA_1_POSICION:frases1:1",
       "jugador": "MARIO",
-      "titulo": "MARIO sube una posición en la clasificación.",
-      "texto": "El grupo ya empieza a notarlo.",
+      "titulo": "MARIO ya puede mirar a GEMINI por encima del hombro durante, como mínimo, una semana.",
+      "texto": null,
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 73,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "RACHA_FALLOS:frases4:1",
@@ -27,16 +27,16 @@
       "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases3:0",
-      "tipo": "EXCLUSIVA",
+      "id": "CAMBIO_SIMULACIONES:frases4:1",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases3:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases4:1",
       "jugador": "AGUSTIN",
-      "titulo": "Las simulaciones han recalculado tras Colombia 1-0 Ghana y AGUSTIN sube en el ranking de probabilidades.",
-      "texto": "El modelo le da ahora un 11.3%.",
+      "titulo": "Solo es un modelo.",
+      "texto": "— AGUSTIN, que sube posiciones en las proyecciones tras Colombia 1-0 Ghana y lo celebra en privado.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 68,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
       "id": "LIDER_HUMANO:frases1:0",
@@ -75,52 +75,52 @@
       "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases4:0",
-      "tipo": "TITULAR",
+      "id": "ULTIMO_CLASIFICADO:frases2:1",
+      "tipo": "EL_BAR",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases4:0",
+      "frase_id": "ULTIMO_CLASIFICADO:frases2:1",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN sigue ocupando la última plaza.",
-      "texto": "La perseverancia también existe por abajo.",
+      "titulo": "CRISTIAN no va último.",
+      "texto": "Está haciendo una auditoría completa de la parte baja.",
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "LIDER_RESISTE:frases4:0",
-      "tipo": "COMUNICADO",
+      "id": "LIDER_RESISTE:frases3:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "LIDER_RESISTE",
-      "frase_id": "LIDER_RESISTE:frases4:0",
+      "frase_id": "LIDER_RESISTE:frases3:0",
       "jugador": "GPT",
-      "titulo": "GPT sigue en cabeza.",
-      "texto": "Cada jornada que pasa empieza a parecer menos casualidad.",
+      "titulo": "GPT sobrevive otra jornada.",
+      "texto": "Los perseguidores empiezan a necesitar algo más que optimismo.",
       "partido": null,
       "prioridad": 39,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "ZONA_MEDIA:frases1:0",
-      "tipo": "EDITORIAL",
+      "id": "ZONA_MEDIA:frases3:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "ZONA_MEDIA",
-      "frase_id": "ZONA_MEDIA:frases1:0",
+      "frase_id": "ZONA_MEDIA:frases3:0",
       "jugador": "PEDRO",
-      "titulo": "PEDRO ocupa la zona media de la tabla.",
-      "texto": "Ni en el podio ni en peligro: territorio de paciencia.",
+      "titulo": "PEDRO navega en la zona media.",
+      "texto": "Ni en el podio ni en peligro: el sitio donde todo todavía puede cambiar.",
       "partido": null,
       "prioridad": 35,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "ZONA_BAJA:frases3:0",
-      "tipo": "EXCLUSIVA",
+      "id": "ZONA_BAJA:frases3:1",
+      "tipo": "INVESTIGACION",
       "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases3:0",
+      "frase_id": "ZONA_BAJA:frases3:1",
       "jugador": "SERGIO",
-      "titulo": "SERGIO ocupa la parte baja de la clasificación.",
-      "texto": "Remontada posible, pero el camino es largo.",
+      "titulo": "Los analistas se preguntan cuándo empieza SERGIO a preocuparse de verdad.",
+      "texto": "La zona baja empieza a tener demasiado mueble.",
       "partido": null,
       "prioridad": 33,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     }
   ]
 }
