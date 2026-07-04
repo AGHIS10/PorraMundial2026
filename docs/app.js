@@ -2005,7 +2005,14 @@ const TPN_CORNER_CLASS = {
 };
 
 const TPN_INTERVAL_MS = 10000;
+const TPN_INTERVAL_MOBILE_MS = 14000;
 const TPN_FADE_MS = 380;
+
+function tpnRotationIntervalMs() {
+  return window.matchMedia("(max-width: 560px)").matches
+    ? TPN_INTERVAL_MOBILE_MS
+    : TPN_INTERVAL_MS;
+}
 
 let tpnNoticias = [];
 let tpnIndex = 0;
@@ -2139,7 +2146,7 @@ function tpnStartRotation() {
   if (tpnNoticias.length <= 1) return;
   tpnTimer = window.setInterval(() => {
     tpnTransitionTo((tpnIndex + 1) % tpnNoticias.length);
-  }, TPN_INTERVAL_MS);
+  }, tpnRotationIntervalMs());
 }
 
 function tpnStopRotation() {
