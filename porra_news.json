@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-04T10:51:16Z",
+  "generado": "2026-07-04T10:53:18Z",
   "partidos_jugados": 88,
   "noticias": [
     {
-      "id": "SUBIDA_1_POSICION:frases1:5",
-      "tipo": "TITULAR",
+      "id": "SUBIDA_1_POSICION:frases2:4",
+      "tipo": "COMUNICADO",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases1:5",
+      "frase_id": "SUBIDA_1_POSICION:frases2:4",
       "jugador": "MARIO",
       "titulo": "MARIO sube una posición en la clasificación.",
       "texto": "El grupo ya empieza a notarlo.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 73,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
       "id": "RACHA_FALLOS:frases4:1",
@@ -27,28 +27,28 @@
       "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases4:0",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_SIMULACIONES:frases3:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases4:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases3:0",
       "jugador": "AGUSTIN",
-      "titulo": "Colombia 1-0 Ghana ha movido el tablero: AGUSTIN sube en las simulaciones y se sitúa con un 11.3% de ganar la porra.",
-      "texto": null,
+      "titulo": "Las simulaciones han recalculado tras Colombia 1-0 Ghana y AGUSTIN sube en el ranking de probabilidades.",
+      "texto": "El modelo le da ahora un 11.3%.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 68,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "LIDER_HUMANO:frases1:1",
-      "tipo": "TITULAR",
+      "id": "LIDER_HUMANO:frases1:0",
+      "tipo": "INVESTIGACION",
       "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases1:1",
+      "frase_id": "LIDER_HUMANO:frases1:0",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL lidera entre los humanos.",
-      "texto": "Las simulaciones también lo tienen en el punto de mira.",
+      "titulo": "GABRIEL encabeza la clasificación entre humanos.",
+      "texto": "GPT lidera la general, pero la porra de carne y hueso tiene un referente claro.",
       "partido": null,
       "prioridad": 67,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
       "id": "GPT_LIDER:frases4:0",
@@ -75,52 +75,52 @@
       "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases3:2",
-      "tipo": "EL_BAR",
+      "id": "ULTIMO_CLASIFICADO:frases4:0",
+      "tipo": "TITULAR",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases3:2",
+      "frase_id": "ULTIMO_CLASIFICADO:frases4:0",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN ya no persigue al líder.",
-      "texto": "Ahora persigue al penúltimo con prismáticos.",
+      "titulo": "CRISTIAN sigue ocupando la última plaza.",
+      "texto": "La perseverancia también existe por abajo.",
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "LIDER_RESISTE:frases1:2",
-      "tipo": "INVESTIGACION",
+      "id": "LIDER_RESISTE:frases4:0",
+      "tipo": "COMUNICADO",
       "categoria": "LIDER_RESISTE",
-      "frase_id": "LIDER_RESISTE:frases1:2",
+      "frase_id": "LIDER_RESISTE:frases4:0",
       "jugador": "GPT",
-      "titulo": "Los expertos siguen sin encontrar el botón de 'bajar del liderato' de GPT.",
-      "texto": null,
+      "titulo": "GPT sigue en cabeza.",
+      "texto": "Cada jornada que pasa empieza a parecer menos casualidad.",
       "partido": null,
       "prioridad": 39,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "ZONA_MEDIA:frases3:0",
-      "tipo": "EXCLUSIVA",
+      "id": "ZONA_MEDIA:frases1:0",
+      "tipo": "EDITORIAL",
       "categoria": "ZONA_MEDIA",
-      "frase_id": "ZONA_MEDIA:frases3:0",
+      "frase_id": "ZONA_MEDIA:frases1:0",
       "jugador": "PEDRO",
-      "titulo": "PEDRO navega en la zona media.",
-      "texto": "Ni en el podio ni en peligro: el sitio donde todo todavía puede cambiar.",
+      "titulo": "PEDRO ocupa la zona media de la tabla.",
+      "texto": "Ni en el podio ni en peligro: territorio de paciencia.",
       "partido": null,
       "prioridad": 35,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "ZONA_BAJA:frases3:1",
-      "tipo": "INVESTIGACION",
+      "id": "ZONA_BAJA:frases3:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases3:1",
+      "frase_id": "ZONA_BAJA:frases3:0",
       "jugador": "SERGIO",
-      "titulo": "Los analistas se preguntan cuándo empieza SERGIO a preocuparse de verdad.",
-      "texto": "La zona baja empieza a tener demasiado mueble.",
+      "titulo": "SERGIO ocupa la parte baja de la clasificación.",
+      "texto": "Remontada posible, pero el camino es largo.",
       "partido": null,
       "prioridad": 33,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "⭐ EXCLUSIVA"
     }
   ]
 }
