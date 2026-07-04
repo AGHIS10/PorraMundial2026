@@ -2007,6 +2007,8 @@ const TPN_CORNER_CLASS = {
 const TPN_INTERVAL_MS = 10000;
 const TPN_INTERVAL_MOBILE_MS = 14000;
 const TPN_FADE_MS = 380;
+const TPN_SWIPE_THRESHOLD_PX = 48;
+const TPN_SWIPE_RATIO = 1.4;
 
 function tpnRotationIntervalMs() {
   return window.matchMedia("(max-width: 560px)").matches
@@ -2018,6 +2020,13 @@ let tpnNoticias = [];
 let tpnIndex = 0;
 let tpnTimer = null;
 let tpnGenerado = null;
+let tpnAnimating = false;
+
+const TPN_STAGE_ANIM_CLASSES = [
+  "is-out", "is-in",
+  "is-out-left", "is-out-right",
+  "is-in-left", "is-in-right",
+];
 
 function tpnNormalizePayload(data) {
   if (!data) return [];
@@ -2127,25 +2136,109 @@ function tpnPaintNoticia(noticia) {
   chirUpdateDots(tpnIndex, tpnNoticias.length);
 }
 
-function tpnTransitionTo(index) {
+function tpnTransitionTo(index, direction = null) {
   const stage = document.getElementById("tpn-stage");
-  if (!stage || !tpnNoticias.length) return;
+  if (!stage || !tpnNoticias.length || tpnAnimating) return;
 
-  stage.classList.add("is-out");
+  const total = tpnNoticias.length;
+  const nextIndex = ((index % total) + total) % total;
+  if (nextIndex === tpnIndex && direction == null) return;
+
+  tpnAnimating = true;
+  const outClass = direction === "next"
+    ? "is-out-left"
+    : direction === "prev"
+      ? "is-out-right"
+      : "is-out";
+  const inClass = direction === "next"
+    ? "is-in-left"
+    : direction === "prev"
+      ? "is-in-right"
+      : "is-in";
+
+  stage.classList.remove(...TPN_STAGE_ANIM_CLASSES);
+  stage.classList.add(outClass);
+
   window.setTimeout(() => {
-    tpnIndex = index;
+    tpnIndex = nextIndex;
     tpnPaintNoticia(tpnNoticias[tpnIndex]);
-    stage.classList.remove("is-out");
-    stage.classList.add("is-in");
-    window.setTimeout(() => stage.classList.remove("is-in"), TPN_FADE_MS);
+    stage.classList.remove(...TPN_STAGE_ANIM_CLASSES);
+    stage.classList.add(inClass);
+    window.setTimeout(() => {
+      stage.classList.remove(inClass);
+      tpnAnimating = false;
+    }, TPN_FADE_MS);
   }, TPN_FADE_MS);
+}
+
+function tpnGoNext(manual = false) {
+  if (tpnNoticias.length <= 1) return;
+  tpnTransitionTo(tpnIndex + 1, "next");
+  if (manual) tpnStartRotation();
+}
+
+function tpnGoPrev(manual = false) {
+  if (tpnNoticias.length <= 1) return;
+  tpnTransitionTo(tpnIndex - 1, "prev");
+  if (manual) tpnStartRotation();
+}
+
+function chirSetupSwipe() {
+  const stage = document.getElementById("tpn-stage");
+  if (!stage || stage.dataset.swipeBound === "1") return;
+  stage.dataset.swipeBound = "1";
+
+  let startX = 0;
+  let startY = 0;
+  let tracking = false;
+
+  function onPointerDown(event) {
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    tracking = true;
+    startX = event.clientX;
+    startY = event.clientY;
+    stage.classList.add("is-dragging");
+    if (stage.setPointerCapture) {
+      try { stage.setPointerCapture(event.pointerId); } catch (_) { /* noop */ }
+    }
+  }
+
+  function onPointerUp(event) {
+    if (!tracking) return;
+    tracking = false;
+    stage.classList.remove("is-dragging");
+    if (stage.releasePointerCapture) {
+      try { stage.releasePointerCapture(event.pointerId); } catch (_) { /* noop */ }
+    }
+
+    const dx = event.clientX - startX;
+    const dy = event.clientY - startY;
+    if (Math.abs(dx) < TPN_SWIPE_THRESHOLD_PX) return;
+    if (Math.abs(dx) < Math.abs(dy) * TPN_SWIPE_RATIO) return;
+
+    if (dx < 0) {
+      tpnGoNext(true);
+    } else {
+      tpnGoPrev(true);
+    }
+  }
+
+  function onPointerCancel() {
+    tracking = false;
+    stage.classList.remove("is-dragging");
+  }
+
+  stage.addEventListener("pointerdown", onPointerDown);
+  stage.addEventListener("pointerup", onPointerUp);
+  stage.addEventListener("pointercancel", onPointerCancel);
+  stage.addEventListener("lostpointercapture", onPointerCancel);
 }
 
 function tpnStartRotation() {
   if (tpnTimer) { clearInterval(tpnTimer); tpnTimer = null; }
   if (tpnNoticias.length <= 1) return;
   tpnTimer = window.setInterval(() => {
-    tpnTransitionTo((tpnIndex + 1) % tpnNoticias.length);
+    tpnGoNext(false);
   }, tpnRotationIntervalMs());
 }
 
@@ -2170,11 +2263,12 @@ function renderPorraNews(data) {
   tpnIndex = 0;
 
   const stage = document.getElementById("tpn-stage");
-  if (stage) stage.classList.remove("is-out", "is-in");
+  if (stage) stage.classList.remove(...TPN_STAGE_ANIM_CLASSES, "is-dragging");
 
   chirBuildDots(tpnNoticias.length);
   chirBuildTicker(tpnNoticias);
   tpnPaintNoticia(tpnNoticias[0]);
+  chirSetupSwipe();
   tpnStartRotation();
 }
 

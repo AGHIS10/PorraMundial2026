@@ -619,6 +619,10 @@ body {
   gap: 1rem;
   padding: 1.2rem 1.2rem 1rem;
   min-height: auto;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
   /* subtle red glow from left accent bar */
   background: linear-gradient(90deg,
     rgba(220,38,38,0.06) 0%,
@@ -627,18 +631,50 @@ body {
   transition: opacity 0.32s ease, transform 0.32s ease;
 }
 
+.chir__stage.is-dragging {
+  cursor: grabbing;
+}
+
 .chir__stage.is-out {
   opacity: 0;
   transform: translateY(8px);
+}
+
+.chir__stage.is-out-left {
+  opacity: 0;
+  transform: translateX(-18px);
+}
+
+.chir__stage.is-out-right {
+  opacity: 0;
+  transform: translateX(18px);
 }
 
 .chir__stage.is-in {
   animation: chirStageIn 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
 }
 
+.chir__stage.is-in-left {
+  animation: chirStageInLeft 0.38s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+.chir__stage.is-in-right {
+  animation: chirStageInRight 0.38s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
 @keyframes chirStageIn {
   from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes chirStageInLeft {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes chirStageInRight {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 /* vivid left red bar */
