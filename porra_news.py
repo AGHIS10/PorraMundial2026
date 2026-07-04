@@ -953,6 +953,27 @@ def _deduplicar_candidatos(candidatos: list[Candidato]) -> list[Candidato]:
     return list(mejor.values())
 
 
+def _limitar_una_por_jugador(candidatos: list[Candidato]) -> list[Candidato]:
+    """Como máximo una noticia por jugador (la de mayor prioridad)."""
+    ordenados = sorted(candidatos, key=lambda c: (c.prioridad, c.peso), reverse=True)
+    vistos: set[str] = set()
+    globales: list[Candidato] = []
+    filtrados: list[Candidato] = []
+    for candidato in ordenados:
+        if not candidato.jugador:
+            globales.append(candidato)
+            continue
+        if candidato.jugador in vistos:
+            continue
+        vistos.add(candidato.jugador)
+        filtrados.append(candidato)
+    resultado = filtrados
+    if globales:
+        resultado = [globales[0]] + filtrados
+        resultado.sort(key=lambda c: (c.prioridad, c.peso), reverse=True)
+    return resultado
+
+
 def _jugadores_cubiertos(candidatos: list[Candidato]) -> set[str]:
     return {c.jugador for c in candidatos if c.jugador}
 
@@ -1046,6 +1067,7 @@ def generar_noticias(
     eventos = _suprimir_contradicciones(eventos, ctx)
     eventos = _deduplicar_candidatos(eventos)
     eventos.sort(key=lambda c: (c.prioridad, c.peso), reverse=True)
+    eventos = _limitar_una_por_jugador(eventos)
 
     usadas_en_lote: set[str] = set()
     noticias: list[dict[str, Any]] = []
