@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-04T15:33:54Z",
+  "generado": "2026-07-04T15:38:35Z",
   "partidos_jugados": 88,
   "noticias": [
     {
-      "id": "SUBIDA_1_POSICION:frases1:0",
-      "tipo": "ULTIMA_HORA",
+      "id": "SUBIDA_1_POSICION:frases4:1",
+      "tipo": "RUMOR",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases1:0",
+      "frase_id": "SUBIDA_1_POSICION:frases4:1",
       "jugador": "MARIO",
-      "titulo": "MARIO adelanta a GEMINI.",
-      "texto": "Parece poca cosa... hasta que toca aguantar el WhatsApp.",
+      "titulo": "Desde que MARIO adelantó a GEMINI, el botón de actualizar la web trabaja horas extra.",
+      "texto": null,
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 73,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "🟡 RUMOR"
     },
     {
       "id": "RACHA_FALLOS:frases4:1",

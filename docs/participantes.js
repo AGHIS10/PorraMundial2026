@@ -1423,7 +1423,7 @@ window.__PARTICIPANTES__ = {
       },
       {
         "resultado": "X",
-        "clasifica": "2"
+        "clasifica": "1"
       },
       {
         "resultado": "X",
@@ -1435,7 +1435,7 @@ window.__PARTICIPANTES__ = {
       },
       {
         "resultado": "X",
-        "clasifica": "1"
+        "clasifica": "2"
       },
       null,
       null,
