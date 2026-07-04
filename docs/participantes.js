@@ -138,14 +138,38 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
       null,
       null,
       null,
@@ -295,14 +319,38 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
       null,
       null,
       null,
@@ -452,14 +500,38 @@ window.__PARTICIPANTES__ = {
         "resultado": "X",
         "clasifica": "1"
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
       null,
       null,
       null,
@@ -473,78 +545,78 @@ window.__PARTICIPANTES__ = {
   "GEMINI": {
     "nombre": "GEMINI",
     "pronosticos": [
-      "1",
-      "X",
-      "1",
-      "1",
-      "2",
-      "1",
-      "2",
-      "1",
-      "2",
-      "1",
-      "1",
-      "X",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "1",
-      "X",
-      "1",
-      "2",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "X",
-      "2",
-      "1",
-      "1",
-      "2",
-      "1",
-      "X",
-      "2",
-      "1",
-      "2",
-      "2",
-      "1",
-      "2",
-      "2",
-      "X",
-      "2",
-      "X",
-      "2",
-      "2",
-      "1",
-      "2",
-      "X",
-      "1",
-      "2",
-      "1",
-      "2",
-      "2",
-      "X",
-      "2",
-      "2",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
       {
         "resultado": "2",
         "clasifica": "2"
@@ -609,14 +681,38 @@ window.__PARTICIPANTES__ = {
         "resultado": "X",
         "clasifica": "1"
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
       null,
       null,
       null,
@@ -630,78 +726,78 @@ window.__PARTICIPANTES__ = {
   "GPT": {
     "nombre": "GPT",
     "pronosticos": [
-      "1",
-      "1",
-      "X",
-      "1",
-      "2",
-      "1",
-      "2",
-      "1",
-      "2",
-      "1",
-      "X",
-      "X",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "X",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "1",
-      "2",
-      "1",
-      "1",
-      "X",
-      "2",
-      "1",
-      "1",
-      "2",
-      "1",
-      "X",
-      "2",
-      "1",
-      "X",
-      "X",
-      "1",
-      "2",
-      "2",
-      "1",
-      "2",
-      "X",
-      "X",
-      "2",
-      "1",
-      "X",
-      "X",
-      "X",
-      "2",
-      "X",
-      "2",
-      "X",
-      "1",
-      "X",
-      "2",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
       {
         "resultado": "2",
         "clasifica": "2"
@@ -766,14 +862,38 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "2"
+      },
       null,
       null,
       null,
@@ -923,14 +1043,38 @@ window.__PARTICIPANTES__ = {
         "resultado": "X",
         "clasifica": "1"
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
       null,
       null,
       null,
@@ -1080,14 +1224,38 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
       null,
       null,
       null,
@@ -1237,14 +1405,38 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
       null,
       null,
       null,
@@ -1394,14 +1586,38 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
       null,
       null,
       null,

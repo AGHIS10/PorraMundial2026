@@ -795,8 +795,8 @@
     "id": 89,
     "fecha": "2026-07-04",
     "hora": "23:00",
-    "local": "Paraguay",
-    "visitante": "Noruega",
+    "local": "Canadá",
+    "visitante": "Marruecos",
     "fase": "octavos",
     "peso": 4
   },
@@ -804,8 +804,8 @@
     "id": 90,
     "fecha": "2026-07-04",
     "hora": "19:00",
-    "local": "Canadá",
-    "visitante": "Marruecos",
+    "local": "Paraguay",
+    "visitante": "Francia",
     "fase": "octavos",
     "peso": 4
   },
@@ -814,7 +814,7 @@
     "fecha": "2026-07-05",
     "hora": "22:00",
     "local": "Brasil",
-    "visitante": "Francia",
+    "visitante": "Noruega",
     "fase": "octavos",
     "peso": 4
   },
@@ -831,8 +831,8 @@
     "id": 93,
     "fecha": "2026-07-06",
     "hora": "21:00",
-    "local": "España",
-    "visitante": "Portugal",
+    "local": "Portugal",
+    "visitante": "España",
     "fase": "octavos",
     "peso": 4
   },
@@ -840,8 +840,8 @@
     "id": 94,
     "fecha": "2026-07-07",
     "hora": "02:00",
-    "local": "Bélgica",
-    "visitante": "Estados Unidos",
+    "local": "Estados Unidos",
+    "visitante": "Bélgica",
     "fase": "octavos",
     "peso": 4
   },
@@ -849,8 +849,8 @@
     "id": 95,
     "fecha": "2026-07-07",
     "hora": "18:00",
-    "local": "Egipto",
-    "visitante": "Colombia",
+    "local": "Argentina",
+    "visitante": "Egipto",
     "fase": "octavos",
     "peso": 4
   },
@@ -859,7 +859,7 @@
     "fecha": "2026-07-07",
     "hora": "22:00",
     "local": "Suiza",
-    "visitante": "Argentina",
+    "visitante": "Colombia",
     "fase": "octavos",
     "peso": 4
   },

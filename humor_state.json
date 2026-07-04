@@ -1,17 +1,17 @@
 {
   "partidos_jugados": 88,
   "posiciones": {
-    "GPT": 1,
-    "GABRIEL": 2,
-    "JORGE": 3,
-    "AGUSTIN": 4,
-    "PEDRO": 5,
-    "GEMINI": 6,
-    "MARIO": 7,
-    "SERGIO": 8,
-    "CRISTIAN": 9
+    "GABRIEL": 1,
+    "JORGE": 2,
+    "AGUSTIN": 3,
+    "PEDRO": 4,
+    "MARIO": 5,
+    "SERGIO": 6,
+    "CRISTIAN": 7,
+    "GPT": 8,
+    "GEMINI": 9
   },
-  "lider": "GPT",
+  "lider": "GABRIEL",
   "frases_usadas": {
     "RACHA_FALLOS:3": 88,
     "FAVORITO_NO_LIDER:4": 88,
@@ -166,7 +166,9 @@
     "CAMBIO_SIMULACIONES:frases2:2": 88,
     "ULTIMO_CLASIFICADO:frases2:0": 88,
     "LIDER_RESISTE:frases4:2": 88,
-    "SUBIDA_1_POSICION:frases3:1": 88
+    "SUBIDA_1_POSICION:frases3:1": 88,
+    "GEMINI_ULTIMO:frases3:0": 88,
+    "GEMINI_ULTIMO:frases2:0": 88
   },
-  "actualizado": "2026-07-04T15:01:43Z"
+  "actualizado": "2026-07-04T15:10:58Z"
 }

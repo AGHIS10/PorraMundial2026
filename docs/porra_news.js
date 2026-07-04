@@ -1,30 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-04T15:01:43Z",
+  "generado": "2026-07-04T15:10:58Z",
   "partidos_jugados": 88,
   "noticias": [
     {
-      "id": "SUBIDA_1_POSICION:frases3:1",
+      "id": "RACHA_FALLOS:frases2:0",
       "tipo": "ULTIMA_HORA",
-      "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases3:1",
-      "jugador": "MARIO",
-      "titulo": "MARIO gana un puesto y ya está ensayando la frase: 'siempre confié en mis pronósticos'.",
-      "texto": null,
-      "partido": "Colombia 1-0 Ghana",
-      "prioridad": 73,
-      "etiqueta": "🔴 ÚLTIMA HORA"
-    },
-    {
-      "id": "RACHA_FALLOS:frases4:1",
-      "tipo": "EL_BAR",
       "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases4:1",
+      "frase_id": "RACHA_FALLOS:frases2:0",
       "jugador": "JORGE",
       "titulo": "JORGE acumula 3 fallos seguidos.",
-      "texto": "El karma también tiene memoria.",
+      "texto": "La estadística ya empieza a pedir explicaciones.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 64,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
       "id": "CAMBIO_SIMULACIONES:frases2:1",
@@ -33,7 +21,7 @@ window.__PORRA_NEWS__ = {
       "frase_id": "CAMBIO_SIMULACIONES:frases2:1",
       "jugador": "AGUSTIN",
       "titulo": "AGUSTIN sube en las proyecciones del campeonato después de Colombia 1-0 Ghana.",
-      "texto": "Sus probabilidades ahora están en el 11.3%.",
+      "texto": "Sus probabilidades ahora están en el 15.6%.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 68,
       "etiqueta": "📢 COMUNICADO"
@@ -51,23 +39,35 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "GPT_LIDER:frases4:0",
-      "tipo": "TITULAR",
-      "categoria": "GPT_LIDER",
-      "frase_id": "GPT_LIDER:frases4:0",
-      "jugador": "GPT",
-      "titulo": "GPT manda en la clasificación.",
-      "texto": "La humanidad solicita la revancha en 2030.",
+      "id": "GEMINI_ULTIMO:frases3:0",
+      "tipo": "DECLARACIONES",
+      "categoria": "GEMINI_ULTIMO",
+      "frase_id": "GEMINI_ULTIMO:frases3:0",
+      "jugador": "GABRIEL",
+      "titulo": "Seguimos aprendiendo.",
+      "texto": "— GEMINI, mientras ocupa el farolillo rojo.",
       "partido": null,
-      "prioridad": 60,
-      "etiqueta": "📰 TITULAR"
+      "prioridad": 58,
+      "etiqueta": "🎙️ DECLARACIONES"
+    },
+    {
+      "id": "GEMINI_ULTIMO:frases2:0",
+      "tipo": "INVESTIGACION",
+      "categoria": "GEMINI_ULTIMO",
+      "frase_id": "GEMINI_ULTIMO:frases2:0",
+      "jugador": "GEMINI",
+      "titulo": "Los ingenieros analizan si GEMINI está participando o simplemente improvisando.",
+      "texto": null,
+      "partido": null,
+      "prioridad": 48,
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
       "id": "MUNDIAL_ABIERTO:frases4:1",
       "tipo": "EDITORIAL",
       "categoria": "MUNDIAL_ABIERTO",
       "frase_id": "MUNDIAL_ABIERTO:frases4:1",
-      "jugador": "GPT",
+      "jugador": "GABRIEL",
       "titulo": "Nadie manda lo suficiente como para comprar ya el champán.",
       "texto": null,
       "partido": null,
@@ -91,36 +91,36 @@ window.__PORRA_NEWS__ = {
       "tipo": "EDITORIAL",
       "categoria": "LIDER_RESISTE",
       "frase_id": "LIDER_RESISTE:frases2:2",
-      "jugador": "GPT",
-      "titulo": "GPT sigue arriba mientras el resto cambia más de posición que de estrategia.",
+      "jugador": "GABRIEL",
+      "titulo": "GABRIEL sigue arriba mientras el resto cambia más de posición que de estrategia.",
       "texto": null,
       "partido": null,
       "prioridad": 39,
       "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "ZONA_MEDIA:frases1:0",
+      "id": "ZONA_BAJA:frases1:0",
       "tipo": "EDITORIAL",
-      "categoria": "ZONA_MEDIA",
-      "frase_id": "ZONA_MEDIA:frases1:0",
-      "jugador": "PEDRO",
-      "titulo": "PEDRO ocupa la zona media de la tabla.",
-      "texto": "Ni en el podio ni en peligro: territorio de paciencia.",
+      "categoria": "ZONA_BAJA",
+      "frase_id": "ZONA_BAJA:frases1:0",
+      "jugador": "MARIO",
+      "titulo": "MARIO mira la clasificación desde la parte baja.",
+      "texto": "El podio existe, pero hay que subir muchos escalones.",
       "partido": null,
-      "prioridad": 35,
+      "prioridad": 33,
       "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "ZONA_BAJA:frases3:0",
-      "tipo": "EXCLUSIVA",
+      "id": "ZONA_BAJA:frases2:1",
+      "tipo": "DECLARACIONES",
       "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases3:0",
+      "frase_id": "ZONA_BAJA:frases2:1",
       "jugador": "SERGIO",
-      "titulo": "SERGIO ocupa la parte baja de la clasificación.",
-      "texto": "Remontada posible, pero el camino es largo.",
+      "titulo": "Todavía tengo opciones matemáticas.",
+      "texto": "— SERGIO, desde la zona baja de la clasificación.",
       "partido": null,
       "prioridad": 33,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "🎙️ DECLARACIONES"
     }
   ]
 };
