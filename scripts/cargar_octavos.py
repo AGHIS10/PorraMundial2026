@@ -56,16 +56,28 @@ CRUCE_OCTAVOS: list[tuple[str, str]] = [
     ("W85", "W87"),  # id 96
 ]
 
-# Horario oficial en CEST (hora peninsular española).
+# Horarios oficiales octavos en CEST (emparejamiento por equipos, no por id).
+FIXTURES_OCTAVOS_CEST: list[dict[str, str]] = [
+    {"local": "Paraguay", "visitante": "Noruega", "fecha": "2026-07-04", "hora": "23:00"},
+    {"local": "Canadá", "visitante": "Marruecos", "fecha": "2026-07-04", "hora": "19:00"},
+    {"local": "Brasil", "visitante": "Francia", "fecha": "2026-07-05", "hora": "22:00"},
+    {"local": "México", "visitante": "Inglaterra", "fecha": "2026-07-06", "hora": "02:00"},
+    {"local": "España", "visitante": "Portugal", "fecha": "2026-07-06", "hora": "21:00"},
+    {"local": "Bélgica", "visitante": "Estados Unidos", "fecha": "2026-07-07", "hora": "02:00"},
+    {"local": "Egipto", "visitante": "Colombia", "fecha": "2026-07-07", "hora": "18:00"},
+    {"local": "Suiza", "visitante": "Argentina", "fecha": "2026-07-07", "hora": "22:00"},
+]
+
+# Compatibilidad con asignación legacy por id (cuadro FIFA W73–W88).
 HORARIOS_OCTAVOS_CEST: dict[int, tuple[str, str]] = {
-    89: ("2026-07-04", "23:00"),  # Paraguay vs Noruega · Philadelphia
-    90: ("2026-07-04", "19:00"),  # Canadá vs Marruecos · Houston
-    91: ("2026-07-05", "22:00"),  # Brasil vs Francia · New York
-    92: ("2026-07-06", "02:00"),  # México vs Inglaterra · Mexico City
-    93: ("2026-07-06", "21:00"),  # España vs Portugal · Dallas
-    94: ("2026-07-07", "02:00"),  # Bélgica vs Estados Unidos · Seattle
-    95: ("2026-07-07", "18:00"),  # Egipto vs Colombia · Atlanta
-    96: ("2026-07-07", "22:00"),  # Suiza vs Argentina · Vancouver
+    89: ("2026-07-04", "23:00"),
+    90: ("2026-07-04", "19:00"),
+    91: ("2026-07-05", "22:00"),
+    92: ("2026-07-06", "02:00"),
+    93: ("2026-07-06", "21:00"),
+    94: ("2026-07-07", "02:00"),
+    95: ("2026-07-07", "18:00"),
+    96: ("2026-07-07", "22:00"),
 }
 
 
@@ -139,6 +151,50 @@ def resolver_octavos_desde_ganadores(
     return partidos
 
 
+def _pareja_equipos(a: str, b: str) -> frozenset[str]:
+    return frozenset({a.strip(), b.strip()})
+
+
+def asignar_horario_octavo(local: str, visitante: str) -> tuple[str, str] | None:
+    """Busca fecha/hora CEST por cruce exacto o por equipo local en calendario FIFA."""
+    par = _pareja_equipos(local, visitante)
+    for fixture in FIXTURES_OCTAVOS_CEST:
+        if _pareja_equipos(fixture["local"], fixture["visitante"]) == par:
+            return fixture["fecha"], fixture["hora"]
+
+    por_local = [
+        fixture
+        for fixture in FIXTURES_OCTAVOS_CEST
+        if fixture["local"] == local or fixture["visitante"] == local
+    ]
+    if len(por_local) == 1:
+        fixture = por_local[0]
+        return fixture["fecha"], fixture["hora"]
+
+    por_visitante = [
+        fixture
+        for fixture in FIXTURES_OCTAVOS_CEST
+        if fixture["local"] == visitante or fixture["visitante"] == visitante
+    ]
+    if len(por_visitante) == 1:
+        fixture = por_visitante[0]
+        return fixture["fecha"], fixture["hora"]
+
+    return None
+
+
+def normalizar_fecha_csv(value: Any) -> str | None:
+    if pd.isna(value):
+        return None
+    texto = str(value).strip()
+    for formato in ("%d/%m/%Y", "%Y-%m-%d"):
+        try:
+            return datetime.strptime(texto, formato).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    return None
+
+
 def leer_partidos_csv(csv_path: Path) -> list[dict[str, str]]:
     df = pd.read_csv(csv_path, encoding="utf-8", header=None)
     if df.shape[1] < 4:
@@ -148,12 +204,14 @@ def leer_partidos_csv(csv_path: Path) -> list[dict[str, str]]:
     for _, fila in df.iloc[1:].iterrows():
         if pd.isna(fila[0]) and pd.isna(fila[1]):
             continue
-        partidos.append(
-            {
-                "local": normalizar_equipo(fila[1]),
-                "visitante": normalizar_equipo(fila[3]),
-            }
-        )
+        entrada: dict[str, str] = {
+            "local": normalizar_equipo(fila[1]),
+            "visitante": normalizar_equipo(fila[3]),
+        }
+        fecha = normalizar_fecha_csv(fila[0])
+        if fecha:
+            entrada["fecha"] = fecha
+        partidos.append(entrada)
 
     esperados = FIN_INDICE - INICIO_INDICE
     if len(partidos) != esperados:
@@ -256,11 +314,20 @@ def actualizar_partidos(
             "Aviso: sin FOOTBALL_DATA_API_KEY; se usan horarios oficiales FIFA en CEST.",
             file=sys.stderr,
         )
-        for indice in range(INICIO_INDICE, FIN_INDICE):
+        for offset in range(FIN_INDICE - INICIO_INDICE):
+            indice = INICIO_INDICE + offset
             partido = partidos[indice]
-            match_id = partido.get("id")
-            if match_id in HORARIOS_OCTAVOS_CEST:
-                partido["fecha"], partido["hora"] = HORARIOS_OCTAVOS_CEST[match_id]
+            datos = partidos_octavos[offset]
+            horario = asignar_horario_octavo(partido["local"], partido["visitante"])
+            if horario:
+                partido["fecha"], partido["hora"] = horario
+            elif datos.get("fecha"):
+                partido["fecha"] = datos["fecha"]
+                match_id = partido.get("id")
+                if isinstance(match_id, int) and match_id in HORARIOS_OCTAVOS_CEST:
+                    _, partido["hora"] = HORARIOS_OCTAVOS_CEST[match_id]
+            elif isinstance(partido.get("id"), int) and partido["id"] in HORARIOS_OCTAVOS_CEST:
+                partido["fecha"], partido["hora"] = HORARIOS_OCTAVOS_CEST[partido["id"]]
 
     guardar_json(partidos, PARTIDOS_FILE)
     return partidos[INICIO_INDICE:FIN_INDICE]

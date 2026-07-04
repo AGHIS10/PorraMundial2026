@@ -794,7 +794,7 @@ window.__PARTIDOS__ = [
   {
     "id": 89,
     "fecha": "2026-07-04",
-    "hora": "23:00",
+    "hora": "19:00",
     "local": "Canadá",
     "visitante": "Marruecos",
     "fase": "octavos",
@@ -803,7 +803,7 @@ window.__PARTIDOS__ = [
   {
     "id": 90,
     "fecha": "2026-07-04",
-    "hora": "19:00",
+    "hora": "23:00",
     "local": "Paraguay",
     "visitante": "Francia",
     "fase": "octavos",
