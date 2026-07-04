@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-04T10:57:21Z",
+  "generado": "2026-07-04T13:12:58Z",
   "partidos_jugados": 88,
   "noticias": [
     {
-      "id": "SUBIDA_1_POSICION:frases1:1",
-      "tipo": "EL_BAR",
+      "id": "SUBIDA_1_POSICION:frases1:4",
+      "tipo": "COMUNICADO",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases1:1",
+      "frase_id": "SUBIDA_1_POSICION:frases1:4",
       "jugador": "MARIO",
-      "titulo": "MARIO ya puede mirar a GEMINI por encima del hombro durante, como mínimo, una semana.",
-      "texto": null,
+      "titulo": "La organización recomienda no dejar solo a MARIO.",
+      "texto": "Lleva una posición ganada y ya habla como si hubiera conquistado Europa.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 73,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
       "id": "RACHA_FALLOS:frases4:1",
@@ -27,16 +27,16 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases4:1",
-      "tipo": "DECLARACIONES",
+      "id": "CAMBIO_SIMULACIONES:frases2:2",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases4:1",
+      "frase_id": "CAMBIO_SIMULACIONES:frases2:2",
       "jugador": "AGUSTIN",
-      "titulo": "Solo es un modelo.",
-      "texto": "— AGUSTIN, que sube posiciones en las proyecciones tras Colombia 1-0 Ghana y lo celebra en privado.",
+      "titulo": "El modelo ha hablado: AGUSTIN sube en el ranking de simulaciones.",
+      "texto": "La bola de cristal no miente... o eso dicen.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 68,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "LIDER_HUMANO:frases1:0",
@@ -75,28 +75,28 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases2:1",
-      "tipo": "EL_BAR",
+      "id": "ULTIMO_CLASIFICADO:frases2:0",
+      "tipo": "INVESTIGACION",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases2:1",
+      "frase_id": "ULTIMO_CLASIFICADO:frases2:0",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN no va último.",
-      "texto": "Está haciendo una auditoría completa de la parte baja.",
+      "titulo": "El equipo científico confirma que CRISTIAN sigue explorando regiones desconocidas de la clasificación.",
+      "texto": null,
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "LIDER_RESISTE:frases3:0",
-      "tipo": "EXCLUSIVA",
+      "id": "LIDER_RESISTE:frases4:2",
+      "tipo": "EL_BAR",
       "categoria": "LIDER_RESISTE",
-      "frase_id": "LIDER_RESISTE:frases3:0",
+      "frase_id": "LIDER_RESISTE:frases4:2",
       "jugador": "GPT",
-      "titulo": "GPT sobrevive otra jornada.",
-      "texto": "Los perseguidores empiezan a necesitar algo más que optimismo.",
+      "titulo": "GPT continúa arriba.",
+      "texto": "Los demás ya empiezan a mirarle con ese odio deportivo tan sano.",
       "partido": null,
       "prioridad": 39,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "ZONA_MEDIA:frases3:0",
