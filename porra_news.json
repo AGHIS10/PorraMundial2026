@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-04T15:38:35Z",
+  "generado": "2026-07-04T15:41:01Z",
   "partidos_jugados": 88,
   "noticias": [
     {
-      "id": "SUBIDA_1_POSICION:frases4:1",
-      "tipo": "RUMOR",
+      "id": "SUBIDA_1_POSICION:frases4:3",
+      "tipo": "EL_BAR",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases4:1",
+      "frase_id": "SUBIDA_1_POSICION:frases4:3",
       "jugador": "MARIO",
-      "titulo": "Desde que MARIO adelantó a GEMINI, el botón de actualizar la web trabaja horas extra.",
+      "titulo": "MARIO gana una posición y ya está saludando como si desfilara por la Castellana.",
       "texto": null,
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 73,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "RACHA_FALLOS:frases4:1",
