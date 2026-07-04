@@ -794,18 +794,18 @@ window.__PARTIDOS__ = [
   {
     "id": 89,
     "fecha": "2026-07-04",
-    "hora": "19:00",
-    "local": "Canadá",
-    "visitante": "Paraguay",
+    "hora": "23:00",
+    "local": "Paraguay",
+    "visitante": "Noruega",
     "fase": "octavos",
     "peso": 4
   },
   {
     "id": 90,
     "fecha": "2026-07-04",
-    "hora": "23:00",
-    "local": "Brasil",
-    "visitante": "Noruega",
+    "hora": "19:00",
+    "local": "Canadá",
+    "visitante": "Marruecos",
     "fase": "octavos",
     "peso": 4
   },
@@ -813,7 +813,7 @@ window.__PARTIDOS__ = [
     "id": 91,
     "fecha": "2026-07-05",
     "hora": "22:00",
-    "local": "Marruecos",
+    "local": "Brasil",
     "visitante": "Francia",
     "fase": "octavos",
     "peso": 4

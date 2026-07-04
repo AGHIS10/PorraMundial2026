@@ -56,9 +56,9 @@ PLACEHOLDERS_ELIMINATORIAS: dict[str, list[tuple[str, str]]] = {
         ("1K", "3DEIJL"),
     ],
     "octavos": [
-        ("W73", "W75"),
-        ("W74", "W77"),
-        ("W76", "W78"),
+        ("W75", "W77"),
+        ("W73", "W76"),
+        ("W74", "W78"),
         ("W79", "W80"),
         ("W83", "W84"),
         ("W81", "W82"),

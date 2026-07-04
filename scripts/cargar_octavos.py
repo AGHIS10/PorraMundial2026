@@ -46,15 +46,27 @@ NOMBRES_CANONICOS = {
 }
 
 CRUCE_OCTAVOS: list[tuple[str, str]] = [
-    ("W73", "W75"),
-    ("W74", "W77"),
-    ("W76", "W78"),
-    ("W79", "W80"),
-    ("W83", "W84"),
-    ("W81", "W82"),
-    ("W86", "W88"),
-    ("W85", "W87"),
+    ("W75", "W77"),  # id 89
+    ("W73", "W76"),  # id 90
+    ("W74", "W78"),  # id 91
+    ("W79", "W80"),  # id 92
+    ("W83", "W84"),  # id 93
+    ("W81", "W82"),  # id 94
+    ("W86", "W88"),  # id 95
+    ("W85", "W87"),  # id 96
 ]
+
+# Horario oficial en CEST (hora peninsular española).
+HORARIOS_OCTAVOS_CEST: dict[int, tuple[str, str]] = {
+    89: ("2026-07-04", "23:00"),  # Paraguay vs Noruega · Philadelphia
+    90: ("2026-07-04", "19:00"),  # Canadá vs Marruecos · Houston
+    91: ("2026-07-05", "22:00"),  # Brasil vs Francia · New York
+    92: ("2026-07-06", "02:00"),  # México vs Inglaterra · Mexico City
+    93: ("2026-07-06", "21:00"),  # España vs Portugal · Dallas
+    94: ("2026-07-07", "02:00"),  # Bélgica vs Estados Unidos · Seattle
+    95: ("2026-07-07", "18:00"),  # Egipto vs Colombia · Atlanta
+    96: ("2026-07-07", "22:00"),  # Suiza vs Argentina · Vancouver
+}
 
 
 def normalizar_equipo(value: Any) -> str:
@@ -241,9 +253,14 @@ def actualizar_partidos(
         sincronizar_horarios_api(partidos, partidos_api, alias)
     else:
         print(
-            "Aviso: sin FOOTBALL_DATA_API_KEY no se sincronizan fecha/hora desde la API.",
+            "Aviso: sin FOOTBALL_DATA_API_KEY; se usan horarios oficiales FIFA en CEST.",
             file=sys.stderr,
         )
+        for indice in range(INICIO_INDICE, FIN_INDICE):
+            partido = partidos[indice]
+            match_id = partido.get("id")
+            if match_id in HORARIOS_OCTAVOS_CEST:
+                partido["fecha"], partido["hora"] = HORARIOS_OCTAVOS_CEST[match_id]
 
     guardar_json(partidos, PARTIDOS_FILE)
     return partidos[INICIO_INDICE:FIN_INDICE]
