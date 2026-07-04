@@ -1,5 +1,5 @@
 {
-  "partidos_jugados": 89,
+  "partidos_jugados": 90,
   "posiciones": {
     "GPT": 1,
     "GABRIEL": 2,
@@ -7,8 +7,8 @@
     "PEDRO": 4,
     "JORGE": 5,
     "SERGIO": 6,
-    "GEMINI": 7,
-    "MARIO": 8,
+    "MARIO": 7,
+    "GEMINI": 8,
     "CRISTIAN": 9
   },
   "lider": "GPT",
@@ -71,12 +71,12 @@
     "RACHA_FALLOS:frases4:1": 88,
     "FAVORITO_SIMULADOR:frases3:0": 88,
     "FAVORITO_SIMULADOR:frases1:0": 88,
-    "LIDER_HUMANO:frases4:0": 88,
-    "GPT_LIDER:frases4:1": 88,
+    "LIDER_HUMANO:frases4:0": 90,
+    "GPT_LIDER:frases4:1": 90,
     "MUNDIAL_ABIERTO:frases3:1": 88,
     "ULTIMO_CLASIFICADO:frases1:0": 88,
     "LIDER_RESISTE:frases2:1": 89,
-    "ZONA_MEDIA:frases3:1": 88,
+    "ZONA_MEDIA:frases3:1": 90,
     "ZONA_MEDIA:frases4:0": 88,
     "BAJADA_1_POSICION:frases2:0": 88,
     "RACHA_FALLOS:frases2:1": 89,
@@ -155,7 +155,7 @@
     "ULTIMO_CLASIFICADO:frases3:2": 88,
     "LIDER_RESISTE:frases1:2": 88,
     "SUBIDA_1_POSICION:frases2:4": 89,
-    "CAMBIO_SIMULACIONES:frases3:0": 88,
+    "CAMBIO_SIMULACIONES:frases3:0": 90,
     "ULTIMO_CLASIFICADO:frases4:0": 88,
     "LIDER_RESISTE:frases4:0": 88,
     "SUBIDA_1_POSICION:frases1:1": 88,
@@ -194,7 +194,11 @@
     "ENTRA_TOP3:frases1:0": 89,
     "ENTRA_TOP3:frases4:0": 89,
     "SALE_TOP3:frases2:0": 89,
-    "SUBIDA_2_3_POSICIONES:frases4:0": 89
+    "SUBIDA_2_3_POSICIONES:frases4:0": 89,
+    "RACHA_ACIERTOS:frases2:1": 90,
+    "RACHA_ACIERTOS:frases4:1": 90,
+    "RACHA_ACIERTOS:frases2:0": 90,
+    "RACHA_ACIERTOS:frases1:0": 90
   },
-  "actualizado": "2026-07-04T23:15:03Z"
+  "actualizado": "2026-07-04T23:17:52Z"
 }
