@@ -191,6 +191,8 @@ def _plantilla_coherente(categoria: str, texto: str, candidato: Candidato) -> bo
         primera = texto.strip().split(".")[0]
         if "{JUGADOR}" not in primera:
             return False
+        if "{RIVAL}" in texto and not (candidato.variables.get("RIVAL") or "").strip():
+            return False
     return True
 
 
@@ -311,10 +313,52 @@ def _humanos(clasificacion: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [f for f in clasificacion if not es_participante_virtual(f["nombre"])]
 
 
+def _puntos_en_paso(evolucion: dict[str, Any] | None, paso: int) -> dict[str, int]:
+    if not evolucion or paso < 0:
+        return {}
+    puntos: dict[str, int] = {}
+    for participante in evolucion.get("participantes", []):
+        if not isinstance(participante, dict):
+            continue
+        serie = participante.get("serie", [])
+        nombre = participante.get("nombre")
+        if nombre and paso < len(serie):
+            puntos[nombre] = int(serie[paso])
+    return puntos
+
+
+def _rival_por_puntos_superados(
+    jugador: str,
+    evolucion: dict[str, Any] | None,
+    paso_prev: int,
+    paso_curr: int,
+) -> str:
+    """Quién tenía más puntos antes y ahora queda igual o por debajo (humano preferido)."""
+    pts_prev = _puntos_en_paso(evolucion, paso_prev)
+    pts_curr = _puntos_en_paso(evolucion, paso_curr)
+    if jugador not in pts_prev or jugador not in pts_curr:
+        return ""
+    antes_j = pts_prev[jugador]
+    ahora_j = pts_curr[jugador]
+    superados: list[str] = []
+    for nombre, pb in pts_prev.items():
+        if nombre == jugador:
+            continue
+        if pb > antes_j and pts_curr.get(nombre, 0) <= ahora_j:
+            superados.append(nombre)
+    humanos = sorted(n for n in superados if not es_participante_virtual(n))
+    if humanos:
+        return humanos[0]
+    return sorted(superados)[0] if superados else ""
+
+
 def _rival_tras_movimiento(
     jugador: str,
     pos_prev: dict[str, int],
     pos_curr: dict[str, int],
+    evolucion: dict[str, Any] | None = None,
+    paso_prev: int | None = None,
+    paso_curr: int | None = None,
 ) -> str:
     antes = pos_prev.get(jugador)
     if antes is None:
@@ -322,7 +366,6 @@ def _rival_tras_movimiento(
     for nombre, pos in pos_curr.items():
         if pos == antes and nombre != jugador:
             return nombre
-    # Si nadie ocupa ya esa posición (empates), usar quien está justo por encima
     ahora = pos_curr.get(jugador)
     if ahora is not None and ahora > 1:
         candidatos = sorted(
@@ -330,6 +373,8 @@ def _rival_tras_movimiento(
         )
         if candidatos:
             return candidatos[0]
+    if evolucion is not None and paso_prev is not None and paso_curr is not None:
+        return _rival_por_puntos_superados(jugador, evolucion, paso_prev, paso_curr)
     return ""
 
 
@@ -421,6 +466,7 @@ def _detectar_eventos(
     partidos: list[dict],
     resultados: list[Any],
     ultimo_idx: int | None,
+    partidos_jugados: int = 0,
 ) -> list[Candidato]:
     candidatos: list[Candidato] = []
     pos_curr = _posiciones(clasificacion)
@@ -490,7 +536,11 @@ def _detectar_eventos(
         movimientos.sort(key=lambda t: abs(t[1]), reverse=True)
 
         for jugador, delta in movimientos:
-            rival = _rival_tras_movimiento(jugador, pos_prev, pos_mov)
+            paso_prev = partidos_jugados - 1 if partidos_jugados > 0 else 0
+            paso_curr = partidos_jugados
+            rival = _rival_tras_movimiento(
+                jugador, pos_prev, pos_mov, evolucion, paso_prev, paso_curr
+            )
             v = {**vars_base, "JUGADOR": jugador, "RIVAL": rival}
             if delta >= 4:
                 v["POSICIONES_GANADAS"] = str(delta)
@@ -964,6 +1014,7 @@ def generar_noticias(
         partidos,
         resultados,
         ultimo_idx,
+        partidos_jugados,
     )
 
     cubiertos = _jugadores_cubiertos(eventos)

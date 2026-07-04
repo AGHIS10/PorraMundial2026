@@ -68,6 +68,11 @@
       "tipo": "COMUNICADO",
       "nivel": "SALVAJE",
       "texto": "La organización recomienda no dejar solo a {JUGADOR}. Lleva una posición ganada y ya habla como si hubiera conquistado Europa."
+    },
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} sube una posición en la clasificación. El grupo ya empieza a notarlo."
     }
   ],
   "SUBIDA_2_3_POSICIONES": [

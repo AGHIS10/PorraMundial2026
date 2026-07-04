@@ -63,6 +63,11 @@
       "tipo": "EL_BAR",
       "nivel": "SALVAJE",
       "texto": "{JUGADOR} gana una posición y ya está saludando como si desfilara por la Castellana."
+    },
+    {
+      "tipo": "COMUNICADO",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} sube una posición en la clasificación. El grupo ya empieza a notarlo."
     }
   ],
   "SUBIDA_2_3_POSICIONES": [

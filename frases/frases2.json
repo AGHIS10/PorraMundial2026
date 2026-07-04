@@ -63,6 +63,11 @@
       "tipo": "EL_BAR",
       "nivel": "SALVAJE",
       "texto": "{JUGADOR} solo ha ganado una posición, pero ya camina como si hubiera levantado la Champions."
+    },
+    {
+      "tipo": "COMUNICADO",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} sube una posición en la clasificación. El grupo ya empieza a notarlo."
     }
   ],
   "SUBIDA_2_3_POSICIONES": [
