@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-04T15:41:01Z",
+  "generado": "2026-07-04T16:59:03Z",
   "partidos_jugados": 88,
   "noticias": [
     {
-      "id": "SUBIDA_1_POSICION:frases4:3",
-      "tipo": "EL_BAR",
+      "id": "SUBIDA_1_POSICION:frases1:5",
+      "tipo": "TITULAR",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases4:3",
+      "frase_id": "SUBIDA_1_POSICION:frases1:5",
       "jugador": "MARIO",
-      "titulo": "MARIO gana una posición y ya está saludando como si desfilara por la Castellana.",
-      "texto": null,
+      "titulo": "MARIO sube una posición en la clasificación.",
+      "texto": "El grupo ya empieza a notarlo.",
       "partido": "Colombia 1-0 Ghana",
       "prioridad": 73,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "📰 TITULAR"
     },
     {
       "id": "RACHA_FALLOS:frases4:1",
