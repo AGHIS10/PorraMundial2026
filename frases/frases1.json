@@ -1,0 +1,419 @@
+{
+  "CAMBIO_LIDER": [
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SUAVE",
+      "texto": "{NUEVO_LIDER} toma el liderato. {ANTERIOR_LIDER} ha pedido cinco minutos para asimilar la tragedia."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "Fuentes cercanas a {ANTERIOR_LIDER} aseguran que la clasificación era bastante más bonita ayer."
+    },
+    {
+      "tipo": "DECLARACIONES",
+      "nivel": "SARCÁSTICO",
+      "texto": "\"No miro la clasificación.\" — {ANTERIOR_LIDER}, después de mirarla exactamente 27 veces."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SUAVE",
+      "texto": "{NUEVO_LIDER} demuestra que en esta porra nadie conserva el trono demasiado tiempo."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{ANTERIOR_LIDER} ha pasado de rey a comentarista en un solo partido. El ego sigue buscando cobertura."
+    }
+  ],
+  "LIDER_RESISTE": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{LIDER} sigue primero. Ya empieza a resultar preocupantemente cómodo."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SARCÁSTICO",
+      "texto": "Los perseguidores prometieron una revolución. {LIDER} ha respondido bostezando."
+    },
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SUAVE",
+      "texto": "Los expertos siguen sin encontrar el botón de 'bajar del liderato' de {LIDER}."
+    }
+  ],
+  "SUBIDA_1_POSICION": [
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} adelanta a {RIVAL}. Parece poca cosa... hasta que toca aguantar el WhatsApp."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} ya puede mirar a {RIVAL} por encima del hombro durante, como mínimo, una semana."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SUAVE",
+      "texto": "Se comenta que {RIVAL} ha dejado de actualizar la clasificación por motivos de salud mental."
+    },
+    {
+      "tipo": "DECLARACIONES",
+      "nivel": "SARCÁSTICO",
+      "texto": "\"Es solo una posición.\" — {RIVAL}, intentando convencerse a sí mismo."
+    },
+    {
+      "tipo": "COMUNICADO",
+      "nivel": "SALVAJE",
+      "texto": "La organización recomienda no dejar solo a {JUGADOR}. Lleva una posición ganada y ya habla como si hubiera conquistado Europa."
+    }
+  ],
+  "SUBIDA_2_3_POSICIONES": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} gana {POSICIONES_GANADAS} posiciones y empieza a aparecer en todas las conversaciones incómodas."
+    },
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} ha adelantado a media mesa. Ya se oyen sus mensajes escribiéndose solos."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SUAVE",
+      "texto": "Lo de {JUGADOR} ya no parece casualidad. Empieza a molestar de verdad."
+    }
+  ],
+  "SUBIDA_4_MAS": [
+    {
+      "tipo": "EXCLUSIVA",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} ha adelantado tantas posiciones que algunos aún no saben cuándo les pasó por encima."
+    },
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SUAVE",
+      "texto": "Los analistas estudian cómo {JUGADOR} ha encontrado el atajo que nadie más vio."
+    }
+  ],
+  "BAJADA_1_POSICION": [
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} pierde una posición. No parece grave... hasta que ves quién le ha pasado."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "Personas del entorno de {JUGADOR} aseguran que hoy la clasificación 'no refleja la realidad'."
+    },
+    {
+      "tipo": "DECLARACIONES",
+      "nivel": "SUAVE",
+      "texto": "\"No pasa nada.\" — {JUGADOR}, mientras actualiza compulsivamente la web."
+    }
+  ],
+  "BAJADA_2_3_POSICIONES": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} baja {POSICIONES_PERDIDAS} posiciones. La gravedad sigue invicta."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} ha bajado tanto que ya saluda a los de abajo por su nombre."
+    }
+  ],
+  "BAJADA_4_MAS": [
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} protagoniza una caída histórica. Solo falta que cobre entrada por el espectáculo."
+    },
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SUAVE",
+      "texto": "Los científicos descartan un fallo de la web. Lo de {JUGADOR} era totalmente real."
+    }
+  ],
+  "ENTRA_TOP3": [
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} entra en el Top 3. Ya puede volver a hablar en el grupo con cierta autoridad."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "Se rumorea que {JUGADOR} ya está ensayando una falsa humildad."
+    }
+  ],
+  "SALE_TOP3": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} abandona el Top 3. Se acabó la zona VIP."
+    },
+    {
+      "tipo": "DECLARACIONES",
+      "nivel": "SARCÁSTICO",
+      "texto": "\"Lo importante es participar.\" — {JUGADOR}, obligado por las circunstancias."
+    }
+  ],
+  "ULTIMO_CLASIFICADO": [
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SUAVE",
+      "texto": "{ULTIMO} sigue cerrando la clasificación. Al menos ya conoce perfectamente el camino."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{ULTIMO} está haciendo turismo por la parte baja. Dice que también tiene encanto."
+    },
+    {
+      "tipo": "COMUNICADO",
+      "nivel": "SALVAJE",
+      "texto": "La organización confirma que {ULTIMO} sigue teniendo opciones matemáticas. Emocionales ya es otro debate."
+    }
+  ],
+  "RACHA_ACIERTOS": [
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} encadena {RACHA} aciertos. Empieza a dar bastante rabia."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} está acertando tanto que algunos ya sospechan que conoce el calendario del futuro."
+    }
+  ],
+  "RACHA_FALLOS": [
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SUAVE",
+      "texto": "El laboratorio sigue intentando entender la racha de {RACHA} fallos consecutivos de {JUGADOR}."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} lleva una racha tan mala que empieza a acertar por accidente los partidos que quería fallar."
+    }
+  ],
+  "GPT_LIDER": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{IA} lidera la porra. Los humanos piden una auditoría... o un milagro."
+    },
+    {
+      "tipo": "COMUNICADO",
+      "nivel": "SUAVE",
+      "texto": "{IA} agradece la colaboración de los participantes humanos para facilitarle el trabajo."
+    }
+  ],
+  "GPT_ULTIMO": [
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SUAVE",
+      "texto": "{IA} demuestra que hasta los algoritmos tienen días para olvidar."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{IA} ha pedido volver a la versión beta después de ver la clasificación."
+    }
+  ],
+  "GEMINI_LIDER": [
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SUAVE",
+      "texto": "{IA} lidera la clasificación. Google ya está preparando la nota de prensa."
+    }
+  ],
+  "GEMINI_ULTIMO": [
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "Fuentes cercanas a {IA} aseguran que hoy prefiere no responder preguntas."
+    }
+  ],
+  "EMPATE_LIDER": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "Hay empate en el liderato. Nadie sabe quién presume primero."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "Dos líderes, dos egos y un solo grupo de WhatsApp. Se vienen días intensos."
+    }
+  ],
+  "CAMBIO_SIMULACIONES": [
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SUAVE",
+      "texto": "Tras {PARTIDO}, {JUGADOR} {TENDENCIA} posiciones en las simulaciones. Ahora tiene un {PROB_SIM}% de probabilidades de ganar la porra."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SARCÁSTICO",
+      "texto": "El algoritmo ha movido ficha: {JUGADOR} {TENDENCIA} en las simulaciones después de {PARTIDO}. El modelo sabe algo que el resto aún no."
+    },
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} {TENDENCIA} en las proyecciones tras {PARTIDO}."
+    }
+  ],
+  "FAVORITO_SIMULADOR": [
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SUAVE",
+      "texto": "Las simulaciones colocan a {FAVORITO} como favorito. Ahora solo falta convencer a los partidos."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SARCÁSTICO",
+      "texto": "{FAVORITO} ya es favorito para el algoritmo. Para el resto sigue siendo sospechoso."
+    }
+  ],
+  "FAVORITO_NO_LIDER": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{FAVORITO} no lidera... pero las simulaciones ya le miran con otros ojos."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "Se comenta que {LIDER} evita abrir la sección de probabilidades desde hace días."
+    }
+  ],
+  "MUNDIAL_ABIERTO": [
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SUAVE",
+      "texto": "La porra sigue tan abierta que hasta el algoritmo duda antes de hablar."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "Aquí no hay favoritos. Solo gente esperando que el otro la líe primero."
+    }
+  ],
+  "MUNDIAL_DECIDIDO": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "El campeonato empieza a tener un dueño... aunque nadie se atreve a decirlo muy alto."
+    },
+    {
+      "tipo": "DECLARACIONES",
+      "nivel": "SARCÁSTICO",
+      "texto": "\"Todavía puede pasar de todo.\" — Todos los que no son {FAVORITO}."
+    }
+  ],
+  "NADIE_ACIERTA": [
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SUAVE",
+      "texto": "Ni un solo participante acertó {PARTIDO}. El fútbol vuelve a ganar."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{PARTIDO} ha conseguido una hazaña histórica: dejar mal a absolutamente todos."
+    }
+  ],
+  "SOLO_UNO_ACIERTA": [
+    {
+      "tipo": "EXCLUSIVA",
+      "nivel": "SUAVE",
+      "texto": "Solo {JUGADOR} acertó {PARTIDO}. El resto sigue buscando explicaciones."
+    },
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SARCÁSTICO",
+      "texto": "Los expertos intentan averiguar si {JUGADOR} sabía algo que nadie más sabía... o simplemente tuvo un golpe de suerte."
+    }
+  ],
+  "REMONTADA_HISTORICA": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} firma una remontada que ya empieza a ponerse seria."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SALVAJE",
+      "texto": "Hace unas jornadas nadie hablaba de {JUGADOR}. Ahora nadie quiere tenerlo detrás."
+    }
+  ],
+  "LIDER_HUMANO": [
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} encabeza la clasificación entre humanos. GPT lidera la general, pero la porra de carne y hueso tiene un referente claro."
+    },
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} lidera entre los humanos. Las simulaciones también lo tienen en el punto de mira."
+    }
+  ],
+  "PODIO_HUMANO": [
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} se mantiene en el podio humano. {LIDER_HUMANO} sigue siendo la referencia."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} aguanta arriba entre humanos, pero {LIDER_HUMANO} marca el ritmo desde la primera posición."
+    }
+  ],
+  "ZONA_MEDIA": [
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} ocupa la zona media de la tabla. Ni en el podio ni en peligro: territorio de paciencia."
+    },
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SARCÁSTICO",
+      "texto": "Los analistas sitúan a {JUGADOR} en la franja intermedia donde todavía puede pasar de todo."
+    }
+  ],
+  "ZONA_BAJA": [
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} mira la clasificación desde la parte baja. El podio existe, pero hay que subir muchos escalones."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "Dicen que {JUGADOR} ha encontrado una rutina cómoda en la zona baja. Demasiado cómoda, según algunos."
+    }
+  ],
+  "HUNDIMIENTO_HISTORICO": [
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} protagoniza el desplome de la jornada. Caer también es un arte."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} ha descubierto que el ascensor también baja... y además bastante rápido."
+    }
+  ]
+}

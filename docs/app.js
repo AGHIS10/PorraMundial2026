@@ -7,6 +7,7 @@ const MARCADORES_URL = `./marcadores.json?v=${BUILD}`;
 const PARTICIPANTES_URL = `./participantes.json?v=${BUILD}`;
 const STATUS_URL = `./status.json?v=${BUILD}`;
 const PROYECCION_URL = `./proyeccion.json?v=${BUILD}`;
+const PORRA_NEWS_URL = `./porra_news.json?v=${BUILD}`;
 const PUNTOS_MAXIMOS = 275;
 const SYNC_TIMEZONE = "UTC";
 const SYNC_DISPLAY_TIMEZONE = "Europe/Madrid";
@@ -93,6 +94,7 @@ const elements = {
   snapshotLeader: document.getElementById("snapshot-leader"),
   snapshotTop3: document.getElementById("snapshot-top3"),
   snapshotPulse: document.getElementById("snapshot-pulse"),
+  porraNewsSection: document.getElementById("porra-news"),
   leaderboardBody: document.getElementById("leaderboard-body"),
   mobileCards: document.getElementById("mobile-cards"),
   viewHome: document.getElementById("view-home"),
@@ -411,6 +413,24 @@ async function loadProyeccion() {
   if (embedded) return embedded;
   const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
   if (canFetch) return fetchProyeccion();
+  return null;
+}
+
+function loadEmbeddedPorraNews() {
+  return window.__PORRA_NEWS__ || null;
+}
+
+async function fetchPorraNews() {
+  const response = await fetch(PORRA_NEWS_URL);
+  if (!response.ok) throw new Error(`No se pudo acceder a porra_news.json (${response.status}).`);
+  return response.json();
+}
+
+async function loadPorraNews() {
+  const embedded = loadEmbeddedPorraNews();
+  if (embedded) return embedded;
+  const canFetch = window.location.protocol === "http:" || window.location.protocol === "https:";
+  if (canFetch) return fetchPorraNews();
   return null;
 }
 
@@ -1938,6 +1958,7 @@ function renderParticipantDetail(entry, participante) {
 }
 
 function renderApp(data) {
+  renderPorraNews(appData.porraNews);
   renderStats(data, appData.status);
   renderProgress();
   renderSnapshot();
@@ -1947,6 +1968,216 @@ function renderApp(data) {
   renderPremios(appData.premios);
   renderTable(data);
 }
+
+/* ── El Chiringuito de la Porra (informativo rotativo) ── */
+
+const TPN_PROGRAM_CLASS = {
+  ULTIMA_HORA:   "tpn__program--ultima",
+  EXCLUSIVA:     "tpn__program--exclusiva",
+  TITULAR:       "tpn__program--titular",
+  RUMOR:         "tpn__program--rumor",
+  INVESTIGACION: "tpn__program--investigacion",
+  EL_BAR:        "tpn__program--el-bar",
+  COMUNICADO:    "tpn__program--comunicado",
+  EDITORIAL:     "tpn__program--editorial",
+  DECLARACIONES: "tpn__program--declaraciones",
+};
+
+const TPN_CORNER_LABEL = {
+  ULTIMA_HORA:   "ÚLTIMA HORA",
+  EXCLUSIVA:     "EXCLUSIVA",
+  TITULAR:       "TITULAR",
+  RUMOR:         "RUMOR",
+  INVESTIGACION: "INVESTIGACIÓN",
+  EL_BAR:        "EL BAR",
+  COMUNICADO:    "COMUNICADO",
+  EDITORIAL:     "EDITORIAL",
+  DECLARACIONES: "DECLARACIONES",
+};
+
+const TPN_CORNER_CLASS = {
+  RUMOR:         "tpn__corner--rumor",
+  INVESTIGACION: "tpn__corner--investigacion",
+  EL_BAR:        "tpn__corner--el-bar",
+  COMUNICADO:    "tpn__corner--comunicado",
+  EDITORIAL:     "tpn__corner--editorial",
+  DECLARACIONES: "tpn__corner--declaraciones",
+};
+
+const TPN_INTERVAL_MS = 10000;
+const TPN_FADE_MS = 380;
+
+let tpnNoticias = [];
+let tpnIndex = 0;
+let tpnTimer = null;
+let tpnGenerado = null;
+
+function tpnNormalizePayload(data) {
+  if (!data) return [];
+  if (Array.isArray(data.noticias)) return data.noticias;
+  if (data.titulo || data.titular) {
+    return [{
+      tipo: data.tipo || "TITULAR",
+      titulo: data.titulo || data.titular,
+      texto: data.texto,
+      partido: data.partido,
+      jugador: data.jugador,
+      etiqueta: data.etiqueta,
+      prioridad: data.prioridad || 0,
+    }];
+  }
+  return [];
+}
+
+function chirUpdateDots(index, total) {
+  const dotsEl = document.getElementById("chir-dots");
+  const counterEl = document.getElementById("chir-counter");
+  if (dotsEl) {
+    const dots = dotsEl.querySelectorAll(".chir__dot");
+    dots.forEach((d, i) => {
+      d.classList.toggle("chir__dot--active", i === index);
+    });
+  }
+  if (counterEl) {
+    counterEl.textContent = `${index + 1} / ${total}`;
+  }
+}
+
+function chirBuildDots(total) {
+  const dotsEl = document.getElementById("chir-dots");
+  if (!dotsEl) return;
+  dotsEl.innerHTML = "";
+  const maxDots = Math.min(total, 12);
+  for (let i = 0; i < maxDots; i++) {
+    const dot = document.createElement("span");
+    dot.className = "chir__dot" + (i === 0 ? " chir__dot--active" : "");
+    dotsEl.appendChild(dot);
+  }
+}
+
+function chirBuildTicker(noticias) {
+  const tickerEl = document.getElementById("chir-ticker");
+  if (!tickerEl || !noticias.length) return;
+  const items = [...noticias, ...noticias];
+  tickerEl.innerHTML = items.map((n, i) =>
+    `<span>${n.titulo || ""}</span><span class="chir__ticker-sep">▸</span>`
+  ).join("");
+}
+
+function tpnPaintNoticia(noticia) {
+  const programEl = document.getElementById("tpn-program");
+  const titleEl   = document.getElementById("tpn-title");
+  const bodyEl    = document.getElementById("tpn-body");
+  const matchEl   = document.getElementById("tpn-match");
+  const stampEl   = document.getElementById("tpn-stamp");
+  const cornerEl  = document.getElementById("tpn-corner");
+
+  if (!noticia || !titleEl) return;
+
+  const tipo     = (noticia.tipo || "EDITORIAL").toUpperCase();
+  const etiqueta = noticia.etiqueta || tipo.replace(/_/g, " ");
+
+  if (programEl) {
+    const progClass = TPN_PROGRAM_CLASS[tipo] || "";
+    programEl.textContent = etiqueta;
+    programEl.className = `chir__program ${progClass}`.trim();
+  }
+
+  const isQuote = tipo === "DECLARACIONES";
+  titleEl.className = isQuote ? "chir__title tpn__title--quote" : "chir__title";
+  titleEl.textContent = noticia.titulo || "";
+
+  if (bodyEl) {
+    if (noticia.texto) {
+      bodyEl.textContent = noticia.texto;
+      bodyEl.hidden = false;
+    } else {
+      bodyEl.textContent = "";
+      bodyEl.hidden = true;
+    }
+  }
+
+  if (matchEl) {
+    if (noticia.partido) {
+      matchEl.textContent = noticia.partido;
+      matchEl.hidden = false;
+    } else {
+      matchEl.hidden = true;
+    }
+  }
+
+  if (stampEl) {
+    stampEl.textContent = tpnGenerado ? formatRelativeTime(tpnGenerado) : "Hace unos segundos";
+  }
+
+  if (cornerEl) {
+    const label      = TPN_CORNER_LABEL[tipo] || "DIRECTO";
+    const cornerCls  = TPN_CORNER_CLASS[tipo] || "";
+    cornerEl.textContent = label;
+    cornerEl.className = `chir__badge ${cornerCls}`.trim();
+  }
+
+  chirUpdateDots(tpnIndex, tpnNoticias.length);
+}
+
+function tpnTransitionTo(index) {
+  const stage = document.getElementById("tpn-stage");
+  if (!stage || !tpnNoticias.length) return;
+
+  stage.classList.add("is-out");
+  window.setTimeout(() => {
+    tpnIndex = index;
+    tpnPaintNoticia(tpnNoticias[tpnIndex]);
+    stage.classList.remove("is-out");
+    stage.classList.add("is-in");
+    window.setTimeout(() => stage.classList.remove("is-in"), TPN_FADE_MS);
+  }, TPN_FADE_MS);
+}
+
+function tpnStartRotation() {
+  if (tpnTimer) { clearInterval(tpnTimer); tpnTimer = null; }
+  if (tpnNoticias.length <= 1) return;
+  tpnTimer = window.setInterval(() => {
+    tpnTransitionTo((tpnIndex + 1) % tpnNoticias.length);
+  }, TPN_INTERVAL_MS);
+}
+
+function tpnStopRotation() {
+  if (tpnTimer) { clearInterval(tpnTimer); tpnTimer = null; }
+}
+
+function renderPorraNews(data) {
+  const section = elements.porraNewsSection;
+  if (!section) return;
+
+  tpnStopRotation();
+  tpnNoticias = tpnNormalizePayload(data);
+
+  if (!tpnNoticias.length) {
+    section.hidden = true;
+    return;
+  }
+
+  section.hidden = false;
+  tpnGenerado = data?.generado || null;
+  tpnIndex = 0;
+
+  const stage = document.getElementById("tpn-stage");
+  if (stage) stage.classList.remove("is-out", "is-in");
+
+  chirBuildDots(tpnNoticias.length);
+  chirBuildTicker(tpnNoticias);
+  tpnPaintNoticia(tpnNoticias[0]);
+  tpnStartRotation();
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    tpnStopRotation();
+  } else if (tpnNoticias.length > 1) {
+    tpnStartRotation();
+  }
+});
 
 /* ── Snapshot: estado del campeonato (cabecera) ── */
 
@@ -2324,7 +2555,7 @@ async function init() {
   hideError();
   showLoading();
   try {
-    const [clasificacion, premios, partidos, resultados, marcadores, participantes, evolucion, status, proyeccion] = await Promise.all([
+    const [clasificacion, premios, partidos, resultados, marcadores, participantes, evolucion, status, proyeccion, porraNews] = await Promise.all([
       loadClasificacion(),
       loadPremios(),
       loadPartidos().catch(() => null),
@@ -2334,6 +2565,7 @@ async function init() {
       loadEvolucion().catch(() => null),
       loadStatus(),
       loadProyeccion().catch(() => null),
+      loadPorraNews().catch(() => null),
     ]);
     appData.clasificacion = clasificacion;
     appData.premios = premios;
@@ -2344,6 +2576,7 @@ async function init() {
     appData.evolucion = evolucion;
     appData.status = status;
     appData.proyeccion = proyeccion;
+    appData.porraNews = porraNews;
     renderApp(clasificacion);
     hideError();
     hideLoading();

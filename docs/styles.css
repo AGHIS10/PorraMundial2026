@@ -415,6 +415,482 @@ body {
   line-height: 1.2;
 }
 
+/* ══════════════════════════════════════════════════════
+   EL CHIRINGUITO DE LA PORRA — TV broadcast card
+   ══════════════════════════════════════════════════════ */
+
+.chir {
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: chirReveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+}
+
+@keyframes chirReveal {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Outer glow wrapper ── */
+.chir__card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  /* Hard, vivid dark background — no backdrop-filter to avoid render bugs */
+  background: #080c22;
+  /* Strong red glow ring */
+  box-shadow:
+    0 0 0 1px rgba(220, 38, 38, 0.5),
+    0 0 32px rgba(220, 38, 38, 0.18),
+    0 28px 60px rgba(0, 0, 0, 0.7),
+    inset 0 0 80px rgba(220, 38, 38, 0.04);
+}
+
+/* Subtle scanline texture over whole card */
+.chir__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.07) 0px,
+    rgba(0,0,0,0.07) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ══ HEADER — red TV broadcast bar ══ */
+.chir__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.7rem 1.1rem;
+  background: linear-gradient(90deg,
+    #7f1d1d 0%,
+    #991b1b 8%,
+    #dc2626 35%,
+    #ef4444 55%,
+    #dc2626 75%,
+    #991b1b 100%
+  );
+  /* inner top shine */
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+/* diagonal stripes */
+.chir__header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -52deg,
+    transparent 0,
+    transparent 7px,
+    rgba(0,0,0,0.06) 7px,
+    rgba(0,0,0,0.06) 8px
+  );
+  pointer-events: none;
+}
+
+/* right dark vignette */
+.chir__header::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 25%;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.22));
+  pointer-events: none;
+}
+
+/* EN DIRECTO pill */
+.chir__live-pill {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: 99px;
+  background: rgba(0,0,0,0.45);
+  border: 1.5px solid rgba(255,255,255,0.28);
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  flex-shrink: 0;
+  text-shadow: none;
+}
+
+.chir__live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px #fff, 0 0 20px rgba(255,255,255,0.6);
+  animation: chirDot 1s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes chirDot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px #fff, 0 0 20px rgba(255,255,255,0.6); }
+  50%       { opacity: 0.15; box-shadow: none; }
+}
+
+/* Brand center */
+.chir__brand {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.chir__brand-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+  flex-shrink: 0;
+}
+
+.chir__brand-name {
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 2.4vw, 1.15rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.92);
+  white-space: nowrap;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.chir__brand-name strong {
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255,255,255,0.5);
+}
+
+/* Counter badge */
+.chir__counter {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.65);
+  flex-shrink: 0;
+  white-space: nowrap;
+  background: rgba(0,0,0,0.35);
+  padding: 0.18rem 0.55rem;
+  border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* ══ ANIMATED STRIPE ══ */
+.chir__stripe {
+  height: 4px;
+  background: linear-gradient(90deg,
+    #7f1d1d, #dc2626 15%, #f97316 30%, #fbbf24 50%,
+    #f97316 70%, #dc2626 85%, #7f1d1d
+  );
+  background-size: 200% 100%;
+  animation: chirStripe 2s linear infinite;
+  box-shadow: 0 0 10px rgba(239,68,68,0.6);
+}
+
+@keyframes chirStripe {
+  from { background-position: 200% 0%; }
+  to   { background-position: 0% 0%; }
+}
+
+/* ══ NEWS STAGE ══ */
+.chir__stage {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 1.2rem 1.2rem 1rem;
+  min-height: 7.5rem;
+  /* subtle red glow from left accent bar */
+  background: linear-gradient(90deg,
+    rgba(220,38,38,0.06) 0%,
+    transparent 40%
+  );
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.chir__stage.is-out {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.chir__stage.is-in {
+  animation: chirStageIn 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+@keyframes chirStageIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* vivid left red bar */
+.chir__accent-bar {
+  width: 4px;
+  flex-shrink: 0;
+  border-radius: 99px;
+  background: linear-gradient(180deg, #f87171 0%, #dc2626 50%, rgba(220,38,38,0.1) 100%);
+  box-shadow: 0 0 12px rgba(239,68,68,0.5), 0 0 24px rgba(239,68,68,0.25);
+  align-self: stretch;
+}
+
+.chir__stage-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ── Category type label ── */
+.chir__program {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+/* color variants — JS sets tpn__program--* class too */
+.chir__program.tpn__program--ultima     { color: #f87171; text-shadow: 0 0 12px rgba(248,113,113,0.5); }
+.chir__program.tpn__program--exclusiva  { color: #fbbf24; text-shadow: 0 0 12px rgba(251,191,36,0.4); }
+.chir__program.tpn__program--rumor      { color: #fde68a; }
+.chir__program.tpn__program--investigacion { color: #38bdf8; }
+.chir__program.tpn__program--el-bar     { color: #fb923c; }
+.chir__program.tpn__program--comunicado { color: #f472b6; }
+.chir__program.tpn__program--editorial  { color: #2ee6d6; }
+.chir__program.tpn__program--declaraciones { color: #c4b5fd; }
+.chir__program.tpn__program--titular    { color: #cbd5e1; }
+
+/* ── Main headline ── */
+.chir__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+  font-weight: 900;
+  line-height: 1.03;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.8),
+    0 4px 20px rgba(0,0,0,0.5);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.chir__title.tpn__title--quote {
+  text-transform: none;
+  font-style: italic;
+  font-weight: 700;
+  color: #e9d5ff;
+  font-size: clamp(1.15rem, 3.2vw, 1.65rem);
+  text-shadow: 0 4px 20px rgba(167,139,250,0.3);
+}
+
+/* ── Body subtext ── */
+.chir__body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.8vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #c8d4e8;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Match ── */
+.chir__match {
+  margin: 0;
+  font-size: clamp(0.72rem, 2vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+.chir__match::before { content: "⚽ "; }
+
+/* ══ FOOTER ══ */
+.chir__foot {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 1.2rem 0.6rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.2);
+}
+
+/* progress dots */
+.chir__dots {
+  display: flex;
+  align-items: center;
+  gap: 0.32rem;
+  flex-shrink: 0;
+}
+
+.chir__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  flex-shrink: 0;
+}
+
+.chir__dot--active {
+  background: #ef4444;
+  width: 18px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(239,68,68,0.8), 0 0 16px rgba(239,68,68,0.4);
+}
+
+/* timestamp */
+.chir__stamp {
+  flex: 1;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: #475569;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+/* type badge pill */
+.chir__badge {
+  flex-shrink: 0;
+  padding: 0.18rem 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: 1px solid rgba(239,68,68,0.4);
+  background: rgba(239,68,68,0.14);
+  color: #fca5a5;
+  white-space: nowrap;
+}
+
+.chir__badge.tpn__corner--rumor        { color: #fde68a; border-color: rgba(253,230,138,0.35); background: rgba(253,230,138,0.08); }
+.chir__badge.tpn__corner--investigacion{ color: #7dd3fc; border-color: rgba(125,211,252,0.35); background: rgba(125,211,252,0.08); }
+.chir__badge.tpn__corner--el-bar       { color: #fdba74; border-color: rgba(253,186,116,0.35); background: rgba(253,186,116,0.08); }
+.chir__badge.tpn__corner--comunicado   { color: #f9a8d4; border-color: rgba(249,168,212,0.35); background: rgba(249,168,212,0.08); }
+.chir__badge.tpn__corner--editorial    { color: #67e8f9; border-color: rgba(103,232,249,0.35); background: rgba(103,232,249,0.08); }
+.chir__badge.tpn__corner--declaraciones{ color: #c4b5fd; border-color: rgba(196,181,253,0.35); background: rgba(196,181,253,0.08); }
+
+/* ══ TICKER ══ */
+.chir__ticker {
+  display: flex;
+  align-items: center;
+  height: 2.25rem;
+  overflow: hidden;
+  background: rgba(0,0,0,0.35);
+  border-top: 1px solid rgba(220,38,38,0.3);
+}
+
+.chir__ticker-label {
+  flex-shrink: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0.85rem;
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #dc2626;
+  box-shadow: 4px 0 12px rgba(220,38,38,0.5);
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.chir__ticker-track {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.chir__ticker-track::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 3rem;
+  background: linear-gradient(270deg, #080c22 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.chir__ticker-inner {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding-left: 1rem;
+  font-family: var(--font-display);
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  animation: chirTicker 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes chirTicker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.chir__ticker-sep {
+  margin: 0 1.5rem;
+  color: #dc2626;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .chir__brand-icon { display: none; }
+  .chir__brand-name { font-size: 0.82rem; }
+  .chir__title { font-size: clamp(1.25rem, 6vw, 1.65rem); }
+  .chir__body { font-size: clamp(0.95rem, 3.5vw, 1.08rem); }
+  .chir__stage { padding: 1rem 0.9rem 0.85rem; min-height: 6rem; }
+  .chir__header { padding: 0.6rem 0.9rem; }
+  .chir__foot { padding: 0.45rem 0.9rem 0.5rem; }
+}
+
+@media (max-width: 380px) {
+  .chir__live-pill { display: none; }
+  .chir__brand { justify-content: flex-start; }
+  .chir__ticker-label { padding: 0 0.6rem; font-size: 0.5rem; }
+}
+
 /* ── Progress card (dual indicator) ── */
 .progress-card {
   position: relative;

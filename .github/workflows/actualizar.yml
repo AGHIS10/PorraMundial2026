@@ -38,6 +38,9 @@ jobs:
       - name: Calcular proyeccion del campeonato
         run: python scripts/calcular_proyeccion.py
 
+      - name: Generar Porra News
+        run: python scripts/generar_porra_news.py
+
       - name: Sincronizar frontend
         run: python scripts/sync_frontend.py
 

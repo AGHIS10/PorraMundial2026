@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260704084353">
+  <link rel="stylesheet" href="styles.css?v=20260704123500">
 </head>
 <body>
   <div class="bg-layer bg-layer--gradient"></div>
@@ -50,6 +50,54 @@
           </p>
         </div>
       </header>
+
+      <section class="chir" id="porra-news" aria-label="El Chiringuito de la Porra" hidden>
+        <div class="chir__card">
+
+          <!-- Brand header -->
+          <div class="chir__header">
+            <span class="chir__live-pill">
+              <span class="chir__live-dot" aria-hidden="true"></span>
+              EN DIRECTO
+            </span>
+            <div class="chir__brand">
+              <span class="chir__brand-icon" aria-hidden="true">🎙️</span>
+              <span class="chir__brand-name">El Chiringuito <strong>de la Porra</strong></span>
+            </div>
+            <span class="chir__counter" id="chir-counter" aria-hidden="true">1 / 1</span>
+          </div>
+
+          <!-- Animated stripe -->
+          <div class="chir__stripe" aria-hidden="true"></div>
+
+          <!-- Stage: rotating content -->
+          <div class="chir__stage" id="tpn-stage">
+            <div class="chir__accent-bar" aria-hidden="true"></div>
+            <div class="chir__stage-inner">
+              <span class="chir__program" id="tpn-program"></span>
+              <h2 class="chir__title" id="tpn-title"></h2>
+              <p class="chir__body" id="tpn-body" hidden></p>
+              <p class="chir__match" id="tpn-match" hidden></p>
+            </div>
+          </div>
+
+          <!-- Footer: dots + stamp + badge -->
+          <div class="chir__foot">
+            <div class="chir__dots" id="chir-dots" aria-hidden="true"></div>
+            <span class="chir__stamp" id="tpn-stamp"></span>
+            <span class="chir__badge" id="tpn-corner"></span>
+          </div>
+
+          <!-- Scrolling ticker -->
+          <div class="chir__ticker" aria-hidden="true">
+            <span class="chir__ticker-label">📢 ÚLTIMA HORA</span>
+            <div class="chir__ticker-track">
+              <div class="chir__ticker-inner" id="chir-ticker"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
       <div class="progress-card" id="mundial-progress">
         <div class="progress-row">
@@ -371,17 +419,18 @@
   }
 ]
   </script>
-  <script src="clasificacion.js?v=20260704084353"></script>
-  <script src="premios.js?v=20260704084353"></script>
-  <script src="partidos.js?v=20260704084353"></script>
-  <script src="resultados.js?v=20260704084353"></script>
-  <script src="marcadores.js?v=20260704084353"></script>
-  <script src="participantes.js?v=20260704084353"></script>
-  <script src="evolucion.js?v=20260704084353"></script>
-  <script src="proyeccion.js?v=20260704084353"></script>
-  <script src="flags.js?v=20260704084353"></script>
-  <script src="config.js?v=20260704084353"></script>
-  <script src="analytics.js?v=20260704084353"></script>
-  <script src="app.js?v=20260704084353"></script>
+  <script src="clasificacion.js?v=20260704122000"></script>
+  <script src="premios.js?v=20260704122000"></script>
+  <script src="partidos.js?v=20260704122000"></script>
+  <script src="resultados.js?v=20260704122000"></script>
+  <script src="marcadores.js?v=20260704122000"></script>
+  <script src="participantes.js?v=20260704122000"></script>
+  <script src="evolucion.js?v=20260704122000"></script>
+  <script src="proyeccion.js?v=20260704122000"></script>
+  <script src="porra_news.js?v=20260704122000"></script>
+  <script src="flags.js?v=20260704122000"></script>
+  <script src="config.js?v=20260704122000"></script>
+  <script src="analytics.js?v=20260704122000"></script>
+  <script src="app.js?v=20260704123700"></script>
 </body>
 </html>
