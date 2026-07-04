@@ -1,14 +1,14 @@
 {
-  "generado": "2026-07-04T19:02:57Z",
+  "generado": "2026-07-04T19:09:43Z",
   "total_partidos": 104,
-  "partidos_jugados": 88,
+  "partidos_jugados": 89,
   "participantes": [
     {
       "nombre": "AGUSTIN",
       "inicial": "A",
       "color": "#2ee6d6",
       "es_ia": false,
-      "puntos_final": 66,
+      "puntos_final": 70,
       "serie": [
         0,
         1,
@@ -98,7 +98,8 @@
         62,
         63,
         64,
-        66
+        66,
+        70
       ],
       "detalle": [
         {
@@ -1028,6 +1029,19 @@
           "acierto": true,
           "posicion": 4,
           "posicion_humanos": 3
+        },
+        {
+          "orden": 89,
+          "match_id": 89,
+          "puntos": 4,
+          "acumulado": 70,
+          "pronostico": {
+            "resultado": "2",
+            "clasifica": "2"
+          },
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
         }
       ]
     },
@@ -1036,7 +1050,7 @@
       "inicial": "C",
       "color": "#f0883e",
       "es_ia": false,
-      "puntos_final": 56,
+      "puntos_final": 60,
       "serie": [
         0,
         1,
@@ -1126,7 +1140,8 @@
         51,
         53,
         54,
-        56
+        56,
+        60
       ],
       "detalle": [
         {
@@ -2056,6 +2071,19 @@
           "acierto": true,
           "posicion": 9,
           "posicion_humanos": 7
+        },
+        {
+          "orden": 89,
+          "match_id": 89,
+          "puntos": 4,
+          "acumulado": 60,
+          "pronostico": {
+            "resultado": "2",
+            "clasifica": "2"
+          },
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": 7
         }
       ]
     },
@@ -2064,7 +2092,7 @@
       "inicial": "G",
       "color": "#9b8cff",
       "es_ia": false,
-      "puntos_final": 69,
+      "puntos_final": 73,
       "serie": [
         0,
         1,
@@ -2154,7 +2182,8 @@
         65,
         67,
         68,
-        69
+        69,
+        73
       ],
       "detalle": [
         {
@@ -3084,6 +3113,19 @@
           "acierto": false,
           "posicion": 2,
           "posicion_humanos": 1
+        },
+        {
+          "orden": 89,
+          "match_id": 89,
+          "puntos": 4,
+          "acumulado": 73,
+          "pronostico": {
+            "resultado": "2",
+            "clasifica": "2"
+          },
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 1
         }
       ]
     },
@@ -3182,6 +3224,7 @@
         63,
         63,
         64,
+        65,
         65
       ],
       "detalle": [
@@ -4112,6 +4155,19 @@
           "acierto": false,
           "posicion": 6,
           "posicion_humanos": null
+        },
+        {
+          "orden": 89,
+          "match_id": 89,
+          "puntos": 0,
+          "acumulado": 65,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "1"
+          },
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": null
         }
       ]
     },
@@ -4120,7 +4176,7 @@
       "inicial": "G",
       "color": "#8c99b0",
       "es_ia": true,
-      "puntos_final": 72,
+      "puntos_final": 74,
       "serie": [
         0,
         1,
@@ -4210,7 +4266,8 @@
         67,
         69,
         70,
-        72
+        72,
+        74
       ],
       "detalle": [
         {
@@ -5140,6 +5197,19 @@
           "acierto": true,
           "posicion": 1,
           "posicion_humanos": null
+        },
+        {
+          "orden": 89,
+          "match_id": 89,
+          "puntos": 2,
+          "acumulado": 74,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "2"
+          },
+          "acierto": false,
+          "posicion": 1,
+          "posicion_humanos": null
         }
       ]
     },
@@ -5148,7 +5218,7 @@
       "inicial": "J",
       "color": "#ef6f6c",
       "es_ia": false,
-      "puntos_final": 67,
+      "puntos_final": 69,
       "serie": [
         0,
         1,
@@ -5238,7 +5308,8 @@
         64,
         65,
         66,
-        67
+        67,
+        69
       ],
       "detalle": [
         {
@@ -6168,6 +6239,19 @@
           "acierto": false,
           "posicion": 3,
           "posicion_humanos": 2
+        },
+        {
+          "orden": 89,
+          "match_id": 89,
+          "puntos": 2,
+          "acumulado": 69,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "2"
+          },
+          "acierto": false,
+          "posicion": 5,
+          "posicion_humanos": 4
         }
       ]
     },
@@ -6176,7 +6260,7 @@
       "inicial": "P",
       "color": "#58d68d",
       "es_ia": false,
-      "puntos_final": 66,
+      "puntos_final": 70,
       "serie": [
         0,
         1,
@@ -6266,7 +6350,8 @@
         61,
         63,
         64,
-        66
+        66,
+        70
       ],
       "detalle": [
         {
@@ -7196,6 +7281,19 @@
           "acierto": true,
           "posicion": 4,
           "posicion_humanos": 3
+        },
+        {
+          "orden": 89,
+          "match_id": 89,
+          "puntos": 4,
+          "acumulado": 70,
+          "pronostico": {
+            "resultado": "2",
+            "clasifica": "2"
+          },
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 2
         }
       ]
     },
@@ -7204,7 +7302,7 @@
       "inicial": "S",
       "color": "#f5c518",
       "es_ia": false,
-      "puntos_final": 63,
+      "puntos_final": 67,
       "serie": [
         0,
         1,
@@ -7294,7 +7392,8 @@
         59,
         60,
         61,
-        63
+        63,
+        67
       ],
       "detalle": [
         {
@@ -8224,6 +8323,19 @@
           "acierto": true,
           "posicion": 8,
           "posicion_humanos": 6
+        },
+        {
+          "orden": 89,
+          "match_id": 89,
+          "puntos": 4,
+          "acumulado": 67,
+          "pronostico": {
+            "resultado": "2",
+            "clasifica": "2"
+          },
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 5
         }
       ]
     },
@@ -8322,6 +8434,7 @@
         60,
         62,
         63,
+        65,
         65
       ],
       "detalle": [
@@ -9252,6 +9365,19 @@
           "acierto": true,
           "posicion": 6,
           "posicion_humanos": 5
+        },
+        {
+          "orden": 89,
+          "match_id": 89,
+          "puntos": 0,
+          "acumulado": 65,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "1"
+          },
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": 6
         }
       ]
     }
@@ -10360,6 +10486,21 @@
         "clasifica": "1"
       },
       "peso": 2
+    },
+    {
+      "orden": 89,
+      "match_id": 89,
+      "fecha": "2026-07-04",
+      "hora": "19:00",
+      "fase": "octavos",
+      "local": "Canadá",
+      "visitante": "Marruecos",
+      "marcador": "0-3",
+      "resultado": {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      "peso": 4
     }
   ],
   "fases": [
@@ -10372,6 +10513,11 @@
       "fase": "dieciseisavos",
       "desde": 73,
       "hasta": 88
+    },
+    {
+      "fase": "octavos",
+      "desde": 89,
+      "hasta": 89
     }
   ],
   "eventos": [
@@ -10733,6 +10879,60 @@
       "equipos": "Costa de Marfil 1 – 2 Noruega",
       "fecha": "2026-06-30",
       "id": "cambio_lider-77-GABRIEL"
+    },
+    {
+      "tipo": "adelantamiento",
+      "nivel": 3,
+      "titulo": "Adelantamiento",
+      "protagonista": "AGUSTIN",
+      "detalle": "AGUSTIN supera a JORGE.",
+      "datos": {
+        "supera_a": [
+          "JORGE"
+        ]
+      },
+      "match_id": 89,
+      "orden": 89,
+      "fase": "octavos",
+      "equipos": "Canadá 0 – 3 Marruecos",
+      "fecha": "2026-07-04",
+      "id": "adelantamiento-89-AGUSTIN"
+    },
+    {
+      "tipo": "adelantamiento",
+      "nivel": 3,
+      "titulo": "Adelantamiento",
+      "protagonista": "PEDRO",
+      "detalle": "PEDRO supera a JORGE.",
+      "datos": {
+        "supera_a": [
+          "JORGE"
+        ]
+      },
+      "match_id": 89,
+      "orden": 89,
+      "fase": "octavos",
+      "equipos": "Canadá 0 – 3 Marruecos",
+      "fecha": "2026-07-04",
+      "id": "adelantamiento-89-PEDRO"
+    },
+    {
+      "tipo": "adelantamiento",
+      "nivel": 3,
+      "titulo": "Adelantamiento",
+      "protagonista": "SERGIO",
+      "detalle": "SERGIO supera a MARIO.",
+      "datos": {
+        "supera_a": [
+          "MARIO"
+        ]
+      },
+      "match_id": 89,
+      "orden": 89,
+      "fase": "octavos",
+      "equipos": "Canadá 0 – 3 Marruecos",
+      "fecha": "2026-07-04",
+      "id": "adelantamiento-89-SERGIO"
     },
     {
       "tipo": "partido_clave",
@@ -11440,10 +11640,21 @@
           ],
           "fase": "dieciseisavos",
           "match_id": 88
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 89,
+          "motivos": [
+            "fase_fin",
+            "cambio_posicion",
+            "top3"
+          ],
+          "fase": "octavos",
+          "match_id": 89
         }
       ],
-      "snapshots_total": 50,
-      "partidos_total": 88
+      "snapshots_total": 51,
+      "partidos_total": 89
     },
     "global": {
       "columnas": [
@@ -12154,10 +12365,21 @@
           ],
           "fase": "dieciseisavos",
           "match_id": 88
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 89,
+          "motivos": [
+            "fase_fin",
+            "cambio_posicion",
+            "top3"
+          ],
+          "fase": "octavos",
+          "match_id": 89
         }
       ],
-      "snapshots_total": 53,
-      "partidos_total": 88
+      "snapshots_total": 54,
+      "partidos_total": 89
     }
   }
 }
