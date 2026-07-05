@@ -1,5 +1,5 @@
 {
-  "generado": "2026-07-05T13:20:47Z",
+  "generado": "2026-07-05T15:09:27Z",
   "partidos_jugados": 90,
   "noticias": [
     {
@@ -51,28 +51,28 @@
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases2:0",
-      "tipo": "RUMOR",
+      "id": "CAMBIO_SIMULACIONES:frases1:0",
+      "tipo": "INVESTIGACION",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases2:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases1:0",
       "jugador": "MARIO",
-      "titulo": "Tras Paraguay 0-1 Francia, el algoritmo ha revisado los números y MARIO sube posiciones.",
-      "texto": "Se nota que alguien apostó bien.",
+      "titulo": "Tras Paraguay 0-1 Francia, MARIO sube posiciones en las simulaciones.",
+      "texto": "Ahora tiene un 7.9% de probabilidades de ganar la porra.",
       "partido": "Paraguay 0-1 Francia",
       "prioridad": 63,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "LIDER_HUMANO:frases1:1",
-      "tipo": "TITULAR",
+      "id": "LIDER_HUMANO:frases4:1",
+      "tipo": "EDITORIAL",
       "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases1:1",
+      "frase_id": "LIDER_HUMANO:frases4:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL lidera entre los humanos.",
-      "texto": "Las simulaciones también lo tienen en el punto de mira.",
+      "titulo": "GABRIEL encabeza la clasificación humana y las simulaciones también lo respaldan.",
+      "texto": "Doble corona, doble presión.",
       "partido": null,
       "prioridad": 67,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
       "id": "GPT_LIDER:frases3:1",

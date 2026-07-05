@@ -91,7 +91,7 @@
     "ZONA_MEDIA:frases4:1": 90,
     "BAJADA_1_POSICION:frases2:1": 88,
     "RACHA_FALLOS:frases3:0": 89,
-    "CAMBIO_SIMULACIONES:frases1:0": 89,
+    "CAMBIO_SIMULACIONES:frases1:0": 90,
     "LIDER_HUMANO:frases3:1": 90,
     "GPT_LIDER:frases2:1": 90,
     "GEMINI_ULTIMO:frases4:0": 88,
@@ -204,5 +204,5 @@
     "RACHA_ACIERTOS:frases1:1": 90,
     "RACHA_ACIERTOS:frases4:0": 90
   },
-  "actualizado": "2026-07-05T13:20:47Z"
+  "actualizado": "2026-07-05T15:09:27Z"
 }
