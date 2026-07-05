@@ -1,5 +1,5 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-05T15:09:27Z",
+  "generado": "2026-07-05T17:03:20Z",
   "partidos_jugados": 90,
   "noticias": [
     {
@@ -51,16 +51,16 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases1:0",
-      "tipo": "INVESTIGACION",
+      "id": "CAMBIO_SIMULACIONES:frases3:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases1:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases3:0",
       "jugador": "MARIO",
-      "titulo": "Tras Paraguay 0-1 Francia, MARIO sube posiciones en las simulaciones.",
-      "texto": "Ahora tiene un 7.9% de probabilidades de ganar la porra.",
+      "titulo": "Las simulaciones han recalculado tras Paraguay 0-1 Francia y MARIO sube en el ranking de probabilidades.",
+      "texto": "El modelo le da ahora un 7.9%.",
       "partido": "Paraguay 0-1 Francia",
       "prioridad": 63,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
       "id": "LIDER_HUMANO:frases4:1",
