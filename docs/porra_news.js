@@ -1,5 +1,5 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-05T09:10:29Z",
+  "generado": "2026-07-05T09:11:55Z",
   "partidos_jugados": 90,
   "noticias": [
     {
@@ -51,52 +51,52 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases2:2",
-      "tipo": "EL_BAR",
+      "id": "CAMBIO_SIMULACIONES:frases3:1",
+      "tipo": "INVESTIGACION",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases2:2",
+      "frase_id": "CAMBIO_SIMULACIONES:frases3:1",
       "jugador": "MARIO",
-      "titulo": "El modelo ha hablado: MARIO sube en el ranking de simulaciones.",
-      "texto": "La bola de cristal no miente... o eso dicen.",
+      "titulo": "El algoritmo tiene preferencias y después de Paraguay 0-1 Francia, MARIO sube puestos en las proyecciones.",
+      "texto": "No es magia: es matemática.",
       "partido": "Paraguay 0-1 Francia",
       "prioridad": 63,
-      "etiqueta": "🍺 DESDE EL BAR"
-    },
-    {
-      "id": "LIDER_HUMANO:frases1:0",
-      "tipo": "INVESTIGACION",
-      "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases1:0",
-      "jugador": "GABRIEL",
-      "titulo": "GABRIEL encabeza la clasificación entre humanos.",
-      "texto": "GPT lidera la general, pero la porra de carne y hueso tiene un referente claro.",
-      "partido": null,
-      "prioridad": 67,
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "GPT_LIDER:frases2:0",
+      "id": "LIDER_HUMANO:frases3:0",
+      "tipo": "EXCLUSIVA",
+      "categoria": "LIDER_HUMANO",
+      "frase_id": "LIDER_HUMANO:frases3:0",
+      "jugador": "GABRIEL",
+      "titulo": "GABRIEL lidera la porra humana.",
+      "texto": "GPT domina la general, pero entre mortales hay un rey claro.",
+      "partido": null,
+      "prioridad": 67,
+      "etiqueta": "⭐ EXCLUSIVA"
+    },
+    {
+      "id": "GPT_LIDER:frases1:1",
       "tipo": "COMUNICADO",
       "categoria": "GPT_LIDER",
-      "frase_id": "GPT_LIDER:frases2:0",
+      "frase_id": "GPT_LIDER:frases1:1",
       "jugador": "GPT",
-      "titulo": "GPT lidera la porra.",
-      "texto": "Los humanos agradecen que, al menos, no pueda cobrar el premio.",
+      "titulo": "GPT agradece la colaboración de los participantes humanos para facilitarle el trabajo.",
+      "texto": null,
       "partido": null,
       "prioridad": 60,
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "ZONA_MEDIA:frases2:1",
-      "tipo": "RUMOR",
+      "id": "ZONA_MEDIA:frases4:1",
+      "tipo": "EL_BAR",
       "categoria": "ZONA_MEDIA",
-      "frase_id": "ZONA_MEDIA:frases2:1",
+      "frase_id": "ZONA_MEDIA:frases4:1",
       "jugador": "JORGE",
-      "titulo": "Se comenta que JORGE sigue en zona media.",
-      "texto": "Traducción: aún puede pasar de todo.",
+      "titulo": "JORGE está instalado en la mitad de la tabla.",
+      "texto": "No es el peor sitio... pero tampoco el que lleva a la cena de campeones.",
       "partido": null,
       "prioridad": 35,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🍺 DESDE EL BAR"
     }
   ]
 };
