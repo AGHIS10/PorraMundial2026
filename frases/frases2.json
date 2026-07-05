@@ -185,7 +185,7 @@
     {
       "tipo": "EDITORIAL",
       "nivel": "SUAVE",
-      "texto": "{JUGADOR} enlaza {RACHA} aciertos. Ya empieza a resultar bastante incómodo."
+      "texto": "{JUGADOR} enlaza {RACHA} partidos plenos seguidos. Ya empieza a resultar bastante incómodo."
     },
     {
       "tipo": "DECLARACIONES",

@@ -185,7 +185,7 @@
     {
       "tipo": "INVESTIGACION",
       "nivel": "SUAVE",
-      "texto": "{JUGADOR} enlaza {RACHA} aciertos y empieza a generar teorías conspirativas."
+      "texto": "{JUGADOR} enlaza {RACHA} partidos plenos seguidos y empieza a generar teorías conspirativas."
     },
     {
       "tipo": "COMUNICADO",

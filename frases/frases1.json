@@ -190,7 +190,7 @@
     {
       "tipo": "ULTIMA_HORA",
       "nivel": "SUAVE",
-      "texto": "{JUGADOR} encadena {RACHA} aciertos. Empieza a dar bastante rabia."
+      "texto": "{JUGADOR} encadena {RACHA} partidos plenos seguidos. Empieza a dar bastante rabia."
     },
     {
       "tipo": "EDITORIAL",

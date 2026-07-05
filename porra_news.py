@@ -10,7 +10,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from apuestas import apuesta_completa, partido_tiene_resultado
+from apuestas import (
+    contar_aciertos_apuesta,
+    es_eliminatoria,
+    partido_tiene_resultado,
+)
 from evolucion import _posiciones as posiciones_por_puntos
 from reparto_premios import es_participante_virtual
 
@@ -411,6 +415,17 @@ def _indice_ultimo_partido(partidos: list[dict], resultados: list[Any]) -> int |
     return ultimo
 
 
+def _partido_pleno(pronostico: Any, resultado: Any, fase: str) -> bool:
+    """True si el pronóstico acertó el partido al completo (pleno en eliminatoria)."""
+    if not partido_tiene_resultado(resultado, fase):
+        return False
+    aciertos = contar_aciertos_apuesta(pronostico, resultado, fase)
+    if es_eliminatoria(fase):
+        # En eliminatoria hay dos apuestas (resultado + clasifica): un pleno exige las dos.
+        return aciertos == 2
+    return aciertos == 1
+
+
 def _racha_participante(
     nombre: str,
     participantes: dict[str, Any],
@@ -418,6 +433,7 @@ def _racha_participante(
     resultados: list[Any],
     acierto: bool,
 ) -> int:
+    """Cuenta partidos consecutivos plenos (acierto) o sin pleno (fallo), no aciertos parciales sueltos."""
     pronosticos = participantes.get(nombre, {}).get("pronosticos", [])
     racha = 0
     for i in range(len(partidos) - 1, -1, -1):
@@ -426,8 +442,13 @@ def _racha_participante(
         fase = partidos[i].get("fase", "grupos")
         if not partido_tiene_resultado(resultados[i], fase):
             continue
-        acerto = apuesta_completa(pronosticos[i], resultados[i], fase)
-        if acerto == acierto:
+        pleno = _partido_pleno(pronosticos[i], resultados[i], fase)
+        if acierto:
+            if pleno:
+                racha += 1
+            else:
+                break
+        elif not pleno:
             racha += 1
         else:
             break
@@ -603,7 +624,7 @@ def _detectar_eventos(
         for fila in humanos:
             n = fila["nombre"]
             pron = participantes.get(n, {}).get("pronosticos", [])
-            if ultimo_idx < len(pron) and apuesta_completa(pron[ultimo_idx], resultados[ultimo_idx], fase):
+            if ultimo_idx < len(pron) and _partido_pleno(pron[ultimo_idx], resultados[ultimo_idx], fase):
                 acertantes.append(n)
         if len(acertantes) == 0 and humanos:
             candidatos.append(Candidato("NADIE_ACIERTA", vars_base, 30, incluir_partido=True))

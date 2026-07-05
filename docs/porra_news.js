@@ -1,5 +1,5 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-05T07:20:32Z",
+  "generado": "2026-07-05T09:10:29Z",
   "partidos_jugados": 90,
   "noticias": [
     {
@@ -32,7 +32,7 @@ window.__PORRA_NEWS__ = {
       "categoria": "RACHA_ACIERTOS",
       "frase_id": "RACHA_ACIERTOS:frases2:0",
       "jugador": "SERGIO",
-      "titulo": "SERGIO enlaza 3 aciertos.",
+      "titulo": "SERGIO enlaza 3 partidos plenos seguidos.",
       "texto": "Ya empieza a resultar bastante incómodo.",
       "partido": "Paraguay 0-1 Francia",
       "prioridad": 65,
@@ -44,59 +44,59 @@ window.__PORRA_NEWS__ = {
       "categoria": "RACHA_ACIERTOS",
       "frase_id": "RACHA_ACIERTOS:frases1:0",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN encadena 3 aciertos.",
+      "titulo": "CRISTIAN encadena 3 partidos plenos seguidos.",
       "texto": "Empieza a dar bastante rabia.",
       "partido": "Paraguay 0-1 Francia",
       "prioridad": 65,
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases4:1",
-      "tipo": "DECLARACIONES",
+      "id": "CAMBIO_SIMULACIONES:frases2:2",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases4:1",
+      "frase_id": "CAMBIO_SIMULACIONES:frases2:2",
       "jugador": "MARIO",
-      "titulo": "Solo es un modelo.",
-      "texto": "— MARIO, que sube posiciones en las proyecciones tras Paraguay 0-1 Francia y lo celebra en privado.",
+      "titulo": "El modelo ha hablado: MARIO sube en el ranking de simulaciones.",
+      "texto": "La bola de cristal no miente... o eso dicen.",
       "partido": "Paraguay 0-1 Francia",
       "prioridad": 63,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "LIDER_HUMANO:frases4:1",
-      "tipo": "EDITORIAL",
+      "id": "LIDER_HUMANO:frases1:0",
+      "tipo": "INVESTIGACION",
       "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases4:1",
+      "frase_id": "LIDER_HUMANO:frases1:0",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL encabeza la clasificación humana y las simulaciones también lo respaldan.",
-      "texto": "Doble corona, doble presión.",
+      "titulo": "GABRIEL encabeza la clasificación entre humanos.",
+      "texto": "GPT lidera la general, pero la porra de carne y hueso tiene un referente claro.",
       "partido": null,
       "prioridad": 67,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "GPT_LIDER:frases3:1",
-      "tipo": "RUMOR",
+      "id": "GPT_LIDER:frases2:0",
+      "tipo": "COMUNICADO",
       "categoria": "GPT_LIDER",
-      "frase_id": "GPT_LIDER:frases3:1",
+      "frase_id": "GPT_LIDER:frases2:0",
       "jugador": "GPT",
-      "titulo": "Dicen que GPT ya está aceptando felicitaciones...",
-      "texto": "aunque no pueda cobrarlas.",
+      "titulo": "GPT lidera la porra.",
+      "texto": "Los humanos agradecen que, al menos, no pueda cobrar el premio.",
       "partido": null,
       "prioridad": 60,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "ZONA_MEDIA:frases4:0",
-      "tipo": "EDITORIAL",
+      "id": "ZONA_MEDIA:frases2:1",
+      "tipo": "RUMOR",
       "categoria": "ZONA_MEDIA",
-      "frase_id": "ZONA_MEDIA:frases4:0",
+      "frase_id": "ZONA_MEDIA:frases2:1",
       "jugador": "JORGE",
-      "titulo": "JORGE navega en la zona media.",
-      "texto": "Ni líder ni colista: la clasificación todavía puede moverse mucho.",
+      "titulo": "Se comenta que JORGE sigue en zona media.",
+      "texto": "Traducción: aún puede pasar de todo.",
       "partido": null,
       "prioridad": 35,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🟡 RUMOR"
     }
   ]
 };

@@ -180,7 +180,7 @@
     {
       "tipo": "EXCLUSIVA",
       "nivel": "SUAVE",
-      "texto": "{JUGADOR} enlaza {RACHA} aciertos. El resto empieza a revisar sus propios pronósticos."
+      "texto": "{JUGADOR} enlaza {RACHA} partidos plenos seguidos. El resto empieza a revisar sus propios pronósticos."
     },
     {
       "tipo": "COMUNICADO",
