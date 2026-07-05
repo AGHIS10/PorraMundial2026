@@ -1,5 +1,5 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-05T10:06:38Z",
+  "generado": "2026-07-05T13:20:47Z",
   "partidos_jugados": 90,
   "noticias": [
     {
@@ -51,52 +51,52 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases2:1",
-      "tipo": "COMUNICADO",
+      "id": "CAMBIO_SIMULACIONES:frases2:0",
+      "tipo": "RUMOR",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases2:1",
+      "frase_id": "CAMBIO_SIMULACIONES:frases2:0",
       "jugador": "MARIO",
-      "titulo": "MARIO sube en las proyecciones del campeonato después de Paraguay 0-1 Francia.",
-      "texto": "Sus probabilidades ahora están en el 7.9%.",
+      "titulo": "Tras Paraguay 0-1 Francia, el algoritmo ha revisado los números y MARIO sube posiciones.",
+      "texto": "Se nota que alguien apostó bien.",
       "partido": "Paraguay 0-1 Francia",
       "prioridad": 63,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🟡 RUMOR"
     },
     {
-      "id": "LIDER_HUMANO:frases2:0",
-      "tipo": "ULTIMA_HORA",
+      "id": "LIDER_HUMANO:frases1:1",
+      "tipo": "TITULAR",
       "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases2:0",
+      "frase_id": "LIDER_HUMANO:frases1:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL manda entre humanos.",
-      "texto": "GPT puede ir primero en la general, pero la porra real la lleva él.",
+      "titulo": "GABRIEL lidera entre los humanos.",
+      "texto": "Las simulaciones también lo tienen en el punto de mira.",
       "partido": null,
       "prioridad": 67,
-      "etiqueta": "🔴 ÚLTIMA HORA"
-    },
-    {
-      "id": "GPT_LIDER:frases1:0",
-      "tipo": "TITULAR",
-      "categoria": "GPT_LIDER",
-      "frase_id": "GPT_LIDER:frases1:0",
-      "jugador": "GPT",
-      "titulo": "GPT lidera la porra.",
-      "texto": "Los humanos piden una auditoría... o un milagro.",
-      "partido": null,
-      "prioridad": 60,
       "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "ZONA_MEDIA:frases1:1",
-      "tipo": "INVESTIGACION",
+      "id": "GPT_LIDER:frases3:1",
+      "tipo": "RUMOR",
+      "categoria": "GPT_LIDER",
+      "frase_id": "GPT_LIDER:frases3:1",
+      "jugador": "GPT",
+      "titulo": "Dicen que GPT ya está aceptando felicitaciones...",
+      "texto": "aunque no pueda cobrarlas.",
+      "partido": null,
+      "prioridad": 60,
+      "etiqueta": "🟡 RUMOR"
+    },
+    {
+      "id": "ZONA_MEDIA:frases1:0",
+      "tipo": "EDITORIAL",
       "categoria": "ZONA_MEDIA",
-      "frase_id": "ZONA_MEDIA:frases1:1",
+      "frase_id": "ZONA_MEDIA:frases1:0",
       "jugador": "JORGE",
-      "titulo": "Los analistas sitúan a JORGE en la franja intermedia donde todavía puede pasar de todo.",
-      "texto": null,
+      "titulo": "JORGE ocupa la zona media de la tabla.",
+      "texto": "Ni en el podio ni en peligro: territorio de paciencia.",
       "partido": null,
       "prioridad": 35,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "📝 EDITORIAL"
     }
   ]
 };
