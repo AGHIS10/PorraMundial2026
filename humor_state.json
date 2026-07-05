@@ -1,5 +1,5 @@
 {
-  "partidos_jugados": 90,
+  "partidos_jugados": 91,
   "posiciones": {
     "GPT": 1,
     "GABRIEL": 2,
@@ -8,8 +8,8 @@
     "JORGE": 5,
     "SERGIO": 6,
     "MARIO": 7,
-    "GEMINI": 8,
-    "CRISTIAN": 9
+    "CRISTIAN": 8,
+    "GEMINI": 9
   },
   "lider": "GPT",
   "frases_usadas": {
@@ -76,7 +76,7 @@
     "MUNDIAL_ABIERTO:frases3:1": 88,
     "ULTIMO_CLASIFICADO:frases1:0": 88,
     "LIDER_RESISTE:frases2:1": 89,
-    "ZONA_MEDIA:frases3:1": 90,
+    "ZONA_MEDIA:frases3:1": 91,
     "ZONA_MEDIA:frases4:0": 90,
     "BAJADA_1_POSICION:frases2:0": 88,
     "RACHA_FALLOS:frases2:1": 89,
@@ -108,22 +108,22 @@
     "MUNDIAL_ABIERTO:frases4:0": 88,
     "ULTIMO_CLASIFICADO:frases4:1": 89,
     "LIDER_RESISTE:frases3:2": 88,
-    "ZONA_BAJA:frases1:0": 88,
+    "ZONA_BAJA:frases1:0": 91,
     "ZONA_BAJA:frases3:1": 88,
     "SUBIDA_1_POSICION:frases2:0": 88,
     "RACHA_FALLOS:frases2:0": 88,
     "CAMBIO_SIMULACIONES:frases1:2": 90,
     "LIDER_HUMANO:frases2:1": 90,
-    "GPT_LIDER:frases4:0": 90,
+    "GPT_LIDER:frases4:0": 91,
     "MUNDIAL_ABIERTO:frases2:1": 89,
     "ULTIMO_CLASIFICADO:frases1:2": 88,
     "LIDER_RESISTE:frases3:1": 88,
     "ZONA_MEDIA:frases2:1": 90,
-    "ZONA_BAJA:frases2:1": 88,
+    "ZONA_BAJA:frases2:1": 91,
     "SUBIDA_1_POSICION:frases2:2": 89,
     "RACHA_FALLOS:frases4:0": 89,
     "CAMBIO_SIMULACIONES:frases2:0": 90,
-    "LIDER_HUMANO:frases3:0": 90,
+    "LIDER_HUMANO:frases3:0": 91,
     "GPT_LIDER:frases2:0": 90,
     "MUNDIAL_ABIERTO:frases3:0": 89,
     "ULTIMO_CLASIFICADO:frases3:0": 88,
@@ -158,7 +158,7 @@
     "CAMBIO_SIMULACIONES:frases3:0": 90,
     "ULTIMO_CLASIFICADO:frases4:0": 88,
     "LIDER_RESISTE:frases4:0": 88,
-    "SUBIDA_1_POSICION:frases1:1": 88,
+    "SUBIDA_1_POSICION:frases1:1": 91,
     "CAMBIO_SIMULACIONES:frases4:1": 90,
     "ULTIMO_CLASIFICADO:frases2:1": 88,
     "LIDER_RESISTE:frases3:0": 88,
@@ -202,7 +202,9 @@
     "RACHA_ACIERTOS:frases3:0": 90,
     "RACHA_ACIERTOS:frases3:1": 90,
     "RACHA_ACIERTOS:frases1:1": 90,
-    "RACHA_ACIERTOS:frases4:0": 90
+    "RACHA_ACIERTOS:frases4:0": 90,
+    "PODIO_HUMANO:frases1:0": 91,
+    "GEMINI_ULTIMO:frases1:0": 91
   },
-  "actualizado": "2026-07-05T20:53:08Z"
+  "actualizado": "2026-07-05T22:47:06Z"
 }

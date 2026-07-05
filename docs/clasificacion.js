@@ -43,14 +43,14 @@ window.__CLASIFICACION__ = [
   },
   {
     "posicion": 8,
-    "nombre": "GEMINI",
-    "aciertos": 65,
-    "puntos": 65
+    "nombre": "CRISTIAN",
+    "aciertos": 62,
+    "puntos": 68
   },
   {
     "posicion": 9,
-    "nombre": "CRISTIAN",
-    "aciertos": 60,
-    "puntos": 64
+    "nombre": "GEMINI",
+    "aciertos": 65,
+    "puntos": 65
   }
 ];
