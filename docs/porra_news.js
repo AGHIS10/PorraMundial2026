@@ -1,30 +1,30 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-06T16:49:47Z",
+  "generado": "2026-07-06T19:49:17Z",
   "partidos_jugados": 92,
   "noticias": [
     {
-      "id": "SALE_TOP3:frases2:0",
-      "tipo": "COMUNICADO",
+      "id": "SALE_TOP3:frases3:0",
+      "tipo": "ULTIMA_HORA",
       "categoria": "SALE_TOP3",
-      "frase_id": "SALE_TOP3:frases2:0",
+      "frase_id": "SALE_TOP3:frases3:0",
       "jugador": "PEDRO",
       "titulo": "PEDRO abandona el Top 3.",
-      "texto": "La zona noble pierde un inquilino.",
+      "texto": "La caída duele más cuanto más cerca estaba el champán.",
       "partido": "México 2-3 Inglaterra",
       "prioridad": 104,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases4:1",
-      "tipo": "EDITORIAL",
+      "id": "SUBIDA_2_3_POSICIONES:frases1:1",
+      "tipo": "ULTIMA_HORA",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases4:1",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:1",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN ha decidido ahorrar tiempo adelantando a varios rivales de una sola vez.",
-      "texto": null,
+      "titulo": "AGUSTIN ha adelantado a media mesa.",
+      "texto": "Ya se oyen sus mensajes escribiéndose solos.",
       "partido": "México 2-3 Inglaterra",
       "prioridad": 80,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
       "id": "SUBIDA_1_POSICION:frases1:4",
@@ -39,76 +39,76 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "SUBIDA_1_POSICION:frases1:1",
+      "id": "SUBIDA_1_POSICION:frases4:3",
       "tipo": "EL_BAR",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases1:1",
+      "frase_id": "SUBIDA_1_POSICION:frases4:3",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN ya puede mirar a MARIO por encima del hombro durante, como mínimo, una semana.",
+      "titulo": "CRISTIAN gana una posición y ya está saludando como si desfilara por la Castellana.",
       "texto": null,
       "partido": "México 2-3 Inglaterra",
       "prioridad": 73,
       "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "BAJADA_1_POSICION:frases3:0",
-      "tipo": "TITULAR",
+      "id": "BAJADA_1_POSICION:frases2:1",
+      "tipo": "EDITORIAL",
       "categoria": "BAJADA_1_POSICION",
-      "frase_id": "BAJADA_1_POSICION:frases3:0",
+      "frase_id": "BAJADA_1_POSICION:frases2:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL pierde una posición.",
-      "texto": "Pequeño descenso, gran motivo para recibir bromas.",
+      "titulo": "GABRIEL cede un puesto: AGUSTIN ya está por delante.",
+      "texto": "Lo peor no es caer... es saber quién te ha adelantado.",
       "partido": "México 2-3 Inglaterra",
       "prioridad": 72,
+      "etiqueta": "📝 EDITORIAL"
+    },
+    {
+      "id": "BAJADA_1_POSICION:frases3:1",
+      "tipo": "RUMOR",
+      "categoria": "BAJADA_1_POSICION",
+      "frase_id": "BAJADA_1_POSICION:frases3:1",
+      "jugador": "MARIO",
+      "titulo": "Fuentes cercanas a MARIO aseguran que hoy la clasificación 'no refleja sensaciones'.",
+      "texto": null,
+      "partido": "México 2-3 Inglaterra",
+      "prioridad": 72,
+      "etiqueta": "🟡 RUMOR"
+    },
+    {
+      "id": "RACHA_FALLOS:frases4:0",
+      "tipo": "EDITORIAL",
+      "categoria": "RACHA_FALLOS",
+      "frase_id": "RACHA_FALLOS:frases4:0",
+      "jugador": "JORGE",
+      "titulo": "JORGE suma 2 fallos consecutivos.",
+      "texto": "El balón insiste en llevarle la contraria.",
+      "partido": "México 2-3 Inglaterra",
+      "prioridad": 63,
+      "etiqueta": "📝 EDITORIAL"
+    },
+    {
+      "id": "GPT_LIDER:frases1:0",
+      "tipo": "TITULAR",
+      "categoria": "GPT_LIDER",
+      "frase_id": "GPT_LIDER:frases1:0",
+      "jugador": "GPT",
+      "titulo": "GPT lidera la porra.",
+      "texto": "Los humanos piden una auditoría... o un milagro.",
+      "partido": null,
+      "prioridad": 60,
       "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "BAJADA_1_POSICION:frases4:0",
-      "tipo": "COMUNICADO",
-      "categoria": "BAJADA_1_POSICION",
-      "frase_id": "BAJADA_1_POSICION:frases4:0",
-      "jugador": "MARIO",
-      "titulo": "MARIO cede un puesto.",
-      "texto": "Hoy la clasificación tiene un pequeño recordatorio de humildad.",
-      "partido": "México 2-3 Inglaterra",
-      "prioridad": 72,
-      "etiqueta": "📢 COMUNICADO"
-    },
-    {
-      "id": "RACHA_FALLOS:frases2:1",
-      "tipo": "INVESTIGACION",
-      "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases2:1",
-      "jugador": "JORGE",
-      "titulo": "Los expertos dudan si JORGE está apostando o eligiendo resultados con una ruleta.",
-      "texto": null,
-      "partido": "México 2-3 Inglaterra",
-      "prioridad": 63,
-      "etiqueta": "🕵 INVESTIGACIÓN"
-    },
-    {
-      "id": "GPT_LIDER:frases3:1",
-      "tipo": "RUMOR",
-      "categoria": "GPT_LIDER",
-      "frase_id": "GPT_LIDER:frases3:1",
-      "jugador": "GPT",
-      "titulo": "Dicen que GPT ya está aceptando felicitaciones...",
-      "texto": "aunque no pueda cobrarlas.",
-      "partido": null,
-      "prioridad": 60,
-      "etiqueta": "🟡 RUMOR"
-    },
-    {
-      "id": "GEMINI_ULTIMO:frases1:0",
-      "tipo": "RUMOR",
+      "id": "GEMINI_ULTIMO:frases3:0",
+      "tipo": "DECLARACIONES",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases1:0",
+      "frase_id": "GEMINI_ULTIMO:frases3:0",
       "jugador": "GEMINI",
-      "titulo": "Fuentes cercanas a GEMINI aseguran que hoy prefiere no responder preguntas.",
-      "texto": null,
+      "titulo": "Seguimos aprendiendo.",
+      "texto": "— GEMINI, mientras ocupa el farolillo rojo.",
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🎙️ DECLARACIONES"
     }
   ]
 };
