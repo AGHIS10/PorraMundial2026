@@ -1,27 +1,27 @@
 {
-  "generado": "2026-07-06T13:41:35Z",
+  "generado": "2026-07-06T16:49:47Z",
   "partidos_jugados": 92,
   "noticias": [
     {
-      "id": "SALE_TOP3:frases1:0",
-      "tipo": "TITULAR",
+      "id": "SALE_TOP3:frases2:0",
+      "tipo": "COMUNICADO",
       "categoria": "SALE_TOP3",
-      "frase_id": "SALE_TOP3:frases1:0",
+      "frase_id": "SALE_TOP3:frases2:0",
       "jugador": "PEDRO",
       "titulo": "PEDRO abandona el Top 3.",
-      "texto": "Se acabó la zona VIP.",
+      "texto": "La zona noble pierde un inquilino.",
       "partido": "México 2-3 Inglaterra",
       "prioridad": 104,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases1:2",
+      "id": "SUBIDA_2_3_POSICIONES:frases4:1",
       "tipo": "EDITORIAL",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:2",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases4:1",
       "jugador": "AGUSTIN",
-      "titulo": "Lo de AGUSTIN ya no parece casualidad.",
-      "texto": "Empieza a molestar de verdad.",
+      "titulo": "AGUSTIN ha decidido ahorrar tiempo adelantando a varios rivales de una sola vez.",
+      "texto": null,
       "partido": "México 2-3 Inglaterra",
       "prioridad": 80,
       "etiqueta": "📝 EDITORIAL"
@@ -39,16 +39,16 @@
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "SUBIDA_1_POSICION:frases1:5",
-      "tipo": "TITULAR",
+      "id": "SUBIDA_1_POSICION:frases1:1",
+      "tipo": "EL_BAR",
       "categoria": "SUBIDA_1_POSICION",
-      "frase_id": "SUBIDA_1_POSICION:frases1:5",
+      "frase_id": "SUBIDA_1_POSICION:frases1:1",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN sube una posición en la clasificación.",
-      "texto": "El grupo ya empieza a notarlo.",
+      "titulo": "CRISTIAN ya puede mirar a MARIO por encima del hombro durante, como mínimo, una semana.",
+      "texto": null,
       "partido": "México 2-3 Inglaterra",
       "prioridad": 73,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "BAJADA_1_POSICION:frases3:0",
@@ -75,40 +75,40 @@
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "RACHA_FALLOS:frases4:0",
-      "tipo": "EDITORIAL",
+      "id": "RACHA_FALLOS:frases2:1",
+      "tipo": "INVESTIGACION",
       "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases4:0",
+      "frase_id": "RACHA_FALLOS:frases2:1",
       "jugador": "JORGE",
-      "titulo": "JORGE suma 2 fallos consecutivos.",
-      "texto": "El balón insiste en llevarle la contraria.",
+      "titulo": "Los expertos dudan si JORGE está apostando o eligiendo resultados con una ruleta.",
+      "texto": null,
       "partido": "México 2-3 Inglaterra",
       "prioridad": 63,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "GPT_LIDER:frases4:0",
-      "tipo": "TITULAR",
+      "id": "GPT_LIDER:frases3:1",
+      "tipo": "RUMOR",
       "categoria": "GPT_LIDER",
-      "frase_id": "GPT_LIDER:frases4:0",
+      "frase_id": "GPT_LIDER:frases3:1",
       "jugador": "GPT",
-      "titulo": "GPT manda en la clasificación.",
-      "texto": "La humanidad solicita la revancha en 2030.",
+      "titulo": "Dicen que GPT ya está aceptando felicitaciones...",
+      "texto": "aunque no pueda cobrarlas.",
       "partido": null,
       "prioridad": 60,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🟡 RUMOR"
     },
     {
-      "id": "GEMINI_ULTIMO:frases3:0",
-      "tipo": "DECLARACIONES",
+      "id": "GEMINI_ULTIMO:frases1:0",
+      "tipo": "RUMOR",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases3:0",
+      "frase_id": "GEMINI_ULTIMO:frases1:0",
       "jugador": "GEMINI",
-      "titulo": "Seguimos aprendiendo.",
-      "texto": "— GEMINI, mientras ocupa el farolillo rojo.",
+      "titulo": "Fuentes cercanas a GEMINI aseguran que hoy prefiere no responder preguntas.",
+      "texto": null,
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "🟡 RUMOR"
     }
   ]
 }
