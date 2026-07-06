@@ -1,56 +1,56 @@
 window.__CLASIFICACION__ = [
   {
     "posicion": 1,
+    "nombre": "AGUSTIN",
+    "aciertos": 74,
+    "puntos": 82
+  },
+  {
+    "posicion": 2,
+    "nombre": "GABRIEL",
+    "aciertos": 75,
+    "puntos": 81
+  },
+  {
+    "posicion": 3,
+    "nombre": "PEDRO",
+    "aciertos": 73,
+    "puntos": 80
+  },
+  {
+    "posicion": 4,
+    "nombre": "JORGE",
+    "aciertos": 73,
+    "puntos": 79
+  },
+  {
+    "posicion": 5,
     "nombre": "GPT",
     "aciertos": 75,
     "puntos": 78
   },
   {
-    "posicion": 2,
-    "nombre": "AGUSTIN",
-    "aciertos": 72,
-    "puntos": 78
-  },
-  {
-    "posicion": 3,
-    "nombre": "GABRIEL",
-    "aciertos": 73,
-    "puntos": 77
-  },
-  {
-    "posicion": 4,
-    "nombre": "PEDRO",
-    "aciertos": 71,
-    "puntos": 76
-  },
-  {
-    "posicion": 5,
-    "nombre": "JORGE",
-    "aciertos": 71,
+    "posicion": 6,
+    "nombre": "MARIO",
+    "aciertos": 70,
     "puntos": 75
   },
   {
-    "posicion": 6,
+    "posicion": 7,
     "nombre": "SERGIO",
     "aciertos": 69,
     "puntos": 75
   },
   {
-    "posicion": 7,
-    "nombre": "CRISTIAN",
-    "aciertos": 64,
-    "puntos": 72
-  },
-  {
     "posicion": 8,
-    "nombre": "MARIO",
-    "aciertos": 68,
-    "puntos": 71
+    "nombre": "CRISTIAN",
+    "aciertos": 65,
+    "puntos": 74
   },
   {
     "posicion": 9,
     "nombre": "GEMINI",
-    "aciertos": 65,
-    "puntos": 65
+    "aciertos": 66,
+    "puntos": 67
   }
 ];
