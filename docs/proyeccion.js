@@ -1,5 +1,5 @@
 window.__PROYECCION__ = {
-  "generatedAt": "2026-07-06T04:49:38Z",
+  "generatedAt": "2026-07-06T07:01:01Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 12,
@@ -118,7 +118,8 @@ window.__PROYECCION__ = {
       "delta": -1.99,
       "inicial": "G",
       "color": "#8c99b0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "AGUSTIN",
@@ -189,7 +190,8 @@ window.__PROYECCION__ = {
       "delta": -0.86,
       "inicial": "G",
       "color": "#c0b3e0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     }
   ],
   "top3": [
