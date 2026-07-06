@@ -331,29 +331,87 @@ def _puntos_en_paso(evolucion: dict[str, Any] | None, paso: int) -> dict[str, in
     return puntos
 
 
-def _rival_por_puntos_superados(
+def _lista_superados(
+    jugador: str,
+    evolucion: dict[str, Any] | None,
+    paso_prev: int,
+    paso_curr: int,
+) -> list[str]:
+    """Participantes a los que jugador pasó en puntos (misma regla que evolucion.py)."""
+    if not evolucion:
+        return []
+    pts_prev = _puntos_en_paso(evolucion, paso_prev)
+    pts_curr = _puntos_en_paso(evolucion, paso_curr)
+    if jugador not in pts_prev or jugador not in pts_curr:
+        return []
+    antes_j = pts_prev[jugador]
+    ahora_j = pts_curr[jugador]
+    return [
+        nombre
+        for nombre, pb in pts_prev.items()
+        if nombre != jugador and antes_j < pb and ahora_j > pts_curr.get(nombre, 0)
+    ]
+
+
+def _lista_quienes_adelantaron(
+    jugador: str,
+    evolucion: dict[str, Any] | None,
+    paso_prev: int,
+    paso_curr: int,
+) -> list[str]:
+    """Participantes que pasaron a jugador en puntos en este paso."""
+    if not evolucion:
+        return []
+    pts_prev = _puntos_en_paso(evolucion, paso_prev)
+    pts_curr = _puntos_en_paso(evolucion, paso_curr)
+    if jugador not in pts_prev or jugador not in pts_curr:
+        return []
+    antes_j = pts_prev[jugador]
+    ahora_j = pts_curr[jugador]
+    return [
+        nombre
+        for nombre, pb in pts_prev.items()
+        if nombre != jugador and pb < antes_j and pts_curr.get(nombre, 0) > ahora_j
+    ]
+
+
+def _elegir_rival(candidatos: list[str], pts_prev: dict[str, int] | None = None) -> str:
+    """Prefiere humano; si hay varios, el que estaba más cerca en puntos."""
+    if not candidatos:
+        return ""
+    ordenados = sorted(candidatos, key=lambda n: pts_prev.get(n, 0) if pts_prev else n)
+    humanos = [n for n in ordenados if not es_participante_virtual(n)]
+    if humanos:
+        return humanos[0]
+    return ordenados[0]
+
+
+def _rival_tras_subida(
     jugador: str,
     evolucion: dict[str, Any] | None,
     paso_prev: int,
     paso_curr: int,
 ) -> str:
-    """Quién tenía más puntos antes y ahora queda igual o por debajo (humano preferido)."""
-    pts_prev = _puntos_en_paso(evolucion, paso_prev)
-    pts_curr = _puntos_en_paso(evolucion, paso_curr)
-    if jugador not in pts_prev or jugador not in pts_curr:
+    """Rival realmente adelantado en la jornada (no quien ocupe la posición de arriba)."""
+    superados = _lista_superados(jugador, evolucion, paso_prev, paso_curr)
+    if not superados:
         return ""
-    antes_j = pts_prev[jugador]
-    ahora_j = pts_curr[jugador]
-    superados: list[str] = []
-    for nombre, pb in pts_prev.items():
-        if nombre == jugador:
-            continue
-        if pb > antes_j and pts_curr.get(nombre, 0) <= ahora_j:
-            superados.append(nombre)
-    humanos = sorted(n for n in superados if not es_participante_virtual(n))
-    if humanos:
-        return humanos[0]
-    return sorted(superados)[0] if superados else ""
+    pts_prev = _puntos_en_paso(evolucion, paso_prev)
+    return _elegir_rival(superados, pts_prev)
+
+
+def _rival_tras_bajada(
+    jugador: str,
+    evolucion: dict[str, Any] | None,
+    paso_prev: int,
+    paso_curr: int,
+) -> str:
+    """Quién adelantó realmente a jugador en puntos en esta jornada."""
+    adelantaron = _lista_quienes_adelantaron(jugador, evolucion, paso_prev, paso_curr)
+    if not adelantaron:
+        return ""
+    pts_prev = _puntos_en_paso(evolucion, paso_prev)
+    return _elegir_rival(adelantaron, pts_prev)
 
 
 def _rival_tras_movimiento(
@@ -363,23 +421,15 @@ def _rival_tras_movimiento(
     evolucion: dict[str, Any] | None = None,
     paso_prev: int | None = None,
     paso_curr: int | None = None,
+    *,
+    subida: bool = True,
 ) -> str:
-    antes = pos_prev.get(jugador)
-    if antes is None:
+    """Delega en la lógica por puntos; ya no infiere rival por posición relativa."""
+    if evolucion is None or paso_prev is None or paso_curr is None:
         return ""
-    for nombre, pos in pos_curr.items():
-        if pos == antes and nombre != jugador:
-            return nombre
-    ahora = pos_curr.get(jugador)
-    if ahora is not None and ahora > 1:
-        candidatos = sorted(
-            n for n, p in pos_curr.items() if p == ahora - 1 and n != jugador
-        )
-        if candidatos:
-            return candidatos[0]
-    if evolucion is not None and paso_prev is not None and paso_curr is not None:
-        return _rival_por_puntos_superados(jugador, evolucion, paso_prev, paso_curr)
-    return ""
+    if subida:
+        return _rival_tras_subida(jugador, evolucion, paso_prev, paso_curr)
+    return _rival_tras_bajada(jugador, evolucion, paso_prev, paso_curr)
 
 
 def _formato_partido(partido: dict[str, Any] | None) -> str | None:
@@ -559,10 +609,31 @@ def _detectar_eventos(
         for jugador, delta in movimientos:
             paso_prev = partidos_jugados - 1 if partidos_jugados > 0 else 0
             paso_curr = partidos_jugados
-            rival = _rival_tras_movimiento(
-                jugador, pos_prev, pos_mov, evolucion, paso_prev, paso_curr
-            )
-            v = {**vars_base, "JUGADOR": jugador, "RIVAL": rival}
+            v = {**vars_base, "JUGADOR": jugador}
+            if delta > 0:
+                rival = _rival_tras_movimiento(
+                    jugador,
+                    pos_prev,
+                    pos_mov,
+                    evolucion,
+                    paso_prev,
+                    paso_curr,
+                    subida=True,
+                )
+                if rival:
+                    v["RIVAL"] = rival
+            elif delta < 0:
+                rival = _rival_tras_movimiento(
+                    jugador,
+                    pos_prev,
+                    pos_mov,
+                    evolucion,
+                    paso_prev,
+                    paso_curr,
+                    subida=False,
+                )
+                if rival:
+                    v["RIVAL"] = rival
             if delta >= 4:
                 v["POSICIONES_GANADAS"] = str(delta)
                 candidatos.append(Candidato("SUBIDA_4_MAS", v, delta, incluir_partido=True))
@@ -756,6 +827,8 @@ def _categoria_individual(
     partidos: list[dict],
     resultados: list[Any],
     vars_base: dict[str, str],
+    evolucion: dict[str, Any] | None = None,
+    partidos_jugados: int = 0,
 ) -> Candidato:
     posiciones_ref = pos_mov or ctx.posiciones
     pos = posiciones_ref.get(nombre, ctx.posiciones.get(nombre, 99))
@@ -784,16 +857,25 @@ def _categoria_individual(
         )
         return Candidato(cat, {**v, "IA": "GEMINI"}, jugador=nombre)
 
+    paso_prev = partidos_jugados - 1 if partidos_jugados > 0 else 0
+    paso_curr = partidos_jugados
+
     if delta >= 4:
         v["POSICIONES_GANADAS"] = str(delta)
-        v["RIVAL"] = _rival_inmediato_superior(nombre, ctx)
+        rival = _rival_tras_subida(nombre, evolucion, paso_prev, paso_curr)
+        if rival:
+            v["RIVAL"] = rival
         return Candidato("SUBIDA_4_MAS", v, delta, jugador=nombre, incluir_partido=True)
     if delta >= 2:
         v["POSICIONES_GANADAS"] = str(delta)
-        v["RIVAL"] = _rival_inmediato_superior(nombre, ctx)
+        rival = _rival_tras_subida(nombre, evolucion, paso_prev, paso_curr)
+        if rival:
+            v["RIVAL"] = rival
         return Candidato("SUBIDA_2_3_POSICIONES", v, delta, jugador=nombre, incluir_partido=True)
     if delta == 1:
-        v["RIVAL"] = _rival_inmediato_superior(nombre, ctx)
+        rival = _rival_tras_subida(nombre, evolucion, paso_prev, paso_curr)
+        if rival:
+            v["RIVAL"] = rival
         return Candidato("SUBIDA_1_POSICION", v, jugador=nombre, incluir_partido=True)
     if delta <= -4:
         v["POSICIONES_PERDIDAS"] = str(-delta)
@@ -802,7 +884,9 @@ def _categoria_individual(
         v["POSICIONES_PERDIDAS"] = str(-delta)
         return Candidato("BAJADA_2_3_POSICIONES", v, -delta, jugador=nombre, incluir_partido=True)
     if delta == -1:
-        v["RIVAL"] = _rival_inmediato_superior(nombre, ctx)
+        rival = _rival_tras_bajada(nombre, evolucion, paso_prev, paso_curr)
+        if rival:
+            v["RIVAL"] = rival
         return Candidato("BAJADA_1_POSICION", v, jugador=nombre, incluir_partido=True)
 
     racha_ok = _racha_participante(nombre, participantes, partidos, resultados, True)
@@ -1081,6 +1165,8 @@ def generar_noticias(
                 partidos,
                 resultados,
                 vars_base,
+                evolucion,
+                partidos_jugados,
             )
         )
 
