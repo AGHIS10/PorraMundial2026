@@ -1,14 +1,14 @@
 {
-  "generado": "2026-07-07T21:18:45Z",
+  "generado": "2026-07-07T22:55:18Z",
   "total_partidos": 104,
-  "partidos_jugados": 95,
+  "partidos_jugados": 96,
   "participantes": [
     {
       "nombre": "AGUSTIN",
       "inicial": "A",
       "color": "#2ee6d6",
       "es_ia": false,
-      "puntos_final": 86,
+      "puntos_final": 88,
       "serie": [
         0,
         1,
@@ -105,7 +105,8 @@
         78,
         82,
         82,
-        86
+        86,
+        88
       ],
       "detalle": [
         {
@@ -1126,6 +1127,19 @@
           "acierto": true,
           "posicion": 2,
           "posicion_humanos": 2
+        },
+        {
+          "orden": 96,
+          "match_id": 96,
+          "puntos": 2,
+          "acumulado": 88,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 2,
+          "posicion_humanos": 2
         }
       ]
     },
@@ -1134,7 +1148,7 @@
       "inicial": "C",
       "color": "#f0883e",
       "es_ia": false,
-      "puntos_final": 82,
+      "puntos_final": 84,
       "serie": [
         0,
         1,
@@ -1231,7 +1245,8 @@
         72,
         74,
         78,
-        82
+        82,
+        84
       ],
       "detalle": [
         {
@@ -2252,6 +2267,19 @@
           "acierto": true,
           "posicion": 6,
           "posicion_humanos": 6
+        },
+        {
+          "orden": 96,
+          "match_id": 96,
+          "puntos": 2,
+          "acumulado": 84,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 6,
+          "posicion_humanos": 6
         }
       ]
     },
@@ -2260,7 +2288,7 @@
       "inicial": "G",
       "color": "#9b8cff",
       "es_ia": false,
-      "puntos_final": 85,
+      "puntos_final": 87,
       "serie": [
         0,
         1,
@@ -2357,7 +2385,8 @@
         77,
         81,
         81,
-        85
+        85,
+        87
       ],
       "detalle": [
         {
@@ -3378,6 +3407,19 @@
           "acierto": true,
           "posicion": 3,
           "posicion_humanos": 3
+        },
+        {
+          "orden": 96,
+          "match_id": 96,
+          "puntos": 2,
+          "acumulado": 87,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "2"
+          },
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 3
         }
       ]
     },
@@ -3483,6 +3525,7 @@
         65,
         67,
         67,
+        71,
         71
       ],
       "detalle": [
@@ -4504,6 +4547,19 @@
           "acierto": true,
           "posicion": 9,
           "posicion_humanos": null
+        },
+        {
+          "orden": 96,
+          "match_id": 96,
+          "puntos": 0,
+          "acumulado": 71,
+          "pronostico": {
+            "resultado": "1",
+            "clasifica": "1"
+          },
+          "acierto": false,
+          "posicion": 9,
+          "posicion_humanos": null
         }
       ]
     },
@@ -4609,6 +4665,7 @@
         78,
         78,
         80,
+        82,
         82
       ],
       "detalle": [
@@ -5630,6 +5687,19 @@
           "acierto": false,
           "posicion": 6,
           "posicion_humanos": null
+        },
+        {
+          "orden": 96,
+          "match_id": 96,
+          "puntos": 0,
+          "acumulado": 82,
+          "pronostico": {
+            "resultado": "1",
+            "clasifica": "2"
+          },
+          "acierto": false,
+          "posicion": 7,
+          "posicion_humanos": null
         }
       ]
     },
@@ -5638,7 +5708,7 @@
       "inicial": "J",
       "color": "#ef6f6c",
       "es_ia": false,
-      "puntos_final": 83,
+      "puntos_final": 85,
       "serie": [
         0,
         1,
@@ -5735,7 +5805,8 @@
         75,
         79,
         79,
-        83
+        83,
+        85
       ],
       "detalle": [
         {
@@ -6756,6 +6827,19 @@
           "acierto": true,
           "posicion": 4,
           "posicion_humanos": 4
+        },
+        {
+          "orden": 96,
+          "match_id": 96,
+          "puntos": 2,
+          "acumulado": 85,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "2"
+          },
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 4
         }
       ]
     },
@@ -6764,7 +6848,7 @@
       "inicial": "P",
       "color": "#58d68d",
       "es_ia": false,
-      "puntos_final": 88,
+      "puntos_final": 90,
       "serie": [
         0,
         1,
@@ -6861,7 +6945,8 @@
         76,
         80,
         84,
-        88
+        88,
+        90
       ],
       "detalle": [
         {
@@ -7882,6 +7967,19 @@
           "acierto": true,
           "posicion": 1,
           "posicion_humanos": 1
+        },
+        {
+          "orden": 96,
+          "match_id": 96,
+          "puntos": 2,
+          "acumulado": 90,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "2"
+          },
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
         }
       ]
     },
@@ -7890,7 +7988,7 @@
       "inicial": "S",
       "color": "#f5c518",
       "es_ia": false,
-      "puntos_final": 79,
+      "puntos_final": 81,
       "serie": [
         0,
         1,
@@ -7987,7 +8085,8 @@
         75,
         75,
         75,
-        79
+        79,
+        81
       ],
       "detalle": [
         {
@@ -9008,6 +9107,19 @@
           "acierto": true,
           "posicion": 8,
           "posicion_humanos": 7
+        },
+        {
+          "orden": 96,
+          "match_id": 96,
+          "puntos": 2,
+          "acumulado": 81,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "2"
+          },
+          "acierto": true,
+          "posicion": 8,
+          "posicion_humanos": 7
         }
       ]
     },
@@ -9016,7 +9128,7 @@
       "inicial": "M",
       "color": "#5aa9ff",
       "es_ia": false,
-      "puntos_final": 83,
+      "puntos_final": 85,
       "serie": [
         0,
         1,
@@ -9113,7 +9225,8 @@
         71,
         75,
         79,
-        83
+        83,
+        85
       ],
       "detalle": [
         {
@@ -10130,6 +10243,19 @@
           "pronostico": {
             "resultado": "1",
             "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 4
+        },
+        {
+          "orden": 96,
+          "match_id": 96,
+          "puntos": 2,
+          "acumulado": 85,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "2"
           },
           "acierto": true,
           "posicion": 4,
@@ -11347,6 +11473,21 @@
         "clasifica": "1"
       },
       "peso": 4
+    },
+    {
+      "orden": 96,
+      "match_id": 96,
+      "fecha": "2026-07-07",
+      "hora": "22:00",
+      "fase": "octavos",
+      "local": "Suiza",
+      "visitante": "Colombia",
+      "marcador": "0-0",
+      "resultado": {
+        "resultado": "X",
+        "clasifica": null
+      },
+      "peso": 4
     }
   ],
   "fases": [
@@ -11363,7 +11504,7 @@
     {
       "fase": "octavos",
       "desde": 89,
-      "hasta": 95
+      "hasta": 96
     }
   ],
   "eventos": [
@@ -12631,17 +12772,23 @@
           "match_id": 94
         },
         {
+          "tipo": "pausa",
+          "partidos": 1,
+          "desde_orden": 95,
+          "hasta_orden": 95
+        },
+        {
           "tipo": "snapshot",
-          "orden": 95,
+          "orden": 96,
           "motivos": [
             "fase_fin"
           ],
           "fase": "octavos",
-          "match_id": 95
+          "match_id": 96
         }
       ],
       "snapshots_total": 55,
-      "partidos_total": 95
+      "partidos_total": 96
     },
     "global": {
       "columnas": [
@@ -13421,16 +13568,26 @@
           "tipo": "snapshot",
           "orden": 95,
           "motivos": [
-            "fase_fin",
             "cambio_posicion",
             "cambio_empate"
           ],
           "fase": "octavos",
           "match_id": 95
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 96,
+          "motivos": [
+            "fase_fin",
+            "cambio_posicion",
+            "cambio_empate"
+          ],
+          "fase": "octavos",
+          "match_id": 96
         }
       ],
-      "snapshots_total": 60,
-      "partidos_total": 95
+      "snapshots_total": 61,
+      "partidos_total": 96
     }
   }
 }
