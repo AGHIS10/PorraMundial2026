@@ -1,30 +1,30 @@
 {
-  "generado": "2026-07-08T21:01:40Z",
+  "generado": "2026-07-08T23:00:04Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases4:2",
-      "tipo": "RUMOR",
+      "id": "CAMBIO_LIDER:frases1:0",
+      "tipo": "ULTIMA_HORA",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases4:2",
+      "frase_id": "CAMBIO_LIDER:frases1:0",
       "jugador": "AGUSTIN",
-      "titulo": "Allegados de AGUSTIN aseguran que ya tenía preparado el discurso de 'yo nunca miraba la clasificación'.",
-      "texto": null,
+      "titulo": "AGUSTIN toma el liderato.",
+      "texto": "PEDRO ha pedido cinco minutos para asimilar la tragedia.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases1:1",
-      "tipo": "ULTIMA_HORA",
+      "id": "SUBIDA_2_3_POSICIONES:frases3:2",
+      "tipo": "INVESTIGACION",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:1",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases3:2",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN ha adelantado a media mesa.",
-      "texto": "Ya se oyen sus mensajes escribiéndose solos.",
+      "titulo": "La remontada de CRISTIAN obliga a recalcular las conversaciones pendientes.",
+      "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 80,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
