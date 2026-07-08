@@ -1,78 +1,78 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-08T06:17:05Z",
+  "generado": "2026-07-08T06:23:54Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:2",
-      "tipo": "RUMOR",
+      "id": "CAMBIO_LIDER:frases3:3",
+      "tipo": "EDITORIAL",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:2",
+      "frase_id": "CAMBIO_LIDER:frases3:3",
       "jugador": "AGUSTIN",
-      "titulo": "El entorno de AGUSTIN asegura que llevaba días practicando cómo responder con falsa humildad.",
+      "titulo": "Cambia el líder, pero no la tradición: el primero tarda exactamente cinco minutos en ponerse insoportable.",
       "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases2:2",
+      "id": "SUBIDA_2_3_POSICIONES:frases4:2",
       "tipo": "COMUNICADO",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases2:2",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases4:2",
       "jugador": "CRISTIAN",
-      "titulo": "Los adelantamientos de CRISTIAN ya empiezan a dejar víctimas conocidas.",
+      "titulo": "CRISTIAN entra de lleno en la conversación por la porra.",
       "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 80,
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "BAJADA_1_POSICION:frases1:0",
-      "tipo": "ULTIMA_HORA",
+      "id": "BAJADA_1_POSICION:frases2:1",
+      "tipo": "EDITORIAL",
       "categoria": "BAJADA_1_POSICION",
-      "frase_id": "BAJADA_1_POSICION:frases1:0",
+      "frase_id": "BAJADA_1_POSICION:frases2:1",
       "jugador": "JORGE",
-      "titulo": "JORGE pierde una posición.",
-      "texto": "No parece grave... hasta que ves quién le ha pasado.",
+      "titulo": "JORGE cede un puesto: CRISTIAN ya está por delante.",
+      "texto": "Lo peor no es caer... es saber quién te ha adelantado.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 72,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "BAJADA_1_POSICION:frases4:0",
-      "tipo": "COMUNICADO",
+      "id": "BAJADA_1_POSICION:frases1:1",
+      "tipo": "RUMOR",
       "categoria": "BAJADA_1_POSICION",
-      "frase_id": "BAJADA_1_POSICION:frases4:0",
+      "frase_id": "BAJADA_1_POSICION:frases1:1",
       "jugador": "MARIO",
-      "titulo": "MARIO cede un puesto.",
-      "texto": "Hoy la clasificación tiene un pequeño recordatorio de humildad.",
+      "titulo": "Personas del entorno de MARIO aseguran que hoy la clasificación 'no refleja la realidad'.",
+      "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 72,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🟡 RUMOR"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases3:1",
-      "tipo": "INVESTIGACION",
+      "id": "CAMBIO_SIMULACIONES:frases4:0",
+      "tipo": "EDITORIAL",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases3:1",
+      "frase_id": "CAMBIO_SIMULACIONES:frases4:0",
       "jugador": "SERGIO",
-      "titulo": "El algoritmo tiene preferencias y después de Suiza 0-0 Colombia, SERGIO sube puestos en las proyecciones.",
-      "texto": "No es magia: es matemática.",
+      "titulo": "Suiza 0-0 Colombia ha movido el tablero: SERGIO sube en las simulaciones y se sitúa con un 7.4% de ganar la porra.",
+      "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 66,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases4:1",
-      "tipo": "DECLARACIONES",
-      "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases4:1",
+      "id": "PODIO_HUMANO:frases4:1",
+      "tipo": "EDITORIAL",
+      "categoria": "PODIO_HUMANO",
+      "frase_id": "PODIO_HUMANO:frases4:1",
       "jugador": "PEDRO",
-      "titulo": "Las probabilidades están muy bien... hasta que rueda el balón.",
-      "texto": "— Todos los perseguidores de PEDRO.",
+      "titulo": "PEDRO persigue a AGUSTIN desde el podio.",
+      "texto": "Cerca... pero no lo bastante para presumir.",
       "partido": null,
-      "prioridad": 65,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "prioridad": 53,
+      "etiqueta": "📝 EDITORIAL"
     },
     {
       "id": "PODIO_HUMANO:frases3:1",
@@ -87,16 +87,16 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "GEMINI_ULTIMO:frases1:0",
-      "tipo": "RUMOR",
+      "id": "GEMINI_ULTIMO:frases3:0",
+      "tipo": "DECLARACIONES",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases1:0",
+      "frase_id": "GEMINI_ULTIMO:frases3:0",
       "jugador": "GEMINI",
-      "titulo": "Fuentes cercanas a GEMINI aseguran que hoy prefiere no responder preguntas.",
-      "texto": null,
+      "titulo": "Seguimos aprendiendo.",
+      "texto": "— GEMINI, mientras ocupa el farolillo rojo.",
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🎙️ DECLARACIONES"
     }
   ]
 };
