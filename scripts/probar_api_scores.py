@@ -146,7 +146,7 @@ def main() -> int:
 
         print("\n--- Conclusión ---")
         print("• resultado (1/X/2): score.regularTime (90 min); si no existe y duration=REGULAR → fullTime")
-        print("• clasifica (1/2): score.winner → HOME_TEAM=1, AWAY_TEAM=2")
+        print("• clasifica (1/2): score.winner; si DRAW → score.penalties; prórroga → fullTime vs regularTime")
         print("• NO usar fullTime en penaltis/prórroga: puede ser marcador global, no 90 min")
         print("• Si falta regularTime: GET /v4/matches/{id} (enriquecimiento ya implementado)")
         return 0

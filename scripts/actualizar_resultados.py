@@ -549,8 +549,49 @@ def diagnosticar_partido(
     return None, ". ".join(detalles)
 
 
+def _clasifica_desde_marcador(goles_local: int, goles_visitante: int) -> str | None:
+    """Convierte un marcador a 1 (local) o 2 (visitante) si hay ganador."""
+    if goles_local > goles_visitante:
+        return "1"
+    if goles_visitante > goles_local:
+        return "2"
+    return None
+
+
+def clasifica_desde_penalties(score: dict[str, Any]) -> str | None:
+    """Quién ganó la tanda de penaltis según score.penalties."""
+    penal = extraer_marcador_desde_nodo(score, "penalties")
+    if penal is None:
+        return None
+    return _clasifica_desde_marcador(*penal)
+
+
+def clasifica_desde_prorroga(score: dict[str, Any]) -> str | None:
+    """Quién ganó en prórroga (fullTime vs regularTime) cuando no hubo penaltis."""
+    full = extraer_marcador_desde_nodo(score, "fullTime")
+    regular = extraer_marcador_desde_nodo(score, "regularTime")
+    if full is None or regular is None or full == regular:
+        return None
+    return _clasifica_desde_marcador(*full)
+
+
+def necesita_enriquecer_clasifica_ko(partido_api: dict[str, Any]) -> bool:
+    """Eliminatoria FINISHED con resultado 90 min pero sin clasifica en la lista API."""
+    if not partido_finalizado(partido_api) or not es_stage_eliminatoria_api(partido_api):
+        return False
+    if clasifica_desde_api(partido_api) is not None:
+        return False
+    score = partido_api.get("score") or {}
+    duration = duracion_partido_api(partido_api)
+    return (
+        duration in {"EXTRA_TIME", "PENALTY_SHOOTOUT"}
+        or nodo_marcador_presente(score, "penalties")
+        or score.get("winner") in {None, "DRAW"}
+    )
+
+
 def clasifica_desde_api(partido_api: dict[str, Any]) -> str | None:
-    """Devuelve 1 o 2 según quién clasifica (score.winner de la API)."""
+    """Devuelve 1 o 2 según quién clasifica (score.winner o penaltis/prórroga)."""
     if not partido_finalizado(partido_api):
         return None
 
@@ -560,8 +601,21 @@ def clasifica_desde_api(partido_api: dict[str, Any]) -> str | None:
         return "1"
     if ganador == "AWAY_TEAM":
         return "2"
-    if ganador == "DRAW":
+
+    if not es_stage_eliminatoria_api(partido_api):
         return None
+
+    duration = duracion_partido_api(partido_api)
+    por_penaltis = clasifica_desde_penalties(score)
+    if por_penaltis is not None and (
+        duration == "PENALTY_SHOOTOUT" or nodo_marcador_presente(score, "penalties")
+    ):
+        return por_penaltis
+
+    if duration == "EXTRA_TIME":
+        por_prorroga = clasifica_desde_prorroga(score)
+        if por_prorroga is not None:
+            return por_prorroga
 
     return None
 
@@ -682,6 +736,7 @@ def enriquecer_marcadores_partidos(
         for partido_id, partido in por_id.items()
         if marcador_final_incompleto(partido)
         or necesita_enriquecer_regular_time_ko(partido)
+        or necesita_enriquecer_clasifica_ko(partido)
     ]
     if not incompletos:
         return partidos_api, 0
@@ -700,6 +755,7 @@ def enriquecer_marcadores_partidos(
         for partido_id in incompletos
         if marcador_final_incompleto(por_id[partido_id])
         or necesita_enriquecer_regular_time_ko(por_id[partido_id])
+        or necesita_enriquecer_clasifica_ko(por_id[partido_id])
     ]
     if incompletos:
         for partido in consultar_partidos_por_ids(api_key, incompletos):
