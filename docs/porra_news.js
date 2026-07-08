@@ -1,27 +1,27 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-08T17:44:38Z",
+  "generado": "2026-07-08T19:17:11Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:2",
-      "tipo": "DECLARACIONES",
+      "id": "CAMBIO_LIDER:frases4:1",
+      "tipo": "ULTIMA_HORA",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:2",
+      "frase_id": "CAMBIO_LIDER:frases4:1",
       "jugador": "AGUSTIN",
-      "titulo": "No miro la clasificación.",
-      "texto": "— PEDRO, después de mirarla exactamente 27 veces.",
+      "titulo": "PEDRO ha dejado de responder en el grupo exactamente desde que perdió el liderato.",
+      "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases1:2",
+      "id": "SUBIDA_2_3_POSICIONES:frases4:1",
       "tipo": "EDITORIAL",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:2",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases4:1",
       "jugador": "CRISTIAN",
-      "titulo": "Lo de CRISTIAN ya no parece casualidad.",
-      "texto": "Empieza a molestar de verdad.",
+      "titulo": "CRISTIAN ha decidido ahorrar tiempo adelantando a varios rivales de una sola vez.",
+      "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 80,
       "etiqueta": "📝 EDITORIAL"
