@@ -1,66 +1,66 @@
 {
-  "generado": "2026-07-08T06:23:54Z",
+  "generado": "2026-07-08T10:12:02Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:3",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_LIDER:frases3:4",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:3",
+      "frase_id": "CAMBIO_LIDER:frases3:4",
       "jugador": "AGUSTIN",
-      "titulo": "Cambia el líder, pero no la tradición: el primero tarda exactamente cinco minutos en ponerse insoportable.",
+      "titulo": "PEDRO ha bajado del trono con la misma elegancia que un borracho bajando unas escaleras.",
       "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases4:2",
-      "tipo": "COMUNICADO",
+      "id": "SUBIDA_2_3_POSICIONES:frases2:0",
+      "tipo": "ULTIMA_HORA",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases4:2",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases2:0",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN entra de lleno en la conversación por la porra.",
-      "texto": null,
+      "titulo": "CRISTIAN gana 2 puestos.",
+      "texto": "La clasificación acaba de sufrir un pequeño terremoto.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 80,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "BAJADA_1_POSICION:frases2:1",
-      "tipo": "EDITORIAL",
+      "id": "BAJADA_1_POSICION:frases2:0",
+      "tipo": "ULTIMA_HORA",
       "categoria": "BAJADA_1_POSICION",
-      "frase_id": "BAJADA_1_POSICION:frases2:1",
+      "frase_id": "BAJADA_1_POSICION:frases2:0",
       "jugador": "JORGE",
-      "titulo": "JORGE cede un puesto: CRISTIAN ya está por delante.",
-      "texto": "Lo peor no es caer... es saber quién te ha adelantado.",
+      "titulo": "JORGE pierde una posición.",
+      "texto": "Hoy le tocará leer más de lo que escriba.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 72,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "BAJADA_1_POSICION:frases1:1",
+      "id": "BAJADA_1_POSICION:frases3:1",
       "tipo": "RUMOR",
       "categoria": "BAJADA_1_POSICION",
-      "frase_id": "BAJADA_1_POSICION:frases1:1",
+      "frase_id": "BAJADA_1_POSICION:frases3:1",
       "jugador": "MARIO",
-      "titulo": "Personas del entorno de MARIO aseguran que hoy la clasificación 'no refleja la realidad'.",
+      "titulo": "Fuentes cercanas a MARIO aseguran que hoy la clasificación 'no refleja sensaciones'.",
       "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 72,
       "etiqueta": "🟡 RUMOR"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases4:0",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_SIMULACIONES:frases2:0",
+      "tipo": "RUMOR",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases4:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases2:0",
       "jugador": "SERGIO",
-      "titulo": "Suiza 0-0 Colombia ha movido el tablero: SERGIO sube en las simulaciones y se sitúa con un 7.4% de ganar la porra.",
-      "texto": null,
+      "titulo": "Tras Suiza 0-0 Colombia, el algoritmo ha revisado los números y SERGIO sube posiciones.",
+      "texto": "Se nota que alguien apostó bien.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 66,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🟡 RUMOR"
     },
     {
       "id": "PODIO_HUMANO:frases4:1",
