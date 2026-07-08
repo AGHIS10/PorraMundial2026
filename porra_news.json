@@ -1,30 +1,30 @@
 {
-  "generado": "2026-07-08T15:59:27Z",
+  "generado": "2026-07-08T17:44:38Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:1",
-      "tipo": "RUMOR",
+      "id": "CAMBIO_LIDER:frases1:2",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:1",
+      "frase_id": "CAMBIO_LIDER:frases1:2",
       "jugador": "AGUSTIN",
-      "titulo": "Fuentes cercanas a PEDRO aseguran que la clasificación era bastante más bonita ayer.",
-      "texto": null,
+      "titulo": "No miro la clasificación.",
+      "texto": "— PEDRO, después de mirarla exactamente 27 veces.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases3:0",
-      "tipo": "TITULAR",
+      "id": "SUBIDA_2_3_POSICIONES:frases1:2",
+      "tipo": "EDITORIAL",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases3:0",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:2",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN escala 2 posiciones.",
-      "texto": "Empieza a colarse en las quinielas de los favoritos.",
+      "titulo": "Lo de CRISTIAN ya no parece casualidad.",
+      "texto": "Empieza a molestar de verdad.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 80,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
@@ -51,16 +51,16 @@
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases1:0",
-      "tipo": "INVESTIGACION",
+      "id": "CAMBIO_SIMULACIONES:frases3:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases1:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases3:0",
       "jugador": "SERGIO",
-      "titulo": "Tras Suiza 0-0 Colombia, SERGIO sube posiciones en las simulaciones.",
-      "texto": "Ahora tiene un 7.4% de probabilidades de ganar la porra.",
+      "titulo": "Las simulaciones han recalculado tras Suiza 0-0 Colombia y SERGIO sube en el ranking de probabilidades.",
+      "texto": "El modelo le da ahora un 7.4%.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 66,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
       "id": "PODIO_HUMANO:frases4:1",
