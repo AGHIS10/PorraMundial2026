@@ -218,7 +218,7 @@
     "SUBIDA_2_3_POSICIONES:frases3:0": 96,
     "SUBIDA_2_3_POSICIONES:frases1:2": 96,
     "SUBIDA_2_3_POSICIONES:frases4:1": 96,
-    "SUBIDA_2_3_POSICIONES:frases1:1": 92,
+    "SUBIDA_2_3_POSICIONES:frases1:1": 96,
     "CAMBIO_LIDER:frases2:2": 93,
     "CAMBIO_LIDER:frases2:3": 93,
     "CAMBIO_LIDER:frases2:4": 93,
@@ -250,7 +250,8 @@
     "CAMBIO_LIDER:frases4:0": 96,
     "CAMBIO_LIDER:frases1:1": 96,
     "CAMBIO_LIDER:frases1:2": 96,
-    "CAMBIO_LIDER:frases4:1": 96
+    "CAMBIO_LIDER:frases4:1": 96,
+    "CAMBIO_LIDER:frases4:2": 96
   },
-  "actualizado": "2026-07-08T19:17:11Z"
+  "actualizado": "2026-07-08T21:01:40Z"
 }
