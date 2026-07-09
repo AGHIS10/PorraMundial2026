@@ -1,30 +1,30 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-09T02:29:19Z",
+  "generado": "2026-07-09T07:38:02Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases4:3",
-      "tipo": "DECLARACIONES",
+      "id": "CAMBIO_LIDER:frases4:4",
+      "tipo": "EDITORIAL",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases4:3",
+      "frase_id": "CAMBIO_LIDER:frases4:4",
       "jugador": "AGUSTIN",
-      "titulo": "Lo importante es disfrutar.",
-      "texto": "— PEDRO, una frase que jamás había utilizado cuando iba primero.",
-      "partido": "Suiza 0-0 Colombia",
-      "prioridad": 110,
-      "etiqueta": "🎙️ DECLARACIONES"
-    },
-    {
-      "id": "SUBIDA_2_3_POSICIONES:frases3:1",
-      "tipo": "RUMOR",
-      "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases3:1",
-      "jugador": "CRISTIAN",
-      "titulo": "Dicen que CRISTIAN ya saluda por su nombre a los de la parte alta.",
+      "titulo": "El liderato cambia de manos y el ego de PEDRO entra oficialmente en periodo de reconstrucción.",
       "texto": null,
       "partido": "Suiza 0-0 Colombia",
+      "prioridad": 110,
+      "etiqueta": "📝 EDITORIAL"
+    },
+    {
+      "id": "SUBIDA_2_3_POSICIONES:frases4:0",
+      "tipo": "EXCLUSIVA",
+      "categoria": "SUBIDA_2_3_POSICIONES",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases4:0",
+      "jugador": "CRISTIAN",
+      "titulo": "CRISTIAN escala 2 puestos.",
+      "texto": "La clasificación ha cambiado de decoración.",
+      "partido": "Suiza 0-0 Colombia",
       "prioridad": 80,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
