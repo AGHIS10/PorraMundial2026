@@ -1,14 +1,14 @@
 window.__EVOLUCION__ = {
-  "generado": "2026-07-09T21:18:40Z",
+  "generado": "2026-07-09T22:19:19Z",
   "total_partidos": 104,
-  "partidos_jugados": 96,
+  "partidos_jugados": 97,
   "participantes": [
     {
       "nombre": "AGUSTIN",
       "inicial": "A",
       "color": "#2ee6d6",
       "es_ia": false,
-      "puntos_final": 90,
+      "puntos_final": 98,
       "serie": [
         0,
         1,
@@ -106,7 +106,8 @@ window.__EVOLUCION__ = {
         82,
         82,
         86,
-        90
+        90,
+        98
       ],
       "detalle": [
         {
@@ -1140,6 +1141,19 @@ window.__EVOLUCION__ = {
           "acierto": true,
           "posicion": 1,
           "posicion_humanos": 1
+        },
+        {
+          "orden": 97,
+          "match_id": 97,
+          "puntos": 8,
+          "acumulado": 98,
+          "pronostico": {
+            "resultado": "1",
+            "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
         }
       ]
     },
@@ -1148,7 +1162,7 @@ window.__EVOLUCION__ = {
       "inicial": "C",
       "color": "#f0883e",
       "es_ia": false,
-      "puntos_final": 86,
+      "puntos_final": 94,
       "serie": [
         0,
         1,
@@ -1246,7 +1260,8 @@ window.__EVOLUCION__ = {
         74,
         78,
         82,
-        86
+        86,
+        94
       ],
       "detalle": [
         {
@@ -2280,6 +2295,19 @@ window.__EVOLUCION__ = {
           "acierto": true,
           "posicion": 4,
           "posicion_humanos": 4
+        },
+        {
+          "orden": 97,
+          "match_id": 97,
+          "puntos": 8,
+          "acumulado": 94,
+          "pronostico": {
+            "resultado": "1",
+            "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 3,
+          "posicion_humanos": 3
         }
       ]
     },
@@ -2288,7 +2316,7 @@ window.__EVOLUCION__ = {
       "inicial": "G",
       "color": "#9b8cff",
       "es_ia": false,
-      "puntos_final": 87,
+      "puntos_final": 91,
       "serie": [
         0,
         1,
@@ -2386,7 +2414,8 @@ window.__EVOLUCION__ = {
         81,
         81,
         85,
-        87
+        87,
+        91
       ],
       "detalle": [
         {
@@ -3420,6 +3449,19 @@ window.__EVOLUCION__ = {
           "acierto": false,
           "posicion": 3,
           "posicion_humanos": 3
+        },
+        {
+          "orden": 97,
+          "match_id": 97,
+          "puntos": 4,
+          "acumulado": 91,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "1"
+          },
+          "acierto": false,
+          "posicion": 6,
+          "posicion_humanos": 6
         }
       ]
     },
@@ -3428,7 +3470,7 @@ window.__EVOLUCION__ = {
       "inicial": "G",
       "color": "#c0b3e0",
       "es_ia": true,
-      "puntos_final": 73,
+      "puntos_final": 81,
       "serie": [
         0,
         1,
@@ -3526,7 +3568,8 @@ window.__EVOLUCION__ = {
         67,
         67,
         71,
-        73
+        73,
+        81
       ],
       "detalle": [
         {
@@ -4560,6 +4603,19 @@ window.__EVOLUCION__ = {
           "acierto": false,
           "posicion": 9,
           "posicion_humanos": null
+        },
+        {
+          "orden": 97,
+          "match_id": 97,
+          "puntos": 8,
+          "acumulado": 81,
+          "pronostico": {
+            "resultado": "1",
+            "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 9,
+          "posicion_humanos": null
         }
       ]
     },
@@ -4568,7 +4624,7 @@ window.__EVOLUCION__ = {
       "inicial": "G",
       "color": "#8c99b0",
       "es_ia": true,
-      "puntos_final": 82,
+      "puntos_final": 90,
       "serie": [
         0,
         1,
@@ -4666,7 +4722,8 @@ window.__EVOLUCION__ = {
         78,
         80,
         82,
-        82
+        82,
+        90
       ],
       "detalle": [
         {
@@ -5700,6 +5757,19 @@ window.__EVOLUCION__ = {
           "acierto": false,
           "posicion": 7,
           "posicion_humanos": null
+        },
+        {
+          "orden": 97,
+          "match_id": 97,
+          "puntos": 8,
+          "acumulado": 90,
+          "pronostico": {
+            "resultado": "1",
+            "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 7,
+          "posicion_humanos": null
         }
       ]
     },
@@ -5708,7 +5778,7 @@ window.__EVOLUCION__ = {
       "inicial": "J",
       "color": "#ef6f6c",
       "es_ia": false,
-      "puntos_final": 85,
+      "puntos_final": 93,
       "serie": [
         0,
         1,
@@ -5806,7 +5876,8 @@ window.__EVOLUCION__ = {
         79,
         79,
         83,
-        85
+        85,
+        93
       ],
       "detalle": [
         {
@@ -6840,6 +6911,19 @@ window.__EVOLUCION__ = {
           "acierto": false,
           "posicion": 5,
           "posicion_humanos": 5
+        },
+        {
+          "orden": 97,
+          "match_id": 97,
+          "puntos": 8,
+          "acumulado": 93,
+          "pronostico": {
+            "resultado": "1",
+            "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 4
         }
       ]
     },
@@ -6848,7 +6932,7 @@ window.__EVOLUCION__ = {
       "inicial": "P",
       "color": "#58d68d",
       "es_ia": false,
-      "puntos_final": 90,
+      "puntos_final": 98,
       "serie": [
         0,
         1,
@@ -6946,7 +7030,8 @@ window.__EVOLUCION__ = {
         80,
         84,
         88,
-        90
+        90,
+        98
       ],
       "detalle": [
         {
@@ -7980,6 +8065,19 @@ window.__EVOLUCION__ = {
           "acierto": false,
           "posicion": 1,
           "posicion_humanos": 1
+        },
+        {
+          "orden": 97,
+          "match_id": 97,
+          "puntos": 8,
+          "acumulado": 98,
+          "pronostico": {
+            "resultado": "1",
+            "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 1,
+          "posicion_humanos": 1
         }
       ]
     },
@@ -7988,7 +8086,7 @@ window.__EVOLUCION__ = {
       "inicial": "S",
       "color": "#f5c518",
       "es_ia": false,
-      "puntos_final": 81,
+      "puntos_final": 85,
       "serie": [
         0,
         1,
@@ -8086,7 +8184,8 @@ window.__EVOLUCION__ = {
         75,
         75,
         79,
-        81
+        81,
+        85
       ],
       "detalle": [
         {
@@ -9120,6 +9219,19 @@ window.__EVOLUCION__ = {
           "acierto": false,
           "posicion": 8,
           "posicion_humanos": 7
+        },
+        {
+          "orden": 97,
+          "match_id": 97,
+          "puntos": 4,
+          "acumulado": 85,
+          "pronostico": {
+            "resultado": "X",
+            "clasifica": "1"
+          },
+          "acierto": false,
+          "posicion": 8,
+          "posicion_humanos": 7
         }
       ]
     },
@@ -9128,7 +9240,7 @@ window.__EVOLUCION__ = {
       "inicial": "M",
       "color": "#5aa9ff",
       "es_ia": false,
-      "puntos_final": 85,
+      "puntos_final": 93,
       "serie": [
         0,
         1,
@@ -9226,7 +9338,8 @@ window.__EVOLUCION__ = {
         75,
         79,
         83,
-        85
+        85,
+        93
       ],
       "detalle": [
         {
@@ -10260,6 +10373,19 @@ window.__EVOLUCION__ = {
           "acierto": false,
           "posicion": 5,
           "posicion_humanos": 5
+        },
+        {
+          "orden": 97,
+          "match_id": 97,
+          "puntos": 8,
+          "acumulado": 93,
+          "pronostico": {
+            "resultado": "1",
+            "clasifica": "1"
+          },
+          "acierto": true,
+          "posicion": 4,
+          "posicion_humanos": 4
         }
       ]
     }
@@ -11488,6 +11614,21 @@ window.__EVOLUCION__ = {
         "clasifica": "1"
       },
       "peso": 4
+    },
+    {
+      "orden": 97,
+      "match_id": 97,
+      "fecha": "2026-07-09",
+      "hora": "22:00",
+      "fase": "cuartos",
+      "local": "Francia",
+      "visitante": "Marruecos",
+      "marcador": "2-0",
+      "resultado": {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      "peso": 8
     }
   ],
   "fases": [
@@ -11505,6 +11646,11 @@ window.__EVOLUCION__ = {
       "fase": "octavos",
       "desde": 89,
       "hasta": 96
+    },
+    {
+      "fase": "cuartos",
+      "desde": 97,
+      "hasta": 97
     }
   ],
   "eventos": [
@@ -12057,6 +12203,60 @@ window.__EVOLUCION__ = {
       "equipos": "Suiza 0 – 0 Colombia",
       "fecha": "2026-07-07",
       "id": "adelantamiento_multiple-96-CRISTIAN"
+    },
+    {
+      "tipo": "adelantamiento",
+      "nivel": 3,
+      "titulo": "Adelantamiento",
+      "protagonista": "CRISTIAN",
+      "detalle": "CRISTIAN supera a GABRIEL.",
+      "datos": {
+        "supera_a": [
+          "GABRIEL"
+        ]
+      },
+      "match_id": 97,
+      "orden": 97,
+      "fase": "cuartos",
+      "equipos": "Francia 2 – 0 Marruecos",
+      "fecha": "2026-07-09",
+      "id": "adelantamiento-97-CRISTIAN"
+    },
+    {
+      "tipo": "adelantamiento",
+      "nivel": 3,
+      "titulo": "Adelantamiento",
+      "protagonista": "JORGE",
+      "detalle": "JORGE supera a GABRIEL.",
+      "datos": {
+        "supera_a": [
+          "GABRIEL"
+        ]
+      },
+      "match_id": 97,
+      "orden": 97,
+      "fase": "cuartos",
+      "equipos": "Francia 2 – 0 Marruecos",
+      "fecha": "2026-07-09",
+      "id": "adelantamiento-97-JORGE"
+    },
+    {
+      "tipo": "adelantamiento",
+      "nivel": 3,
+      "titulo": "Adelantamiento",
+      "protagonista": "MARIO",
+      "detalle": "MARIO supera a GABRIEL.",
+      "datos": {
+        "supera_a": [
+          "GABRIEL"
+        ]
+      },
+      "match_id": 97,
+      "orden": 97,
+      "fase": "cuartos",
+      "equipos": "Francia 2 – 0 Marruecos",
+      "fecha": "2026-07-09",
+      "id": "adelantamiento-97-MARIO"
     },
     {
       "tipo": "partido_clave",
@@ -12830,10 +13030,21 @@ window.__EVOLUCION__ = {
           ],
           "fase": "octavos",
           "match_id": 96
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 97,
+          "motivos": [
+            "fase_fin",
+            "cambio_posicion",
+            "top3"
+          ],
+          "fase": "cuartos",
+          "match_id": 97
         }
       ],
-      "snapshots_total": 55,
-      "partidos_total": 96
+      "snapshots_total": 56,
+      "partidos_total": 97
     },
     "global": {
       "columnas": [
@@ -13630,10 +13841,21 @@ window.__EVOLUCION__ = {
           ],
           "fase": "octavos",
           "match_id": 96
+        },
+        {
+          "tipo": "snapshot",
+          "orden": 97,
+          "motivos": [
+            "fase_fin",
+            "cambio_posicion",
+            "top3"
+          ],
+          "fase": "cuartos",
+          "match_id": 97
         }
       ],
-      "snapshots_total": 61,
-      "partidos_total": 96
+      "snapshots_total": 62,
+      "partidos_total": 97
     }
   }
 };
