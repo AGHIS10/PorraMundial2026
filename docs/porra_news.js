@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-09T13:22:27Z",
+  "generado": "2026-07-09T13:26:38Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:2",
-      "tipo": "DECLARACIONES",
+      "id": "CAMBIO_LIDER:frases2:4",
+      "tipo": "COMUNICADO",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:2",
+      "frase_id": "CAMBIO_LIDER:frases2:4",
       "jugador": "AGUSTIN",
-      "titulo": "No pasa nada, todavía queda Mundial.",
-      "texto": "— PEDRO, pronunciando la frase oficial de quien acaba de perder el liderato.",
+      "titulo": "La organización informa de que el liderato ha cambiado de propietario.",
+      "texto": "Las lágrimas corren por cuenta del anterior ocupante.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases2:1",
@@ -63,40 +63,40 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases3:1",
-      "tipo": "ULTIMA_HORA",
+      "id": "FAVORITO_SIMULADOR:frases2:1",
+      "tipo": "DECLARACIONES",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases3:1",
+      "frase_id": "FAVORITO_SIMULADOR:frases2:1",
       "jugador": "PEDRO",
-      "titulo": "PEDRO gusta mucho a los algoritmos.",
-      "texto": "Ahora falta convencer al balón.",
+      "titulo": "Las simulaciones no juegan partidos.",
+      "texto": "— Todos los que no son PEDRO.",
       "partido": null,
       "prioridad": 65,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "PODIO_HUMANO:frases4:1",
-      "tipo": "EDITORIAL",
+      "id": "PODIO_HUMANO:frases3:1",
+      "tipo": "INVESTIGACION",
       "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases4:1",
+      "frase_id": "PODIO_HUMANO:frases3:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL persigue a AGUSTIN desde el podio.",
-      "texto": "Cerca... pero no lo bastante para presumir.",
+      "titulo": "Los expertos analizan si GABRIEL puede acercarse a AGUSTIN.",
+      "texto": "De momento, la distancia sigue siendo el tema.",
       "partido": null,
       "prioridad": 53,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "GEMINI_ULTIMO:frases3:0",
-      "tipo": "DECLARACIONES",
+      "id": "GEMINI_ULTIMO:frases1:0",
+      "tipo": "RUMOR",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases3:0",
+      "frase_id": "GEMINI_ULTIMO:frases1:0",
       "jugador": "GEMINI",
-      "titulo": "Seguimos aprendiendo.",
-      "texto": "— GEMINI, mientras ocupa el farolillo rojo.",
+      "titulo": "Fuentes cercanas a GEMINI aseguran que hoy prefiere no responder preguntas.",
+      "texto": null,
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "🟡 RUMOR"
     }
   ]
 };
