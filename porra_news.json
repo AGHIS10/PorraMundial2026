@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-09T13:26:38Z",
+  "generado": "2026-07-09T13:35:09Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:4",
-      "tipo": "COMUNICADO",
+      "id": "CAMBIO_LIDER:frases3:0",
+      "tipo": "TITULAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:4",
+      "frase_id": "CAMBIO_LIDER:frases3:0",
       "jugador": "AGUSTIN",
-      "titulo": "La organización informa de que el liderato ha cambiado de propietario.",
-      "texto": "Las lágrimas corren por cuenta del anterior ocupante.",
+      "titulo": "AGUSTIN estrena liderato.",
+      "texto": "PEDRO descubre que el alquiler del trono vencía esta jornada.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "📰 TITULAR"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases2:1",
@@ -63,16 +63,16 @@
       "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases2:1",
-      "tipo": "DECLARACIONES",
+      "id": "FAVORITO_SIMULADOR:frases2:0",
+      "tipo": "COMUNICADO",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases2:1",
+      "frase_id": "FAVORITO_SIMULADOR:frases2:0",
       "jugador": "PEDRO",
-      "titulo": "Las simulaciones no juegan partidos.",
-      "texto": "— Todos los que no son PEDRO.",
+      "titulo": "El simulador señala a PEDRO.",
+      "texto": "La presión cambia oficialmente de domicilio.",
       "partido": null,
       "prioridad": 65,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
       "id": "PODIO_HUMANO:frases3:1",

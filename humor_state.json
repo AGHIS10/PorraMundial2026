@@ -222,7 +222,7 @@
     "CAMBIO_LIDER:frases2:2": 96,
     "CAMBIO_LIDER:frases2:3": 96,
     "CAMBIO_LIDER:frases2:4": 96,
-    "CAMBIO_LIDER:frases3:0": 93,
+    "CAMBIO_LIDER:frases3:0": 96,
     "CAMBIO_LIDER:frases3:1": 94,
     "BAJADA_2_3_POSICIONES:frases2:0": 94,
     "CAMBIO_LIDER:frases1:3": 94,
@@ -256,7 +256,8 @@
     "CAMBIO_LIDER:frases4:3": 96,
     "CAMBIO_LIDER:frases4:4": 96,
     "FAVORITO_SIMULADOR:frases3:1": 96,
-    "FAVORITO_SIMULADOR:frases2:1": 96
+    "FAVORITO_SIMULADOR:frases2:1": 96,
+    "FAVORITO_SIMULADOR:frases2:0": 96
   },
-  "actualizado": "2026-07-09T13:26:38Z"
+  "actualizado": "2026-07-09T13:35:09Z"
 }
