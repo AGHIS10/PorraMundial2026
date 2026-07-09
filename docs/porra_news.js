@@ -1,30 +1,30 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-08T23:00:04Z",
+  "generado": "2026-07-09T02:29:19Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:0",
-      "tipo": "ULTIMA_HORA",
+      "id": "CAMBIO_LIDER:frases4:3",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:0",
+      "frase_id": "CAMBIO_LIDER:frases4:3",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN toma el liderato.",
-      "texto": "PEDRO ha pedido cinco minutos para asimilar la tragedia.",
+      "titulo": "Lo importante es disfrutar.",
+      "texto": "— PEDRO, una frase que jamás había utilizado cuando iba primero.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases3:2",
-      "tipo": "INVESTIGACION",
+      "id": "SUBIDA_2_3_POSICIONES:frases3:1",
+      "tipo": "RUMOR",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases3:2",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases3:1",
       "jugador": "CRISTIAN",
-      "titulo": "La remontada de CRISTIAN obliga a recalcular las conversaciones pendientes.",
+      "titulo": "Dicen que CRISTIAN ya saluda por su nombre a los de la parte alta.",
       "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 80,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "🟡 RUMOR"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
