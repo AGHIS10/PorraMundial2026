@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-09T19:37:01Z",
+  "generado": "2026-07-09T21:18:40Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:3",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_LIDER:frases2:1",
+      "tipo": "INVESTIGACION",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:3",
+      "frase_id": "CAMBIO_LIDER:frases2:1",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN demuestra que en esta porra nadie conserva el trono demasiado tiempo.",
+      "titulo": "Los analistas confirman que el ego de PEDRO ha sufrido una caída mayor que la de la bolsa.",
       "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases2:1",
@@ -63,16 +63,16 @@
       "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases1:1",
-      "tipo": "EDITORIAL",
+      "id": "FAVORITO_SIMULADOR:frases1:0",
+      "tipo": "INVESTIGACION",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases1:1",
+      "frase_id": "FAVORITO_SIMULADOR:frases1:0",
       "jugador": "PEDRO",
-      "titulo": "PEDRO ya es favorito para el algoritmo.",
-      "texto": "Para el resto sigue siendo sospechoso.",
+      "titulo": "Las simulaciones colocan a PEDRO como favorito.",
+      "texto": "Ahora solo falta convencer a los partidos.",
       "partido": null,
       "prioridad": 65,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
       "id": "PODIO_HUMANO:frases3:1",
