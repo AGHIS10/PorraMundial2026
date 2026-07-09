@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-09T13:35:09Z",
+  "generado": "2026-07-09T14:46:09Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:0",
-      "tipo": "TITULAR",
+      "id": "CAMBIO_LIDER:frases1:4",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:0",
+      "frase_id": "CAMBIO_LIDER:frases1:4",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN estrena liderato.",
-      "texto": "PEDRO descubre que el alquiler del trono vencía esta jornada.",
+      "titulo": "PEDRO ha pasado de rey a comentarista en un solo partido.",
+      "texto": "El ego sigue buscando cobertura.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases2:1",
@@ -63,16 +63,16 @@
       "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases2:0",
-      "tipo": "COMUNICADO",
+      "id": "FAVORITO_SIMULADOR:frases4:0",
+      "tipo": "EDITORIAL",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases2:0",
+      "frase_id": "FAVORITO_SIMULADOR:frases4:0",
       "jugador": "PEDRO",
-      "titulo": "El simulador señala a PEDRO.",
-      "texto": "La presión cambia oficialmente de domicilio.",
+      "titulo": "Las simulaciones colocan a PEDRO como favorito para la porra.",
+      "texto": null,
       "partido": null,
       "prioridad": 65,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
       "id": "PODIO_HUMANO:frases3:1",
