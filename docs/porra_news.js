@@ -1,30 +1,30 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-09T10:49:51Z",
+  "generado": "2026-07-09T13:22:27Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:3",
-      "tipo": "EL_BAR",
+      "id": "CAMBIO_LIDER:frases2:2",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:3",
+      "frase_id": "CAMBIO_LIDER:frases2:2",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN ha ocupado el trono y PEDRO ya está repasando mentalmente todos los partidos que 'tenía clarísimos'.",
-      "texto": null,
+      "titulo": "No pasa nada, todavía queda Mundial.",
+      "texto": "— PEDRO, pronunciando la frase oficial de quien acaba de perder el liderato.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases1:0",
-      "tipo": "TITULAR",
+      "id": "SUBIDA_2_3_POSICIONES:frases2:1",
+      "tipo": "EXCLUSIVA",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:0",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases2:1",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN gana 2 posiciones y empieza a aparecer en todas las conversaciones incómodas.",
-      "texto": null,
+      "titulo": "CRISTIAN ha adelantado a varios rivales.",
+      "texto": "El silencio en el grupo dura exactamente hasta que envíe la primera captura.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 80,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
@@ -57,34 +57,34 @@ window.__PORRA_NEWS__ = {
       "frase_id": "CAMBIO_SIMULACIONES:frases3:0",
       "jugador": "SERGIO",
       "titulo": "Las simulaciones han recalculado tras Suiza 0-0 Colombia y SERGIO sube en el ranking de probabilidades.",
-      "texto": "El modelo le da ahora un 7.4%.",
+      "texto": "El modelo le da ahora un 7.2%.",
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 66,
       "etiqueta": "⭐ EXCLUSIVA"
+    },
+    {
+      "id": "FAVORITO_SIMULADOR:frases3:1",
+      "tipo": "ULTIMA_HORA",
+      "categoria": "FAVORITO_SIMULADOR",
+      "frase_id": "FAVORITO_SIMULADOR:frases3:1",
+      "jugador": "PEDRO",
+      "titulo": "PEDRO gusta mucho a los algoritmos.",
+      "texto": "Ahora falta convencer al balón.",
+      "partido": null,
+      "prioridad": 65,
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
       "id": "PODIO_HUMANO:frases4:1",
       "tipo": "EDITORIAL",
       "categoria": "PODIO_HUMANO",
       "frase_id": "PODIO_HUMANO:frases4:1",
-      "jugador": "PEDRO",
-      "titulo": "PEDRO persigue a AGUSTIN desde el podio.",
+      "jugador": "GABRIEL",
+      "titulo": "GABRIEL persigue a AGUSTIN desde el podio.",
       "texto": "Cerca... pero no lo bastante para presumir.",
       "partido": null,
       "prioridad": 53,
       "etiqueta": "📝 EDITORIAL"
-    },
-    {
-      "id": "PODIO_HUMANO:frases3:1",
-      "tipo": "INVESTIGACION",
-      "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases3:1",
-      "jugador": "GABRIEL",
-      "titulo": "Los expertos analizan si GABRIEL puede acercarse a AGUSTIN.",
-      "texto": "De momento, la distancia sigue siendo el tema.",
-      "partido": null,
-      "prioridad": 53,
-      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
       "id": "GEMINI_ULTIMO:frases3:0",
