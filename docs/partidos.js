@@ -867,8 +867,8 @@ window.__PARTIDOS__ = [
     "id": 97,
     "fecha": "2026-07-09",
     "hora": "22:00",
-    "local": "W89",
-    "visitante": "W90",
+    "local": "Francia",
+    "visitante": "Marruecos",
     "fase": "cuartos",
     "peso": 8
   },
@@ -876,8 +876,8 @@ window.__PARTIDOS__ = [
     "id": 98,
     "fecha": "2026-07-10",
     "hora": "21:00",
-    "local": "W93",
-    "visitante": "W94",
+    "local": "España",
+    "visitante": "Bélgica",
     "fase": "cuartos",
     "peso": 8
   },
@@ -885,8 +885,8 @@ window.__PARTIDOS__ = [
     "id": 99,
     "fecha": "2026-07-11",
     "hora": "23:00",
-    "local": "W91",
-    "visitante": "W92",
+    "local": "Noruega",
+    "visitante": "Inglaterra",
     "fase": "cuartos",
     "peso": 8
   },
@@ -894,8 +894,8 @@ window.__PARTIDOS__ = [
     "id": 100,
     "fecha": "2026-07-12",
     "hora": "03:00",
-    "local": "W95",
-    "visitante": "W96",
+    "local": "Argentina",
+    "visitante": "Suiza",
     "fase": "cuartos",
     "peso": 8
   },
