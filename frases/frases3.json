@@ -24,6 +24,16 @@
       "tipo": "EL_BAR",
       "nivel": "SALVAJE",
       "texto": "{ANTERIOR_LIDER} ha bajado del trono con la misma elegancia que un borracho bajando unas escaleras."
+    },
+    {
+      "tipo": "COMUNICADO",
+      "nivel": "SARCÁSTICO",
+      "texto": "Nuevo líder: {NUEVO_LIDER}. {ANTERIOR_LIDER} ha activado el modo 'lo importante es divertirse'."
+    },
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SUAVE",
+      "texto": "Tras el cambio de liderato, {ANTERIOR_LIDER} estudia si borrar las capturas del móvil cuenta como terapia."
     }
   ],
   "LIDER_RESISTE": [
@@ -41,6 +51,16 @@
       "tipo": "INVESTIGACION",
       "nivel": "SUAVE",
       "texto": "Los datos indican que {LIDER} sigue encontrando la puerta del primer puesto antes que nadie."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{LIDER} sigue primero. Los rivales ya no compiten: solo esperan un desastre ajeno con esperanza religiosa."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "El reinado de {LIDER} continúa. El resto estudia si la paciencia o el rencor les dará más puntos."
     }
   ],
   "SUBIDA_1_POSICION": [
@@ -63,6 +83,16 @@
       "tipo": "EL_BAR",
       "nivel": "SALVAJE",
       "texto": "{RIVAL} acaba de ser adelantado. Hoy el móvil vibra... pero mejor no leer los mensajes."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} supera a {RIVAL}. Una posición arriba, diez mensajes de más en el grupo."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SALVAJE",
+      "texto": "Dicen que {RIVAL} ha dejado de felicitar a {JUGADOR} por 'motivos personales y de clasificación'."
     }
   ],
   "SUBIDA_2_3_POSICIONES": [
@@ -80,6 +110,16 @@
       "tipo": "INVESTIGACION",
       "nivel": "SUAVE",
       "texto": "La remontada de {JUGADOR} obliga a recalcular las conversaciones pendientes."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} gana {POSICIONES_GANADAS} posiciones y ya hay quien le pide que explique la vida."
+    },
+    {
+      "tipo": "TITULAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} escala {POSICIONES_GANADAS} puestos. El grupo pasa de la burla al respeto incómodo en un solo partido."
     }
   ],
   "SUBIDA_4_MAS": [
@@ -109,6 +149,26 @@
       "tipo": "INVESTIGACION",
       "nivel": "SUAVE",
       "texto": "La caída es mínima. El orgullo afectado, bastante menos."
+    },
+    {
+      "tipo": "INVESTIGACION",
+      "nivel": "SARCÁSTICO",
+      "texto": "Tras ceder ante {RIVAL}, {JUGADOR} analiza si ignorar el grupo dos horas es estrategia o duelo."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} baja un puesto. Hoy le toca sonreír poco y refrescar mucho."
+    },
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} cede un puesto a {RIVAL}. Hoy la dignidad de {JUGADOR} ha salido antes que él del grupo."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{RIVAL} pasa a {JUGADOR} y el ambiente se enfría como nevera de hospital."
     }
   ],
   "BAJADA_2_3_POSICIONES": [
@@ -133,6 +193,16 @@
       "tipo": "EDITORIAL",
       "nivel": "SARCÁSTICO",
       "texto": "La clasificación ha decidido recordarle a {JUGADOR} que la gravedad sigue funcionando."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} cae en picado. Alguien ya le ha dicho que 'así se aprende', que es la peor frase del mundo."
+    },
+    {
+      "tipo": "COMUNICADO",
+      "nivel": "SUAVE",
+      "texto": "La caída de {JUGADOR} ha sido tan grande que el grupo ha pedido hablar de otra cosa cinco minutos."
     }
   ],
   "ENTRA_TOP3": [
@@ -145,6 +215,16 @@
       "tipo": "DECLARACIONES",
       "nivel": "SARCÁSTICO",
       "texto": "\"No miro el podio.\" — {JUGADOR}, justo después de hacer una captura."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} entra en el Top 3. El podio le abre la puerta, pero no le promete amigos."
+    },
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} pisa el podio. Los de abajo ya le miran con la mezcla exacta de odio y respeto."
     }
   ],
   "SALE_TOP3": [
@@ -186,6 +266,16 @@
       "tipo": "COMUNICADO",
       "nivel": "SARCÁSTICO",
       "texto": "Se recomienda no discutir de fútbol con {JUGADOR} hasta nuevo aviso."
+    },
+    {
+      "tipo": "COMUNICADO",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} suma {RACHA} partidos plenos seguidos. El grupo le concede un día para no corregir a nadie."
+    },
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} no falla un pleno desde hace {RACHA} partidos. Empieza a incomodar con elegancia."
     }
   ],
   "RACHA_FALLOS": [
@@ -198,6 +288,16 @@
       "tipo": "EDITORIAL",
       "nivel": "SALVAJE",
       "texto": "{JUGADOR} acumula {RACHA} fallos seguidos. La estadística ya empieza a pedir explicaciones."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} lleva {RACHA} fallos seguidos. Su grupo de WhatsApp ya no pregunta '¿cómo vas?' por salud mental común."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SARCÁSTICO",
+      "texto": "La racha de {JUGADOR} ({RACHA} fallos) obliga a replantear si el problema es el fútbol o la intuición."
     }
   ],
   "GPT_LIDER": [
@@ -222,6 +322,16 @@
       "tipo": "EL_BAR",
       "nivel": "SARCÁSTICO",
       "texto": "Por primera vez en semanas, los humanos pueden mirar a {IA} desde arriba."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{IA} en último lugar. Los humanos respiran, pero no tanto como para dejar de mirar la clasificación."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SUAVE",
+      "texto": "Hoy {IA} cierra la tabla. La humanidad recupera un poco de autoestima colectiva."
     }
   ],
   "GEMINI_LIDER": [
@@ -236,6 +346,16 @@
       "tipo": "DECLARACIONES",
       "nivel": "SARCÁSTICO",
       "texto": "\"Seguimos aprendiendo.\" — {IA}, mientras ocupa el farolillo rojo."
+    },
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SALVAJE",
+      "texto": "{IA} sigue último. La humanidad no celebra demasiado por miedo a que sea contagioso."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{IA} cierra la tabla. Los humanos respiran, pero sin hacer mucho ruido por si se ofende el algoritmo."
     }
   ],
   "EMPATE_LIDER": [
@@ -248,6 +368,11 @@
       "tipo": "EDITORIAL",
       "nivel": "SARCÁSTICO",
       "texto": "La clasificación reparte el liderato. Los egos siguen siendo individuales."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "Empate en el liderato. Dos primeros, cero ganas de compartir y muchas ganas de que el otro falle pronto."
     }
   ],
   "FAVORITO_SIMULADOR": [
@@ -272,6 +397,21 @@
       "tipo": "INVESTIGACION",
       "nivel": "SARCÁSTICO",
       "texto": "El algoritmo tiene preferencias y después de {PARTIDO}, {JUGADOR} {TENDENCIA} puestos en las proyecciones. No es magia: es matemática."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "Tras {PARTIDO}, {JUGADOR} {TENDENCIA} en las simulaciones. Ya mira el futuro con más calma que el presente."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "El modelo ha recalculado y {JUGADOR} {TENDENCIA}. A los rivales no les ha hecho ninguna gracia."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "Tras {PARTIDO}, {JUGADOR} {TENDENCIA} en las simulaciones. Los rivales ya hablan de él en susurros y malas palabras."
     }
   ],
   "FAVORITO_NO_LIDER": [
@@ -284,6 +424,21 @@
       "tipo": "EL_BAR",
       "nivel": "SARCÁSTICO",
       "texto": "Las simulaciones creen en {FAVORITO} más que algunos miembros de su propia familia."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{FAVORITO} no lidera, pero el simulador le sonríe. {LIDER} evita hablar de probabilidades como quien evita al dentista."
+    },
+    {
+      "tipo": "DECLARACIONES",
+      "nivel": "SUAVE",
+      "texto": "\"La clasificación manda.\" — {LIDER}, mientras {FAVORITO} acumula buenas vibras en las proyecciones."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{FAVORITO} no lidera, pero el simulador le sonríe. {LIDER} finge tranquilidad con la destreza de un mentiroso experto."
     }
   ],
   "MUNDIAL_ABIERTO": [
@@ -296,6 +451,16 @@
       "tipo": "EDITORIAL",
       "nivel": "SARCÁSTICO",
       "texto": "La emoción sigue intacta. También las posibilidades de hacer el ridículo."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "La porra sigue tan abierta que hasta el último puede soñar... y el primero puede sufrir."
+    },
+    {
+      "tipo": "TITULAR",
+      "nivel": "SUAVE",
+      "texto": "Nadie tiene esto cerrado. Eso alegra a muchos y asusta a los que van arriba."
     }
   ],
   "MUNDIAL_DECIDIDO": [
@@ -368,6 +533,26 @@
       "tipo": "INVESTIGACION",
       "nivel": "SARCÁSTICO",
       "texto": "Los expertos analizan si {JUGADOR} puede acercarse a {LIDER_HUMANO}. De momento, la distancia sigue siendo el tema."
+    },
+    {
+      "tipo": "ULTIMA_HORA",
+      "nivel": "SUAVE",
+      "texto": "{JUGADOR} se mantiene en el podio humano. {LIDER_HUMANO} sigue siendo la referencia que duele."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "Se comenta que {JUGADOR} mira a {LIDER_HUMANO} con admiración y con ganas de adelantarle."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} aguanta en el podio humano mirando a {LIDER_HUMANO} como quien mira la cima desde un precipicio."
+    },
+    {
+      "tipo": "EDITORIAL",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} sigue en el Top 3 humano. {LIDER_HUMANO} sigue siendo el problema principal de su semana."
     }
   ],
   "ZONA_MEDIA": [
@@ -380,6 +565,16 @@
       "tipo": "COMUNICADO",
       "nivel": "SARCÁSTICO",
       "texto": "{JUGADOR} confirma su presencia en la zona media de la tabla. Ni para presumir ni para preocuparse... aún."
+    },
+    {
+      "tipo": "EL_BAR",
+      "nivel": "SALVAJE",
+      "texto": "{JUGADOR} vive en la zona media: ni gloria ni ruina. El purgatorio con WiFi."
+    },
+    {
+      "tipo": "RUMOR",
+      "nivel": "SARCÁSTICO",
+      "texto": "{JUGADOR} sigue en el centro de la tabla. Ni para presumir ni para llorar en público."
     }
   ],
   "ZONA_BAJA": [

@@ -257,7 +257,23 @@
     "CAMBIO_LIDER:frases4:4": 96,
     "FAVORITO_SIMULADOR:frases3:1": 96,
     "FAVORITO_SIMULADOR:frases2:1": 96,
-    "FAVORITO_SIMULADOR:frases2:0": 96
+    "FAVORITO_SIMULADOR:frases2:0": 96,
+    "CAMBIO_LIDER:frases1:6": 97,
+    "ENTRA_TOP3:frases4:2": 97,
+    "SALE_TOP3:frases1:2": 97,
+    "SUBIDA_1_POSICION:frases4:5": 97,
+    "SUBIDA_1_POSICION:frases3:4": 97,
+    "FAVORITO_SIMULADOR:frases2:3": 97,
+    "GEMINI_ULTIMO:frases1:1": 97,
+    "ULTIMO_CLASIFICADO:frases2:3": 97,
+    "CAMBIO_LIDER:frases2:5": 97,
+    "ENTRA_TOP3:frases3:2": 97,
+    "SALE_TOP3:frases1:3": 97,
+    "SUBIDA_1_POSICION:frases3:5": 97,
+    "SUBIDA_1_POSICION:frases4:7": 97,
+    "FAVORITO_SIMULADOR:frases4:2": 97,
+    "GEMINI_ULTIMO:frases3:1": 97,
+    "ULTIMO_CLASIFICADO:frases2:4": 97
   },
-  "actualizado": "2026-07-09T22:19:20Z"
+  "actualizado": "2026-07-09T22:33:16Z"
 }
