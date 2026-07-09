@@ -38,7 +38,7 @@ const FASE_LABELS = {
 };
 
 /** Fase eliminatoria que muestra la pestaña «Próximos». Cambiar al avanzar el torneo. */
-const PROXIMOS_FASE = "octavos";
+const PROXIMOS_FASE = "cuartos";
 
 const FASE_BADGE_CLASS = {
   grupos: "fase-badge--grupos",
