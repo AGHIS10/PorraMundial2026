@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-09T17:51:06Z",
+  "generado": "2026-07-09T19:37:01Z",
   "partidos_jugados": 96,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:0",
-      "tipo": "EXCLUSIVA",
+      "id": "CAMBIO_LIDER:frases1:3",
+      "tipo": "EDITORIAL",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:0",
+      "frase_id": "CAMBIO_LIDER:frases1:3",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN ya ocupa el primer puesto.",
-      "texto": "PEDRO pregunta si se puede volver a la jornada anterior.",
+      "titulo": "AGUSTIN demuestra que en esta porra nadie conserva el trono demasiado tiempo.",
+      "texto": null,
       "partido": "Suiza 0-0 Colombia",
       "prioridad": 110,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases2:1",
@@ -63,40 +63,40 @@
       "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases3:0",
-      "tipo": "INVESTIGACION",
+      "id": "FAVORITO_SIMULADOR:frases1:1",
+      "tipo": "EDITORIAL",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases3:0",
+      "frase_id": "FAVORITO_SIMULADOR:frases1:1",
       "jugador": "PEDRO",
-      "titulo": "Las simulaciones señalan a PEDRO.",
-      "texto": "La presión acaba de cambiar de camiseta.",
+      "titulo": "PEDRO ya es favorito para el algoritmo.",
+      "texto": "Para el resto sigue siendo sospechoso.",
       "partido": null,
       "prioridad": 65,
-      "etiqueta": "🕵 INVESTIGACIÓN"
-    },
-    {
-      "id": "PODIO_HUMANO:frases4:1",
-      "tipo": "EDITORIAL",
-      "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases4:1",
-      "jugador": "GABRIEL",
-      "titulo": "GABRIEL persigue a AGUSTIN desde el podio.",
-      "texto": "Cerca... pero no lo bastante para presumir.",
-      "partido": null,
-      "prioridad": 53,
       "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "GEMINI_ULTIMO:frases3:0",
-      "tipo": "DECLARACIONES",
+      "id": "PODIO_HUMANO:frases3:1",
+      "tipo": "INVESTIGACION",
+      "categoria": "PODIO_HUMANO",
+      "frase_id": "PODIO_HUMANO:frases3:1",
+      "jugador": "GABRIEL",
+      "titulo": "Los expertos analizan si GABRIEL puede acercarse a AGUSTIN.",
+      "texto": "De momento, la distancia sigue siendo el tema.",
+      "partido": null,
+      "prioridad": 53,
+      "etiqueta": "🕵 INVESTIGACIÓN"
+    },
+    {
+      "id": "GEMINI_ULTIMO:frases1:0",
+      "tipo": "RUMOR",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases3:0",
+      "frase_id": "GEMINI_ULTIMO:frases1:0",
       "jugador": "GEMINI",
-      "titulo": "Seguimos aprendiendo.",
-      "texto": "— GEMINI, mientras ocupa el farolillo rojo.",
+      "titulo": "Fuentes cercanas a GEMINI aseguran que hoy prefiere no responder preguntas.",
+      "texto": null,
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "🟡 RUMOR"
     }
   ]
 }
