@@ -1,102 +1,102 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-10T21:19:42Z",
+  "generado": "2026-07-10T22:56:03Z",
   "partidos_jugados": 98,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:0",
-      "tipo": "TITULAR",
+      "id": "CAMBIO_LIDER:frases1:3",
+      "tipo": "EDITORIAL",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:0",
+      "frase_id": "CAMBIO_LIDER:frases1:3",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN estrena liderato.",
-      "texto": "AGUSTIN descubre que el alquiler del trono vencía esta jornada.",
-      "partido": "España 2-1 Bélgica",
-      "prioridad": 110,
-      "etiqueta": "📰 TITULAR"
-    },
-    {
-      "id": "RACHA_ACIERTOS:frases3:2",
-      "tipo": "COMUNICADO",
-      "categoria": "RACHA_ACIERTOS",
-      "frase_id": "RACHA_ACIERTOS:frases3:2",
-      "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN suma 5 partidos plenos seguidos.",
-      "texto": "El grupo le concede un día para no corregir a nadie.",
-      "partido": "España 2-1 Bélgica",
-      "prioridad": 67,
-      "etiqueta": "📢 COMUNICADO"
-    },
-    {
-      "id": "RACHA_ACIERTOS:frases1:3",
-      "tipo": "EL_BAR",
-      "categoria": "RACHA_ACIERTOS",
-      "frase_id": "RACHA_ACIERTOS:frases1:3",
-      "jugador": "JORGE",
-      "titulo": "JORGE encadena 2 plenos y el resto empieza a sospechar que estudia por las noches.",
+      "titulo": "AGUSTIN demuestra que en esta porra nadie conserva el trono demasiado tiempo.",
       "texto": null,
       "partido": "España 2-1 Bélgica",
-      "prioridad": 64,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "prioridad": 110,
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "RACHA_ACIERTOS:frases3:3",
-      "tipo": "TITULAR",
+      "id": "RACHA_ACIERTOS:frases2:3",
+      "tipo": "RUMOR",
       "categoria": "RACHA_ACIERTOS",
-      "frase_id": "RACHA_ACIERTOS:frases3:3",
-      "jugador": "MARIO",
-      "titulo": "MARIO no falla un pleno desde hace 2 partidos.",
-      "texto": "Empieza a incomodar con elegancia.",
+      "frase_id": "RACHA_ACIERTOS:frases2:3",
+      "jugador": "CRISTIAN",
+      "titulo": "CRISTIAN encadena 5 plenos.",
+      "texto": "Los rivales ya no le tienen envidia: le tienen miedo.",
+      "partido": "España 2-1 Bélgica",
+      "prioridad": 67,
+      "etiqueta": "🟡 RUMOR"
+    },
+    {
+      "id": "RACHA_ACIERTOS:frases1:0",
+      "tipo": "ULTIMA_HORA",
+      "categoria": "RACHA_ACIERTOS",
+      "frase_id": "RACHA_ACIERTOS:frases1:0",
+      "jugador": "JORGE",
+      "titulo": "JORGE encadena 2 partidos plenos seguidos.",
+      "texto": "Empieza a dar bastante rabia.",
       "partido": "España 2-1 Bélgica",
       "prioridad": 64,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases4:2",
-      "tipo": "EL_BAR",
+      "id": "RACHA_ACIERTOS:frases3:0",
+      "tipo": "EXCLUSIVA",
+      "categoria": "RACHA_ACIERTOS",
+      "frase_id": "RACHA_ACIERTOS:frases3:0",
+      "jugador": "MARIO",
+      "titulo": "MARIO enlaza 2 partidos plenos seguidos.",
+      "texto": "El resto empieza a revisar sus propios pronósticos.",
+      "partido": "España 2-1 Bélgica",
+      "prioridad": 64,
+      "etiqueta": "⭐ EXCLUSIVA"
+    },
+    {
+      "id": "FAVORITO_SIMULADOR:frases4:0",
+      "tipo": "EDITORIAL",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases4:2",
+      "frase_id": "FAVORITO_SIMULADOR:frases4:0",
       "jugador": "PEDRO",
-      "titulo": "El simulador señala a PEDRO.",
-      "texto": "Los demás fingen desinterés con la elegancia de quien ya ha perdido antes.",
+      "titulo": "Las simulaciones colocan a PEDRO como favorito para la porra.",
+      "texto": null,
       "partido": null,
       "prioridad": 65,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "GEMINI_ULTIMO:frases4:0",
-      "tipo": "EL_BAR",
+      "id": "GEMINI_ULTIMO:frases2:0",
+      "tipo": "INVESTIGACION",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases4:0",
+      "frase_id": "GEMINI_ULTIMO:frases2:0",
       "jugador": "GEMINI",
-      "titulo": "GEMINI va última.",
-      "texto": "Por fin alguien demuestra que la inteligencia artificial también puede tener lunes.",
+      "titulo": "Los ingenieros analizan si GEMINI está participando o simplemente improvisando.",
+      "texto": null,
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases4:2",
-      "tipo": "EL_BAR",
+      "id": "ULTIMO_CLASIFICADO:frases2:0",
+      "tipo": "INVESTIGACION",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases4:2",
+      "frase_id": "ULTIMO_CLASIFICADO:frases2:0",
       "jugador": "SERGIO",
-      "titulo": "SERGIO ha encontrado una forma original de seguir el Mundial: mirando siempre hacia arriba.",
+      "titulo": "El equipo científico confirma que SERGIO sigue explorando regiones desconocidas de la clasificación.",
       "texto": null,
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "ZONA_BAJA:frases1:4",
-      "tipo": "EDITORIAL",
+      "id": "ZONA_BAJA:frases1:5",
+      "tipo": "ULTIMA_HORA",
       "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases1:4",
+      "frase_id": "ZONA_BAJA:frases1:5",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL se instala en la zona baja.",
-      "texto": "Desde ahí se ve bien cómo los demás celebran y cómo él finge calma.",
+      "titulo": "GABRIEL vive en el sótano de la clasificación.",
+      "texto": "Dice que 'todavía hay Mundial' con la voz de quien ya no se lo cree.",
       "partido": null,
       "prioridad": 33,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     }
   ]
 };
