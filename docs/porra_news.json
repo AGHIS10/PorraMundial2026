@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-11T16:50:56Z",
+  "generado": "2026-07-11T18:54:13Z",
   "partidos_jugados": 98,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases4:0",
-      "tipo": "TITULAR",
+      "id": "CAMBIO_LIDER:frases1:1",
+      "tipo": "RUMOR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases4:0",
+      "frase_id": "CAMBIO_LIDER:frases1:1",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN se coloca primero.",
-      "texto": "El trono vuelve a cambiar de contraseña.",
+      "titulo": "Fuentes cercanas a AGUSTIN aseguran que la clasificación era bastante más bonita ayer.",
+      "texto": null,
       "partido": "España 2-1 Bélgica",
       "prioridad": 110,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🟡 RUMOR"
     },
     {
       "id": "RACHA_ACIERTOS:frases4:1",
@@ -51,16 +51,16 @@
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases1:1",
-      "tipo": "EDITORIAL",
+      "id": "FAVORITO_SIMULADOR:frases1:0",
+      "tipo": "INVESTIGACION",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases1:1",
+      "frase_id": "FAVORITO_SIMULADOR:frases1:0",
       "jugador": "PEDRO",
-      "titulo": "PEDRO ya es favorito para el algoritmo.",
-      "texto": "Para el resto sigue siendo sospechoso.",
+      "titulo": "Las simulaciones colocan a PEDRO como favorito.",
+      "texto": "Ahora solo falta convencer a los partidos.",
       "partido": null,
       "prioridad": 65,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
       "id": "GEMINI_ULTIMO:frases3:1",
@@ -75,28 +75,28 @@
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases4:0",
-      "tipo": "TITULAR",
+      "id": "ULTIMO_CLASIFICADO:frases4:3",
+      "tipo": "EL_BAR",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases4:0",
+      "frase_id": "ULTIMO_CLASIFICADO:frases4:3",
       "jugador": "SERGIO",
-      "titulo": "SERGIO sigue ocupando la última plaza.",
-      "texto": "La perseverancia también existe por abajo.",
+      "titulo": "SERGIO sigue último.",
+      "texto": "La esperanza matemática vive; la esperanza emocional está en UCI.",
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "ZONA_BAJA:frases2:1",
-      "tipo": "DECLARACIONES",
+      "id": "ZONA_BAJA:frases3:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases2:1",
+      "frase_id": "ZONA_BAJA:frases3:0",
       "jugador": "GABRIEL",
-      "titulo": "Todavía tengo opciones matemáticas.",
-      "texto": "— GABRIEL, desde la zona baja de la clasificación.",
+      "titulo": "GABRIEL ocupa la parte baja de la clasificación.",
+      "texto": "Remontada posible, pero el camino es largo.",
       "partido": null,
       "prioridad": 33,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "⭐ EXCLUSIVA"
     }
   ]
 }
