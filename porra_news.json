@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-11T09:22:47Z",
+  "generado": "2026-07-11T10:59:05Z",
   "partidos_jugados": 98,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:1",
-      "tipo": "INVESTIGACION",
+      "id": "CAMBIO_LIDER:frases3:2",
+      "tipo": "RUMOR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:1",
+      "frase_id": "CAMBIO_LIDER:frases3:2",
       "jugador": "AGUSTIN",
-      "titulo": "Los analistas confirman que el ego de AGUSTIN ha sufrido una caída mayor que la de la bolsa.",
+      "titulo": "El entorno de AGUSTIN asegura que llevaba días practicando cómo responder con falsa humildad.",
       "texto": null,
       "partido": "España 2-1 Bélgica",
       "prioridad": 110,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "🟡 RUMOR"
     },
     {
       "id": "RACHA_ACIERTOS:frases4:1",
@@ -51,52 +51,52 @@
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases3:1",
-      "tipo": "ULTIMA_HORA",
+      "id": "FAVORITO_SIMULADOR:frases2:1",
+      "tipo": "DECLARACIONES",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases3:1",
+      "frase_id": "FAVORITO_SIMULADOR:frases2:1",
       "jugador": "PEDRO",
-      "titulo": "PEDRO gusta mucho a los algoritmos.",
-      "texto": "Ahora falta convencer al balón.",
+      "titulo": "Las simulaciones no juegan partidos.",
+      "texto": "— Todos los que no son PEDRO.",
       "partido": null,
       "prioridad": 65,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "GEMINI_ULTIMO:frases1:1",
-      "tipo": "EL_BAR",
+      "id": "GEMINI_ULTIMO:frases1:0",
+      "tipo": "RUMOR",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases1:1",
+      "frase_id": "GEMINI_ULTIMO:frases1:0",
       "jugador": "GEMINI",
-      "titulo": "GEMINI sigue último.",
-      "texto": "Los humanos le agradecen el esfuerzo, pero no demasiado.",
+      "titulo": "Fuentes cercanas a GEMINI aseguran que hoy prefiere no responder preguntas.",
+      "texto": null,
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🟡 RUMOR"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases2:1",
-      "tipo": "EL_BAR",
+      "id": "ULTIMO_CLASIFICADO:frases1:0",
+      "tipo": "EDITORIAL",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases2:1",
+      "frase_id": "ULTIMO_CLASIFICADO:frases1:0",
       "jugador": "SERGIO",
-      "titulo": "SERGIO no va último.",
-      "texto": "Está haciendo una auditoría completa de la parte baja.",
+      "titulo": "SERGIO sigue cerrando la clasificación.",
+      "texto": "Al menos ya conoce perfectamente el camino.",
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "ZONA_BAJA:frases1:2",
-      "tipo": "RUMOR",
+      "id": "ZONA_BAJA:frases1:0",
+      "tipo": "EDITORIAL",
       "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases1:2",
+      "frase_id": "ZONA_BAJA:frases1:0",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL sigue en la zona baja.",
-      "texto": "Dice que 'matemáticamente puede remontar' con la fe de quien ya ha mirado el calendario.",
+      "titulo": "GABRIEL mira la clasificación desde la parte baja.",
+      "texto": "El podio existe, pero hay que subir muchos escalones.",
       "partido": null,
       "prioridad": 33,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "📝 EDITORIAL"
     }
   ]
 }
