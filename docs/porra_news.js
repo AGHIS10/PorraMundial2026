@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-11T18:54:13Z",
+  "generado": "2026-07-11T20:41:37Z",
   "partidos_jugados": 98,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:1",
-      "tipo": "RUMOR",
+      "id": "CAMBIO_LIDER:frases1:2",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:1",
+      "frase_id": "CAMBIO_LIDER:frases1:2",
       "jugador": "AGUSTIN",
-      "titulo": "Fuentes cercanas a AGUSTIN aseguran que la clasificación era bastante más bonita ayer.",
-      "texto": null,
+      "titulo": "No miro la clasificación.",
+      "texto": "— AGUSTIN, después de mirarla exactamente 27 veces.",
       "partido": "España 2-1 Bélgica",
       "prioridad": 110,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
       "id": "RACHA_ACIERTOS:frases4:1",
@@ -51,13 +51,13 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases1:0",
+      "id": "FAVORITO_SIMULADOR:frases3:0",
       "tipo": "INVESTIGACION",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases1:0",
+      "frase_id": "FAVORITO_SIMULADOR:frases3:0",
       "jugador": "PEDRO",
-      "titulo": "Las simulaciones colocan a PEDRO como favorito.",
-      "texto": "Ahora solo falta convencer a los partidos.",
+      "titulo": "Las simulaciones señalan a PEDRO.",
+      "texto": "La presión acaba de cambiar de camiseta.",
       "partido": null,
       "prioridad": 65,
       "etiqueta": "🕵 INVESTIGACIÓN"
@@ -75,28 +75,28 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases4:3",
-      "tipo": "EL_BAR",
+      "id": "ULTIMO_CLASIFICADO:frases2:4",
+      "tipo": "DECLARACIONES",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases4:3",
+      "frase_id": "ULTIMO_CLASIFICADO:frases2:4",
       "jugador": "SERGIO",
-      "titulo": "SERGIO sigue último.",
-      "texto": "La esperanza matemática vive; la esperanza emocional está en UCI.",
+      "titulo": "La temporada es larga.",
+      "texto": "— SERGIO, frase que solo suena creíble cuando no vas último.",
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "ZONA_BAJA:frases3:0",
-      "tipo": "EXCLUSIVA",
+      "id": "ZONA_BAJA:frases2:0",
+      "tipo": "EL_BAR",
       "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases3:0",
+      "frase_id": "ZONA_BAJA:frases2:0",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL ocupa la parte baja de la clasificación.",
-      "texto": "Remontada posible, pero el camino es largo.",
+      "titulo": "GABRIEL se ha instalado en la parte baja de la tabla con una comodidad que empieza a dar que pensar.",
+      "texto": null,
       "partido": null,
       "prioridad": 33,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "🍺 DESDE EL BAR"
     }
   ]
 };
