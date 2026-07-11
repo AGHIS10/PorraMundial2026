@@ -1,42 +1,42 @@
 {
-  "generado": "2026-07-11T20:41:37Z",
-  "partidos_jugados": 98,
+  "generado": "2026-07-11T22:41:37Z",
+  "partidos_jugados": 97,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:2",
-      "tipo": "DECLARACIONES",
-      "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:2",
-      "jugador": "AGUSTIN",
-      "titulo": "No miro la clasificación.",
-      "texto": "— AGUSTIN, después de mirarla exactamente 27 veces.",
-      "partido": "España 2-1 Bélgica",
-      "prioridad": 110,
-      "etiqueta": "🎙️ DECLARACIONES"
-    },
-    {
-      "id": "RACHA_ACIERTOS:frases4:1",
-      "tipo": "COMUNICADO",
+      "id": "RACHA_ACIERTOS:frases1:3",
+      "tipo": "EL_BAR",
       "categoria": "RACHA_ACIERTOS",
-      "frase_id": "RACHA_ACIERTOS:frases4:1",
+      "frase_id": "RACHA_ACIERTOS:frases1:3",
       "jugador": "CRISTIAN",
-      "titulo": "La organización confirma que acertar tanto también empieza a caer un poco mal.",
+      "titulo": "CRISTIAN encadena 5 plenos y el resto empieza a sospechar que estudia por las noches.",
       "texto": null,
       "partido": "España 2-1 Bélgica",
       "prioridad": 67,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "RACHA_ACIERTOS:frases2:0",
-      "tipo": "EDITORIAL",
+      "id": "RACHA_ACIERTOS:frases4:2",
+      "tipo": "ULTIMA_HORA",
       "categoria": "RACHA_ACIERTOS",
-      "frase_id": "RACHA_ACIERTOS:frases2:0",
+      "frase_id": "RACHA_ACIERTOS:frases4:2",
+      "jugador": "AGUSTIN",
+      "titulo": "AGUSTIN suma 4 partidos plenos seguidos.",
+      "texto": "Los rivales empiezan a pensar en boicot emocional.",
+      "partido": "España 2-1 Bélgica",
+      "prioridad": 66,
+      "etiqueta": "🔴 ÚLTIMA HORA"
+    },
+    {
+      "id": "RACHA_ACIERTOS:frases2:1",
+      "tipo": "DECLARACIONES",
+      "categoria": "RACHA_ACIERTOS",
+      "frase_id": "RACHA_ACIERTOS:frases2:1",
       "jugador": "JORGE",
-      "titulo": "JORGE enlaza 2 partidos plenos seguidos.",
-      "texto": "Ya empieza a resultar bastante incómodo.",
+      "titulo": "No estoy teniendo suerte.",
+      "texto": "— JORGE, mientras sigue acertando absolutamente todo.",
       "partido": "España 2-1 Bélgica",
       "prioridad": 64,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
       "id": "RACHA_ACIERTOS:frases1:0",
@@ -51,52 +51,40 @@
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases3:0",
-      "tipo": "INVESTIGACION",
-      "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases3:0",
-      "jugador": "PEDRO",
-      "titulo": "Las simulaciones señalan a PEDRO.",
-      "texto": "La presión acaba de cambiar de camiseta.",
-      "partido": null,
-      "prioridad": 65,
-      "etiqueta": "🕵 INVESTIGACIÓN"
-    },
-    {
-      "id": "GEMINI_ULTIMO:frases3:1",
+      "id": "LIDER_HUMANO:frases4:6",
       "tipo": "ULTIMA_HORA",
-      "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases3:1",
-      "jugador": "GEMINI",
-      "titulo": "GEMINI sigue último.",
-      "texto": "La humanidad no celebra demasiado por miedo a que sea contagioso.",
+      "categoria": "LIDER_HUMANO",
+      "frase_id": "LIDER_HUMANO:frases4:6",
+      "jugador": "PEDRO",
+      "titulo": "PEDRO lidera la porra humana.",
+      "texto": "El resto ya lo mira como quien mira a su verdugo favorito.",
       "partido": null,
-      "prioridad": 48,
+      "prioridad": 67,
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases2:4",
-      "tipo": "DECLARACIONES",
-      "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases2:4",
-      "jugador": "SERGIO",
-      "titulo": "La temporada es larga.",
-      "texto": "— SERGIO, frase que solo suena creíble cuando no vas último.",
-      "partido": null,
-      "prioridad": 45,
-      "etiqueta": "🎙️ DECLARACIONES"
-    },
-    {
-      "id": "ZONA_BAJA:frases2:0",
-      "tipo": "EL_BAR",
-      "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases2:0",
+      "id": "PODIO_HUMANO:frases3:3",
+      "tipo": "RUMOR",
+      "categoria": "PODIO_HUMANO",
+      "frase_id": "PODIO_HUMANO:frases3:3",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL se ha instalado en la parte baja de la tabla con una comodidad que empieza a dar que pensar.",
+      "titulo": "Se comenta que GABRIEL mira a PEDRO con admiración y con ganas de adelantarle.",
       "texto": null,
       "partido": null,
-      "prioridad": 33,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "prioridad": 53,
+      "etiqueta": "🟡 RUMOR"
+    },
+    {
+      "id": "ULTIMO_CLASIFICADO:frases2:3",
+      "tipo": "RUMOR",
+      "categoria": "ULTIMO_CLASIFICADO",
+      "frase_id": "ULTIMO_CLASIFICADO:frases2:3",
+      "jugador": "SERGIO",
+      "titulo": "SERGIO sigue cerrando la tabla.",
+      "texto": "Insiste en que 'todavía hay Mundial', con optimismo y desesperación mezclados.",
+      "partido": null,
+      "prioridad": 45,
+      "etiqueta": "🟡 RUMOR"
     }
   ]
 }
