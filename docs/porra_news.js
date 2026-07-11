@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-11T13:07:07Z",
+  "generado": "2026-07-11T14:47:52Z",
   "partidos_jugados": 98,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:3",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_LIDER:frases3:4",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:3",
+      "frase_id": "CAMBIO_LIDER:frases3:4",
       "jugador": "AGUSTIN",
-      "titulo": "Cambia el líder, pero no la tradición: el primero tarda exactamente cinco minutos en ponerse insoportable.",
+      "titulo": "AGUSTIN ha bajado del trono con la misma elegancia que un borracho bajando unas escaleras.",
       "texto": null,
       "partido": "España 2-1 Bélgica",
       "prioridad": 110,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "RACHA_ACIERTOS:frases4:1",
@@ -51,52 +51,52 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "FAVORITO_SIMULADOR:frases2:3",
-      "tipo": "RUMOR",
+      "id": "FAVORITO_SIMULADOR:frases2:0",
+      "tipo": "COMUNICADO",
       "categoria": "FAVORITO_SIMULADOR",
-      "frase_id": "FAVORITO_SIMULADOR:frases2:3",
+      "frase_id": "FAVORITO_SIMULADOR:frases2:0",
       "jugador": "PEDRO",
-      "titulo": "Las proyecciones señalan a PEDRO.",
-      "texto": "El grupo ya empieza a tratarle con ese respeto incómodo.",
+      "titulo": "El simulador señala a PEDRO.",
+      "texto": "La presión cambia oficialmente de domicilio.",
       "partido": null,
       "prioridad": 65,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "GEMINI_ULTIMO:frases3:1",
-      "tipo": "ULTIMA_HORA",
+      "id": "GEMINI_ULTIMO:frases3:0",
+      "tipo": "DECLARACIONES",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases3:1",
+      "frase_id": "GEMINI_ULTIMO:frases3:0",
       "jugador": "GEMINI",
-      "titulo": "GEMINI sigue último.",
-      "texto": "La humanidad no celebra demasiado por miedo a que sea contagioso.",
+      "titulo": "Seguimos aprendiendo.",
+      "texto": "— GEMINI, mientras ocupa el farolillo rojo.",
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases3:1",
-      "tipo": "INVESTIGACION",
+      "id": "ULTIMO_CLASIFICADO:frases4:4",
+      "tipo": "EDITORIAL",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases3:1",
+      "frase_id": "ULTIMO_CLASIFICADO:frases4:4",
       "jugador": "SERGIO",
-      "titulo": "Los analistas destacan que SERGIO conoce la última posición mejor que nadie.",
+      "titulo": "SERGIO cierra la clasificación con la perseverancia de quien ya sabe cómo termina la película.",
       "texto": null,
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "ZONA_BAJA:frases4:0",
-      "tipo": "EDITORIAL",
+      "id": "ZONA_BAJA:frases4:1",
+      "tipo": "EL_BAR",
       "categoria": "ZONA_BAJA",
-      "frase_id": "ZONA_BAJA:frases4:0",
+      "frase_id": "ZONA_BAJA:frases4:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL ocupa la zona baja de la tabla.",
-      "texto": "No todo está perdido, pero la remontada requiere urgencia.",
+      "titulo": "Desde el fondo del bar, alguien apunta que GABRIEL lleva demasiadas jornadas en la parte baja de la clasificación.",
+      "texto": "El tiempo pasa.",
       "partido": null,
       "prioridad": 33,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🍺 DESDE EL BAR"
     }
   ]
 };
