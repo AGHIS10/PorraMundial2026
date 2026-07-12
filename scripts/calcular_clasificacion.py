@@ -257,16 +257,29 @@ def ordenar_clasificacion(
 def asignar_posiciones(
     entradas_ordenadas: list[EntradaClasificacion],
 ) -> list[FilaClasificacion]:
-    """Enumera posiciones de forma secuencial."""
-    return [
-        FilaClasificacion(
-            posicion=indice,
-            nombre=entrada.nombre,
-            aciertos=entrada.aciertos,
-            puntos=entrada.puntos,
+    """Enumera posiciones; comparte número si empatan en puntos y aciertos."""
+    filas: list[FilaClasificacion] = []
+    for indice, entrada in enumerate(entradas_ordenadas):
+        if indice == 0:
+            posicion = 1
+        else:
+            anterior = entradas_ordenadas[indice - 1]
+            if (
+                entrada.puntos == anterior.puntos
+                and entrada.aciertos == anterior.aciertos
+            ):
+                posicion = filas[-1].posicion
+            else:
+                posicion = indice + 1
+        filas.append(
+            FilaClasificacion(
+                posicion=posicion,
+                nombre=entrada.nombre,
+                aciertos=entrada.aciertos,
+                puntos=entrada.puntos,
+            )
         )
-        for indice, entrada in enumerate(entradas_ordenadas, start=1)
-    ]
+    return filas
 
 
 def filas_a_dict(filas: list[FilaClasificacion]) -> list[dict[str, Any]]:

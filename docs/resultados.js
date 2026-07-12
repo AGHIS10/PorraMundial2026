@@ -147,7 +147,10 @@ window.__RESULTADOS__ = [
     "resultado": "2",
     "clasifica": "2"
   },
-  null,
+  {
+    "resultado": "2",
+    "clasifica": "2"
+  },
   {
     "resultado": "2",
     "clasifica": "2"
@@ -176,7 +179,10 @@ window.__RESULTADOS__ = [
     "resultado": "X",
     "clasifica": "2"
   },
-  null,
+  {
+    "resultado": "X",
+    "clasifica": "1"
+  },
   null,
   null,
   null,

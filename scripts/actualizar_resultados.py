@@ -386,7 +386,14 @@ def fusionar_partido_api(
 
 def partido_finalizado(partido_api: dict[str, Any]) -> bool:
     """Indica si la API considera finalizado el partido."""
-    return partido_api.get("status") in ESTADOS_FINALIZADOS
+    if partido_api.get("status") in ESTADOS_FINALIZADOS:
+        return True
+    # La API a veces devuelve utcDate u otro valor en status aunque el partido
+    # ya tenga marcador final y ganador (p. ej. México–Inglaterra, octavos 2026).
+    score = partido_api.get("score") or {}
+    if score.get("winner") in {"HOME_TEAM", "AWAY_TEAM", "DRAW"}:
+        return extraer_marcador_desde_nodo(score, "fullTime") is not None
+    return False
 
 
 def resultado_desde_api(partido_api: dict[str, Any]) -> str | None:

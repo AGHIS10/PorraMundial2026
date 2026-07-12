@@ -29,6 +29,8 @@ def _validar_resultado(valor: Any) -> str | None:
     if valor is None:
         return None
     texto = str(valor).strip().upper()
+    if texto.endswith(".0") and texto[:-2] in RESULTADOS_VALIDOS:
+        texto = texto[:-2]
     if texto not in RESULTADOS_VALIDOS:
         raise ValueError(f"Resultado inválido: {valor!r} (esperado 1, X o 2).")
     return texto
