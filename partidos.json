@@ -903,8 +903,8 @@
     "id": 101,
     "fecha": "2026-07-14",
     "hora": "21:00",
-    "local": "W97",
-    "visitante": "W98",
+    "local": "Francia",
+    "visitante": "España",
     "fase": "semifinales",
     "peso": 16
   },
@@ -912,8 +912,8 @@
     "id": 102,
     "fecha": "2026-07-15",
     "hora": "21:00",
-    "local": "W99",
-    "visitante": "W100",
+    "local": "Inglaterra",
+    "visitante": "Argentina",
     "fase": "semifinales",
     "peso": 16
   },
