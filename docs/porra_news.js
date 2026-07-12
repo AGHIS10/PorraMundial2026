@@ -1,30 +1,30 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-12T20:38:42Z",
+  "generado": "2026-07-12T22:41:34Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:6",
-      "tipo": "EL_BAR",
+      "id": "CAMBIO_LIDER:frases2:2",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:6",
+      "frase_id": "CAMBIO_LIDER:frases2:2",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN ocupa el trono y AGUSTIN ya está repasando mentalmente quién le traicionó en el último partido.",
-      "texto": null,
+      "titulo": "No pasa nada, todavía queda Mundial.",
+      "texto": "— AGUSTIN, pronunciando la frase oficial de quien acaba de perder el liderato.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases3:0",
-      "tipo": "TITULAR",
+      "id": "SUBIDA_2_3_POSICIONES:frases3:1",
+      "tipo": "RUMOR",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases3:0",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases3:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL escala 3 posiciones.",
-      "texto": "Empieza a colarse en las quinielas de los favoritos.",
+      "titulo": "Dicen que GABRIEL ya saluda por su nombre a los de la parte alta.",
+      "texto": null,
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 81,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🟡 RUMOR"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
@@ -63,40 +63,40 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "PODIO_HUMANO:frases2:1",
-      "tipo": "EL_BAR",
+      "id": "PODIO_HUMANO:frases3:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases2:1",
+      "frase_id": "PODIO_HUMANO:frases3:0",
       "jugador": "MARIO",
-      "titulo": "MARIO aguanta en el podio humano.",
-      "texto": "AGUSTIN sigue siendo el que marca el objetivo.",
+      "titulo": "MARIO permanece en el podio humano.",
+      "texto": "AGUSTIN continúa marcando el listón.",
       "partido": null,
       "prioridad": 53,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "GEMINI_ULTIMO:frases4:0",
-      "tipo": "EL_BAR",
+      "id": "GEMINI_ULTIMO:frases2:0",
+      "tipo": "INVESTIGACION",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases4:0",
+      "frase_id": "GEMINI_ULTIMO:frases2:0",
       "jugador": "GEMINI",
-      "titulo": "GEMINI va última.",
-      "texto": "Por fin alguien demuestra que la inteligencia artificial también puede tener lunes.",
+      "titulo": "Los ingenieros analizan si GEMINI está participando o simplemente improvisando.",
+      "texto": null,
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases2:1",
-      "tipo": "EL_BAR",
+      "id": "ULTIMO_CLASIFICADO:frases2:4",
+      "tipo": "DECLARACIONES",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases2:1",
+      "frase_id": "ULTIMO_CLASIFICADO:frases2:4",
       "jugador": "SERGIO",
-      "titulo": "SERGIO no va último.",
-      "texto": "Está haciendo una auditoría completa de la parte baja.",
+      "titulo": "La temporada es larga.",
+      "texto": "— SERGIO, frase que solo suena creíble cuando no vas último.",
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🎙️ DECLARACIONES"
     }
   ]
 };
