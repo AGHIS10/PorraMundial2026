@@ -1,15 +1,15 @@
 {
-  "partidos_jugados": 97,
+  "partidos_jugados": 98,
   "posiciones": {
     "PEDRO": 1,
-    "AGUSTIN": 2,
-    "GABRIEL": 3,
-    "JORGE": 4,
-    "MARIO": 5,
-    "GPT": 6,
+    "MARIO": 2,
+    "GPT": 3,
+    "AGUSTIN": 4,
+    "GABRIEL": 5,
+    "JORGE": 6,
     "CRISTIAN": 7,
-    "GEMINI": 8,
-    "SERGIO": 9
+    "SERGIO": 8,
+    "GEMINI": 9
   },
   "lider": "PEDRO",
   "frases_usadas": {
@@ -170,7 +170,7 @@
     "GEMINI_ULTIMO:frases3:0": 98,
     "GEMINI_ULTIMO:frases2:0": 98,
     "SUBIDA_1_POSICION:frases4:0": 97,
-    "SUBIDA_1_POSICION:frases1:0": 95,
+    "SUBIDA_1_POSICION:frases1:0": 98,
     "SUBIDA_1_POSICION:frases4:1": 97,
     "SUBIDA_1_POSICION:frases4:3": 97,
     "ENTRA_TOP3:frases2:1": 93,
@@ -207,11 +207,11 @@
     "GEMINI_ULTIMO:frases1:0": 98,
     "PODIO_HUMANO:frases1:1": 96,
     "PODIO_HUMANO:frases3:0": 96,
-    "SALE_TOP3:frases3:1": 92,
+    "SALE_TOP3:frases3:1": 98,
     "SUBIDA_2_3_POSICIONES:frases2:2": 96,
     "SALE_TOP3:frases2:1": 97,
     "SUBIDA_2_3_POSICIONES:frases4:2": 96,
-    "SALE_TOP3:frases4:0": 92,
+    "SALE_TOP3:frases4:0": 98,
     "SUBIDA_2_3_POSICIONES:frases2:0": 96,
     "SALE_TOP3:frases4:1": 92,
     "SUBIDA_2_3_POSICIONES:frases2:1": 96,
@@ -299,7 +299,7 @@
     "SALE_TOP3:frases4:3": 97,
     "SUBIDA_1_POSICION:frases1:8": 97,
     "SUBIDA_1_POSICION:frases1:6": 97,
-    "ULTIMO_CLASIFICADO:frases1:4": 97,
+    "ULTIMO_CLASIFICADO:frases1:4": 98,
     "CAMBIO_LIDER:frases4:5": 97,
     "SALE_TOP3:frases4:4": 97,
     "CAMBIO_LIDER:frases4:6": 97,
@@ -317,7 +317,10 @@
     "ZONA_BAJA:frases4:2": 98,
     "ZONA_BAJA:frases1:2": 98,
     "LIDER_HUMANO:frases4:6": 97,
-    "PODIO_HUMANO:frases3:3": 97
+    "PODIO_HUMANO:frases3:3": 97,
+    "BAJADA_1_POSICION:frases4:4": 98,
+    "BAJADA_1_POSICION:frases3:4": 98,
+    "LIDER_HUMANO:frases4:5": 98
   },
-  "actualizado": "2026-07-11T22:41:37Z"
+  "actualizado": "2026-07-12T02:12:01Z"
 }
