@@ -1,30 +1,30 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-12T18:58:24Z",
+  "generado": "2026-07-12T20:38:42Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:1",
-      "tipo": "ULTIMA_HORA",
+      "id": "CAMBIO_LIDER:frases1:6",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:1",
+      "frase_id": "CAMBIO_LIDER:frases1:6",
       "jugador": "AGUSTIN",
-      "titulo": "Se confirma el relevo en cabeza.",
-      "texto": "AGUSTIN ya ha pasado de hablar de la clasificación a hablar del tiempo.",
-      "partido": "Argentina 1-1 Suiza",
-      "prioridad": 110,
-      "etiqueta": "🔴 ÚLTIMA HORA"
-    },
-    {
-      "id": "SUBIDA_2_3_POSICIONES:frases2:2",
-      "tipo": "COMUNICADO",
-      "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases2:2",
-      "jugador": "GABRIEL",
-      "titulo": "Los adelantamientos de GABRIEL ya empiezan a dejar víctimas conocidas.",
+      "titulo": "AGUSTIN ocupa el trono y AGUSTIN ya está repasando mentalmente quién le traicionó en el último partido.",
       "texto": null,
       "partido": "Argentina 1-1 Suiza",
+      "prioridad": 110,
+      "etiqueta": "🍺 DESDE EL BAR"
+    },
+    {
+      "id": "SUBIDA_2_3_POSICIONES:frases3:0",
+      "tipo": "TITULAR",
+      "categoria": "SUBIDA_2_3_POSICIONES",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases3:0",
+      "jugador": "GABRIEL",
+      "titulo": "GABRIEL escala 3 posiciones.",
+      "texto": "Empieza a colarse en las quinielas de los favoritos.",
+      "partido": "Argentina 1-1 Suiza",
       "prioridad": 81,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "📰 TITULAR"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
@@ -63,16 +63,16 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "PODIO_HUMANO:frases2:0",
-      "tipo": "RUMOR",
+      "id": "PODIO_HUMANO:frases2:1",
+      "tipo": "EL_BAR",
       "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases2:0",
+      "frase_id": "PODIO_HUMANO:frases2:1",
       "jugador": "MARIO",
-      "titulo": "Dicen que MARIO ya ha mirado cuánto le falta para alcanzar a AGUSTIN.",
-      "texto": "Spoiler: no es poco.",
+      "titulo": "MARIO aguanta en el podio humano.",
+      "texto": "AGUSTIN sigue siendo el que marca el objetivo.",
       "partido": null,
       "prioridad": 53,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "GEMINI_ULTIMO:frases4:0",
@@ -87,16 +87,16 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases2:0",
-      "tipo": "INVESTIGACION",
+      "id": "ULTIMO_CLASIFICADO:frases2:1",
+      "tipo": "EL_BAR",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases2:0",
+      "frase_id": "ULTIMO_CLASIFICADO:frases2:1",
       "jugador": "SERGIO",
-      "titulo": "El equipo científico confirma que SERGIO sigue explorando regiones desconocidas de la clasificación.",
-      "texto": null,
+      "titulo": "SERGIO no va último.",
+      "texto": "Está haciendo una auditoría completa de la parte baja.",
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "🍺 DESDE EL BAR"
     }
   ]
 };
