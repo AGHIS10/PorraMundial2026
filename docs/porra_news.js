@@ -1,42 +1,42 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-12T14:51:26Z",
+  "generado": "2026-07-12T16:54:16Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:5",
-      "tipo": "EL_BAR",
+      "id": "CAMBIO_LIDER:frases2:6",
+      "tipo": "ULTIMA_HORA",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:5",
+      "frase_id": "CAMBIO_LIDER:frases2:6",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN toma el mando.",
-      "texto": "AGUSTIN ya está escribiendo su autobiografía titulada 'Yo también tuve opciones'.",
+      "titulo": "Cae AGUSTIN, sube AGUSTIN.",
+      "texto": "El trono cambia de dueño y el anterior ya busca terapeuta deportivo.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases1:3",
-      "tipo": "EL_BAR",
+      "id": "SUBIDA_2_3_POSICIONES:frases2:1",
+      "tipo": "EXCLUSIVA",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:3",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases2:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL sube 3 puestos y ya hay rivales pidiéndole que baje el tono en el grupo.",
-      "texto": null,
+      "titulo": "GABRIEL ha adelantado a varios rivales.",
+      "texto": "El silencio en el grupo dura exactamente hasta que envíe la primera captura.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 81,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
-      "id": "BAJADA_1_POSICION:frases3:4",
-      "tipo": "EL_BAR",
+      "id": "BAJADA_1_POSICION:frases1:0",
+      "tipo": "ULTIMA_HORA",
       "categoria": "BAJADA_1_POSICION",
-      "frase_id": "BAJADA_1_POSICION:frases3:4",
+      "frase_id": "BAJADA_1_POSICION:frases1:0",
       "jugador": "PEDRO",
-      "titulo": "PEDRO baja un puesto.",
-      "texto": "Hoy le toca sonreír poco y refrescar mucho.",
+      "titulo": "PEDRO pierde una posición.",
+      "texto": "No parece grave... hasta que ves quién le ha pasado.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 72,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
       "id": "BAJADA_1_POSICION:frases3:5",
@@ -63,40 +63,40 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "PODIO_HUMANO:frases4:0",
-      "tipo": "TITULAR",
+      "id": "PODIO_HUMANO:frases4:1",
+      "tipo": "EDITORIAL",
       "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases4:0",
+      "frase_id": "PODIO_HUMANO:frases4:1",
       "jugador": "MARIO",
-      "titulo": "MARIO aguanta en el podio humano.",
-      "texto": "AGUSTIN sigue marcando el objetivo.",
+      "titulo": "MARIO persigue a AGUSTIN desde el podio.",
+      "texto": "Cerca... pero no lo bastante para presumir.",
       "partido": null,
       "prioridad": 53,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
-      "id": "GEMINI_ULTIMO:frases1:1",
-      "tipo": "EL_BAR",
+      "id": "GEMINI_ULTIMO:frases2:0",
+      "tipo": "INVESTIGACION",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases1:1",
+      "frase_id": "GEMINI_ULTIMO:frases2:0",
       "jugador": "GEMINI",
-      "titulo": "GEMINI sigue último.",
-      "texto": "Los humanos le agradecen el esfuerzo, pero no demasiado.",
+      "titulo": "Los ingenieros analizan si GEMINI está participando o simplemente improvisando.",
+      "texto": null,
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases1:0",
-      "tipo": "EDITORIAL",
+      "id": "ULTIMO_CLASIFICADO:frases1:4",
+      "tipo": "EL_BAR",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases1:0",
+      "frase_id": "ULTIMO_CLASIFICADO:frases1:4",
       "jugador": "SERGIO",
-      "titulo": "SERGIO sigue cerrando la clasificación.",
-      "texto": "Al menos ya conoce perfectamente el camino.",
+      "titulo": "SERGIO permanece último con la dignidad de quien sabe que el milagro no viene en PDF.",
+      "texto": null,
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🍺 DESDE EL BAR"
     }
   ]
 };
