@@ -1,30 +1,30 @@
 {
-  "generado": "2026-07-13T14:22:06Z",
+  "generado": "2026-07-13T17:51:01Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases4:5",
-      "tipo": "EL_BAR",
+      "id": "CAMBIO_LIDER:frases4:6",
+      "tipo": "TITULAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases4:5",
+      "frase_id": "CAMBIO_LIDER:frases4:6",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN es el nuevo líder.",
-      "texto": "AGUSTIN ya busca quién le mandó el resultado del partido.",
+      "titulo": "Cambia el trono: entra AGUSTIN, sale AGUSTIN.",
+      "texto": "El drama es gratis, el ego no.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases2:0",
-      "tipo": "ULTIMA_HORA",
+      "id": "SUBIDA_2_3_POSICIONES:frases4:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases2:0",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases4:0",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL gana 3 puestos.",
-      "texto": "La clasificación acaba de sufrir un pequeño terremoto.",
+      "titulo": "GABRIEL escala 3 puestos.",
+      "texto": "La clasificación ha cambiado de decoración.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 81,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
@@ -87,16 +87,16 @@
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases4:0",
-      "tipo": "TITULAR",
+      "id": "ULTIMO_CLASIFICADO:frases4:2",
+      "tipo": "EL_BAR",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases4:0",
+      "frase_id": "ULTIMO_CLASIFICADO:frases4:2",
       "jugador": "SERGIO",
-      "titulo": "SERGIO sigue ocupando la última plaza.",
-      "texto": "La perseverancia también existe por abajo.",
+      "titulo": "SERGIO ha encontrado una forma original de seguir el Mundial: mirando siempre hacia arriba.",
+      "texto": null,
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🍺 DESDE EL BAR"
     }
   ]
 }
