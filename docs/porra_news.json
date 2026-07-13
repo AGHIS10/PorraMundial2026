@@ -1,30 +1,30 @@
 {
-  "generado": "2026-07-13T10:55:04Z",
+  "generado": "2026-07-13T14:22:06Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:5",
-      "tipo": "RUMOR",
+      "id": "CAMBIO_LIDER:frases4:5",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:5",
+      "frase_id": "CAMBIO_LIDER:frases4:5",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN acaba de descubrir que liderar molaba más de lo que admitía en público.",
-      "texto": null,
+      "titulo": "AGUSTIN es el nuevo líder.",
+      "texto": "AGUSTIN ya busca quién le mandó el resultado del partido.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases1:2",
-      "tipo": "EDITORIAL",
+      "id": "SUBIDA_2_3_POSICIONES:frases2:0",
+      "tipo": "ULTIMA_HORA",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:2",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases2:0",
       "jugador": "GABRIEL",
-      "titulo": "Lo de GABRIEL ya no parece casualidad.",
-      "texto": "Empieza a molestar de verdad.",
+      "titulo": "GABRIEL gana 3 puestos.",
+      "texto": "La clasificación acaba de sufrir un pequeño terremoto.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 81,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
@@ -63,40 +63,40 @@
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "PODIO_HUMANO:frases3:3",
-      "tipo": "RUMOR",
+      "id": "PODIO_HUMANO:frases3:4",
+      "tipo": "EL_BAR",
       "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases3:3",
+      "frase_id": "PODIO_HUMANO:frases3:4",
       "jugador": "MARIO",
-      "titulo": "Se comenta que MARIO mira a AGUSTIN con admiración y con ganas de adelantarle.",
+      "titulo": "MARIO aguanta en el podio humano mirando a AGUSTIN como quien mira la cima desde un precipicio.",
       "texto": null,
       "partido": null,
       "prioridad": 53,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "GEMINI_ULTIMO:frases4:0",
-      "tipo": "EL_BAR",
+      "id": "GEMINI_ULTIMO:frases2:0",
+      "tipo": "INVESTIGACION",
       "categoria": "GEMINI_ULTIMO",
-      "frase_id": "GEMINI_ULTIMO:frases4:0",
+      "frase_id": "GEMINI_ULTIMO:frases2:0",
       "jugador": "GEMINI",
-      "titulo": "GEMINI va última.",
-      "texto": "Por fin alguien demuestra que la inteligencia artificial también puede tener lunes.",
+      "titulo": "Los ingenieros analizan si GEMINI está participando o simplemente improvisando.",
+      "texto": null,
       "partido": null,
       "prioridad": 48,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases3:2",
-      "tipo": "EL_BAR",
+      "id": "ULTIMO_CLASIFICADO:frases4:0",
+      "tipo": "TITULAR",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases3:2",
+      "frase_id": "ULTIMO_CLASIFICADO:frases4:0",
       "jugador": "SERGIO",
-      "titulo": "SERGIO ya no persigue al líder.",
-      "texto": "Ahora persigue al penúltimo con prismáticos.",
+      "titulo": "SERGIO sigue ocupando la última plaza.",
+      "texto": "La perseverancia también existe por abajo.",
       "partido": null,
       "prioridad": 45,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "📰 TITULAR"
     }
   ]
 }
