@@ -217,7 +217,7 @@
     "SUBIDA_2_3_POSICIONES:frases2:1": 100,
     "SUBIDA_2_3_POSICIONES:frases3:0": 100,
     "SUBIDA_2_3_POSICIONES:frases1:2": 100,
-    "SUBIDA_2_3_POSICIONES:frases4:1": 96,
+    "SUBIDA_2_3_POSICIONES:frases4:1": 100,
     "SUBIDA_2_3_POSICIONES:frases1:1": 100,
     "CAMBIO_LIDER:frases2:2": 100,
     "CAMBIO_LIDER:frases2:3": 100,
@@ -229,7 +229,7 @@
     "BAJADA_2_3_POSICIONES:frases2:1": 94,
     "CAMBIO_LIDER:frases1:4": 100,
     "BAJADA_2_3_POSICIONES:frases1:1": 94,
-    "CAMBIO_LIDER:frases2:0": 98,
+    "CAMBIO_LIDER:frases2:0": 100,
     "BAJADA_2_3_POSICIONES:frases4:1": 94,
     "CAMBIO_LIDER:frases2:1": 98,
     "BAJADA_2_3_POSICIONES:frases1:0": 94,
@@ -293,7 +293,7 @@
     "SALE_TOP3:frases4:2": 97,
     "SUBIDA_1_POSICION:frases2:8": 97,
     "SUBIDA_1_POSICION:frases2:5": 97,
-    "ULTIMO_CLASIFICADO:frases4:4": 98,
+    "ULTIMO_CLASIFICADO:frases4:4": 100,
     "CAMBIO_LIDER:frases1:5": 100,
     "ENTRA_TOP3:frases1:2": 97,
     "SALE_TOP3:frases4:3": 97,
@@ -344,5 +344,5 @@
     "SUBIDA_2_3_POSICIONES:frases4:3": 100,
     "SUBIDA_2_3_POSICIONES:frases1:3": 100
   },
-  "actualizado": "2026-07-13T19:17:56Z"
+  "actualizado": "2026-07-13T20:53:07Z"
 }
