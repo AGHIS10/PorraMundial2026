@@ -1,30 +1,30 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-13T20:53:07Z",
+  "generado": "2026-07-13T22:51:34Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:0",
-      "tipo": "EXCLUSIVA",
+      "id": "CAMBIO_LIDER:frases2:1",
+      "tipo": "INVESTIGACION",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:0",
+      "frase_id": "CAMBIO_LIDER:frases2:1",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN ya ocupa el primer puesto.",
-      "texto": "AGUSTIN pregunta si se puede volver a la jornada anterior.",
+      "titulo": "Los analistas confirman que el ego de AGUSTIN ha sufrido una caída mayor que la de la bolsa.",
+      "texto": null,
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases4:1",
-      "tipo": "EDITORIAL",
+      "id": "SUBIDA_2_3_POSICIONES:frases1:0",
+      "tipo": "TITULAR",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases4:1",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:0",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL ha decidido ahorrar tiempo adelantando a varios rivales de una sola vez.",
+      "titulo": "GABRIEL gana 3 posiciones y empieza a aparecer en todas las conversaciones incómodas.",
       "texto": null,
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 81,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "📰 TITULAR"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
@@ -87,13 +87,13 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases4:4",
+      "id": "ULTIMO_CLASIFICADO:frases1:0",
       "tipo": "EDITORIAL",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases4:4",
+      "frase_id": "ULTIMO_CLASIFICADO:frases1:0",
       "jugador": "SERGIO",
-      "titulo": "SERGIO cierra la clasificación con la perseverancia de quien ya sabe cómo termina la película.",
-      "texto": null,
+      "titulo": "SERGIO sigue cerrando la clasificación.",
+      "texto": "Al menos ya conoce perfectamente el camino.",
       "partido": null,
       "prioridad": 45,
       "etiqueta": "📝 EDITORIAL"

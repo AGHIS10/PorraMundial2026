@@ -176,7 +176,7 @@
     "ENTRA_TOP3:frases2:1": 93,
     "ENTRA_TOP3:frases4:1": 93,
     "SALE_TOP3:frases3:0": 92,
-    "SUBIDA_2_3_POSICIONES:frases1:0": 96,
+    "SUBIDA_2_3_POSICIONES:frases1:0": 100,
     "BAJADA_2_3_POSICIONES:frases4:0": 89,
     "BAJADA_1_POSICION:frases3:1": 100,
     "ENTRA_TOP3:frases1:1": 97,
@@ -231,7 +231,7 @@
     "BAJADA_2_3_POSICIONES:frases1:1": 94,
     "CAMBIO_LIDER:frases2:0": 100,
     "BAJADA_2_3_POSICIONES:frases4:1": 94,
-    "CAMBIO_LIDER:frases2:1": 98,
+    "CAMBIO_LIDER:frases2:1": 100,
     "BAJADA_2_3_POSICIONES:frases1:0": 94,
     "PODIO_HUMANO:frases4:1": 100,
     "PODIO_HUMANO:frases4:0": 100,
@@ -344,5 +344,5 @@
     "SUBIDA_2_3_POSICIONES:frases4:3": 100,
     "SUBIDA_2_3_POSICIONES:frases1:3": 100
   },
-  "actualizado": "2026-07-13T20:53:07Z"
+  "actualizado": "2026-07-13T22:51:34Z"
 }
