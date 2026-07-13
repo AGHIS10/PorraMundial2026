@@ -1,30 +1,30 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-13T17:51:01Z",
+  "generado": "2026-07-13T19:17:56Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases4:6",
-      "tipo": "TITULAR",
+      "id": "CAMBIO_LIDER:frases1:4",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases4:6",
+      "frase_id": "CAMBIO_LIDER:frases1:4",
       "jugador": "AGUSTIN",
-      "titulo": "Cambia el trono: entra AGUSTIN, sale AGUSTIN.",
-      "texto": "El drama es gratis, el ego no.",
+      "titulo": "AGUSTIN ha pasado de rey a comentarista en un solo partido.",
+      "texto": "El ego sigue buscando cobertura.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases4:0",
-      "tipo": "EXCLUSIVA",
+      "id": "SUBIDA_2_3_POSICIONES:frases1:1",
+      "tipo": "ULTIMA_HORA",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases4:0",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL escala 3 puestos.",
-      "texto": "La clasificación ha cambiado de decoración.",
+      "titulo": "GABRIEL ha adelantado a media mesa.",
+      "texto": "Ya se oyen sus mensajes escribiéndose solos.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 81,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
       "id": "BAJADA_1_POSICION:frases1:0",
@@ -87,13 +87,13 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "ULTIMO_CLASIFICADO:frases4:2",
+      "id": "ULTIMO_CLASIFICADO:frases4:3",
       "tipo": "EL_BAR",
       "categoria": "ULTIMO_CLASIFICADO",
-      "frase_id": "ULTIMO_CLASIFICADO:frases4:2",
+      "frase_id": "ULTIMO_CLASIFICADO:frases4:3",
       "jugador": "SERGIO",
-      "titulo": "SERGIO ha encontrado una forma original de seguir el Mundial: mirando siempre hacia arriba.",
-      "texto": null,
+      "titulo": "SERGIO sigue último.",
+      "texto": "La esperanza matemática vive; la esperanza emocional está en UCI.",
       "partido": null,
       "prioridad": 45,
       "etiqueta": "🍺 DESDE EL BAR"
