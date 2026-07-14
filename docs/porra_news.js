@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-14T04:56:32Z",
+  "generado": "2026-07-14T07:54:01Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:0",
-      "tipo": "TITULAR",
+      "id": "CAMBIO_LIDER:frases1:2",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:0",
+      "frase_id": "CAMBIO_LIDER:frases1:2",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN estrena liderato.",
-      "texto": "AGUSTIN descubre que el alquiler del trono vencía esta jornada.",
+      "titulo": "No miro la clasificación.",
+      "texto": "— AGUSTIN, después de mirarla exactamente 27 veces.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases3:0",
