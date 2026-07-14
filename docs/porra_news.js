@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-14T09:52:51Z",
+  "generado": "2026-07-14T11:22:27Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:3",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_LIDER:frases3:2",
+      "tipo": "RUMOR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:3",
+      "frase_id": "CAMBIO_LIDER:frases3:2",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN demuestra que en esta porra nadie conserva el trono demasiado tiempo.",
+      "titulo": "El entorno de AGUSTIN asegura que llevaba días practicando cómo responder con falsa humildad.",
       "texto": null,
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🟡 RUMOR"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases3:0",
