@@ -1,39 +1,39 @@
 window.__CLASIFICACION__ = [
   {
     "posicion": 1,
-    "nombre": "MARIO",
-    "aciertos": 83,
-    "puntos": 121
+    "nombre": "PEDRO",
+    "aciertos": 86,
+    "puntos": 130
   },
   {
     "posicion": 2,
+    "nombre": "GABRIEL",
+    "aciertos": 86,
+    "puntos": 127
+  },
+  {
+    "posicion": 3,
     "nombre": "AGUSTIN",
     "aciertos": 85,
     "puntos": 118
   },
   {
-    "posicion": 2,
-    "nombre": "GPT",
-    "aciertos": 85,
-    "puntos": 118
-  },
-  {
     "posicion": 4,
-    "nombre": "CRISTIAN",
-    "aciertos": 78,
-    "puntos": 118
+    "nombre": "MARIO",
+    "aciertos": 82,
+    "puntos": 113
   },
   {
     "posicion": 5,
-    "nombre": "PEDRO",
+    "nombre": "GPT",
     "aciertos": 84,
-    "puntos": 114
+    "puntos": 110
   },
   {
     "posicion": 6,
-    "nombre": "GABRIEL",
-    "aciertos": 84,
-    "puntos": 111
+    "nombre": "CRISTIAN",
+    "aciertos": 77,
+    "puntos": 110
   },
   {
     "posicion": 7,
