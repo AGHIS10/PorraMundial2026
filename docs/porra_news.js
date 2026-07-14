@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-14T13:22:06Z",
+  "generado": "2026-07-14T14:05:05Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:3",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_LIDER:frases1:1",
+      "tipo": "RUMOR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:3",
+      "frase_id": "CAMBIO_LIDER:frases1:1",
       "jugador": "AGUSTIN",
-      "titulo": "Cambia el líder, pero no la tradición: el primero tarda exactamente cinco minutos en ponerse insoportable.",
+      "titulo": "Fuentes cercanas a AGUSTIN aseguran que la clasificación era bastante más bonita ayer.",
       "texto": null,
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🟡 RUMOR"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases3:0",
