@@ -1,27 +1,27 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-13T22:51:34Z",
+  "generado": "2026-07-14T01:59:29Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:1",
-      "tipo": "INVESTIGACION",
+      "id": "CAMBIO_LIDER:frases2:4",
+      "tipo": "COMUNICADO",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:1",
+      "frase_id": "CAMBIO_LIDER:frases2:4",
       "jugador": "AGUSTIN",
-      "titulo": "Los analistas confirman que el ego de AGUSTIN ha sufrido una caída mayor que la de la bolsa.",
-      "texto": null,
+      "titulo": "La organización informa de que el liderato ha cambiado de propietario.",
+      "texto": "Las lágrimas corren por cuenta del anterior ocupante.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "SUBIDA_2_3_POSICIONES:frases1:0",
+      "id": "SUBIDA_2_3_POSICIONES:frases3:0",
       "tipo": "TITULAR",
       "categoria": "SUBIDA_2_3_POSICIONES",
-      "frase_id": "SUBIDA_2_3_POSICIONES:frases1:0",
+      "frase_id": "SUBIDA_2_3_POSICIONES:frases3:0",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL gana 3 posiciones y empieza a aparecer en todas las conversaciones incómodas.",
-      "texto": null,
+      "titulo": "GABRIEL escala 3 posiciones.",
+      "texto": "Empieza a colarse en las quinielas de los favoritos.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 81,
       "etiqueta": "📰 TITULAR"
