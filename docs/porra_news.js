@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-14T01:59:29Z",
+  "generado": "2026-07-14T04:56:32Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:4",
-      "tipo": "COMUNICADO",
+      "id": "CAMBIO_LIDER:frases3:0",
+      "tipo": "TITULAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:4",
+      "frase_id": "CAMBIO_LIDER:frases3:0",
       "jugador": "AGUSTIN",
-      "titulo": "La organización informa de que el liderato ha cambiado de propietario.",
-      "texto": "Las lágrimas corren por cuenta del anterior ocupante.",
+      "titulo": "AGUSTIN estrena liderato.",
+      "texto": "AGUSTIN descubre que el alquiler del trono vencía esta jornada.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "📰 TITULAR"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases3:0",
