@@ -186,8 +186,14 @@ window.__PARTICIPANTES__ = {
         "resultado": "X",
         "clasifica": "1"
       },
-      null,
-      null,
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
       null,
       null
     ]
@@ -379,8 +385,14 @@ window.__PARTICIPANTES__ = {
         "resultado": "X",
         "clasifica": "2"
       },
-      null,
-      null,
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
       null,
       null
     ]
@@ -572,8 +584,14 @@ window.__PARTICIPANTES__ = {
         "resultado": "X",
         "clasifica": "1"
       },
-      null,
-      null,
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
       null,
       null
     ]
@@ -765,8 +783,14 @@ window.__PARTICIPANTES__ = {
         "resultado": "X",
         "clasifica": "1"
       },
-      null,
-      null,
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
       null,
       null
     ]
@@ -958,8 +982,14 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "2"
+      },
       null,
       null
     ]
@@ -1151,8 +1181,14 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
       null,
       null
     ]
@@ -1344,8 +1380,14 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
+      {
+        "resultado": "2",
+        "clasifica": "2"
+      },
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
       null,
       null
     ]
@@ -1537,8 +1579,14 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
+      {
+        "resultado": "1",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
       null,
       null
     ]
@@ -1730,8 +1778,14 @@ window.__PARTICIPANTES__ = {
         "resultado": "1",
         "clasifica": "1"
       },
-      null,
-      null,
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
+      {
+        "resultado": "X",
+        "clasifica": "1"
+      },
       null,
       null
     ]

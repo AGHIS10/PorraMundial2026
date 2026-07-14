@@ -185,8 +185,14 @@
       "resultado": "X",
       "clasifica": "1"
     },
-    null,
-    null,
+    {
+      "resultado": "X",
+      "clasifica": "2"
+    },
+    {
+      "resultado": "X",
+      "clasifica": "2"
+    },
     null,
     null
   ]
