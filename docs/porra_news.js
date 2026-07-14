@@ -1,90 +1,90 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-14T21:19:22Z",
+  "generado": "2026-07-14T22:11:03Z",
   "partidos_jugados": 101,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases2:2",
-      "tipo": "DECLARACIONES",
+      "id": "CAMBIO_LIDER:frases2:3",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases2:2",
+      "frase_id": "CAMBIO_LIDER:frases2:3",
       "jugador": "PEDRO",
-      "titulo": "No pasa nada, todavía queda Mundial.",
-      "texto": "— AGUSTIN, pronunciando la frase oficial de quien acaba de perder el liderato.",
+      "titulo": "PEDRO ha ocupado el trono y AGUSTIN ya está repasando mentalmente todos los partidos que 'tenía clarísimos'.",
+      "texto": null,
       "partido": "Francia 0-2 España",
       "prioridad": 110,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "ENTRA_TOP3:frases2:0",
-      "tipo": "EXCLUSIVA",
+      "id": "ENTRA_TOP3:frases3:0",
+      "tipo": "TITULAR",
       "categoria": "ENTRA_TOP3",
-      "frase_id": "ENTRA_TOP3:frases2:0",
+      "frase_id": "ENTRA_TOP3:frases3:0",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL entra en el Top 3.",
-      "texto": "Ya tiene permiso para volver a sacar pecho.",
+      "titulo": "GABRIEL aterriza en el Top 3.",
+      "texto": "Ya vuelve a tener motivos para abrir la web con una sonrisa.",
       "partido": "Francia 0-2 España",
       "prioridad": 105,
-      "etiqueta": "⭐ EXCLUSIVA"
-    },
-    {
-      "id": "SALE_TOP3:frases1:0",
-      "tipo": "TITULAR",
-      "categoria": "SALE_TOP3",
-      "frase_id": "SALE_TOP3:frases1:0",
-      "jugador": "MARIO",
-      "titulo": "MARIO abandona el Top 3.",
-      "texto": "Se acabó la zona VIP.",
-      "partido": "Francia 0-2 España",
-      "prioridad": 104,
       "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "BAJADA_2_3_POSICIONES:frases1:5",
-      "tipo": "EL_BAR",
+      "id": "SALE_TOP3:frases1:1",
+      "tipo": "DECLARACIONES",
+      "categoria": "SALE_TOP3",
+      "frase_id": "SALE_TOP3:frases1:1",
+      "jugador": "MARIO",
+      "titulo": "Lo importante es participar.",
+      "texto": "— MARIO, obligado por las circunstancias.",
+      "partido": "Francia 0-2 España",
+      "prioridad": 104,
+      "etiqueta": "🎙️ DECLARACIONES"
+    },
+    {
+      "id": "BAJADA_2_3_POSICIONES:frases1:4",
+      "tipo": "ULTIMA_HORA",
       "categoria": "BAJADA_2_3_POSICIONES",
-      "frase_id": "BAJADA_2_3_POSICIONES:frases1:5",
+      "frase_id": "BAJADA_2_3_POSICIONES:frases1:4",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN baja 2 puestos.",
-      "texto": "El grupo ya le trata con el silencio respetuoso de un funeral deportivo.",
+      "titulo": "AGUSTIN cae 2 posiciones.",
+      "texto": "Su autoestima ha pedido baja médica.",
       "partido": "Francia 0-2 España",
       "prioridad": 79,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "BAJADA_1_POSICION:frases3:6",
-      "tipo": "EL_BAR",
+      "id": "BAJADA_1_POSICION:frases2:4",
+      "tipo": "TITULAR",
       "categoria": "BAJADA_1_POSICION",
-      "frase_id": "BAJADA_1_POSICION:frases3:6",
+      "frase_id": "BAJADA_1_POSICION:frases2:4",
       "jugador": "SERGIO",
-      "titulo": "GEMINI pasa a SERGIO y el ambiente se enfría como nevera de hospital.",
-      "texto": null,
+      "titulo": "GEMINI pasa a SERGIO.",
+      "texto": "Hoy SERGIO leerá más mensajes de los que escribirá.",
       "partido": "Francia 0-2 España",
       "prioridad": 72,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "RACHA_FALLOS:frases3:2",
-      "tipo": "RUMOR",
+      "id": "RACHA_FALLOS:frases4:2",
+      "tipo": "ULTIMA_HORA",
       "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases3:2",
+      "frase_id": "RACHA_FALLOS:frases4:2",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN lleva 3 fallos seguidos.",
-      "texto": "Su grupo de WhatsApp ya no pregunta '¿cómo vas?' por salud mental común.",
+      "titulo": "CRISTIAN acumula 3 partidos sin pleno.",
+      "texto": "La racha es tan larga que ya tiene nombre y apellidos.",
       "partido": "Francia 0-2 España",
       "prioridad": 64,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "RACHA_FALLOS:frases1:5",
-      "tipo": "EDITORIAL",
+      "id": "RACHA_FALLOS:frases1:4",
+      "tipo": "EL_BAR",
       "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases1:5",
+      "frase_id": "RACHA_FALLOS:frases1:4",
       "jugador": "JORGE",
-      "titulo": "JORGE encadena 3 jornadas negras.",
-      "texto": "La estadística ya no le persigue: le acecha.",
+      "titulo": "JORGE suma 3 partidos sin pleno.",
+      "texto": "Si la porra fuera un hospital, ya estarían llamando a familia.",
       "partido": "Francia 0-2 España",
       "prioridad": 64,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🍺 DESDE EL BAR"
     }
   ]
 };
