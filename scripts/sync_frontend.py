@@ -3,10 +3,14 @@
 from __future__ import annotations
 
 import json
+import re
+import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 PROYECTO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROYECTO_DIR))
 PARTICIPANTES_DIR = PROYECTO_DIR / "participantes"
 RESULTADOS_FILE = PROYECTO_DIR / "resultados.json"
 MARCADORES_FILE = PROYECTO_DIR / "marcadores.json"
@@ -17,6 +21,21 @@ DOCS_RESULTADOS_FILE = DOCS_DIR / "resultados.json"
 DOCS_RESULTADOS_JS_FILE = DOCS_DIR / "resultados.js"
 DOCS_MARCADORES_FILE = DOCS_DIR / "marcadores.json"
 DOCS_MARCADORES_JS_FILE = DOCS_DIR / "marcadores.js"
+DOCS_INDEX_FILE = DOCS_DIR / "index.html"
+
+
+def generar_build_id() -> str:
+    return datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+
+
+def actualizar_cache_bust(html: str, build_id: str) -> str:
+    html = re.sub(
+        r'(<meta name="app-build" content=")[^"]*(")',
+        rf"\g<1>{build_id}\2",
+        html,
+        count=1,
+    )
+    return re.sub(r"\?v=\d+", f"?v={build_id}", html)
 
 
 def guardar_json(contenido: Any, ruta: Path) -> None:
@@ -64,6 +83,11 @@ def main() -> int:
     guardar_modulo_js("__RESULTADOS__", resultados, DOCS_RESULTADOS_JS_FILE)
     guardar_json(marcadores, DOCS_MARCADORES_FILE)
     guardar_modulo_js("__MARCADORES__", marcadores, DOCS_MARCADORES_JS_FILE)
+
+    if DOCS_INDEX_FILE.exists():
+        build_id = generar_build_id()
+        html = DOCS_INDEX_FILE.read_text(encoding="utf-8")
+        DOCS_INDEX_FILE.write_text(actualizar_cache_bust(html, build_id), encoding="utf-8")
 
     print(f"✓ {len(participantes)} participantes → docs/participantes.js")
     print(f"✓ {len(resultados)} resultados → docs/resultados.js")
