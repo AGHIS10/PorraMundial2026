@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-14T11:22:27Z",
+  "generado": "2026-07-14T13:22:06Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:2",
-      "tipo": "RUMOR",
+      "id": "CAMBIO_LIDER:frases3:3",
+      "tipo": "EDITORIAL",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:2",
+      "frase_id": "CAMBIO_LIDER:frases3:3",
       "jugador": "AGUSTIN",
-      "titulo": "El entorno de AGUSTIN asegura que llevaba días practicando cómo responder con falsa humildad.",
+      "titulo": "Cambia el líder, pero no la tradición: el primero tarda exactamente cinco minutos en ponerse insoportable.",
       "texto": null,
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases3:0",
