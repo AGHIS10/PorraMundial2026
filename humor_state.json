@@ -1,17 +1,17 @@
 {
-  "partidos_jugados": 100,
+  "partidos_jugados": 101,
   "posiciones": {
-    "AGUSTIN": 1,
-    "PEDRO": 2,
-    "MARIO": 3,
-    "GABRIEL": 4,
-    "GPT": 5,
-    "CRISTIAN": 6,
+    "MARIO": 1,
+    "AGUSTIN": 2,
+    "GPT": 2,
+    "CRISTIAN": 4,
+    "PEDRO": 5,
+    "GABRIEL": 6,
     "JORGE": 7,
-    "SERGIO": 8,
-    "GEMINI": 9
+    "GEMINI": 8,
+    "SERGIO": 9
   },
-  "lider": "AGUSTIN",
+  "lider": "MARIO",
   "frases_usadas": {
     "RACHA_FALLOS:3": 88,
     "FAVORITO_NO_LIDER:4": 88,
@@ -173,12 +173,12 @@
     "SUBIDA_1_POSICION:frases1:0": 98,
     "SUBIDA_1_POSICION:frases4:1": 97,
     "SUBIDA_1_POSICION:frases4:3": 97,
-    "ENTRA_TOP3:frases2:1": 93,
+    "ENTRA_TOP3:frases2:1": 101,
     "ENTRA_TOP3:frases4:1": 93,
-    "SALE_TOP3:frases3:0": 92,
+    "SALE_TOP3:frases3:0": 101,
     "SUBIDA_2_3_POSICIONES:frases1:0": 100,
     "BAJADA_2_3_POSICIONES:frases4:0": 89,
-    "BAJADA_1_POSICION:frases3:1": 100,
+    "BAJADA_1_POSICION:frases3:1": 101,
     "ENTRA_TOP3:frases1:1": 97,
     "ENTRA_TOP3:frases3:0": 97,
     "SALE_TOP3:frases1:0": 97,
@@ -229,7 +229,7 @@
     "BAJADA_2_3_POSICIONES:frases2:1": 94,
     "CAMBIO_LIDER:frases1:4": 100,
     "BAJADA_2_3_POSICIONES:frases1:1": 94,
-    "CAMBIO_LIDER:frases2:0": 100,
+    "CAMBIO_LIDER:frases2:0": 101,
     "BAJADA_2_3_POSICIONES:frases4:1": 94,
     "CAMBIO_LIDER:frases2:1": 100,
     "BAJADA_2_3_POSICIONES:frases1:0": 94,
@@ -327,7 +327,7 @@
     "BAJADA_1_POSICION:frases3:6": 100,
     "PODIO_HUMANO:frases3:5": 100,
     "SUBIDA_2_3_POSICIONES:frases2:4": 100,
-    "BAJADA_1_POSICION:frases3:5": 100,
+    "BAJADA_1_POSICION:frases3:5": 101,
     "BAJADA_1_POSICION:frases2:4": 100,
     "PODIO_HUMANO:frases3:4": 100,
     "SUBIDA_2_3_POSICIONES:frases3:3": 100,
@@ -342,7 +342,9 @@
     "BAJADA_1_POSICION:frases1:5": 100,
     "PODIO_HUMANO:frases1:2": 100,
     "SUBIDA_2_3_POSICIONES:frases4:3": 100,
-    "SUBIDA_2_3_POSICIONES:frases1:3": 100
+    "SUBIDA_2_3_POSICIONES:frases1:3": 100,
+    "BAJADA_2_3_POSICIONES:frases4:2": 101,
+    "RACHA_FALLOS:frases1:1": 101
   },
-  "actualizado": "2026-07-14T17:09:15Z"
+  "actualizado": "2026-07-14T19:11:21Z"
 }

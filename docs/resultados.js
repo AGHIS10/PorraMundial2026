@@ -183,7 +183,10 @@ window.__RESULTADOS__ = [
     "resultado": "X",
     "clasifica": "1"
   },
-  null,
+  {
+    "resultado": "X",
+    "clasifica": null
+  },
   null,
   null,
   null
