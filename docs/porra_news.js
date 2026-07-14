@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-14T15:19:59Z",
+  "generado": "2026-07-14T17:09:15Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases4:0",
-      "tipo": "TITULAR",
+      "id": "CAMBIO_LIDER:frases2:0",
+      "tipo": "EXCLUSIVA",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases4:0",
+      "frase_id": "CAMBIO_LIDER:frases2:0",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN se coloca primero.",
-      "texto": "El trono vuelve a cambiar de contraseña.",
+      "titulo": "AGUSTIN ya ocupa el primer puesto.",
+      "texto": "AGUSTIN pregunta si se puede volver a la jornada anterior.",
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "⭐ EXCLUSIVA"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases3:0",
