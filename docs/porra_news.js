@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-14T07:54:01Z",
+  "generado": "2026-07-14T09:52:51Z",
   "partidos_jugados": 100,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases1:2",
-      "tipo": "DECLARACIONES",
+      "id": "CAMBIO_LIDER:frases1:3",
+      "tipo": "EDITORIAL",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases1:2",
+      "frase_id": "CAMBIO_LIDER:frases1:3",
       "jugador": "AGUSTIN",
-      "titulo": "No miro la clasificación.",
-      "texto": "— AGUSTIN, después de mirarla exactamente 27 veces.",
+      "titulo": "AGUSTIN demuestra que en esta porra nadie conserva el trono demasiado tiempo.",
+      "texto": null,
       "partido": "Argentina 1-1 Suiza",
       "prioridad": 110,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "📝 EDITORIAL"
     },
     {
       "id": "SUBIDA_2_3_POSICIONES:frases3:0",

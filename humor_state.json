@@ -225,7 +225,7 @@
     "CAMBIO_LIDER:frases3:0": 100,
     "CAMBIO_LIDER:frases3:1": 100,
     "BAJADA_2_3_POSICIONES:frases2:0": 94,
-    "CAMBIO_LIDER:frases1:3": 98,
+    "CAMBIO_LIDER:frases1:3": 100,
     "BAJADA_2_3_POSICIONES:frases2:1": 94,
     "CAMBIO_LIDER:frases1:4": 100,
     "BAJADA_2_3_POSICIONES:frases1:1": 94,
@@ -344,5 +344,5 @@
     "SUBIDA_2_3_POSICIONES:frases4:3": 100,
     "SUBIDA_2_3_POSICIONES:frases1:3": 100
   },
-  "actualizado": "2026-07-14T07:54:01Z"
+  "actualizado": "2026-07-14T09:52:51Z"
 }
