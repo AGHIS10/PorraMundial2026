@@ -13,39 +13,39 @@
   },
   {
     "posicion": 3,
+    "nombre": "JORGE",
+    "aciertos": 84,
+    "puntos": 125
+  },
+  {
+    "posicion": 4,
     "nombre": "AGUSTIN",
     "aciertos": 85,
     "puntos": 118
   },
   {
     "posicion": 4,
+    "nombre": "GPT",
+    "aciertos": 85,
+    "puntos": 118
+  },
+  {
+    "posicion": 6,
+    "nombre": "GEMINI",
+    "aciertos": 78,
+    "puntos": 117
+  },
+  {
+    "posicion": 7,
     "nombre": "MARIO",
     "aciertos": 82,
     "puntos": 113
   },
   {
-    "posicion": 5,
-    "nombre": "GPT",
-    "aciertos": 84,
-    "puntos": 110
-  },
-  {
-    "posicion": 6,
+    "posicion": 8,
     "nombre": "CRISTIAN",
     "aciertos": 77,
     "puntos": 110
-  },
-  {
-    "posicion": 7,
-    "nombre": "JORGE",
-    "aciertos": 82,
-    "puntos": 109
-  },
-  {
-    "posicion": 8,
-    "nombre": "GEMINI",
-    "aciertos": 77,
-    "puntos": 109
   },
   {
     "posicion": 9,

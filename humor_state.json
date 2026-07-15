@@ -1,14 +1,14 @@
 {
-  "partidos_jugados": 101,
+  "partidos_jugados": 102,
   "posiciones": {
     "PEDRO": 1,
     "GABRIEL": 2,
-    "AGUSTIN": 3,
-    "MARIO": 4,
-    "GPT": 5,
-    "CRISTIAN": 6,
-    "JORGE": 7,
-    "GEMINI": 8,
+    "JORGE": 3,
+    "AGUSTIN": 4,
+    "GPT": 4,
+    "GEMINI": 6,
+    "MARIO": 7,
+    "CRISTIAN": 8,
     "SERGIO": 9
   },
   "lider": "PEDRO",
@@ -68,7 +68,7 @@
     "ULTIMO_CLASIFICADO:7": 88,
     "LIDER_RESISTE:10": 88,
     "BAJADA_1_POSICION:frases1:1": 100,
-    "RACHA_FALLOS:frases4:1": 101,
+    "RACHA_FALLOS:frases4:1": 102,
     "FAVORITO_SIMULADOR:frases3:0": 98,
     "FAVORITO_SIMULADOR:frases1:0": 98,
     "LIDER_HUMANO:frases4:0": 90,
@@ -191,7 +191,7 @@
     "SUBIDA_2_3_POSICIONES:frases3:2": 100,
     "BAJADA_2_3_POSICIONES:frases3:1": 101,
     "BAJADA_1_POSICION:frases4:0": 101,
-    "ENTRA_TOP3:frases1:0": 97,
+    "ENTRA_TOP3:frases1:0": 102,
     "ENTRA_TOP3:frases4:0": 101,
     "SALE_TOP3:frases2:0": 101,
     "SUBIDA_2_3_POSICIONES:frases4:0": 100,
@@ -211,7 +211,7 @@
     "SUBIDA_2_3_POSICIONES:frases2:2": 100,
     "SALE_TOP3:frases2:1": 101,
     "SUBIDA_2_3_POSICIONES:frases4:2": 100,
-    "SALE_TOP3:frases4:0": 98,
+    "SALE_TOP3:frases4:0": 102,
     "SUBIDA_2_3_POSICIONES:frases2:0": 100,
     "SALE_TOP3:frases4:1": 101,
     "SUBIDA_2_3_POSICIONES:frases2:1": 100,
@@ -232,7 +232,7 @@
     "CAMBIO_LIDER:frases2:0": 101,
     "BAJADA_2_3_POSICIONES:frases4:1": 101,
     "CAMBIO_LIDER:frases2:1": 101,
-    "BAJADA_2_3_POSICIONES:frases1:0": 101,
+    "BAJADA_2_3_POSICIONES:frases1:0": 102,
     "PODIO_HUMANO:frases4:1": 100,
     "PODIO_HUMANO:frases4:0": 100,
     "PODIO_HUMANO:frases2:1": 100,
@@ -345,7 +345,7 @@
     "SUBIDA_2_3_POSICIONES:frases1:3": 100,
     "BAJADA_2_3_POSICIONES:frases4:2": 101,
     "RACHA_FALLOS:frases1:1": 101,
-    "BAJADA_2_3_POSICIONES:frases4:3": 101,
+    "BAJADA_2_3_POSICIONES:frases4:3": 102,
     "RACHA_FALLOS:frases3:3": 101,
     "RACHA_FALLOS:frases4:3": 101,
     "BAJADA_2_3_POSICIONES:frases1:5": 101,
@@ -356,7 +356,9 @@
     "RACHA_FALLOS:frases1:4": 101,
     "BAJADA_2_3_POSICIONES:frases1:3": 101,
     "RACHA_FALLOS:frases1:3": 101,
-    "RACHA_FALLOS:frases1:2": 101
+    "RACHA_FALLOS:frases1:2": 101,
+    "CAMBIO_SIMULACIONES:frases3:4": 102,
+    "LIDER_HUMANO:frases4:4": 102
   },
-  "actualizado": "2026-07-15T19:03:08Z"
+  "actualizado": "2026-07-15T20:54:42Z"
 }
