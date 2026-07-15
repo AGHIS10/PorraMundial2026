@@ -1,66 +1,66 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-15T15:22:59Z",
+  "generado": "2026-07-15T17:11:56Z",
   "partidos_jugados": 101,
   "noticias": [
     {
-      "id": "CAMBIO_LIDER:frases3:3",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_LIDER:frases3:4",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_LIDER",
-      "frase_id": "CAMBIO_LIDER:frases3:3",
+      "frase_id": "CAMBIO_LIDER:frases3:4",
       "jugador": "PEDRO",
-      "titulo": "Cambia el líder, pero no la tradición: el primero tarda exactamente cinco minutos en ponerse insoportable.",
+      "titulo": "AGUSTIN ha bajado del trono con la misma elegancia que un borracho bajando unas escaleras.",
       "texto": null,
       "partido": "Francia 0-2 España",
       "prioridad": 110,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "ENTRA_TOP3:frases4:0",
-      "tipo": "ULTIMA_HORA",
+      "id": "ENTRA_TOP3:frases1:1",
+      "tipo": "RUMOR",
       "categoria": "ENTRA_TOP3",
-      "frase_id": "ENTRA_TOP3:frases4:0",
+      "frase_id": "ENTRA_TOP3:frases1:1",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL irrumpe en el Top 3.",
-      "texto": "Ya empieza a mirar el trofeo con otros ojos.",
+      "titulo": "Se rumorea que GABRIEL ya está ensayando una falsa humildad.",
+      "texto": null,
       "partido": "Francia 0-2 España",
       "prioridad": 105,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "🟡 RUMOR"
     },
     {
-      "id": "SALE_TOP3:frases4:2",
-      "tipo": "EDITORIAL",
+      "id": "SALE_TOP3:frases4:3",
+      "tipo": "RUMOR",
       "categoria": "SALE_TOP3",
-      "frase_id": "SALE_TOP3:frases4:2",
+      "frase_id": "SALE_TOP3:frases4:3",
       "jugador": "MARIO",
-      "titulo": "MARIO deja el Top 3.",
-      "texto": "Vuelve a la clase turista de la clasificación.",
+      "titulo": "Tras salir del podio, MARIO asegura que 'lo importante es la experiencia'.",
+      "texto": "Nadie le ha creído.",
       "partido": "Francia 0-2 España",
       "prioridad": 104,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🟡 RUMOR"
     },
     {
-      "id": "BAJADA_2_3_POSICIONES:frases2:0",
-      "tipo": "TITULAR",
+      "id": "BAJADA_2_3_POSICIONES:frases1:1",
+      "tipo": "EL_BAR",
       "categoria": "BAJADA_2_3_POSICIONES",
-      "frase_id": "BAJADA_2_3_POSICIONES:frases2:0",
+      "frase_id": "BAJADA_2_3_POSICIONES:frases1:1",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN pierde 2 posiciones.",
-      "texto": "Una mala jornada puede hacer mucho ruido.",
+      "titulo": "AGUSTIN ha bajado tanto que ya saluda a los de abajo por su nombre.",
+      "texto": null,
       "partido": "Francia 0-2 España",
       "prioridad": 79,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "BAJADA_1_POSICION:frases2:3",
-      "tipo": "COMUNICADO",
+      "id": "BAJADA_1_POSICION:frases1:5",
+      "tipo": "EL_BAR",
       "categoria": "BAJADA_1_POSICION",
-      "frase_id": "BAJADA_1_POSICION:frases2:3",
+      "frase_id": "BAJADA_1_POSICION:frases1:5",
       "jugador": "SERGIO",
-      "titulo": "SERGIO cede un puesto a GEMINI.",
-      "texto": "La dignidad de SERGIO pide cinco minutos fuera.",
+      "titulo": "SERGIO cede ante GEMINI.",
+      "texto": "La clasificación le acaba de hacer ghosting y él sigue escribiendo.",
       "partido": "Francia 0-2 España",
       "prioridad": 72,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "RACHA_FALLOS:frases4:2",
