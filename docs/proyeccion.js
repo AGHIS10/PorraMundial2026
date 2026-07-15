@@ -1,5 +1,5 @@
 window.__PROYECCION__ = {
-  "generatedAt": "2026-07-15T20:54:42Z",
+  "generatedAt": "2026-07-15T22:54:29Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 2,
@@ -154,7 +154,8 @@ window.__PROYECCION__ = {
       "delta": 3.68,
       "inicial": "G",
       "color": "#8c99b0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "GEMINI",
@@ -162,7 +163,8 @@ window.__PROYECCION__ = {
       "delta": 2.2,
       "inicial": "G",
       "color": "#c0b3e0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "MARIO",
