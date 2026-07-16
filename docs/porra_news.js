@@ -1,41 +1,29 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-16T19:02:09Z",
+  "generado": "2026-07-16T20:52:33Z",
   "partidos_jugados": 102,
   "noticias": [
     {
-      "id": "ENTRA_TOP3:frases1:3",
-      "tipo": "COMUNICADO",
+      "id": "ENTRA_TOP3:frases4:0",
+      "tipo": "ULTIMA_HORA",
       "categoria": "ENTRA_TOP3",
-      "frase_id": "ENTRA_TOP3:frases1:3",
+      "frase_id": "ENTRA_TOP3:frases4:0",
       "jugador": "JORGE",
-      "titulo": "JORGE pisa el podio.",
-      "texto": "El grupo le concede 24 horas para no ponerse insoportable.",
+      "titulo": "JORGE irrumpe en el Top 3.",
+      "texto": "Ya empieza a mirar el trofeo con otros ojos.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 105,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🔴 ÚLTIMA HORA"
     },
     {
-      "id": "SALE_TOP3:frases4:4",
-      "tipo": "RUMOR",
+      "id": "SALE_TOP3:frases1:2",
+      "tipo": "EL_BAR",
       "categoria": "SALE_TOP3",
-      "frase_id": "SALE_TOP3:frases4:4",
+      "frase_id": "SALE_TOP3:frases1:2",
       "jugador": "AGUSTIN",
       "titulo": "AGUSTIN sale del Top 3.",
-      "texto": "El podio le devuelve la entrada y le desea suerte en la vida real.",
+      "texto": "La zona noble echa de menos su ego, pero no demasiado.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 104,
-      "etiqueta": "🟡 RUMOR"
-    },
-    {
-      "id": "BAJADA_2_3_POSICIONES:frases1:5",
-      "tipo": "EL_BAR",
-      "categoria": "BAJADA_2_3_POSICIONES",
-      "frase_id": "BAJADA_2_3_POSICIONES:frases1:5",
-      "jugador": "MARIO",
-      "titulo": "MARIO baja 3 puestos.",
-      "texto": "El grupo ya le trata con el silencio respetuoso de un funeral deportivo.",
-      "partido": "Inglaterra 1-2 Argentina",
-      "prioridad": 80,
       "etiqueta": "🍺 DESDE EL BAR"
     },
     {
@@ -43,48 +31,60 @@ window.__PORRA_NEWS__ = {
       "tipo": "TITULAR",
       "categoria": "BAJADA_2_3_POSICIONES",
       "frase_id": "BAJADA_2_3_POSICIONES:frases1:0",
-      "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN baja 3 posiciones.",
+      "jugador": "MARIO",
+      "titulo": "MARIO baja 3 posiciones.",
       "texto": "La gravedad sigue invicta.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 80,
       "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "RACHA_FALLOS:frases3:3",
-      "tipo": "EDITORIAL",
+      "id": "BAJADA_2_3_POSICIONES:frases4:3",
+      "tipo": "RUMOR",
+      "categoria": "BAJADA_2_3_POSICIONES",
+      "frase_id": "BAJADA_2_3_POSICIONES:frases4:3",
+      "jugador": "CRISTIAN",
+      "titulo": "Tras caer 3 puestos, CRISTIAN asegura que 'nada está decidido'.",
+      "texto": "El grupo asiente por educación.",
+      "partido": "Inglaterra 1-2 Argentina",
+      "prioridad": 80,
+      "etiqueta": "🟡 RUMOR"
+    },
+    {
+      "id": "RACHA_FALLOS:frases1:3",
+      "tipo": "DECLARACIONES",
       "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases3:3",
+      "frase_id": "RACHA_FALLOS:frases1:3",
       "jugador": "SERGIO",
-      "titulo": "La racha de SERGIO (3 fallos) obliga a replantear si el problema es el fútbol o la intuición.",
-      "texto": null,
+      "titulo": "Estoy construyendo algo a largo plazo.",
+      "texto": "— SERGIO, con 3 partidos sin pleno encima.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 64,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases2:1",
-      "tipo": "COMUNICADO",
+      "id": "CAMBIO_SIMULACIONES:frases2:2",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases2:1",
+      "frase_id": "CAMBIO_SIMULACIONES:frases2:2",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL baja en las proyecciones del campeonato después de Inglaterra 1-2 Argentina.",
-      "texto": "Sus probabilidades ahora están en el 19.0%.",
+      "titulo": "El modelo ha hablado: GABRIEL baja en el ranking de simulaciones.",
+      "texto": "La bola de cristal no miente... o eso dicen.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 68,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "LIDER_HUMANO:frases1:1",
-      "tipo": "TITULAR",
+      "id": "LIDER_HUMANO:frases1:0",
+      "tipo": "INVESTIGACION",
       "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases1:1",
+      "frase_id": "LIDER_HUMANO:frases1:0",
       "jugador": "PEDRO",
-      "titulo": "PEDRO lidera entre los humanos.",
-      "texto": "Las simulaciones también lo tienen en el punto de mira.",
+      "titulo": "PEDRO encabeza la clasificación entre humanos.",
+      "texto": "GPT lidera la general, pero la porra de carne y hueso tiene un referente claro.",
       "partido": null,
       "prioridad": 67,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     }
   ]
 };
