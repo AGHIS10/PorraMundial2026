@@ -1,42 +1,42 @@
 {
-  "generado": "2026-07-16T15:29:07Z",
+  "generado": "2026-07-16T17:09:44Z",
   "partidos_jugados": 102,
   "noticias": [
     {
-      "id": "ENTRA_TOP3:frases3:3",
-      "tipo": "ULTIMA_HORA",
+      "id": "ENTRA_TOP3:frases1:2",
+      "tipo": "EL_BAR",
       "categoria": "ENTRA_TOP3",
-      "frase_id": "ENTRA_TOP3:frases3:3",
+      "frase_id": "ENTRA_TOP3:frases1:2",
       "jugador": "JORGE",
-      "titulo": "JORGE pisa el podio.",
-      "texto": "Los de abajo ya le miran con la mezcla exacta de odio y respeto.",
-      "partido": "Inglaterra 1-2 Argentina",
-      "prioridad": 105,
-      "etiqueta": "🔴 ÚLTIMA HORA"
-    },
-    {
-      "id": "SALE_TOP3:frases3:0",
-      "tipo": "ULTIMA_HORA",
-      "categoria": "SALE_TOP3",
-      "frase_id": "SALE_TOP3:frases3:0",
-      "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN abandona el Top 3.",
-      "texto": "La caída duele más cuanto más cerca estaba el champán.",
-      "partido": "Inglaterra 1-2 Argentina",
-      "prioridad": 104,
-      "etiqueta": "🔴 ÚLTIMA HORA"
-    },
-    {
-      "id": "BAJADA_2_3_POSICIONES:frases2:1",
-      "tipo": "RUMOR",
-      "categoria": "BAJADA_2_3_POSICIONES",
-      "frase_id": "BAJADA_2_3_POSICIONES:frases2:1",
-      "jugador": "MARIO",
-      "titulo": "Dicen que MARIO ha dejado de abrir la clasificación en público.",
+      "titulo": "JORGE entra en el Top 3 y ya practica esa humildad falsa que solo usan los que van bien.",
       "texto": null,
       "partido": "Inglaterra 1-2 Argentina",
+      "prioridad": 105,
+      "etiqueta": "🍺 DESDE EL BAR"
+    },
+    {
+      "id": "SALE_TOP3:frases4:1",
+      "tipo": "DECLARACIONES",
+      "categoria": "SALE_TOP3",
+      "frase_id": "SALE_TOP3:frases4:1",
+      "jugador": "AGUSTIN",
+      "titulo": "Lo importante es acabar bien.",
+      "texto": "— AGUSTIN, improvisando objetivos nuevos.",
+      "partido": "Inglaterra 1-2 Argentina",
+      "prioridad": 104,
+      "etiqueta": "🎙️ DECLARACIONES"
+    },
+    {
+      "id": "BAJADA_2_3_POSICIONES:frases1:0",
+      "tipo": "TITULAR",
+      "categoria": "BAJADA_2_3_POSICIONES",
+      "frase_id": "BAJADA_2_3_POSICIONES:frases1:0",
+      "jugador": "MARIO",
+      "titulo": "MARIO baja 3 posiciones.",
+      "texto": "La gravedad sigue invicta.",
+      "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 80,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "📰 TITULAR"
     },
     {
       "id": "BAJADA_2_3_POSICIONES:frases4:3",
@@ -51,40 +51,40 @@
       "etiqueta": "🟡 RUMOR"
     },
     {
-      "id": "RACHA_FALLOS:frases2:1",
-      "tipo": "INVESTIGACION",
+      "id": "RACHA_FALLOS:frases3:0",
+      "tipo": "TITULAR",
       "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases2:1",
+      "frase_id": "RACHA_FALLOS:frases3:0",
       "jugador": "SERGIO",
-      "titulo": "Los expertos dudan si SERGIO está apostando o eligiendo resultados con una ruleta.",
-      "texto": null,
+      "titulo": "SERGIO acumula 3 fallos consecutivos.",
+      "texto": "El viento sigue soplando en contra.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 64,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases4:0",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_SIMULACIONES:frases4:1",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases4:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases4:1",
       "jugador": "GABRIEL",
-      "titulo": "Inglaterra 1-2 Argentina ha movido el tablero: GABRIEL baja en las simulaciones y se sitúa con un 19.0% de ganar la porra.",
-      "texto": null,
+      "titulo": "Solo es un modelo.",
+      "texto": "— GABRIEL, que baja posiciones en las proyecciones tras Inglaterra 1-2 Argentina y lo celebra en privado.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 68,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "LIDER_HUMANO:frases2:1",
-      "tipo": "DECLARACIONES",
+      "id": "LIDER_HUMANO:frases4:0",
+      "tipo": "TITULAR",
       "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases2:1",
+      "frase_id": "LIDER_HUMANO:frases4:0",
       "jugador": "PEDRO",
-      "titulo": "No miro la clasificación.",
-      "texto": "— PEDRO, mientras lidera entre humanos y las simulaciones lo respaldan.",
+      "titulo": "PEDRO lidera entre los humanos.",
+      "texto": "GPT puede ir primero en la general, pero la porra de carne y hueso tiene dueño.",
       "partido": null,
       "prioridad": 67,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "📰 TITULAR"
     }
   ]
 }
