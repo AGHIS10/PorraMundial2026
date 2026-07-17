@@ -1,5 +1,5 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-17T11:18:18Z",
+  "generado": "2026-07-17T13:16:52Z",
   "partidos_jugados": 102,
   "noticias": [
     {
@@ -15,76 +15,76 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "SALE_TOP3:frases1:0",
-      "tipo": "TITULAR",
+      "id": "SALE_TOP3:frases4:3",
+      "tipo": "RUMOR",
       "categoria": "SALE_TOP3",
-      "frase_id": "SALE_TOP3:frases1:0",
+      "frase_id": "SALE_TOP3:frases4:3",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN abandona el Top 3.",
-      "texto": "Se acabó la zona VIP.",
+      "titulo": "Tras salir del podio, AGUSTIN asegura que 'lo importante es la experiencia'.",
+      "texto": "Nadie le ha creído.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 104,
-      "etiqueta": "📰 TITULAR"
+      "etiqueta": "🟡 RUMOR"
+    },
+    {
+      "id": "BAJADA_2_3_POSICIONES:frases1:5",
+      "tipo": "EL_BAR",
+      "categoria": "BAJADA_2_3_POSICIONES",
+      "frase_id": "BAJADA_2_3_POSICIONES:frases1:5",
+      "jugador": "MARIO",
+      "titulo": "MARIO baja 3 puestos.",
+      "texto": "El grupo ya le trata con el silencio respetuoso de un funeral deportivo.",
+      "partido": "Inglaterra 1-2 Argentina",
+      "prioridad": 80,
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "BAJADA_2_3_POSICIONES:frases1:0",
       "tipo": "TITULAR",
       "categoria": "BAJADA_2_3_POSICIONES",
       "frase_id": "BAJADA_2_3_POSICIONES:frases1:0",
-      "jugador": "MARIO",
-      "titulo": "MARIO baja 3 posiciones.",
+      "jugador": "CRISTIAN",
+      "titulo": "CRISTIAN baja 3 posiciones.",
       "texto": "La gravedad sigue invicta.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 80,
       "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "BAJADA_2_3_POSICIONES:frases4:3",
-      "tipo": "RUMOR",
-      "categoria": "BAJADA_2_3_POSICIONES",
-      "frase_id": "BAJADA_2_3_POSICIONES:frases4:3",
-      "jugador": "CRISTIAN",
-      "titulo": "Tras caer 3 puestos, CRISTIAN asegura que 'nada está decidido'.",
-      "texto": "El grupo asiente por educación.",
-      "partido": "Inglaterra 1-2 Argentina",
-      "prioridad": 80,
-      "etiqueta": "🟡 RUMOR"
-    },
-    {
-      "id": "RACHA_FALLOS:frases1:2",
-      "tipo": "EL_BAR",
+      "id": "RACHA_FALLOS:frases1:0",
+      "tipo": "INVESTIGACION",
       "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases1:2",
+      "frase_id": "RACHA_FALLOS:frases1:0",
       "jugador": "SERGIO",
-      "titulo": "SERGIO acumula 3 fallos seguidos.",
-      "texto": "Su relación con el 1/X/2 atraviesa un momento delicado.",
+      "titulo": "El laboratorio sigue intentando entender la racha de 3 fallos consecutivos de SERGIO.",
+      "texto": null,
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 64,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases1:0",
+      "id": "CAMBIO_SIMULACIONES:frases3:1",
       "tipo": "INVESTIGACION",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases1:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases3:1",
       "jugador": "GABRIEL",
-      "titulo": "Tras Inglaterra 1-2 Argentina, GABRIEL baja posiciones en las simulaciones.",
-      "texto": "Ahora tiene un 19.0% de probabilidades de ganar la porra.",
+      "titulo": "El algoritmo tiene preferencias y después de Inglaterra 1-2 Argentina, GABRIEL baja puestos en las proyecciones.",
+      "texto": "No es magia: es matemática.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 68,
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "LIDER_HUMANO:frases4:5",
-      "tipo": "EL_BAR",
+      "id": "LIDER_HUMANO:frases4:3",
+      "tipo": "RUMOR",
       "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases4:5",
+      "frase_id": "LIDER_HUMANO:frases4:3",
       "jugador": "PEDRO",
-      "titulo": "PEDRO manda entre humanos.",
-      "texto": "Las IA pueden ir arriba, pero el dinero y el sufrimiento siguen siendo cosa nuestra.",
+      "titulo": "PEDRO lidera entre humanos.",
+      "texto": "Las IA pueden mandar en la general, pero el premio tiene nombre y apellidos.",
       "partido": null,
       "prioridad": 67,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🟡 RUMOR"
     }
   ]
 };
