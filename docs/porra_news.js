@@ -1,30 +1,30 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-17T09:52:03Z",
+  "generado": "2026-07-17T11:18:18Z",
   "partidos_jugados": 102,
   "noticias": [
     {
-      "id": "ENTRA_TOP3:frases4:3",
-      "tipo": "INVESTIGACION",
+      "id": "ENTRA_TOP3:frases1:3",
+      "tipo": "COMUNICADO",
       "categoria": "ENTRA_TOP3",
-      "frase_id": "ENTRA_TOP3:frases4:3",
+      "frase_id": "ENTRA_TOP3:frases1:3",
       "jugador": "JORGE",
-      "titulo": "JORGE entra en el podio.",
-      "texto": "El grupo ya prepara comentarios irónicos y felicitaciones a medias.",
+      "titulo": "JORGE pisa el podio.",
+      "texto": "El grupo le concede 24 horas para no ponerse insoportable.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 105,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "SALE_TOP3:frases4:3",
-      "tipo": "RUMOR",
+      "id": "SALE_TOP3:frases1:0",
+      "tipo": "TITULAR",
       "categoria": "SALE_TOP3",
-      "frase_id": "SALE_TOP3:frases4:3",
+      "frase_id": "SALE_TOP3:frases1:0",
       "jugador": "AGUSTIN",
-      "titulo": "Tras salir del podio, AGUSTIN asegura que 'lo importante es la experiencia'.",
-      "texto": "Nadie le ha creído.",
+      "titulo": "AGUSTIN abandona el Top 3.",
+      "texto": "Se acabó la zona VIP.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 104,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "📰 TITULAR"
     },
     {
       "id": "BAJADA_2_3_POSICIONES:frases1:0",
@@ -51,40 +51,40 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🟡 RUMOR"
     },
     {
-      "id": "RACHA_FALLOS:frases1:1",
+      "id": "RACHA_FALLOS:frases1:2",
       "tipo": "EL_BAR",
       "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases1:1",
+      "frase_id": "RACHA_FALLOS:frases1:2",
       "jugador": "SERGIO",
-      "titulo": "SERGIO lleva una racha tan mala que hasta los partidos que quería fallar le salen mal de formas creativas.",
-      "texto": null,
+      "titulo": "SERGIO acumula 3 fallos seguidos.",
+      "texto": "Su relación con el 1/X/2 atraviesa un momento delicado.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 64,
       "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases1:1",
-      "tipo": "EDITORIAL",
+      "id": "CAMBIO_SIMULACIONES:frases1:0",
+      "tipo": "INVESTIGACION",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases1:1",
+      "frase_id": "CAMBIO_SIMULACIONES:frases1:0",
       "jugador": "GABRIEL",
-      "titulo": "El algoritmo ha movido ficha: GABRIEL baja en las simulaciones después de Inglaterra 1-2 Argentina.",
-      "texto": "El modelo sabe algo que el resto aún no.",
+      "titulo": "Tras Inglaterra 1-2 Argentina, GABRIEL baja posiciones en las simulaciones.",
+      "texto": "Ahora tiene un 19.0% de probabilidades de ganar la porra.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 68,
-      "etiqueta": "📝 EDITORIAL"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "LIDER_HUMANO:frases4:6",
-      "tipo": "ULTIMA_HORA",
+      "id": "LIDER_HUMANO:frases4:5",
+      "tipo": "EL_BAR",
       "categoria": "LIDER_HUMANO",
-      "frase_id": "LIDER_HUMANO:frases4:6",
+      "frase_id": "LIDER_HUMANO:frases4:5",
       "jugador": "PEDRO",
-      "titulo": "PEDRO lidera la porra humana.",
-      "texto": "El resto ya lo mira como quien mira a su verdugo favorito.",
+      "titulo": "PEDRO manda entre humanos.",
+      "texto": "Las IA pueden ir arriba, pero el dinero y el sufrimiento siguen siendo cosa nuestra.",
       "partido": null,
       "prioridad": 67,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "🍺 DESDE EL BAR"
     }
   ]
 };
