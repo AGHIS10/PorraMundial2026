@@ -1,5 +1,5 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-17T13:16:52Z",
+  "generado": "2026-07-17T15:09:53Z",
   "partidos_jugados": 102,
   "noticias": [
     {
@@ -51,16 +51,16 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "📰 TITULAR"
     },
     {
-      "id": "RACHA_FALLOS:frases1:0",
-      "tipo": "INVESTIGACION",
+      "id": "RACHA_FALLOS:frases4:1",
+      "tipo": "EL_BAR",
       "categoria": "RACHA_FALLOS",
-      "frase_id": "RACHA_FALLOS:frases1:0",
+      "frase_id": "RACHA_FALLOS:frases4:1",
       "jugador": "SERGIO",
-      "titulo": "El laboratorio sigue intentando entender la racha de 3 fallos consecutivos de SERGIO.",
-      "texto": null,
+      "titulo": "SERGIO acumula 3 fallos seguidos.",
+      "texto": "El karma también tiene memoria.",
       "partido": "Inglaterra 1-2 Argentina",
       "prioridad": 64,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "CAMBIO_SIMULACIONES:frases3:1",
