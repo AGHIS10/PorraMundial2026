@@ -1,5 +1,5 @@
 window.__PROYECCION__ = {
-  "generatedAt": "2026-07-18T13:02:55Z",
+  "generatedAt": "2026-07-18T14:26:00Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 2,
@@ -19,14 +19,14 @@ window.__PROYECCION__ = {
       "nombre": "JORGE",
       "inicial": "J",
       "color": "#ef6f6c",
-      "probabilidad": 15.52,
+      "probabilidad": 0.0,
       "delta": 9.1
     },
     "perjudicado": {
       "nombre": "GABRIEL",
       "inicial": "G",
       "color": "#9b8cff",
-      "probabilidad": 19.0,
+      "probabilidad": 19.87,
       "delta": -5.09
     }
   },
@@ -45,14 +45,14 @@ window.__PROYECCION__ = {
       "nombre": "JORGE",
       "inicial": "J",
       "color": "#ef6f6c",
-      "probabilidad": 15.52,
+      "probabilidad": 0.0,
       "delta": 9.1
     },
     "perjudicado": {
       "nombre": "GABRIEL",
       "inicial": "G",
       "color": "#9b8cff",
-      "probabilidad": 19.0,
+      "probabilidad": 19.87,
       "delta": -5.09
     },
     "deltas_campeon": {
@@ -104,17 +104,17 @@ window.__PROYECCION__ = {
     }
   },
   "indice_emocion": {
-    "nivel": "muy_abierto",
-    "etiqueta": "Muy abierto",
-    "emoji": "🟢",
-    "entropia": 0.898,
-    "concentracion": 0.055,
-    "lider_pct": 25.8
+    "nivel": "igualado",
+    "etiqueta": "Muy igualado",
+    "emoji": "🟠",
+    "entropia": 0.842,
+    "concentracion": 0.155,
+    "lider_pct": 53.1
   },
   "campeon": [
     {
       "nombre": "PEDRO",
-      "probabilidad": 25.8,
+      "probabilidad": 53.12,
       "delta": -2.86,
       "inicial": "P",
       "color": "#58d68d",
@@ -123,7 +123,7 @@ window.__PROYECCION__ = {
     },
     {
       "nombre": "GABRIEL",
-      "probabilidad": 19.0,
+      "probabilidad": 19.87,
       "delta": -5.09,
       "inicial": "G",
       "color": "#9b8cff",
@@ -131,17 +131,8 @@ window.__PROYECCION__ = {
       "delta_sin_ia": -4.23
     },
     {
-      "nombre": "JORGE",
-      "probabilidad": 15.52,
-      "delta": 9.1,
-      "inicial": "J",
-      "color": "#ef6f6c",
-      "es_ia": false,
-      "delta_sin_ia": 11.59
-    },
-    {
       "nombre": "AGUSTIN",
-      "probabilidad": 11.51,
+      "probabilidad": 19.79,
       "delta": -2.22,
       "inicial": "A",
       "color": "#2ee6d6",
@@ -149,17 +140,8 @@ window.__PROYECCION__ = {
       "delta_sin_ia": -1.58
     },
     {
-      "nombre": "GPT",
-      "probabilidad": 10.6,
-      "delta": 3.68,
-      "inicial": "G",
-      "color": "#8c99b0",
-      "es_ia": true,
-      "delta_sin_ia": 0.0
-    },
-    {
       "nombre": "GEMINI",
-      "probabilidad": 7.17,
+      "probabilidad": 7.23,
       "delta": 2.2,
       "inicial": "G",
       "color": "#c0b3e0",
@@ -167,17 +149,8 @@ window.__PROYECCION__ = {
       "delta_sin_ia": 0.0
     },
     {
-      "nombre": "MARIO",
-      "probabilidad": 4.76,
-      "delta": -1.01,
-      "inicial": "M",
-      "color": "#5aa9ff",
-      "es_ia": false,
-      "delta_sin_ia": -0.76
-    },
-    {
       "nombre": "CRISTIAN",
-      "probabilidad": 3.79,
+      "probabilidad": 0.0,
       "delta": -2.63,
       "inicial": "C",
       "color": "#f0883e",
@@ -185,8 +158,35 @@ window.__PROYECCION__ = {
       "delta_sin_ia": -2.68
     },
     {
+      "nombre": "GPT",
+      "probabilidad": 0.0,
+      "delta": 3.68,
+      "inicial": "G",
+      "color": "#8c99b0",
+      "es_ia": true,
+      "delta_sin_ia": 0.0
+    },
+    {
+      "nombre": "JORGE",
+      "probabilidad": 0.0,
+      "delta": 9.1,
+      "inicial": "J",
+      "color": "#ef6f6c",
+      "es_ia": false,
+      "delta_sin_ia": 11.59
+    },
+    {
+      "nombre": "MARIO",
+      "probabilidad": 0.0,
+      "delta": -1.01,
+      "inicial": "M",
+      "color": "#5aa9ff",
+      "es_ia": false,
+      "delta_sin_ia": -0.76
+    },
+    {
       "nombre": "SERGIO",
-      "probabilidad": 1.84,
+      "probabilidad": 0.0,
       "delta": -1.18,
       "inicial": "S",
       "color": "#f5c518",
@@ -197,49 +197,49 @@ window.__PROYECCION__ = {
   "top3": [
     {
       "nombre": "PEDRO",
-      "probabilidad": 67.74,
+      "probabilidad": 100.0,
       "delta": -2.57,
       "inicial": "P",
       "color": "#58d68d"
     },
     {
       "nombre": "GABRIEL",
-      "probabilidad": 61.05,
+      "probabilidad": 76.42,
       "delta": -4.15,
       "inicial": "G",
       "color": "#9b8cff"
     },
     {
       "nombre": "JORGE",
-      "probabilidad": 54.52,
+      "probabilidad": 63.85,
       "delta": 24.28,
       "inicial": "J",
       "color": "#ef6f6c"
     },
     {
       "nombre": "AGUSTIN",
-      "probabilidad": 45.73,
+      "probabilidad": 39.86,
       "delta": -3.03,
       "inicial": "A",
       "color": "#2ee6d6"
     },
     {
       "nombre": "MARIO",
-      "probabilidad": 29.33,
+      "probabilidad": 19.87,
       "delta": -2.84,
       "inicial": "M",
       "color": "#5aa9ff"
     },
     {
       "nombre": "CRISTIAN",
-      "probabilidad": 24.19,
+      "probabilidad": 0.0,
       "delta": -7.52,
       "inicial": "C",
       "color": "#f0883e"
     },
     {
       "nombre": "SERGIO",
-      "probabilidad": 17.45,
+      "probabilidad": 0.0,
       "delta": -4.16,
       "inicial": "S",
       "color": "#f5c518"
@@ -247,142 +247,142 @@ window.__PROYECCION__ = {
   ],
   "distribucion": {
     "AGUSTIN": [
-      11.51,
-      12.32,
-      12.97,
-      12.7,
-      11.85,
-      10.95,
-      10.87,
-      9.9,
-      6.93
+      19.79,
+      7.23,
+      12.85,
+      10.46,
+      0.0,
+      0.0,
+      9.05,
+      29.82,
+      10.81
     ],
     "CRISTIAN": [
-      3.79,
-      6.53,
-      7.68,
-      8.88,
-      10.52,
-      12.73,
-      14.56,
-      15.67,
-      19.64
+      0.0,
+      0.0,
+      0.0,
+      16.41,
+      12.85,
+      34.95,
+      0.0,
+      35.78,
+      0.0
     ],
     "GABRIEL": [
-      19.0,
-      15.75,
-      14.06,
-      12.54,
-      10.9,
-      9.36,
-      8.34,
-      6.73,
-      3.31
+      19.87,
+      23.86,
+      23.64,
+      21.89,
+      10.74,
+      0.0,
+      0.0,
+      0.0,
+      0.0
     ],
     "GEMINI": [
-      7.17,
-      9.59,
-      10.62,
-      11.3,
-      11.65,
-      12.76,
-      12.11,
-      12.8,
-      12.01
+      7.23,
+      9.04,
+      10.74,
+      9.05,
+      0.0,
+      10.46,
+      10.81,
+      12.85,
+      29.82
     ],
     "GPT": [
-      10.6,
-      11.81,
-      12.07,
-      12.74,
-      12.21,
-      11.45,
-      10.87,
-      10.47,
-      7.78
+      0.0,
+      19.87,
+      0.0,
+      20.63,
+      26.87,
+      21.89,
+      10.74,
+      0.0,
+      0.0
     ],
     "JORGE": [
-      15.52,
-      14.79,
-      13.36,
-      12.8,
-      11.93,
-      10.18,
-      9.37,
-      7.79,
-      4.28
+      0.0,
+      29.26,
+      23.86,
+      10.74,
+      19.86,
+      9.05,
+      7.23,
+      0.0,
+      0.0
     ],
     "PEDRO": [
-      25.8,
-      17.55,
-      14.48,
-      11.47,
-      9.91,
-      7.89,
-      6.54,
-      4.73,
-      1.63
+      53.12,
+      10.74,
+      28.91,
+      0.0,
+      7.23,
+      0.0,
+      0.0,
+      0.0,
+      0.0
     ],
     "SERGIO": [
-      1.84,
-      4.07,
-      5.86,
-      7.39,
-      9.26,
-      11.35,
-      13.9,
-      17.78,
-      28.56
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      16.41,
+      26.25,
+      21.55,
+      35.78
     ],
     "MARIO": [
-      4.76,
-      7.6,
-      8.89,
-      10.17,
-      11.78,
-      13.35,
-      13.45,
-      14.12,
-      15.87
+      0.0,
+      0.0,
+      0.0,
+      10.81,
+      22.45,
+      7.23,
+      35.91,
+      0.0,
+      23.59
     ]
   },
   "stats": {
     "AGUSTIN": {
-      "media_puntos": 152.9,
-      "std_puntos": 19.6
+      "media_puntos": 148.5,
+      "std_puntos": 18.8
     },
     "CRISTIAN": {
       "media_puntos": 143.9,
-      "std_puntos": 19.5
+      "std_puntos": 19.6
     },
     "GABRIEL": {
-      "media_puntos": 161.9,
-      "std_puntos": 19.6
+      "media_puntos": 159.2,
+      "std_puntos": 19.4
     },
     "GEMINI": {
-      "media_puntos": 151.3,
-      "std_puntos": 19.5
+      "media_puntos": 145.8,
+      "std_puntos": 18.6
     },
     "GPT": {
-      "media_puntos": 152.8,
-      "std_puntos": 19.6
+      "media_puntos": 150.2,
+      "std_puntos": 19.4
     },
     "JORGE": {
-      "media_puntos": 159.6,
+      "media_puntos": 158.9,
       "std_puntos": 19.6
     },
     "PEDRO": {
-      "media_puntos": 164.9,
-      "std_puntos": 19.5
+      "media_puntos": 163.9,
+      "std_puntos": 19.6
     },
     "SERGIO": {
-      "media_puntos": 139.1,
-      "std_puntos": 19.4
+      "media_puntos": 138.9,
+      "std_puntos": 19.6
     },
     "MARIO": {
-      "media_puntos": 147.3,
-      "std_puntos": 19.5
+      "media_puntos": 145.2,
+      "std_puntos": 19.4
     }
   },
-  "frecuencia_empate_liderato": 0.0585
+  "frecuencia_empate_liderato": 0.0
 };
