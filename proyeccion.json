@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T22:40:27Z",
+  "generatedAt": "2026-07-18T22:42:57Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 1,
@@ -154,7 +154,8 @@
       "delta": -7.23,
       "inicial": "G",
       "color": "#c0b3e0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "GPT",
@@ -162,7 +163,8 @@
       "delta": 0.0,
       "inicial": "G",
       "color": "#8c99b0",
-      "es_ia": true
+      "es_ia": true,
+      "delta_sin_ia": 0.0
     },
     {
       "nombre": "JORGE",
