@@ -921,8 +921,8 @@
     "id": 103,
     "fecha": "2026-07-18",
     "hora": "23:00",
-    "local": "Perdedor 101",
-    "visitante": "Perdedor 102",
+    "local": "Francia",
+    "visitante": "Inglaterra",
     "fase": "tercer_puesto",
     "peso": 25
   },
@@ -930,8 +930,8 @@
     "id": 104,
     "fecha": "2026-07-19",
     "hora": "21:00",
-    "local": "W101",
-    "visitante": "W102",
+    "local": "España",
+    "visitante": "Argentina",
     "fase": "final",
     "peso": 50
   }

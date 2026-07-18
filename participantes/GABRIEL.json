@@ -193,7 +193,13 @@
       "resultado": "X",
       "clasifica": "1"
     },
-    null,
-    null
+    {
+      "resultado": "X",
+      "clasifica": "1"
+    },
+    {
+      "resultado": "1",
+      "clasifica": "1"
+    }
   ]
 }
