@@ -1,5 +1,5 @@
 window.__EVOLUCION__ = {
-  "generado": "2026-07-18T22:42:57Z",
+  "generado": "2026-07-19T00:14:34Z",
   "total_partidos": 104,
   "partidos_jugados": 103,
   "participantes": [
@@ -12469,7 +12469,7 @@ window.__EVOLUCION__ = {
       "fase": "tercer_puesto",
       "local": "Francia",
       "visitante": "Inglaterra",
-      "marcador": "3-4",
+      "marcador": "4-6",
       "resultado": {
         "resultado": "2",
         "clasifica": "2"

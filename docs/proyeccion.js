@@ -1,5 +1,5 @@
 window.__PROYECCION__ = {
-  "generatedAt": "2026-07-18T22:42:57Z",
+  "generatedAt": "2026-07-19T00:14:35Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 1,
@@ -13,7 +13,7 @@ window.__PROYECCION__ = {
       "local": "Francia",
       "visitante": "Inglaterra",
       "fase": "tercer_puesto",
-      "marcador": "3-4"
+      "marcador": "4-6"
     },
     "beneficiado": {
       "nombre": "PEDRO",
@@ -38,7 +38,7 @@ window.__PROYECCION__ = {
       "local": "Francia",
       "visitante": "Inglaterra",
       "fase": "tercer_puesto",
-      "marcador": "3-4"
+      "marcador": "4-6"
     },
     "hay_cambio": true,
     "beneficiado": {
