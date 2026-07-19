@@ -1,18 +1,18 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-07-19T16:52:32Z",
+  "generado": "2026-07-19T18:58:26Z",
   "partidos_jugados": 103,
   "noticias": [
     {
-      "id": "NADIE_ACIERTA:frases1:1",
-      "tipo": "EL_BAR",
+      "id": "NADIE_ACIERTA:frases3:0",
+      "tipo": "COMUNICADO",
       "categoria": "NADIE_ACIERTA",
-      "frase_id": "NADIE_ACIERTA:frases1:1",
+      "frase_id": "NADIE_ACIERTA:frases3:0",
       "jugador": "PEDRO",
-      "titulo": "Francia 4-6 Inglaterra ha conseguido una hazaña histórica: dejar mal a absolutamente todos.",
+      "titulo": "Francia 4-6 Inglaterra ha dejado a toda la porra mirando al techo.",
       "texto": null,
       "partido": "Francia 4-6 Inglaterra",
       "prioridad": 78,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
       "id": "RACHA_FALLOS:frases3:1",
@@ -63,28 +63,28 @@ window.__PORRA_NEWS__ = {
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases2:0",
-      "tipo": "RUMOR",
+      "id": "CAMBIO_SIMULACIONES:frases2:1",
+      "tipo": "COMUNICADO",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases2:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases2:1",
       "jugador": "GABRIEL",
-      "titulo": "Tras Francia 4-6 Inglaterra, el algoritmo ha revisado los números y GABRIEL baja posiciones.",
-      "texto": "Se nota que alguien apostó bien.",
+      "titulo": "GABRIEL baja en las proyecciones del campeonato después de Francia 4-6 Inglaterra.",
+      "texto": "Sus probabilidades ahora están en el 0.0%.",
       "partido": "Francia 4-6 Inglaterra",
       "prioridad": 68,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "📢 COMUNICADO"
     },
     {
-      "id": "PODIO_HUMANO:frases1:3",
-      "tipo": "COMUNICADO",
+      "id": "PODIO_HUMANO:frases2:0",
+      "tipo": "RUMOR",
       "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases1:3",
+      "frase_id": "PODIO_HUMANO:frases2:0",
       "jugador": "JORGE",
-      "titulo": "JORGE aguanta en el podio humano mirando a PEDRO como quien mira una montaña.",
-      "texto": null,
+      "titulo": "Dicen que JORGE ya ha mirado cuánto le falta para alcanzar a PEDRO.",
+      "texto": "Spoiler: no es poco.",
       "partido": null,
       "prioridad": 53,
-      "etiqueta": "📢 COMUNICADO"
+      "etiqueta": "🟡 RUMOR"
     }
   ]
 };

@@ -132,7 +132,7 @@
     "ZONA_BAJA:frases1:1": 96,
     "SUBIDA_1_POSICION:frases2:3": 97,
     "RACHA_FALLOS:frases1:0": 103,
-    "CAMBIO_SIMULACIONES:frases2:1": 102,
+    "CAMBIO_SIMULACIONES:frases2:1": 103,
     "LIDER_HUMANO:frases2:0": 102,
     "GPT_LIDER:frases1:1": 92,
     "MUNDIAL_ABIERTO:frases1:1": 88,
@@ -238,10 +238,10 @@
     "PODIO_HUMANO:frases2:1": 103,
     "PODIO_HUMANO:frases3:1": 103,
     "NADIE_ACIERTA:frases2:1": 103,
-    "PODIO_HUMANO:frases2:0": 100,
+    "PODIO_HUMANO:frases2:0": 103,
     "NADIE_ACIERTA:frases1:1": 103,
     "NADIE_ACIERTA:frases2:0": 103,
-    "NADIE_ACIERTA:frases3:0": 96,
+    "NADIE_ACIERTA:frases3:0": 103,
     "NADIE_ACIERTA:frases3:1": 96,
     "CAMBIO_LIDER:frases3:2": 101,
     "FAVORITO_SIMULADOR:frases4:1": 98,
@@ -374,5 +374,5 @@
     "NADIE_ACIERTA:frases4:0": 103,
     "NADIE_ACIERTA:frases4:1": 103
   },
-  "actualizado": "2026-07-19T16:52:32Z"
+  "actualizado": "2026-07-19T18:58:26Z"
 }
