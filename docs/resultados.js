@@ -197,6 +197,6 @@ window.__RESULTADOS__ = [
   },
   {
     "resultado": "X",
-    "clasifica": null
+    "clasifica": "1"
   }
 ];

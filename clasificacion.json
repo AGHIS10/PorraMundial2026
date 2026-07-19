@@ -2,55 +2,55 @@
   {
     "posicion": 1,
     "nombre": "AGUSTIN",
-    "aciertos": 86,
-    "puntos": 143
+    "aciertos": 87,
+    "puntos": 168
   },
   {
     "posicion": 2,
     "nombre": "GEMINI",
-    "aciertos": 79,
-    "puntos": 142
+    "aciertos": 80,
+    "puntos": 167
   },
   {
     "posicion": 3,
     "nombre": "PEDRO",
-    "aciertos": 86,
-    "puntos": 130
+    "aciertos": 87,
+    "puntos": 155
   },
   {
     "posicion": 4,
     "nombre": "GABRIEL",
-    "aciertos": 86,
-    "puntos": 127
+    "aciertos": 87,
+    "puntos": 152
   },
   {
     "posicion": 5,
     "nombre": "JORGE",
-    "aciertos": 84,
-    "puntos": 125
+    "aciertos": 85,
+    "puntos": 150
   },
   {
     "posicion": 6,
     "nombre": "GPT",
-    "aciertos": 85,
-    "puntos": 118
+    "aciertos": 86,
+    "puntos": 143
   },
   {
     "posicion": 7,
     "nombre": "MARIO",
-    "aciertos": 82,
-    "puntos": 113
+    "aciertos": 83,
+    "puntos": 138
   },
   {
     "posicion": 8,
     "nombre": "CRISTIAN",
-    "aciertos": 77,
-    "puntos": 110
+    "aciertos": 78,
+    "puntos": 135
   },
   {
     "posicion": 9,
     "nombre": "SERGIO",
-    "aciertos": 78,
-    "puntos": 105
+    "aciertos": 79,
+    "puntos": 130
   }
 ]
