@@ -1,15 +1,15 @@
 {
-  "generado": "2026-07-19T06:26:25Z",
+  "generado": "2026-07-19T09:47:38Z",
   "partidos_jugados": 103,
   "noticias": [
     {
-      "id": "NADIE_ACIERTA:frases1:0",
+      "id": "NADIE_ACIERTA:frases4:0",
       "tipo": "ULTIMA_HORA",
       "categoria": "NADIE_ACIERTA",
-      "frase_id": "NADIE_ACIERTA:frases1:0",
+      "frase_id": "NADIE_ACIERTA:frases4:0",
       "jugador": "PEDRO",
-      "titulo": "Ni un solo participante acertó Francia 4-6 Inglaterra.",
-      "texto": "El fútbol vuelve a ganar.",
+      "titulo": "Francia 4-6 Inglaterra consigue un pleno histórico...",
+      "texto": "de errores.",
       "partido": "Francia 4-6 Inglaterra",
       "prioridad": 78,
       "etiqueta": "🔴 ÚLTIMA HORA"
@@ -63,28 +63,28 @@
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases3:4",
-      "tipo": "EL_BAR",
+      "id": "CAMBIO_SIMULACIONES:frases4:1",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases3:4",
+      "frase_id": "CAMBIO_SIMULACIONES:frases4:1",
       "jugador": "GABRIEL",
-      "titulo": "Tras Francia 4-6 Inglaterra, GABRIEL baja en las simulaciones.",
-      "texto": "Los rivales ya hablan de él en susurros y malas palabras.",
+      "titulo": "Solo es un modelo.",
+      "texto": "— GABRIEL, que baja posiciones en las proyecciones tras Francia 4-6 Inglaterra y lo celebra en privado.",
       "partido": "Francia 4-6 Inglaterra",
       "prioridad": 68,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "PODIO_HUMANO:frases3:3",
-      "tipo": "RUMOR",
+      "id": "PODIO_HUMANO:frases3:4",
+      "tipo": "EL_BAR",
       "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases3:3",
+      "frase_id": "PODIO_HUMANO:frases3:4",
       "jugador": "JORGE",
-      "titulo": "Se comenta que JORGE mira a PEDRO con admiración y con ganas de adelantarle.",
+      "titulo": "JORGE aguanta en el podio humano mirando a PEDRO como quien mira la cima desde un precipicio.",
       "texto": null,
       "partido": null,
       "prioridad": 53,
-      "etiqueta": "🟡 RUMOR"
+      "etiqueta": "🍺 DESDE EL BAR"
     }
   ]
 }
