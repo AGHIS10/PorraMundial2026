@@ -1,51 +1,51 @@
 window.__PREMIOS__ = [
   {
     "posicion": 1,
-    "nombre": "PEDRO",
-    "puntos": 130,
+    "nombre": "AGUSTIN",
+    "puntos": 143,
     "premio_fijo": 40.0,
-    "premio_variable": 7.55,
-    "premio_total": 47.55
+    "premio_variable": 8.03,
+    "premio_total": 48.03
   },
   {
     "posicion": 2,
-    "nombre": "GABRIEL",
-    "puntos": 127,
+    "nombre": "PEDRO",
+    "puntos": 130,
     "premio_fijo": 30.0,
-    "premio_variable": 7.38,
-    "premio_total": 37.38
+    "premio_variable": 7.3,
+    "premio_total": 37.3
   },
   {
     "posicion": 3,
-    "nombre": "JORGE",
-    "puntos": 125,
+    "nombre": "GABRIEL",
+    "puntos": 127,
     "premio_fijo": 20.0,
-    "premio_variable": 7.26,
-    "premio_total": 27.26
+    "premio_variable": 7.13,
+    "premio_total": 27.13
   },
   {
     "posicion": 4,
-    "nombre": "AGUSTIN",
-    "puntos": 118,
+    "nombre": "JORGE",
+    "puntos": 125,
     "premio_fijo": 8.0,
-    "premio_variable": 6.85,
-    "premio_total": 14.85
+    "premio_variable": 7.02,
+    "premio_total": 15.02
   },
   {
     "posicion": 5,
     "nombre": "MARIO",
     "puntos": 113,
     "premio_fijo": 0.0,
-    "premio_variable": 6.56,
-    "premio_total": 6.56
+    "premio_variable": 6.34,
+    "premio_total": 6.34
   },
   {
     "posicion": 6,
     "nombre": "CRISTIAN",
     "puntos": 110,
     "premio_fijo": 0.0,
-    "premio_variable": 6.39,
-    "premio_total": 6.39
+    "premio_variable": 6.18,
+    "premio_total": 6.18
   },
   {
     "posicion": 7,
