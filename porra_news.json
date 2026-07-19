@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-19T09:47:38Z",
+  "generado": "2026-07-19T11:06:31Z",
   "partidos_jugados": 103,
   "noticias": [
     {
-      "id": "NADIE_ACIERTA:frases4:0",
-      "tipo": "ULTIMA_HORA",
+      "id": "NADIE_ACIERTA:frases4:1",
+      "tipo": "INVESTIGACION",
       "categoria": "NADIE_ACIERTA",
-      "frase_id": "NADIE_ACIERTA:frases4:0",
+      "frase_id": "NADIE_ACIERTA:frases4:1",
       "jugador": "PEDRO",
-      "titulo": "Francia 4-6 Inglaterra consigue un pleno histórico...",
-      "texto": "de errores.",
+      "titulo": "Las estadísticas confirman que todos pensaban igual.",
+      "texto": "Y todos estaban equivocados.",
       "partido": "Francia 4-6 Inglaterra",
       "prioridad": 78,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
       "id": "RACHA_FALLOS:frases3:1",
@@ -63,28 +63,28 @@
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases4:1",
-      "tipo": "DECLARACIONES",
+      "id": "CAMBIO_SIMULACIONES:frases2:2",
+      "tipo": "EL_BAR",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases4:1",
+      "frase_id": "CAMBIO_SIMULACIONES:frases2:2",
       "jugador": "GABRIEL",
-      "titulo": "Solo es un modelo.",
-      "texto": "— GABRIEL, que baja posiciones en las proyecciones tras Francia 4-6 Inglaterra y lo celebra en privado.",
+      "titulo": "El modelo ha hablado: GABRIEL baja en el ranking de simulaciones.",
+      "texto": "La bola de cristal no miente... o eso dicen.",
       "partido": "Francia 4-6 Inglaterra",
       "prioridad": 68,
-      "etiqueta": "🎙️ DECLARACIONES"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
-      "id": "PODIO_HUMANO:frases3:4",
-      "tipo": "EL_BAR",
+      "id": "PODIO_HUMANO:frases3:1",
+      "tipo": "INVESTIGACION",
       "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases3:4",
+      "frase_id": "PODIO_HUMANO:frases3:1",
       "jugador": "JORGE",
-      "titulo": "JORGE aguanta en el podio humano mirando a PEDRO como quien mira la cima desde un precipicio.",
-      "texto": null,
+      "titulo": "Los expertos analizan si JORGE puede acercarse a PEDRO.",
+      "texto": "De momento, la distancia sigue siendo el tema.",
       "partido": null,
       "prioridad": 53,
-      "etiqueta": "🍺 DESDE EL BAR"
+      "etiqueta": "🕵 INVESTIGACIÓN"
     }
   ]
 }
