@@ -1,18 +1,18 @@
 {
-  "generado": "2026-07-19T13:05:27Z",
+  "generado": "2026-07-19T14:50:26Z",
   "partidos_jugados": 103,
   "noticias": [
     {
-      "id": "NADIE_ACIERTA:frases2:0",
-      "tipo": "INVESTIGACION",
+      "id": "NADIE_ACIERTA:frases2:1",
+      "tipo": "EL_BAR",
       "categoria": "NADIE_ACIERTA",
-      "frase_id": "NADIE_ACIERTA:frases2:0",
+      "frase_id": "NADIE_ACIERTA:frases2:1",
       "jugador": "PEDRO",
-      "titulo": "Francia 4-6 Inglaterra ha conseguido poner de acuerdo a todos...",
-      "texto": "en fallar.",
+      "titulo": "Si alguien apostó por el caos en Francia 4-6 Inglaterra, ese sí acertó.",
+      "texto": null,
       "partido": "Francia 4-6 Inglaterra",
       "prioridad": 78,
-      "etiqueta": "🕵 INVESTIGACIÓN"
+      "etiqueta": "🍺 DESDE EL BAR"
     },
     {
       "id": "RACHA_FALLOS:frases3:1",
@@ -63,28 +63,28 @@
       "etiqueta": "🕵 INVESTIGACIÓN"
     },
     {
-      "id": "CAMBIO_SIMULACIONES:frases3:0",
-      "tipo": "EXCLUSIVA",
+      "id": "CAMBIO_SIMULACIONES:frases1:4",
+      "tipo": "DECLARACIONES",
       "categoria": "CAMBIO_SIMULACIONES",
-      "frase_id": "CAMBIO_SIMULACIONES:frases3:0",
+      "frase_id": "CAMBIO_SIMULACIONES:frases1:4",
       "jugador": "GABRIEL",
-      "titulo": "Las simulaciones han recalculado tras Francia 4-6 Inglaterra y GABRIEL baja en el ranking de probabilidades.",
-      "texto": "El modelo le da ahora un 0.0%.",
+      "titulo": "Las simulaciones me respetan.",
+      "texto": "— GABRIEL, con un 0.0% que baja tras Francia 4-6 Inglaterra.",
       "partido": "Francia 4-6 Inglaterra",
       "prioridad": 68,
-      "etiqueta": "⭐ EXCLUSIVA"
+      "etiqueta": "🎙️ DECLARACIONES"
     },
     {
-      "id": "PODIO_HUMANO:frases3:2",
-      "tipo": "ULTIMA_HORA",
+      "id": "PODIO_HUMANO:frases4:0",
+      "tipo": "TITULAR",
       "categoria": "PODIO_HUMANO",
-      "frase_id": "PODIO_HUMANO:frases3:2",
+      "frase_id": "PODIO_HUMANO:frases4:0",
       "jugador": "JORGE",
-      "titulo": "JORGE se mantiene en el podio humano.",
-      "texto": "PEDRO sigue siendo la referencia que duele.",
+      "titulo": "JORGE aguanta en el podio humano.",
+      "texto": "PEDRO sigue marcando el objetivo.",
       "partido": null,
       "prioridad": 53,
-      "etiqueta": "🔴 ÚLTIMA HORA"
+      "etiqueta": "📰 TITULAR"
     }
   ]
 }
