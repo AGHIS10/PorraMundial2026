@@ -1180,63 +1180,72 @@ def _frase_resumen_final(stats: dict[str, Any], campeon: str) -> tuple[str, str]
 
     if n == "AGUSTIN":
         return (
-            "AGUSTIN, campeón y ya tiene excusa para el resto de la vida",
-            "Tocó el puesto 9, el grupo le dio por muerto y él respondió con un X/1 en la final "
-            "que huele a brujería. Un punto sobre Gemini: justo lo bastante para ser insoportable.",
+            "AGUSTIN, de la lona a la gloria eterna",
+            "Tocó fondo en el puesto 9, el grupo le dio por muerto y resucitó con un X/1 de "
+            "leyenda en la final. Se llevó el título por 1 punto sobre Gemini: la remontada "
+            "más ajustada y más insufrible de todo el Mundial.",
         )
     if n == "GEMINI":
         return (
-            "GEMINI, subcampeón digital con cara de humano decepcionado",
-            "La IA acertó la final igual que el campeón y aun así perdió. "
-            "Si esto fuera una película, el guionista habría sido despedido por sadismo.",
+            "GEMINI, la IA que se quedó a un punto de la inmortalidad",
+            "Clavó la final exactamente igual que el campeón, acierto por acierto, y aun así "
+            "perdió por el margen más cruel posible: 1 punto. Ni la inteligencia artificial "
+            "se libra de la lotería de la porra.",
         )
     if n == "PEDRO":
         return (
-            "PEDRO, de rey absoluto a bronce con sabor a traición",
-            "Llevaba el cetro puesto en el knockout y en la final puso 1/1 como si España "
-            "no fuera capaz de inventarse un drama en prórroga. Spoiler: se lo inventó.",
+            "PEDRO, el rey derrocado en el último suspiro",
+            "Llevó la corona durante todo el tramo final y en la última jugada plantó un 1/1, "
+            "como si España no fuera capaz de inventarse un drama en la prórroga. España se lo "
+            "inventó, y el trono se esfumó en el peor momento posible.",
         )
     if n == "GABRIEL":
         return (
-            "GABRIEL, el podio se le escapó en el VAR emocional",
-            f"Mismos {aciertos} que Pedro, mismo 1/1 en la final, tres puntos menos y "
-            "cuatro puestos peor. La porra no perdona empates morales.",
+            "GABRIEL, el podio que se le escapó por tres puntos",
+            f"{aciertos} aciertos, los mismos que Pedro, el mismo pronóstico en la final... y "
+            "tres puntos de diferencia le dejaron a las puertas del podio. La porra es "
+            "despiadada con los empates de mérito.",
         )
     if n == "JORGE":
         return (
-            "JORGE, photocall del bloque perdedor de la final",
-            "Se apuntó al carro del 1/1 con Pedro y Gabriel y acabó quinto. "
-            "Copiar no es ganar, pero al menos compartió sufrimiento con estilo.",
+            "JORGE, el quinto que casi la cuela",
+            "Se subió al mismo carro que Pedro y Gabriel en la final —1/1— con la esperanza "
+            "de colarse en el podio. Llegó quinto: ir en pelotón está bien, pero el podio solo "
+            "tiene tres sitios.",
         )
     if n == "GPT":
         return (
-            "GPT, dictador de agosto y exiliado en junio",
-            "Lideró la porra como un autócrata benevolente hasta que los humanos "
-            f"le hicieron un golpe blando. Sexto con {pts} puntos y dignidad almacenada en la nube.",
+            "GPT, el dictador de junio que cayó en julio",
+            "Dominó la fase de grupos como una máquina imparable y se apagó justo cuando "
+            f"llegaron los cruces de julio. Sexto puesto con {pts} puntos: a la IA todavía le "
+            "cuesta procesar la palabra 'sorpresa'.",
         )
     if n == "MARIO":
         return (
-            "MARIO, zona de confort en la mediocridad elegante",
-            "Subió, bajó, volvió a subir y en la final regaló un 1/1 que solo le dio "
-            f"medio premio. Séptimo con {pts} puntos: ni drama, ni gloria, puro Mariano.",
+            "MARIO, el eterno séptimo con estilo",
+            "Subió, bajó, volvió a subir... y en la final puso un 1/1 que solo le valió medio "
+            f"premio. Séptimo con {pts} puntos: ni el drama de la caída ni la gloria de ganar, "
+            "solo la consistencia de no destacar nunca.",
         )
     if n == "CRISTIAN":
         return (
-            "CRISTIAN, última oportunidad convertida en anécdota",
-            f"Con {aciertos} aciertos parecía respetable hasta que miras la clasificación: "
-            "octavo. Mismo error en la final que medio grupo y cero épica de remontada.",
+            "CRISTIAN, el octavo que no encontró su milagro",
+            f"{aciertos} aciertos que sonaban bien hasta que miras la tabla: octavo puesto. "
+            "Mismo pronóstico que medio grupo en la final y ni rastro de la remontada que "
+            "necesitaba.",
         )
     if n == "SERGIO":
         return (
-            "SERGIO, de emperador de grupos a último con curriculum",
-            "Fue líder cuando nadie prestaba atención y luego desapareció como "
-            f"notificación leída. Cierra último con {pts} puntos y muchas explicaciones pendientes.",
+            "SERGIO, el emperador de junio que desapareció en julio",
+            "Lideró la porra cuando nadie miraba la clasificación y se esfumó como una "
+            f"notificación sin abrir en cuanto empezó a importar de verdad. Último puesto con "
+            f"{pts} puntos y muchas explicaciones pendientes.",
         )
 
     if pos == 1:
         return (
             f"{n}, campeón y ya está insoportable",
-            f"168 puntos, {aciertos} aciertos y cero humildad prevista. "
+            f"{pts} puntos, {aciertos} aciertos y cero humildad prevista. "
             "El grupo tiene 364 días para odiarlo con motivos.",
         )
     if stats["es_ia"]:

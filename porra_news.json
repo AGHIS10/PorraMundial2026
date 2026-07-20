@@ -1,5 +1,5 @@
 {
-  "generado": "2026-07-20T06:41:19Z",
+  "generado": "2026-07-20T07:27:59Z",
   "partidos_jugados": 104,
   "noticias": [
     {
@@ -8,8 +8,8 @@
       "categoria": "RESUMEN_FINAL",
       "frase_id": "RESUMEN_FINAL:AGUSTIN",
       "jugador": "AGUSTIN",
-      "titulo": "AGUSTIN, campeón y ya tiene excusa para el resto de la vida",
-      "texto": "Tocó el puesto 9, el grupo le dio por muerto y él respondió con un X/1 en la final que huele a brujería. Un punto sobre Gemini: justo lo bastante para ser insoportable.",
+      "titulo": "AGUSTIN, de la lona a la gloria eterna",
+      "texto": "Tocó fondo en el puesto 9, el grupo le dio por muerto y resucitó con un X/1 de leyenda en la final. Se llevó el título por 1 punto sobre Gemini: la remontada más ajustada y más insufrible de todo el Mundial.",
       "partido": "España – Argentina",
       "prioridad": 199,
       "etiqueta": "🏆 Cierre del mundial"
@@ -20,8 +20,8 @@
       "categoria": "RESUMEN_FINAL",
       "frase_id": "RESUMEN_FINAL:GEMINI",
       "jugador": "GEMINI",
-      "titulo": "GEMINI, subcampeón digital con cara de humano decepcionado",
-      "texto": "La IA acertó la final igual que el campeón y aun así perdió. Si esto fuera una película, el guionista habría sido despedido por sadismo.",
+      "titulo": "GEMINI, la IA que se quedó a un punto de la inmortalidad",
+      "texto": "Clavó la final exactamente igual que el campeón, acierto por acierto, y aun así perdió por el margen más cruel posible: 1 punto. Ni la inteligencia artificial se libra de la lotería de la porra.",
       "partido": "España – Argentina",
       "prioridad": 198,
       "etiqueta": "🏆 Cierre del mundial"
@@ -32,8 +32,8 @@
       "categoria": "RESUMEN_FINAL",
       "frase_id": "RESUMEN_FINAL:PEDRO",
       "jugador": "PEDRO",
-      "titulo": "PEDRO, de rey absoluto a bronce con sabor a traición",
-      "texto": "Llevaba el cetro puesto en el knockout y en la final puso 1/1 como si España no fuera capaz de inventarse un drama en prórroga. Spoiler: se lo inventó.",
+      "titulo": "PEDRO, el rey derrocado en el último suspiro",
+      "texto": "Llevó la corona durante todo el tramo final y en la última jugada plantó un 1/1, como si España no fuera capaz de inventarse un drama en la prórroga. España se lo inventó, y el trono se esfumó en el peor momento posible.",
       "partido": "España – Argentina",
       "prioridad": 197,
       "etiqueta": "🏆 Cierre del mundial"
@@ -44,8 +44,8 @@
       "categoria": "RESUMEN_FINAL",
       "frase_id": "RESUMEN_FINAL:GABRIEL",
       "jugador": "GABRIEL",
-      "titulo": "GABRIEL, el podio se le escapó en el VAR emocional",
-      "texto": "Mismos 87 que Pedro, mismo 1/1 en la final, tres puntos menos y cuatro puestos peor. La porra no perdona empates morales.",
+      "titulo": "GABRIEL, el podio que se le escapó por tres puntos",
+      "texto": "87 aciertos, los mismos que Pedro, el mismo pronóstico en la final... y tres puntos de diferencia le dejaron a las puertas del podio. La porra es despiadada con los empates de mérito.",
       "partido": "España – Argentina",
       "prioridad": 196,
       "etiqueta": "🏆 Cierre del mundial"
@@ -56,8 +56,8 @@
       "categoria": "RESUMEN_FINAL",
       "frase_id": "RESUMEN_FINAL:JORGE",
       "jugador": "JORGE",
-      "titulo": "JORGE, photocall del bloque perdedor de la final",
-      "texto": "Se apuntó al carro del 1/1 con Pedro y Gabriel y acabó quinto. Copiar no es ganar, pero al menos compartió sufrimiento con estilo.",
+      "titulo": "JORGE, el quinto que casi la cuela",
+      "texto": "Se subió al mismo carro que Pedro y Gabriel en la final —1/1— con la esperanza de colarse en el podio. Llegó quinto: ir en pelotón está bien, pero el podio solo tiene tres sitios.",
       "partido": "España – Argentina",
       "prioridad": 195,
       "etiqueta": "🏆 Cierre del mundial"
@@ -68,8 +68,8 @@
       "categoria": "RESUMEN_FINAL",
       "frase_id": "RESUMEN_FINAL:GPT",
       "jugador": "GPT",
-      "titulo": "GPT, dictador de agosto y exiliado en junio",
-      "texto": "Lideró la porra como un autócrata benevolente hasta que los humanos le hicieron un golpe blando. Sexto con 143 puntos y dignidad almacenada en la nube.",
+      "titulo": "GPT, el dictador de junio que cayó en julio",
+      "texto": "Dominó la fase de grupos como una máquina imparable y se apagó justo cuando llegaron los cruces de julio. Sexto puesto con 143 puntos: a la IA todavía le cuesta procesar la palabra 'sorpresa'.",
       "partido": "España – Argentina",
       "prioridad": 194,
       "etiqueta": "🏆 Cierre del mundial"
@@ -80,8 +80,8 @@
       "categoria": "RESUMEN_FINAL",
       "frase_id": "RESUMEN_FINAL:MARIO",
       "jugador": "MARIO",
-      "titulo": "MARIO, zona de confort en la mediocridad elegante",
-      "texto": "Subió, bajó, volvió a subir y en la final regaló un 1/1 que solo le dio medio premio. Séptimo con 138 puntos: ni drama, ni gloria, puro Mariano.",
+      "titulo": "MARIO, el eterno séptimo con estilo",
+      "texto": "Subió, bajó, volvió a subir... y en la final puso un 1/1 que solo le valió medio premio. Séptimo con 138 puntos: ni el drama de la caída ni la gloria de ganar, solo la consistencia de no destacar nunca.",
       "partido": "España – Argentina",
       "prioridad": 193,
       "etiqueta": "🏆 Cierre del mundial"
@@ -92,8 +92,8 @@
       "categoria": "RESUMEN_FINAL",
       "frase_id": "RESUMEN_FINAL:CRISTIAN",
       "jugador": "CRISTIAN",
-      "titulo": "CRISTIAN, última oportunidad convertida en anécdota",
-      "texto": "Con 78 aciertos parecía respetable hasta que miras la clasificación: octavo. Mismo error en la final que medio grupo y cero épica de remontada.",
+      "titulo": "CRISTIAN, el octavo que no encontró su milagro",
+      "texto": "78 aciertos que sonaban bien hasta que miras la tabla: octavo puesto. Mismo pronóstico que medio grupo en la final y ni rastro de la remontada que necesitaba.",
       "partido": "España – Argentina",
       "prioridad": 192,
       "etiqueta": "🏆 Cierre del mundial"
@@ -104,8 +104,8 @@
       "categoria": "RESUMEN_FINAL",
       "frase_id": "RESUMEN_FINAL:SERGIO",
       "jugador": "SERGIO",
-      "titulo": "SERGIO, de emperador de grupos a último con curriculum",
-      "texto": "Fue líder cuando nadie prestaba atención y luego desapareció como notificación leída. Cierra último con 130 puntos y muchas explicaciones pendientes.",
+      "titulo": "SERGIO, el emperador de junio que desapareció en julio",
+      "texto": "Lideró la porra cuando nadie miraba la clasificación y se esfumó como una notificación sin abrir en cuanto empezó a importar de verdad. Último puesto con 130 puntos y muchas explicaciones pendientes.",
       "partido": "España – Argentina",
       "prioridad": 191,
       "etiqueta": "🏆 Cierre del mundial"
