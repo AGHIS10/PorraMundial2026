@@ -1958,6 +1958,7 @@ function renderParticipantDetail(entry, participante) {
 }
 
 function renderApp(data) {
+  renderChampionHero(data);
   renderPorraNews(appData.porraNews);
   renderStats(data, appData.status);
   renderProgress();
@@ -2633,6 +2634,250 @@ function renderProyeccion() {
 
 /* ── UI state ── */
 
+/* ── Champion Splash: reveal espectacular cuando el mundial ha terminado ── */
+
+const CHAMPION_SPLASH_SESSION_KEY = "porra-champion-splash-seen";
+
+function isMundialTerminado() {
+  const { total, restantes } = calcularEstadisticasPartidos();
+  return total > 0 && restantes === 0;
+}
+
+function getCampeonInfo(clasificacion) {
+  if (!Array.isArray(clasificacion) || !clasificacion.length) return null;
+  const ordenado = [...clasificacion].sort((a, b) => a.posicion - b.posicion);
+  const campeon = ordenado[0];
+  const segundo = ordenado[1] || null;
+  const evolInfo = appData.evolucion?.participantes?.find((p) => p.nombre === campeon.nombre) || null;
+  const premioInfo = Array.isArray(appData.premios)
+    ? appData.premios.find((p) => p.nombre === campeon.nombre)
+    : null;
+
+  return {
+    nombre: campeon.nombre,
+    puntos: campeon.puntos,
+    aciertos: campeon.aciertos,
+    color: evolInfo?.color || "#f5c518",
+    inicial: evolInfo?.inicial || getInitials(campeon.nombre),
+    premio: premioInfo?.premio_total ?? null,
+    diffSegundo: segundo ? campeon.puntos - segundo.puntos : null,
+    segundoNombre: segundo ? segundo.nombre : null,
+  };
+}
+
+function championSplashSeen() {
+  try {
+    return sessionStorage.getItem(CHAMPION_SPLASH_SESSION_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function markChampionSplashSeen() {
+  try {
+    sessionStorage.setItem(CHAMPION_SPLASH_SESSION_KEY, "1");
+  } catch {
+    /* almacenamiento no disponible: no bloquea la experiencia */
+  }
+}
+
+function renderChampionSplashContent(info) {
+  const nameEl = document.getElementById("champion-splash-name");
+  const avatarEl = document.getElementById("champion-splash-avatar");
+  const statsEl = document.getElementById("champion-splash-stats");
+  const gapEl = document.getElementById("champion-splash-gap");
+  if (!nameEl) return;
+
+  nameEl.textContent = info.nombre;
+
+  if (avatarEl) {
+    avatarEl.textContent = info.inicial;
+    avatarEl.style.setProperty("--champ-color", info.color);
+  }
+
+  if (statsEl) {
+    const partes = [`${info.puntos} puntos`, `${info.aciertos} aciertos`];
+    if (info.premio != null && info.premio > 0) partes.push(formatEuro(info.premio));
+    statsEl.textContent = partes.join(" · ");
+  }
+
+  if (gapEl) {
+    if (info.diffSegundo != null && info.segundoNombre && info.diffSegundo > 0) {
+      gapEl.hidden = false;
+      const unidad = info.diffSegundo === 1 ? "punto" : "puntos";
+      gapEl.textContent = `${info.segundoNombre} se quedó a solo ${info.diffSegundo} ${unidad}.`;
+    } else if (info.diffSegundo === 0 && info.segundoNombre) {
+      gapEl.hidden = false;
+      gapEl.textContent = `Empatado a puntos con ${info.segundoNombre} en la cima.`;
+    } else {
+      gapEl.hidden = true;
+    }
+  }
+}
+
+let championConfettiStop = null;
+
+function startChampionConfetti() {
+  const canvas = document.getElementById("champion-confetti");
+  if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return null;
+  }
+
+  const ctx = canvas.getContext("2d");
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const colors = ["#f5c518", "#2ee6d6", "#7c3aed", "#ffffff", "#f87171"];
+
+  function resize() {
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  function nuevaParticula() {
+    return {
+      x: Math.random() * window.innerWidth,
+      y: -20 - Math.random() * window.innerHeight * 0.4,
+      w: 6 + Math.random() * 6,
+      h: 8 + Math.random() * 10,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rot: Math.random() * Math.PI * 2,
+      vRot: (Math.random() - 0.5) * 0.22,
+      vy: 2 + Math.random() * 2.4,
+      vx: (Math.random() - 0.5) * 1.4,
+      dead: false,
+    };
+  }
+
+  const particulas = Array.from({ length: 150 }, nuevaParticula);
+  const spawnHasta = Date.now() + 3200;
+  let vivo = true;
+  let raf = null;
+
+  function tick() {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    let algunaViva = false;
+    particulas.forEach((p) => {
+      if (p.dead) return;
+      p.y += p.vy;
+      p.x += p.vx + Math.sin(p.y * 0.01) * 0.6;
+      p.rot += p.vRot;
+      if (p.y > window.innerHeight + 20) {
+        if (Date.now() < spawnHasta) {
+          p.y = -20;
+          p.x = Math.random() * window.innerWidth;
+        } else {
+          p.dead = true;
+          return;
+        }
+      }
+      algunaViva = true;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    });
+    if (!algunaViva) {
+      vivo = false;
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      return;
+    }
+    if (vivo) raf = requestAnimationFrame(tick);
+  }
+  raf = requestAnimationFrame(tick);
+
+  return () => {
+    vivo = false;
+    if (raf) cancelAnimationFrame(raf);
+    window.removeEventListener("resize", resize);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  };
+}
+
+function hideChampionSplash() {
+  const splash = document.getElementById("champion-splash");
+  if (!splash || splash.hidden) return;
+
+  splash.classList.add("is-leaving");
+  splash.classList.remove("is-visible");
+  document.body.classList.remove("no-scroll");
+
+  if (splash._onKeydown) {
+    document.removeEventListener("keydown", splash._onKeydown);
+    splash._onKeydown = null;
+  }
+  if (championConfettiStop) {
+    championConfettiStop();
+    championConfettiStop = null;
+  }
+
+  markChampionSplashSeen();
+
+  setTimeout(() => {
+    splash.hidden = true;
+    splash.setAttribute("aria-hidden", "true");
+    splash.classList.remove("is-leaving");
+  }, 500);
+}
+
+function showChampionSplash(info) {
+  const splash = document.getElementById("champion-splash");
+  const closeBtn = document.getElementById("champion-splash-close");
+  if (!splash) return;
+
+  renderChampionSplashContent(info);
+  splash.hidden = false;
+  splash.setAttribute("aria-hidden", "false");
+  document.body.classList.add("no-scroll");
+
+  requestAnimationFrame(() => splash.classList.add("is-visible"));
+
+  championConfettiStop = startChampionConfetti();
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", hideChampionSplash, { once: true });
+  }
+
+  const onKeydown = (event) => {
+    if (event.key === "Escape") hideChampionSplash();
+  };
+  document.addEventListener("keydown", onKeydown);
+  splash._onKeydown = onKeydown;
+}
+
+function maybeShowChampionSplash(clasificacion) {
+  if (!isMundialTerminado() || championSplashSeen()) return;
+  const info = getCampeonInfo(clasificacion);
+  if (!info) return;
+  setTimeout(() => showChampionSplash(info), 300);
+}
+
+function renderChampionHero(clasificacion) {
+  const subtitle = document.querySelector(".hero__subtitle");
+  if (!subtitle) return;
+
+  if (!isMundialTerminado()) {
+    subtitle.classList.remove("hero__subtitle--champion");
+    subtitle.innerHTML = `<span class="live-dot" aria-hidden="true"></span>Clasificación en directo`;
+    return;
+  }
+
+  const info = getCampeonInfo(clasificacion);
+  if (!info) return;
+
+  subtitle.classList.add("hero__subtitle--champion");
+  subtitle.innerHTML = `
+    <span class="hero__champion-badge">🏆 Campeón</span>
+    <span class="hero__champion-name">${info.nombre}</span>
+  `;
+  document.title = `Porra Mundial 2026 · ${info.nombre} campeón`;
+}
+
 function showLoading() {
   elements.loading.classList.remove("is-hidden");
   hideError();
@@ -2684,6 +2929,7 @@ async function init() {
     renderApp(clasificacion);
     hideError();
     hideLoading();
+    maybeShowChampionSplash(clasificacion);
   } catch (error) {
     showError(error instanceof Error ? error.message : "Error desconocido al cargar los datos.");
   }

@@ -268,6 +268,32 @@ body {
   animation: pulse 2.2s ease-in-out infinite;
 }
 
+/* ── Hero: estado de campeón (mundial finalizado) ── */
+.hero__subtitle--champion {
+  gap: 0.65rem;
+  padding: 0.5rem 1.15rem 0.5rem 0.85rem;
+  color: var(--accent-gold);
+  background: linear-gradient(90deg, rgba(245, 197, 24, 0.14), rgba(245, 197, 24, 0.04));
+  border-color: var(--border-gold);
+  box-shadow: 0 0 24px rgba(245, 197, 24, 0.15);
+}
+
+.hero__champion-badge {
+  display: inline-flex;
+  align-items: center;
+  animation: championBadgePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes championBadgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.hero__champion-name {
+  color: var(--text-primary);
+  letter-spacing: 0.22em;
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.55; transform: scale(0.85); }
@@ -4278,6 +4304,283 @@ body {
   .stat-card--wide { grid-column: auto; }
 }
 
+/* ── Champion Splash: reveal espectacular al cargar ── */
+body.no-scroll { overflow: hidden; }
+
+.champion-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 38%, rgba(245, 197, 24, 0.28), transparent 62%),
+    radial-gradient(ellipse 90% 70% at 50% 100%, rgba(124, 58, 237, 0.22), transparent 60%),
+    linear-gradient(180deg, #050a22 0%, #0a1230 45%, #140c34 100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.champion-splash:not([hidden]) { display: flex; }
+
+.champion-splash.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.champion-splash.is-leaving .champion-splash__content {
+  opacity: 0;
+  transform: translateY(-14px) scale(0.97);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.champion-splash__confetti {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.champion-splash__rays {
+  position: absolute;
+  inset: -10%;
+  z-index: 0;
+  background: conic-gradient(
+    from 0deg,
+    rgba(245, 197, 24, 0.05) 0deg,
+    transparent 20deg,
+    transparent 40deg,
+    rgba(245, 197, 24, 0.05) 60deg,
+    transparent 80deg,
+    transparent 100deg,
+    rgba(245, 197, 24, 0.05) 120deg,
+    transparent 140deg,
+    transparent 160deg,
+    rgba(245, 197, 24, 0.05) 180deg,
+    transparent 200deg,
+    transparent 220deg,
+    rgba(245, 197, 24, 0.05) 240deg,
+    transparent 260deg,
+    transparent 280deg,
+    rgba(245, 197, 24, 0.05) 300deg,
+    transparent 320deg,
+    transparent 340deg,
+    rgba(245, 197, 24, 0.05) 360deg
+  );
+  animation: championRaysSpin 40s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes championRaysSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.champion-splash__sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.champion-splash__sparkles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  box-shadow: 0 0 8px 2px rgba(245, 197, 24, 0.7);
+  opacity: 0;
+  animation: championSparkle 2.6s ease-in-out infinite;
+}
+
+.champion-splash__sparkles span:nth-child(1)  { top: 18%; left: 12%; animation-delay: 0.1s; }
+.champion-splash__sparkles span:nth-child(2)  { top: 72%; left: 8%;  animation-delay: 0.6s; }
+.champion-splash__sparkles span:nth-child(3)  { top: 30%; left: 88%; animation-delay: 0.3s; }
+.champion-splash__sparkles span:nth-child(4)  { top: 82%; left: 90%; animation-delay: 0.9s; }
+.champion-splash__sparkles span:nth-child(5)  { top: 8%;  left: 55%; animation-delay: 1.2s; }
+.champion-splash__sparkles span:nth-child(6)  { top: 92%; left: 45%; animation-delay: 0.4s; }
+.champion-splash__sparkles span:nth-child(7)  { top: 45%; left: 4%;  animation-delay: 1.5s; }
+.champion-splash__sparkles span:nth-child(8)  { top: 55%; left: 95%; animation-delay: 0.7s; }
+.champion-splash__sparkles span:nth-child(9)  { top: 15%; left: 75%; animation-delay: 1.8s; }
+.champion-splash__sparkles span:nth-child(10) { top: 68%; left: 25%; animation-delay: 1.0s; }
+
+@keyframes championSparkle {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.champion-splash__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: min(92vw, 560px);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.champion-splash__trophy-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: scale(0.4) rotate(-10deg);
+  animation: championTrophyIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s forwards;
+}
+
+.champion-splash__trophy-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -34px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.4), transparent 68%);
+  animation: trophyGlow 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes championTrophyIn {
+  0% { opacity: 0; transform: scale(0.3) rotate(-16deg); }
+  60% { opacity: 1; transform: scale(1.15) rotate(4deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+.champion-splash__trophy {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  color: var(--accent-gold);
+  filter: drop-shadow(0 0 34px rgba(245, 197, 24, 0.65));
+}
+
+.champion-splash__kicker {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--border-gold);
+  border-radius: 999px;
+  background: rgba(245, 197, 24, 0.08);
+  opacity: 0;
+  animation: championFadeUp 0.6s ease 0.55s forwards;
+}
+
+.champion-splash__avatar {
+  --champ-color: var(--accent-gold);
+  width: 64px;
+  height: 64px;
+  margin-top: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--champ-color);
+  background: color-mix(in srgb, var(--champ-color) 16%, transparent);
+  border: 2px solid var(--champ-color);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--champ-color) 55%, transparent);
+  opacity: 0;
+  animation: championFadeUp 0.6s ease 0.7s forwards;
+}
+
+.champion-splash__name {
+  margin-top: 0.9rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 11vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  background: linear-gradient(100deg, #f5c518 0%, #fff8dd 25%, #f5c518 50%, #fff8dd 75%, #f5c518 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 30px rgba(245, 197, 24, 0.35));
+  opacity: 0;
+  animation:
+    championNameIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.75s forwards,
+    championShine 3.2s linear infinite 1.5s;
+}
+
+@keyframes championNameIn {
+  from { opacity: 0; transform: translateY(26px) scale(0.85); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes championShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.champion-splash__stats {
+  margin-top: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  opacity: 0;
+  animation: championFadeUp 0.6s ease 1.7s forwards;
+}
+
+.champion-splash__gap {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  opacity: 0;
+  animation: championFadeUp 0.6s ease 1.85s forwards;
+}
+
+@keyframes championFadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.champion-splash__cta {
+  margin-top: 1.8rem;
+  padding: 0.75rem 1.9rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a1204;
+  background: linear-gradient(135deg, #ffe08a, var(--accent-gold));
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(245, 197, 24, 0.35);
+  opacity: 0;
+  animation: championFadeUp 0.6s ease 2s forwards;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.champion-splash__cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 34px rgba(245, 197, 24, 0.48);
+}
+
+.champion-splash__cta:active { transform: translateY(0) scale(0.98); }
+
+@media (max-width: 560px) {
+  .champion-splash__trophy { width: 64px; height: 64px; }
+  .champion-splash__content { padding: 2rem 1.25rem; gap: 0.3rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -4289,4 +4592,17 @@ body {
   .podium-player,
   .pred-card,
   .mobile-row { opacity: 1; animation: none; }
+  .champion-splash__confetti,
+  .champion-splash__rays,
+  .champion-splash__sparkles { display: none; }
+  .champion-splash__name,
+  .champion-splash__kicker,
+  .champion-splash__avatar,
+  .champion-splash__stats,
+  .champion-splash__gap,
+  .champion-splash__cta,
+  .champion-splash__trophy-wrap {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

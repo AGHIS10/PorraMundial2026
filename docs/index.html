@@ -13,6 +13,32 @@
   <link rel="stylesheet" href="styles.css?v=20260719224509">
 </head>
 <body>
+  <div class="champion-splash" id="champion-splash" hidden aria-hidden="true">
+    <canvas class="champion-splash__confetti" id="champion-confetti" aria-hidden="true"></canvas>
+    <div class="champion-splash__rays" aria-hidden="true"></div>
+    <div class="champion-splash__sparkles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="champion-splash__content">
+      <div class="champion-splash__trophy-wrap" aria-hidden="true">
+        <svg class="champion-splash__trophy" viewBox="0 0 64 64">
+          <path d="M32 4l4 8h12l-2 10 8 6-10 2 2 12-14-8-14 8 2-12-10-2 8-6-2-10h12z" fill="currentColor"/>
+          <rect x="22" y="48" width="20" height="4" rx="1" fill="currentColor"/>
+          <rect x="18" y="54" width="28" height="6" rx="2" fill="currentColor"/>
+        </svg>
+      </div>
+      <p class="champion-splash__kicker">🏆 Campeón de la Porra Mundial 2026</p>
+      <div class="champion-splash__avatar" id="champion-splash-avatar"></div>
+      <h2 class="champion-splash__name" id="champion-splash-name"></h2>
+      <p class="champion-splash__stats" id="champion-splash-stats"></p>
+      <p class="champion-splash__gap" id="champion-splash-gap" hidden></p>
+      <button class="champion-splash__cta" id="champion-splash-close" type="button">
+        Ver la clasificación final
+      </button>
+    </div>
+  </div>
+
   <div class="bg-layer bg-layer--gradient"></div>
   <div class="bg-layer bg-layer--spotlights"></div>
   <div class="bg-layer bg-layer--stadium"></div>
