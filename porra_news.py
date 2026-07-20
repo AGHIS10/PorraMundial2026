@@ -14,6 +14,7 @@ from apuestas import (
     contar_aciertos_apuesta,
     es_eliminatoria,
     partido_tiene_resultado,
+    puntos_apuesta,
 )
 from evolucion import _posiciones as posiciones_por_puntos
 from reparto_premios import es_participante_virtual
@@ -52,6 +53,7 @@ PRIORIDAD_SCORE: dict[str, int] = {
     "ULTIMO_CLASIFICADO": 40,
     "LIDER_RESISTE": 38,
     "JUGADOR_SPOT": 25,
+    "RESUMEN_FINAL": 200,
 }
 
 TIPO_ETIQUETA: dict[str, str] = {
@@ -64,6 +66,7 @@ TIPO_ETIQUETA: dict[str, str] = {
     "EL_BAR": "🍺 DESDE EL BAR",
     "COMUNICADO": "📢 COMUNICADO",
     "EDITORIAL": "📝 EDITORIAL",
+    "RESUMEN_FINAL": "🏆 Cierre del mundial",
 }
 
 RACHA_MINIMA = 3
@@ -1083,6 +1086,231 @@ def _jugadores_cubiertos(candidatos: list[Candidato]) -> set[str]:
     return {c.jugador for c in candidatos if c.jugador}
 
 
+def _mundial_terminado(
+    partidos: list[dict],
+    resultados: list[Any],
+    partidos_jugados: int,
+) -> bool:
+    if not partidos or partidos_jugados < len(partidos):
+        return False
+    return all(
+        i < len(resultados)
+        and partido_tiene_resultado(resultados[i], partido.get("fase", "grupos"))
+        for i, partido in enumerate(partidos)
+    )
+
+
+def _stats_resumen_jugador(
+    fila: dict[str, Any],
+    evolucion: dict[str, Any] | None,
+    participantes: dict[str, Any],
+    partidos: list[dict],
+    resultados: list[Any],
+    puntos_lider: int,
+) -> dict[str, Any]:
+    nombre = fila["nombre"]
+    pos = int(fila["posicion"])
+    puntos = int(fila["puntos"])
+    aciertos = int(fila.get("aciertos", 0))
+
+    pos_inicio = pos
+    mejor_pos = pos
+    peor_pos = pos
+    veces_lider = 0
+    es_ia = es_participante_virtual(nombre)
+
+    if evolucion and isinstance(evolucion.get("participantes"), list):
+        for p in evolucion["participantes"]:
+            if p.get("nombre") != nombre:
+                continue
+            es_ia = bool(p.get("es_ia", es_ia))
+            detalle = p.get("detalle") or []
+            if detalle:
+                posiciones = [int(d["posicion"]) for d in detalle]
+                pos_inicio = posiciones[0]
+                mejor_pos = min(posiciones)
+                peor_pos = max(posiciones)
+                veces_lider = sum(1 for d in detalle if int(d["posicion"]) == 1)
+            break
+
+    pts_final = 0
+    pleno_final = False
+    pron_final = ""
+    ultimo_idx = len(partidos) - 1
+    if (
+        ultimo_idx >= 0
+        and ultimo_idx < len(resultados)
+        and nombre in participantes
+    ):
+        fase_final = partidos[ultimo_idx].get("fase", "final")
+        res_final = resultados[ultimo_idx]
+        pron = participantes[nombre].get("pronosticos", [])
+        if ultimo_idx < len(pron):
+            apuesta = pron[ultimo_idx]
+            pts_final = puntos_apuesta(apuesta, res_final, fase_final)
+            pleno_final = _partido_pleno(apuesta, res_final, fase_final)
+            r = apuesta.get("resultado") if isinstance(apuesta, dict) else apuesta
+            c = apuesta.get("clasifica") if isinstance(apuesta, dict) else None
+            pron_final = f"{r}/{c}" if c is not None else str(r)
+
+    return {
+        "nombre": nombre,
+        "posicion": pos,
+        "puntos": puntos,
+        "aciertos": aciertos,
+        "diff_lider": puntos_lider - puntos,
+        "pos_inicio": pos_inicio,
+        "mejor_pos": mejor_pos,
+        "peor_pos": peor_pos,
+        "veces_lider": veces_lider,
+        "es_ia": es_ia,
+        "pts_final": pts_final,
+        "pleno_final": pleno_final,
+        "pron_final": pron_final,
+    }
+
+
+def _frase_resumen_final(stats: dict[str, Any], campeon: str) -> tuple[str, str]:
+    """Devuelve (titulo, texto) personalizado para el cierre del mundial."""
+    n = stats["nombre"]
+    pos = stats["posicion"]
+    pts = stats["puntos"]
+    diff = stats["diff_lider"]
+    aciertos = stats["aciertos"]
+
+    if n == "AGUSTIN":
+        return (
+            "AGUSTIN, campeón y ya tiene excusa para el resto de la vida",
+            "Tocó el puesto 9, el grupo le dio por muerto y él respondió con un X/1 en la final "
+            "que huele a brujería. Un punto sobre Gemini: justo lo bastante para ser insoportable.",
+        )
+    if n == "GEMINI":
+        return (
+            "GEMINI, subcampeón digital con cara de humano decepcionado",
+            "La IA acertó la final igual que el campeón y aun así perdió. "
+            "Si esto fuera una película, el guionista habría sido despedido por sadismo.",
+        )
+    if n == "PEDRO":
+        return (
+            "PEDRO, de rey absoluto a bronce con sabor a traición",
+            "Llevaba el cetro puesto en el knockout y en la final puso 1/1 como si España "
+            "no fuera capaz de inventarse un drama en prórroga. Spoiler: se lo inventó.",
+        )
+    if n == "GABRIEL":
+        return (
+            "GABRIEL, el podio se le escapó en el VAR emocional",
+            f"Mismos {aciertos} que Pedro, mismo 1/1 en la final, tres puntos menos y "
+            "cuatro puestos peor. La porra no perdona empates morales.",
+        )
+    if n == "JORGE":
+        return (
+            "JORGE, photocall del bloque perdedor de la final",
+            "Se apuntó al carro del 1/1 con Pedro y Gabriel y acabó quinto. "
+            "Copiar no es ganar, pero al menos compartió sufrimiento con estilo.",
+        )
+    if n == "GPT":
+        return (
+            "GPT, dictador de agosto y exiliado en junio",
+            "Lideró la porra como un autócrata benevolente hasta que los humanos "
+            f"le hicieron un golpe blando. Sexto con {pts} puntos y dignidad almacenada en la nube.",
+        )
+    if n == "MARIO":
+        return (
+            "MARIO, zona de confort en la mediocridad elegante",
+            "Subió, bajó, volvió a subir y en la final regaló un 1/1 que solo le dio "
+            f"medio premio. Séptimo con {pts} puntos: ni drama, ni gloria, puro Mariano.",
+        )
+    if n == "CRISTIAN":
+        return (
+            "CRISTIAN, última oportunidad convertida en anécdota",
+            f"Con {aciertos} aciertos parecía respetable hasta que miras la clasificación: "
+            "octavo. Mismo error en la final que medio grupo y cero épica de remontada.",
+        )
+    if n == "SERGIO":
+        return (
+            "SERGIO, de emperador de grupos a último con curriculum",
+            "Fue líder cuando nadie prestaba atención y luego desapareció como "
+            f"notificación leída. Cierra último con {pts} puntos y muchas explicaciones pendientes.",
+        )
+
+    if pos == 1:
+        return (
+            f"{n}, campeón y ya está insoportable",
+            f"168 puntos, {aciertos} aciertos y cero humildad prevista. "
+            "El grupo tiene 364 días para odiarlo con motivos.",
+        )
+    if stats["es_ia"]:
+        return (
+            f"{n}, algoritmo herido en {pos}º",
+            f"La IA sumó {pts} puntos y sigue sin entender por qué pierde contra humanos "
+            f"con menos neurona y más suerte. A {diff} del campeón {campeon}.",
+        )
+    if stats["pleno_final"]:
+        return (
+            f"{n}, acertó la final y aun así perdió el relato",
+            f"Pleno en el último partido, {pts} puntos totales y {pos}º puesto. "
+            f"Ganó la batalla, perdió la guerra y el grupo se ríe por WhatsApp.",
+        )
+    if stats["veces_lider"] >= 5:
+        return (
+            f"{n}, exlíder con trauma de clasificación",
+            f"Estuvo arriba {stats['veces_lider']} jornadas y acabó {pos}º. "
+            "De rey a meme en tiempo récord.",
+        )
+    if stats["peor_pos"] - stats["mejor_pos"] >= 4:
+        return (
+            f"{n}, montaña rusa con billete de vuelta al infierno",
+            f"Del {stats['mejor_pos']}º al {stats['peor_pos']}º y cierre en {pos}º. "
+            f"{pts} puntos y cero estabilidad emocional.",
+        )
+    return (
+        f"{n}, cierre en {pos}º sin excusa creíble",
+        f"{aciertos} aciertos, {pts} puntos y a {diff} del campeón {campeon}. "
+        "La porra ha hablado y no ha sido amable."
+        if diff
+        else f"{aciertos} aciertos y {pts} puntos. El grupo ya está buscando ángulo para vacilarle.",
+    )
+
+
+def _generar_resumenes_finales(
+    clasificacion: list[dict[str, Any]],
+    evolucion: dict[str, Any] | None,
+    participantes: dict[str, Any],
+    partidos: list[dict],
+    resultados: list[Any],
+) -> list[dict[str, Any]]:
+    if not clasificacion:
+        return []
+
+    ordenados = sorted(clasificacion, key=lambda f: int(f["posicion"]))
+    campeon = ordenados[0]["nombre"]
+    puntos_lider = int(ordenados[0]["puntos"])
+    partido_final = _formato_partido(partidos[-1]) if partidos else None
+
+    noticias: list[dict[str, Any]] = []
+    for fila in ordenados:
+        stats = _stats_resumen_jugador(
+            fila, evolucion, participantes, partidos, resultados, puntos_lider
+        )
+        titulo, texto = _frase_resumen_final(stats, campeon)
+        pos = int(fila["posicion"])
+        noticias.append(
+            {
+                "id": f"RESUMEN_FINAL:{stats['nombre']}",
+                "tipo": "EDITORIAL",
+                "categoria": "RESUMEN_FINAL",
+                "frase_id": f"RESUMEN_FINAL:{stats['nombre']}",
+                "jugador": stats["nombre"],
+                "titulo": _capitalizar_titulo(titulo),
+                "texto": texto,
+                "partido": partido_final,
+                "prioridad": PRIORIDAD_SCORE["RESUMEN_FINAL"] - pos,
+                "etiqueta": TIPO_ETIQUETA["RESUMEN_FINAL"],
+            }
+        )
+    return noticias
+
+
 def generar_noticias(
     clasificacion: list[dict[str, Any]],
     evolucion: dict[str, Any] | None,
@@ -1098,6 +1326,35 @@ def generar_noticias(
     rng = rng or random.Random()
     partidos_jugados = _contar_partidos_jugados(partidos, resultados)
     ultimo_idx = _indice_ultimo_partido(partidos, resultados)
+
+    if _mundial_terminado(partidos, resultados, partidos_jugados):
+        pos_curr = _posiciones(clasificacion)
+        noticias = _generar_resumenes_finales(
+            clasificacion,
+            evolucion if isinstance(evolucion, dict) else None,
+            participantes,
+            partidos,
+            resultados,
+        )
+        generado = (
+            datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+        )
+        paquete = {
+            "generado": generado,
+            "partidos_jugados": partidos_jugados,
+            "noticias": noticias,
+        }
+        historial: dict[str, int] = {}
+        if estado_previo and isinstance(estado_previo.get("frases_usadas"), dict):
+            historial = {k: int(v) for k, v in estado_previo["frases_usadas"].items()}
+        nuevo_estado = {
+            "partidos_jugados": partidos_jugados,
+            "posiciones": pos_curr,
+            "lider": _lideres(pos_curr)[0] if clasificacion else None,
+            "frases_usadas": historial,
+            "actualizado": generado,
+        }
+        return paquete, nuevo_estado
 
     pos_prev_raw = (estado_previo or {}).get("posiciones")
     pos_prev_estado = pos_prev_raw if isinstance(pos_prev_raw, dict) else None

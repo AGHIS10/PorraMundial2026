@@ -1981,6 +1981,7 @@ const TPN_PROGRAM_CLASS = {
   COMUNICADO:    "tpn__program--comunicado",
   EDITORIAL:     "tpn__program--editorial",
   DECLARACIONES: "tpn__program--declaraciones",
+  RESUMEN_FINAL: "tpn__program--editorial",
 };
 
 const TPN_CORNER_LABEL = {
@@ -1993,6 +1994,7 @@ const TPN_CORNER_LABEL = {
   COMUNICADO:    "COMUNICADO",
   EDITORIAL:     "EDITORIAL",
   DECLARACIONES: "DECLARACIONES",
+  RESUMEN_FINAL: "CIERRE",
 };
 
 const TPN_CORNER_CLASS = {
@@ -2002,6 +2004,7 @@ const TPN_CORNER_CLASS = {
   COMUNICADO:    "tpn__corner--comunicado",
   EDITORIAL:     "tpn__corner--editorial",
   DECLARACIONES: "tpn__corner--declaraciones",
+  RESUMEN_FINAL: "tpn__corner--editorial",
 };
 
 const TPN_INTERVAL_MS = 10000;
