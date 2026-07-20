@@ -2725,7 +2725,8 @@ function startChampionConfetti() {
 
   const ctx = canvas.getContext("2d");
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  const colors = ["#f5c518", "#2ee6d6", "#7c3aed", "#ffffff", "#f87171"];
+  // Mezcla dorado/porra + rojo y amarillo de la bandera de España (campeona del Mundial)
+  const colors = ["#f5c518", "#aa151b", "#f1bf00", "#2ee6d6", "#ffffff", "#aa151b", "#f1bf00"];
 
   function resize() {
     canvas.width = window.innerWidth * dpr;
@@ -2874,6 +2875,7 @@ function renderChampionHero(clasificacion) {
   subtitle.innerHTML = `
     <span class="hero__champion-badge">🏆 Campeón</span>
     <span class="hero__champion-name">${info.nombre}</span>
+    <span class="hero__champion-flag" aria-hidden="true">🇪🇸</span>
   `;
   document.title = `Porra Mundial 2026 · ${info.nombre} campeón`;
 }

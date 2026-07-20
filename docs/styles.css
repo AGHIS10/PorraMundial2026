@@ -294,6 +294,11 @@ body {
   letter-spacing: 0.22em;
 }
 
+.hero__champion-flag {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.55; transform: scale(0.85); }
@@ -4317,6 +4322,8 @@ body.no-scroll { overflow: hidden; }
   overflow: hidden;
   background:
     radial-gradient(ellipse 70% 55% at 50% 38%, rgba(245, 197, 24, 0.28), transparent 62%),
+    radial-gradient(ellipse 60% 45% at 12% 8%, rgba(170, 21, 27, 0.22), transparent 65%),
+    radial-gradient(ellipse 60% 45% at 88% 8%, rgba(241, 191, 0, 0.16), transparent 65%),
     radial-gradient(ellipse 90% 70% at 50% 100%, rgba(124, 58, 237, 0.22), transparent 60%),
     linear-gradient(180deg, #050a22 0%, #0a1230 45%, #140c34 100%);
   opacity: 0;
@@ -4411,6 +4418,57 @@ body.no-scroll { overflow: hidden; }
 @keyframes championSparkle {
   0%, 100% { opacity: 0; transform: scale(0.4); }
   50% { opacity: 1; transform: scale(1.3); }
+}
+
+.champion-splash__flags {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.champion-splash__flag-emoji {
+  position: absolute;
+  left: var(--fx);
+  top: var(--fy);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  opacity: 0;
+  transform-origin: 30% 15%;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+  animation:
+    championFlagIn 0.6s ease-out 0.3s forwards,
+    championFlagWave 2.6s ease-in-out 0.9s infinite;
+  animation-delay: var(--fd), calc(var(--fd) + 0.6s);
+}
+
+@keyframes championFlagIn {
+  from { opacity: 0; transform: scale(0.4) rotate(-14deg); }
+  to { opacity: 0.9; transform: scale(1) rotate(-8deg); }
+}
+
+@keyframes championFlagWave {
+  0%, 100% { transform: scale(1) rotate(-10deg); }
+  50% { transform: scale(1) rotate(10deg); }
+}
+
+.champion-splash__spain-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+  padding: 0.4rem 1.15rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff8dd;
+  background: linear-gradient(90deg, #aa151b 0%, #aa151b 20%, #f1bf00 50%, #aa151b 80%, #aa151b 100%);
+  border-radius: 999px;
+  box-shadow: 0 6px 24px rgba(170, 21, 27, 0.35);
+  opacity: 0;
+  transform: translateY(-8px);
+  animation: championFadeUp 0.55s ease 0.05s forwards;
 }
 
 .champion-splash__content {
@@ -4594,14 +4652,16 @@ body.no-scroll { overflow: hidden; }
   .mobile-row { opacity: 1; animation: none; }
   .champion-splash__confetti,
   .champion-splash__rays,
-  .champion-splash__sparkles { display: none; }
+  .champion-splash__sparkles,
+  .champion-splash__flags { display: none; }
   .champion-splash__name,
   .champion-splash__kicker,
   .champion-splash__avatar,
   .champion-splash__stats,
   .champion-splash__gap,
   .champion-splash__cta,
-  .champion-splash__trophy-wrap {
+  .champion-splash__trophy-wrap,
+  .champion-splash__spain-ribbon {
     opacity: 1 !important;
     transform: none !important;
   }
