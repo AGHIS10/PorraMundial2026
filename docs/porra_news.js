@@ -1,5 +1,5 @@
 window.__PORRA_NEWS__ = {
-  "generado": "2026-09-07T22:27:04Z",
+  "generado": "2026-09-08T02:41:28Z",
   "partidos_jugados": 104,
   "noticias": [
     {
