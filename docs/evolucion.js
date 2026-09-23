@@ -1,5 +1,5 @@
 window.__EVOLUCION__ = {
-  "generado": "2026-09-23T09:00:13Z",
+  "generado": "2026-09-23T14:36:50Z",
   "total_partidos": 104,
   "partidos_jugados": 104,
   "participantes": [
