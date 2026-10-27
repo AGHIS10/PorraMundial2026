@@ -1,5 +1,5 @@
 window.__PROYECCION__ = {
-  "generatedAt": "2026-10-26T22:11:56Z",
+  "generatedAt": "2026-10-27T03:23:35Z",
   "simulaciones": 20000,
   "seed": 2026,
   "partidos_pendientes": 0,
